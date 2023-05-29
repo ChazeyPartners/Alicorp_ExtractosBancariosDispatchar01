@@ -1,0 +1,311 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="BCP_IngresarGeneracionArchivos" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="out_BooEnterFileGeneration" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="out_StrExceptionMessage" Type="OutArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>658,4782</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>BCP_IngresarGeneracionArchivos_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="BCP_IngresarGeneracionArchivos" sap:VirtualizedContainerService.HintSize="668,4717" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="vBooClosePop" />
+      <Variable x:TypeArguments="x:Boolean" Name="vBooCloseNotes" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Try Catch BCP_IngresarGeneracionArchivos" sap:VirtualizedContainerService.HintSize="606,4606" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="568,3869" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="506,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Ingresar Generación Archivos&quot;]" />
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: Ingresar Generacion Archivos" sap:VirtualizedContainerService.HintSize="506,3504" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="50578787-3f80-485e-9440-4c4ad5cac324" Version="V2" WindowResize="Maximize">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="472,3287" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NCheckState DisplayName="Check App State vBooClosePop" EnableIfExists="False" EnableIfNotExists="False" Exists="[vBooClosePop]" sap:VirtualizedContainerService.HintSize="410,177" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
+                    <uix:NCheckState.IfExists>
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.IfNotExists>
+                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable BrowserURL="https://www.telecreditobcp.com/tlcnp/welcome.do" CvElementArea="688, 93, 26, 27" CvTextArea="692, 98, 15, 16" CvType="Icon" DesignTimeRectangle="691, 97, 20, 20" DesignTimeScaleFactor="1" ElementType="Icon" FriendlyName="'IMG'" FullSelectorArgument="&lt;webctrl name='mainBcp' tag='FRAME' /&gt;&lt;webctrl parentid='PopupHome_*' tableRow='*' tag='TABLE' /&gt;&lt;webctrl tableRow='*' tag='IMG' /&gt;" Guid="b93d6241-cbcf-4ede-bf4c-415f659e249c" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHrSURBVEhLvdW9rRpBFAVgiyJIERUQIpGSUAABHRAhUQIBNSAcUgASoe2AgIz4WUKiB2qY52/1rj3emQU7sI80Ypn7c+7PWfj0+dv39PN8/Zvz9vv5Uj//j6CGx+OR9vt9Wi6XaTqdpvF4nEajUZrNZmm9Xqfdbtf41PCS4HK5pPl83iRcLBZpu92m2+2Wrtdr87xarRrbZDJJ9/v9I+oXOglUJIFqVd5VIbAhR9TuppOA43A4TMfj8ePmNXQrRmGBKoFWVSMAer1eOp/PzXMNbHxAQbqO2IJAe+ap5YAF50E53PHXccBI7U2ugoCj6tszt0wkbbhjyyE29lEQkF07AASRJZl6bn9vwwR0UhAIypeUQ6JQlVPrNCAH8oJAEI13gW0wGDRqeeZHKIopCFx6kbpwOp1Sv99vzjMJI1dsQaCtrhGFzjebTeMjQU1ZwG7cBYHZ5hINmDU5Sh4gCHe1PRAKe0HQJVO6VlEb7thyiJWjKlNGAToJxO9M7ccs3vq8a8/RWUEA5mrZlhhzr40hwMaHr5MXUyUASxJ0OByeyjHAx0jE+Ax0Eqgq9qHlVx0Yqa4Vlvt2EgS0ap6IKEMC1br3HPuxt5pkXxJAdIOAaiRUrXfGHVtXhwVBc6p/7s/OjyR/+qf/bwje0juy+jhjnZfKmQAAAABJRU5ErkJggg==" InformativeScreenshot="ad135c1841a8991e223e0243df72b253.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Telecrédito - BCP' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NCheckState.Target>
+                  </uix:NCheckState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="410,92" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;¿Cerrar Pop? &quot; + vBooClosePop.ToString]" />
+                  <If Condition="[vBooClosePop]" sap:VirtualizedContainerService.HintSize="410,559" sap2010:WorkflowViewState.IdRef="If_1">
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="376,377" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Cerrar Pop&quot;]" />
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Close Pop" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NClick_9" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://www.telecreditobcp.com/tlcnp/welcome.do" CvElementArea="537, 221, 26, 25" CvTextArea="543, 224, 14, 14" CvType="Icon" DesignTimeRectangle="539, 220, 24, 24" DesignTimeScaleFactor="1" ElementType="Icon" FriendlyName="'IMG'" FullSelectorArgument="&lt;webctrl name='mainBcp' tag='FRAME' /&gt;&lt;webctrl parentid='PopupHome_*' tableRow='*' tag='TABLE' /&gt;&lt;webctrl tableRow='*' tag='IMG' /&gt;" FuzzyMatches="10000" Guid="771b56f8-0da6-4b11-b91e-227fdc81e0b6" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALhSURBVEhLxZTLThNRHMYbHoIt4QlYkrBlwwOw4A1YkfAILHgGwqgEa6yKkYS4MAEUgShySdCYKGYwaIxYhpkJbRBqufTz/E45ZZhOy8r4JSedOf/L979805z+Mf4vQRzHmpyc1PDwsPr7+9Xb26uenh4NDAxodHRUExMT1qcdWhKsrq5qcHDQJhwaGtL4+Lh2dna0sbFhn0dGRqytr69Pvu9fRTWjiYCKSEC1VN6uQmyQQ9SqmyYCHLu7uzU7O3t1czvolhgKS+MGAa1SDQGgo6NDS0tL9jkL2PABFETXLtahQUB7zJOWHVhwVhDgDn86dmCk7C05qgYBjlSfniPLhCQN7rAlQazbh0OuFq6Ig+zSAYAgZIlMeU6/p8EE6MTlbRAQlLUkQCKnKk5Wpw7kgLyJgCA03grYurq6rFra+SEUimki4JIPqRXm5ubU2dlpTzsJQ06x1wTxC3Foq9WInM7HxsasDwmylAWwM+7LeNGceaOiaF61aMHONilRB2aNHEnugCC4y9oDQsFeJ1gwBOFrybTSSqbomorS4A5bEsSSw8o0XDTnpSEI3krBmjUSQCcO7n8m68/MffXJrnludHZNsKVaUFcFc2XZLNHNPWsMDtjwwZdzo5hwoU5QCzYNwXr90oAlEZTP59vK0QEfRkJM8gsmucJXyl1EK7oI31zd1qty+6Dl2zpgpHRNYUnfy3DZHCPTs3hZZ3Gz5GiVeUKEMkhAtdzz7PbD3rIkex5u6izcUq4ar6kaX3eQhOsGAlRDQqrlm+EOW6sOT4qfVQl85f5E26pEa7o4+qKC56ka7ur4p69q8VAzvEef9OyBp6P9XVVLscrFoh6a+0oU6JH5fXzX02X5m04Pftj4p1MmJjbvh3vWljs5+KjzkiExbDP3PJ1G76TKtsq/tlQ59PV7f88mfJL3NH3HU2HaJL3vqVT8roJJUC29V/lgXafBnp4XpnQcfDDH5It9nYRf9RezIqBCASzbqwAAAABJRU5ErkJggg==" InformativeScreenshot="fc108c283c29994517c4a55e65890857.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Telecrédito - BCP' /&gt;" SearchSteps="Selector" Version="V2" />
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence sap2010:WorkflowViewState.IdRef="Sequence_16" />
+                    </If.Else>
+                  </If>
+                  <uix:NCheckState DisplayName="Check App State vBooCloseNotes" EnableIfExists="False" EnableIfNotExists="False" Exists="[vBooCloseNotes]" sap:VirtualizedContainerService.HintSize="410,177" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
+                    <uix:NCheckState.IfExists>
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.IfNotExists>
+                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable BrowserURL="https://www.telecreditobcp.com/tlcnp/welcome.do" CvElementArea="203, 226, 374, 384" CvTextArea="537, 238, 35, 10" CvType="InputBox" DesignTimeRectangle="533, 233, 43, 22" DesignTimeScaleFactor="1" ElementType="Icon" FriendlyName="'IMG'" FullSelectorArgument="&lt;webctrl name='mainBcp' tag='FRAME' /&gt;&lt;webctrl parentid='postItHome' tableRow='*' tag='TABLE' /&gt;&lt;webctrl tableRow='*' tag='IMG' /&gt;" Guid="bc3d3e8b-c23c-4a35-9b44-608df4af9beb" ImageBase64="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" InformativeScreenshot="0b6cdc1b9e7747ab737f7e20ef5dac3d.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Telecrédito - BCP' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NCheckState.Target>
+                  </uix:NCheckState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="410,92" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Info" Message="[&quot;¿Cerrar Notas? &quot; + vBooCloseNotes.ToString]" />
+                  <If Condition="[vBooCloseNotes]" DisplayName="If vBooCloseNotes" sap:VirtualizedContainerService.HintSize="410,559" sap2010:WorkflowViewState.IdRef="If_2">
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="376,377" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Cerrar Notas&quot;]" />
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Close Notes" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NClick_10" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://www.telecreditobcp.com/tlcnp/welcome.do" CvType="Text" DesignTimeRectangle="533, 233, 43, 22" DesignTimeScaleFactor="1" ElementType="Icon" FriendlyName="'IMG'" FullSelectorArgument="&lt;webctrl name='mainBcp' tag='FRAME' /&gt;&lt;webctrl parentid='postItHome' tableRow='*' tag='TABLE' /&gt;&lt;webctrl tableRow='*' tag='IMG' /&gt;" Guid="4289c1fc-d731-45d0-9cd5-f8c1c3b151ef" ImageBase64="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" InformativeScreenshot="72dfbf671d066f4d1b26c8ac6842099d.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Telecrédito - BCP' /&gt;" SearchSteps="Selector" Version="V2" />
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence sap2010:WorkflowViewState.IdRef="Sequence_20" />
+                    </If.Else>
+                  </If>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="410,92" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Clic Consultas&quot;]" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Consultations" sap:VirtualizedContainerService.HintSize="410,157" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://www.telecreditobcp.com/tlcnp/welcome.do" CvType="Text" DesignTimeRectangle="19, 195, 70, 15" DesignTimeScaleFactor="1" FriendlyName="'Consultas'" FullSelectorArgument="&lt;webctrl name='mainBcp' tag='FRAME' /&gt;&lt;webctrl aaname='Consultas' tag='DIV' /&gt;" Guid="bb50ec8d-a068-46ac-9674-9ec916e9d4e4" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEoAAAATCAYAAAA3UZtOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFISURBVFhH7ZTRDcIwDES7IaOwEBKTIIbggwE6AD/9D7blq440LVYK/fJJJ9rGbi8vCUM5DSX93Qkq6AQVdIIKOkEFnaCC3gB1LmUqpFcpl1bdP+0Zxqvfy+90p/HjvALKA3Koh4A6HFYFaqwyHeg2qNvzOxSrgagWvaOCdd22eqpFQY31EChbKEhqtFbBQTNA74Hm3bjPbVAWysO0fJFQqoeE0nsL7PWYqI0xhMa1TYKfU38NCt/5qPNvIo/2cL9dY0H2uQ9UPb4ISuF4crwD5v5OUGZ5ztIeZIGwmDvdd/R6QXGtSd/RCQpHkeFYj5sX5Qew+v7MEWz16LVAVZNm2NzPALZALb4pWiyU77j/gVJ7yFk0eTXCmWhsFZRc18cCO4DfNdKkm3BVUsPvmvz5x8K5eLF3eANUmp2ggk5QQSeooBNUyEN5AwNi8W4pXSzlAAAAAElFTkSuQmCC" InformativeScreenshot="64bcde4694d4df6542b9f0c34a761eaf.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Telecrédito - BCP' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Clic Consultas Cuentas&quot;]" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Consultations Accounts" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_6" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://www.telecreditobcp.com/tlcnp/welcome.do" CvType="Text" DesignTimeRectangle="19, 212, 200, 20" DesignTimeScaleFactor="1" FriendlyName="'Consulta de cuentas'" FullSelectorArgument="&lt;webctrl name='mainBcp' tag='FRAME' /&gt;&lt;webctrl aaname='Consulta de cuentas' tag='DIV' /&gt;" Guid="d6fc4c84-f2b1-4574-a26e-cbb808be1538" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAMwAAAAYCAYAAAC2jRLLAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALCSURBVHhe7ZixcRsxEEXZgKtwFayCPTBgxpABQ0UcOZJCJ06vBlWgUIGLUBnwAfg47AILHI4eS57R35k3wwOwiz1gP0By5w47RwgZIwqGRqOtmxLMy09CSAtvFAwhg3ijYAgZxBsFQ8gg3oJgklmDujy7aX9yu13i7KbJGvcvQQ7HRzw/utv+wb1X48Z4v57n97i4V6Pvs/G53Z7sPvIBwGzBnOZm+VyBQhXFGYvto0WjBfN61Dlt5b8VzPQwH24nCuYzgbUF0xPN02VdHGGMv3k8Yix8b0dfnLF/KQTTpxAnxkSfLJhY7Mk3Fn0QUGprCCmPSTllwUj/w/W58vWoeXs5ivnNuEkUx7wGsW++NfG8tHXX1mgnfw+sL5iGaFZPYmx+KoZYIBiPTY19spiMz+HmKAquIZhlHjUOc7ZOaCsWfMI7plhD/rGwZUGruIjVjIvP6l3M/OM8Kna1TnpdyDjfp99me7J1wRiiWRNM1S83PBRTPv1kkcuTN/vrgjOL0RJMQJ/O0SdT5pmfEVf4etIB0PJfaAqmE7cQpYpd9HnUWimRJYy8yBDffr3V7bB1wcj2RFH0JfcKRo7Nm36fYGIOGGcUnKfMMz8Xczao3jOxJhgr7qhg0vrIW0XeJNX6oZ1sohINrC8Y2aaoNz5uMISATWt/JbMEozdfFoz0j+1FMRqCqeesBWMWtpoHeRY5d/19Lur9ccshr2ZcKYplHPKXfWpOxDbEo/zJXSjRwNqCkc8mqcASRUFhY6u+ovhkkevTMRePjJV+FFdFOo9LYgqFImPtz6KAERNEYXnKH/36/SxfT55zZjlAhO/+4m7+s9Un4/YEI75aHq4/hP/8XjJ2a/3IZrbdMIR8Ybb/hiHki3Lfv2SEEA2MgiFkBBgFQ8gIMAqGkBFgFAwhI8AoGEJGgGXB0Gi0VeMNQ8gIwZz7A9ObheWhKMBjAAAAAElFTkSuQmCC" InformativeScreenshot="46099628f70ba06c490024d2fd1c300c.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Telecrédito - BCP' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Clic Generación Especial Movimientos Históricos&quot;]" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Special Generation Historical Movements" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_7" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://www.telecreditobcp.com/tlcnp/welcome.do" CvType="Text" DesignTimeRectangle="180, 237, 270, 20" DesignTimeScaleFactor="1" FriendlyName="'Generación especial'" FullSelectorArgument="&lt;webctrl name='mainBcp' tag='FRAME' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div' idx='13' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl name='mainBcp' tag='FRAME' /&gt;&lt;webctrl type='' class='' tag='DIV' aaname='Generación especial de movimientos históricos' check:innerText='Generación especial de movimientos históricos' /&gt;" Guid="6088793d-de60-406e-9181-d72fe52d3ee8" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAARIAAAAYCAYAAAA223LxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAU/SURBVHhe7Vq9bhw5DJ4XyFNcfQ+QKk2AlPsW7q5zimsPMNy6DWAccJUL+wUC+OptAqRIm37rtGkmkkiJHzXkarzrTZwFCXzIjERRH3/E1a4zzR8/zEW+fgoEAoGngUUaSUhISMiBEjeSQCBwOFiikQQCgcPBMk3TBT1ZSoFAILAPLNN8856eLKVzxP1V6p5X89aaCwSeGdvLi3m6fDDnzgIsR91ISpDS+orNzaOp9+vwMF9P7+e7rYxtL/X7y8WSe49d+hAYFekandPicb57ezFf31tzBnKjf3s776y5Eba38+boDwniu6zlsR/LWKcc7vVlnOMXDxbzRvLH3Rf1bqE0ERWkHJQnFMwvweO8+52T1uH3aCQ/Ec9y2/QayRiL28c21RvMnyWSvPvn/3na/f1XeekVXv37eTHW4HT+XLSSAGosdFuRrkuFfSVzEHi84TQ75RMq6afkFt2yt6HHBUDjdT/d8cve3bp9fBC4VnTQx9pE+ZPrRnhiczV9HHLH+QRu4MTd4FsOFNm6Tjcwm6/EBUE2b2W/tFZ8l5xjPKof2Tfxifa6vud4pBissq1uJBZftpdyVven+IIu+2tx1PVjxYDsb5J9nT/xQ/PisRZzrU9jsg/FgOptc/Nf+tfKMfLCvez4H3yDew4kmf68TDxe240kw20mKtkWMOgJoE8B4ICUpFLQKMBY8BzMkiBIxH0qvqLDc2i3cmrjvZ2aCEpO5ufxIR4M2Ad9U5ybDhcEcmH7no9D7tuHeds4deuaPZzvirno+DnB9RSPui8dOjqEYBd8WoxXm3ltee7itcZ2t07zRZ+M2FVeDkdsdnb82D7bFPudH3Ud+Iw3EnxGLhQD5LWvBmhPxbeMy7pFXk8E91tKktJIRn/+NZsJBC+/U3BS4DKao/zeYAQMAoKf1BUlgKogGFyERY9t6U/Dii5RUDRV3+ODdpR/FdkW8JBE9okd+zjijnZpne1TQRcv0cn29N7YoCv8eDgHKUH4Z305MDTWrRvYltry+JJuixfWIvjuciw6tu8Ezz5wNPPO+S17gm6ZE1+9GKyqgbIv+Vf2yhyardPD7AVJ3o0aiXsjAYfUuCoCO1FPC2QCFEd+pwDye9tvnAivsPziFvRrF2jFmXn5ReT5OOJe7ZNN36eCLl6iY/vWw4+H+NXvi/zzM32dcdYNbEtOPb6k2+IFNYC+7+OYUebNg+jZB45Vt+wn9Zj3oD173S5nRgyGNZDfF+eO9skclmtPg0VPSLL3RuI2EUYJWpcEGWMHayL7BBuBpMTWIOVxKCwIHgYcOSi7bQ0kQtkR+x6f6pPwr+NSaHltS2BL8sD3EQePu5qHmMFhIYjdVmhQ3BYvXO/Hg9Yvc4L78VxqIvS1Rq9bbbvoeHxpvMW96aNO9wwcc81orpVPhWdf+7HMO9cj88Vn5OLFQI03fc1FdPK66ps+Ez8DqjckcRvJmr/aZBTHUoIaVFIoeTRXC8YPZJ4rwec1KpEQNHonHfpBUwe0zZVi0faR7zI5S32E8rUWSC12Hqc9OfnpMOlxguljN77kDrHkHytrQQsXQIvRgT+2mvGQg9T02JYuYl38uG6V7cxd6fR8O/uoXw510mV/bY6jGHj2gSM/V9t9TJY6so8fA6sGqk4dt8+B2Ds9rBvJmzW/kQSeiq4QA4EzgfktJckmGskpEI0kcH7Y91ebaCSBQOA4JIlGEggEjkMS+rG1iqUUCAQC+5Bk1X9ICwQCARdJdt++RyMJBAJHgCUaSSAQOBws0khCQkJCDhRqJC8dISEhL1jm+Qck9qmAvKzBzwAAAABJRU5ErkJggg==" InformativeScreenshot="78cdbb30f105e640b48a48bc14eeaeef.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Telecrédito - BCP' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Clic Generación Archivos&quot;]" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Special File Generation" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_8" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://www.telecreditobcp.com/tlcnp/welcome.do" CvType="Text" DesignTimeRectangle="397, 241, 200, 20" DesignTimeScaleFactor="1" FriendlyName="'Generación de archivos'" FullSelectorArgument="&lt;webctrl name='mainBcp' tag='FRAME' /&gt;&lt;webctrl aaname='Generación de archivos' tag='DIV' /&gt;" Guid="85ab3314-47b6-40d4-9d40-d2076d6d9447" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAMwAAAAYCAYAAAC2jRLLAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANeSURBVHhe7Zg9jtswEIV5gZwidW7hfm+xJ/AewXDrAyzSurCP4F5NgBRpUwRpHCBBrqCQ80MOqaGkZI3dxeYN8MEUNSSH5BtRchi/fhrfLDDYjS2E7VmKMBhsycJVn8Tt0xkAUBDjV7JkrQMAoCAWQnjgkucEAGDEwnjacclzeovE+YawGwfvHgA9xOIrmXz0e04LDNv7KL7C3eHi+r0c53EfT9DjUOqGbX3991zG4+Z+3J+8e7eGx5qu63PGAAgxN2HeH79U1x6ULJvHkf40IJI4X/smXsbrk5Il8RoSBjw7Yt1XsncfP0/qMsPjeOe81lwPD2ZzOYH49ClP9eQTtrtyL/2tLe3tiZX7Sa9Qm+gfhUO+NLbjJ+Lieh2vPmFo7KbdXDyWHJvEoglj++y15ddA8YlwW45tH088fUW082cfSZgYn87Z1qdyatOuufXh/sypWq3fU0/b/wix2Y/+btKQiO3p0lI2lK6NPwtMko02jzeNhauCM0InsRnRn85l3LZfjSnXt/1okhdh9eLhOATbVgRHczPjT+ZsGGLMWi7z5BiqB0M1RiqL6CdzNGPZGFI7KVPy6Xqavm2C1WsOZhFb/FvZTZpKKCo6eWpRPYsh1xEmMXLbImj7dFVoY62QFBEt+RmBlCetUvpvxaH+vXhsP5X4jFireSs9AdI8rA+vkSZYGx/DY1VJRbHa5Ez98PqkPtjX3lcfmVeOYzpPMINYPGHuueQ4dU+Y/ARs6vOG+sJL9ATqCz7SJAwnllzn8V4wYXoJkmF/HaO0SWPdImE4vv0p1Wns9X1vXjReSpw8dzCLWPeEmf2GiZCImsUudSISFYARfU+gvIGaGEZMTsKogGwMVb+5jRFK1U/pvxePzqmNf/JKlv0bcWeseO26mDm6Y6R+mz6Tj1nfqm1MFn0dS3W0Ns76p/q6XWkDZhBzE2bNv2SJ/JRSqsVnQfC9IsI5gdImS5tKJFnoes0++0N90tn2LIq6fxuv9r8qYSK573/46C8+se+DirRJmMpP41uZMK2fqcvj5jn5+wIWEFv8hgEARMSQMACsQQwJA8AaxJAwAKxBLMiv7wQAYMSQMACsQSyED1sueU4AACZayhWcMACsQawkDAwGW7Tw/ddvLnlZBQBgon378XP8A1c+GjrLl1Z/AAAAAElFTkSuQmCC" InformativeScreenshot="5fd6274eeee38c9a41461ee66cf23808.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Telecrédito - BCP' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="-8, -8, 1382, 736" BrowserType="Edge" IconBase64="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" InformativeScreenshot="da363b92c30084f1fc610a945392df98.jpg" Selector="&lt;html app='msedge.exe' title='Telecrédito - BCP' /&gt;" Title="Nuevo Telecrédito" />
+            </uix:NApplicationCard.TargetApp>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </uix:NApplicationCard>
+          <Assign DisplayName="Assign out_BooEnterFileGeneration" sap:VirtualizedContainerService.HintSize="484,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Boolean">[out_BooEnterFileGeneration]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="550,394" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Exception" sap:VirtualizedContainerService.HintSize="496,325" sap2010:WorkflowViewState.IdRef="Sequence_12">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Error" Message="[&quot;Mensaje Excepción &quot; + exception.Source + &quot; - &quot; + exception.Message]" />
+              <Assign DisplayName="Assign out_StrExceptionMessage" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_2">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[out_StrExceptionMessage]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">["Mensaje Excepción BCP_IngresarGeneracionArchivos " + exception.Source + " - " + exception.Message]</InArgument>
+                </Assign.Value>
+              </Assign>
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+      <TryCatch.Finally>
+        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;¿Ingresó Generación Archivo? &quot; + out_BooEnterFileGeneration.ToString]" />
+      </TryCatch.Finally>
+    </TryCatch>
+  </Sequence>
+</Activity>

@@ -1,0 +1,387 @@
+{
+  "Workflows": [
+    {
+      "Path": null,
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Main.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vDtbProcessMonitoring&StateMachine_1",
+        "TransactionItem&StateMachine_1",
+        "SystemException&StateMachine_1",
+        "BusinessException&StateMachine_1",
+        "TransactionNumber&StateMachine_1",
+        "Config&StateMachine_1",
+        "RetryNumber&StateMachine_1",
+        "TransactionField2&StateMachine_1",
+        "TransactionField1&StateMachine_1",
+        "TransactionID&StateMachine_1",
+        "dt_TransactionData&StateMachine_1",
+        "ConsecutiveSystemExceptions&StateMachine_1",
+        "ShouldStop&Sequence_25"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_OrchestratorQueueName",
+        "in_OrchestratorQueueFolder"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/Mail/Mail_EnviarNotificacion.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vCstAttachmentsCollection&Sequence_1",
+        "vBooAttachments&Sequence_1",
+        "vStrAttachmentsCollection&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_CstAttachmentsCollection",
+        "in_StrTemplate",
+        "in_StrBody",
+        "in_StrSubject",
+        "in_StrTo",
+        "in_StrBcc",
+        "in_SrtCc",
+        "in_BooAlert"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/InitAllApplications.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vDtmDate&Sequence_9",
+        "vBooValidateDate&Sequence_9",
+        "vBooUploadQueues&Sequence_9",
+        "vBooReadParametersOrder&Sequence_9",
+        "vDtbParametersOrder&Sequence_9",
+        "vBooReadParametersBanks&Sequence_9",
+        "vDtbParametersBanks&Sequence_9"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_DtbProcessMonitoring",
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/Excel/Excel_LeerParametrico.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_StrSortColumn",
+        "out_BooReadParameters",
+        "out_DtbParameters",
+        "in_StrParameterizableSheet",
+        "in_StrParameterizableFile"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/UiPath/UiPath_CargarQueueObtenerMovimientos.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vIntIndex&Sequence_1",
+        "vDtbParametersBanks&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_DtmDate",
+        "in_DtbParametersOrder",
+        "in_DtbParametersBanks",
+        "out_BooUploadQueues",
+        "in_StrOrchestratorQueueName",
+        "in_StrOrchestratorQueueFolder",
+        "in_BooUploadQueues",
+        "out_DtbProcessMonitoring"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Test.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/Process.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vBooUploadQueues&Sequence_1",
+        "vBooDownloadFileMovements&Sequence_1",
+        "vBooEnterDownloadFile&Sequence_1",
+        "vBooRequestSent&Sequence_1",
+        "vBooRequestGenerationFiles&Sequence_1",
+        "vBooEnterFileGeneration&Sequence_1",
+        "vBooEntryModule&Sequence_1",
+        "vBooLogin&Sequence_1",
+        "vBooSessionStarted&Sequence_1",
+        "vStrExceptionMessage&Sequence_1",
+        "Config&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_DtbProcessMonitoring",
+        "in_TransactionItem",
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/GetTransactionData.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_TransactionNumber",
+        "in_Config",
+        "out_TransactionItem",
+        "out_TransactionField1",
+        "out_TransactionField2",
+        "out_TransactionID",
+        "io_dt_TransactionData"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/InitAllSettings.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vJsonProjectName&Sequence_2",
+        "dt_SettingsAndConstants&Sequence_5",
+        "dt_Assets&Sequence_6",
+        "AssetValue&Sequence_11"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_ConfigFile",
+        "in_ConfigSheets",
+        "out_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/BCP/BCP_ValidateBCPSessionStart.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/BCP/BCP_IniciarSesionBCP.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vStrUsername&Sequence_1",
+        "vSstPassword&Sequence_1",
+        "vStrCardData&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrExceptionMessage",
+        "out_BooLogin",
+        "in_StrOrchestratorAssetName",
+        "in_StrOrchestratorFolderPath",
+        "in_StrURL"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Login_Bcp.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vStrSelector&Sequence_1",
+        "vStrTexto&Sequence_1",
+        "vIntContador&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "Config",
+        "out_vBooLoginExitoso",
+        "in_vStrPass_Bcp"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/BCP/BCP_ValidarInicioSesionBCP.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vStrInitials&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrExceptionMessage",
+        "out_BooSessionStarted"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/Excel/Excel_AgregarSeguimiento.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vBooProcessMonitoring&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_DtbProcessMonitoring",
+        "in_StrPathProcessMonitoring",
+        "in_StrSheetsProcessMonitoring",
+        "in_AobAddDataRow"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/BCP/BCP_IngresarModuloAntiguoTelecredito.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrExceptionMessage",
+        "out_BooEntryModule"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/BCP/BCP_IngresarGeneracionArchivos.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vBooCloseNotes&Sequence_1",
+        "vBooClosePop&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_BooEnterFileGeneration",
+        "out_StrExceptionMessage"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/BCP/BCP_SolicitarGeneracionArchivos.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrExceptionMessage",
+        "out_BooRequestGenerationFiles",
+        "in_StrAccount",
+        "in_StrCompany",
+        "in_StrInformationRequired",
+        "in_StrFileName",
+        "in_StrDate"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/UiPath/UIPath_ValidarCalendario.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vIntWeekday&Sequence_1",
+        "vIntRowIndex&Sequence_1",
+        "vDtbCalendar&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_DtmDate",
+        "out_BooValidateDate",
+        "in_StrSheetCalendar",
+        "in_StrCalendarPath",
+        "in_DtmDate"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/BCP/BCP_IngresarDescargaArchivo.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrExceptionMessage",
+        "out_BooEnterDownloadFile",
+        "in_TspRetryIntervalDownload",
+        "in_IntRetryDownload",
+        "in_StrFileName"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/BCP/BCP_ValidarSolicitudGeneracionArchivo.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrExceptionMessage",
+        "out_BooRequestSent",
+        "in_StrValidationMessage"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/BCP/BCP_DescargarArchivoMovimientos.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrExceptionMessage",
+        "out_BooDownloadFileMovements",
+        "in_StrExtension",
+        "in_StrCopyFile",
+        "in_StrPathDownload",
+        "in_StrFileName"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Dynamic365_Download.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vBooDownloadedFileExists&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_StrDownloadPath",
+        "out_BooDownload"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/Edge/Edge_Descargar.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vBooDownloadedFileExists&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_BooDownload",
+        "in_StrCopyFile",
+        "in_StrDownloadPath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/UiPath/UiPath_CargarQueueRegistrarMovimientos.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrExceptionMessage",
+        "out_BooUploadQueues",
+        "in_AstQueueData",
+        "in_StrOrchestratorQueueName",
+        "in_StrOrchestratorQueueFolder"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    }
+  ]
+}

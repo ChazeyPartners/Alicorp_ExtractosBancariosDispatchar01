@@ -1,0 +1,256 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="BCP_IngresarDescargaArchivo" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_StrFileName" Type="InArgument(x:String)" />
+    <x:Property Name="in_IntRetryDownload" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_TspRetryIntervalDownload" Type="InArgument(x:TimeSpan)" />
+    <x:Property Name="out_BooEnterDownloadFile" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="out_StrExceptionMessage" Type="OutArgument(x:String)" />
+  </x:Members>
+  <this:BCP_IngresarDescargaArchivo.in_TspRetryIntervalDownload>
+    <InArgument x:TypeArguments="x:TimeSpan" />
+  </this:BCP_IngresarDescargaArchivo.in_TspRetryIntervalDownload>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>740,3212</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>BCP_IngresarDescargaArchivo_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="BCP_IngresarDescargaArchivo" sap:VirtualizedContainerService.HintSize="750,3147" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Try Catch BCP_IngresarDescargaArchivo" sap:VirtualizedContainerService.HintSize="688,3036" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="650,2299" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:RetryScope ContinueOnError="True" DisplayName="Retry Scope BCP_IngresarDescargaArchivo" sap:VirtualizedContainerService.HintSize="588,2188" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="[in_IntRetryDownload]" RetryInterval="[in_TspRetryIntervalDownload]">
+            <ui:RetryScope.ActivityBody>
+              <ActivityAction>
+                <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="546,1851" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Ingresar Descarga Archivo&quot;]" />
+                  <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: Ingresar Descarga Archivo" sap:VirtualizedContainerService.HintSize="484,1608" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="50578787-3f80-485e-9440-4c4ad5cac324" Version="V2" WindowResize="Maximize">
+                    <uix:NApplicationCard.Body>
+                      <ActivityAction x:TypeArguments="x:Object">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,1391" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Clic Consultas&quot;]" />
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Consultations" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable BrowserURL="https://www.telecreditobcp.com/tlcnp/welcome.do" CvType="Text" DesignTimeRectangle="19, 195, 70, 15" DesignTimeScaleFactor="1" FriendlyName="'Consultas'" FullSelectorArgument="&lt;webctrl name='mainBcp' tag='FRAME' /&gt;&lt;webctrl aaname='Consultas' tag='DIV' /&gt;" Guid="bb50ec8d-a068-46ac-9674-9ec916e9d4e4" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEoAAAATCAYAAAA3UZtOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFISURBVFhH7ZTRDcIwDES7IaOwEBKTIIbggwE6AD/9D7blq440LVYK/fJJJ9rGbi8vCUM5DSX93Qkq6AQVdIIKOkEFnaCC3gB1LmUqpFcpl1bdP+0Zxqvfy+90p/HjvALKA3Koh4A6HFYFaqwyHeg2qNvzOxSrgagWvaOCdd22eqpFQY31EChbKEhqtFbBQTNA74Hm3bjPbVAWysO0fJFQqoeE0nsL7PWYqI0xhMa1TYKfU38NCt/5qPNvIo/2cL9dY0H2uQ9UPb4ISuF4crwD5v5OUGZ5ztIeZIGwmDvdd/R6QXGtSd/RCQpHkeFYj5sX5Qew+v7MEWz16LVAVZNm2NzPALZALb4pWiyU77j/gVJ7yFk0eTXCmWhsFZRc18cCO4DfNdKkm3BVUsPvmvz5x8K5eLF3eANUmp2ggk5QQSeooBNUyEN5AwNi8W4pXSzlAAAAAElFTkSuQmCC" InformativeScreenshot="64bcde4694d4df6542b9f0c34a761eaf.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Telecrédito - BCP' /&gt;" SearchSteps="Selector" Version="V2" />
+                            </uix:NClick.Target>
+                          </uix:NClick>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Clic Consultas Cuentas&quot;]" />
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Consultations Accounts" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable BrowserURL="https://www.telecreditobcp.com/tlcnp/welcome.do" CvType="Text" DesignTimeRectangle="19, 212, 200, 20" DesignTimeScaleFactor="1" FriendlyName="'Consulta de cuentas'" FullSelectorArgument="&lt;webctrl name='mainBcp' tag='FRAME' /&gt;&lt;webctrl aaname='Consulta de cuentas' tag='DIV' /&gt;" Guid="d6fc4c84-f2b1-4574-a26e-cbb808be1538" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAMwAAAAYCAYAAAC2jRLLAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALCSURBVHhe7ZixcRsxEEXZgKtwFayCPTBgxpABQ0UcOZJCJ06vBlWgUIGLUBnwAfg47AILHI4eS57R35k3wwOwiz1gP0By5w47RwgZIwqGRqOtmxLMy09CSAtvFAwhg3ijYAgZxBsFQ8gg3oJgklmDujy7aX9yu13i7KbJGvcvQQ7HRzw/utv+wb1X48Z4v57n97i4V6Pvs/G53Z7sPvIBwGzBnOZm+VyBQhXFGYvto0WjBfN61Dlt5b8VzPQwH24nCuYzgbUF0xPN02VdHGGMv3k8Yix8b0dfnLF/KQTTpxAnxkSfLJhY7Mk3Fn0QUGprCCmPSTllwUj/w/W58vWoeXs5ivnNuEkUx7wGsW++NfG8tHXX1mgnfw+sL5iGaFZPYmx+KoZYIBiPTY19spiMz+HmKAquIZhlHjUOc7ZOaCsWfMI7plhD/rGwZUGruIjVjIvP6l3M/OM8Kna1TnpdyDjfp99me7J1wRiiWRNM1S83PBRTPv1kkcuTN/vrgjOL0RJMQJ/O0SdT5pmfEVf4etIB0PJfaAqmE7cQpYpd9HnUWimRJYy8yBDffr3V7bB1wcj2RFH0JfcKRo7Nm36fYGIOGGcUnKfMMz8Xczao3jOxJhgr7qhg0vrIW0XeJNX6oZ1sohINrC8Y2aaoNz5uMISATWt/JbMEozdfFoz0j+1FMRqCqeesBWMWtpoHeRY5d/19Lur9ccshr2ZcKYplHPKXfWpOxDbEo/zJXSjRwNqCkc8mqcASRUFhY6u+ovhkkevTMRePjJV+FFdFOo9LYgqFImPtz6KAERNEYXnKH/36/SxfT55zZjlAhO/+4m7+s9Un4/YEI75aHq4/hP/8XjJ2a/3IZrbdMIR8Ybb/hiHki3Lfv2SEEA2MgiFkBBgFQ8gIMAqGkBFgFAwhI8AoGEJGgGXB0Gi0VeMNQ8gIwZz7A9ObheWhKMBjAAAAAElFTkSuQmCC" InformativeScreenshot="46099628f70ba06c490024d2fd1c300c.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Telecrédito - BCP' /&gt;" SearchSteps="Selector" Version="V2" />
+                            </uix:NClick.Target>
+                          </uix:NClick>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Clic Generación Especial Movimientos Históricos&quot;]" />
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Special Generation Historical Movements" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable BrowserURL="https://www.telecreditobcp.com/tlcnp/welcome.do" CvType="Text" DesignTimeRectangle="180, 237, 270, 20" DesignTimeScaleFactor="1" FriendlyName="'Generación especial'" FullSelectorArgument="&lt;webctrl name='mainBcp' tag='FRAME' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div' idx='13' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl name='mainBcp' tag='FRAME' /&gt;&lt;webctrl type='' class='' tag='DIV' aaname='Generación especial de movimientos históricos' check:innerText='Generación especial de movimientos históricos' /&gt;" Guid="6088793d-de60-406e-9181-d72fe52d3ee8" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAARIAAAAYCAYAAAA223LxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAU/SURBVHhe7Vq9bhw5DJ4XyFNcfQ+QKk2AlPsW7q5zimsPMNy6DWAccJUL+wUC+OptAqRIm37rtGkmkkiJHzXkarzrTZwFCXzIjERRH3/E1a4zzR8/zEW+fgoEAoGngUUaSUhISMiBEjeSQCBwOFiikQQCgcPBMk3TBT1ZSoFAILAPLNN8856eLKVzxP1V6p5X89aaCwSeGdvLi3m6fDDnzgIsR91ISpDS+orNzaOp9+vwMF9P7+e7rYxtL/X7y8WSe49d+hAYFekandPicb57ezFf31tzBnKjf3s776y5Eba38+boDwniu6zlsR/LWKcc7vVlnOMXDxbzRvLH3Rf1bqE0ERWkHJQnFMwvweO8+52T1uH3aCQ/Ec9y2/QayRiL28c21RvMnyWSvPvn/3na/f1XeekVXv37eTHW4HT+XLSSAGosdFuRrkuFfSVzEHi84TQ75RMq6afkFt2yt6HHBUDjdT/d8cve3bp9fBC4VnTQx9pE+ZPrRnhiczV9HHLH+QRu4MTd4FsOFNm6Tjcwm6/EBUE2b2W/tFZ8l5xjPKof2Tfxifa6vud4pBissq1uJBZftpdyVven+IIu+2tx1PVjxYDsb5J9nT/xQ/PisRZzrU9jsg/FgOptc/Nf+tfKMfLCvez4H3yDew4kmf68TDxe240kw20mKtkWMOgJoE8B4ICUpFLQKMBY8BzMkiBIxH0qvqLDc2i3cmrjvZ2aCEpO5ufxIR4M2Ad9U5ybDhcEcmH7no9D7tuHeds4deuaPZzvirno+DnB9RSPui8dOjqEYBd8WoxXm3ltee7itcZ2t07zRZ+M2FVeDkdsdnb82D7bFPudH3Ud+Iw3EnxGLhQD5LWvBmhPxbeMy7pFXk8E91tKktJIRn/+NZsJBC+/U3BS4DKao/zeYAQMAoKf1BUlgKogGFyERY9t6U/Dii5RUDRV3+ODdpR/FdkW8JBE9okd+zjijnZpne1TQRcv0cn29N7YoCv8eDgHKUH4Z305MDTWrRvYltry+JJuixfWIvjuciw6tu8Ezz5wNPPO+S17gm6ZE1+9GKyqgbIv+Vf2yhyardPD7AVJ3o0aiXsjAYfUuCoCO1FPC2QCFEd+pwDye9tvnAivsPziFvRrF2jFmXn5ReT5OOJe7ZNN36eCLl6iY/vWw4+H+NXvi/zzM32dcdYNbEtOPb6k2+IFNYC+7+OYUebNg+jZB45Vt+wn9Zj3oD173S5nRgyGNZDfF+eO9skclmtPg0VPSLL3RuI2EUYJWpcEGWMHayL7BBuBpMTWIOVxKCwIHgYcOSi7bQ0kQtkR+x6f6pPwr+NSaHltS2BL8sD3EQePu5qHmMFhIYjdVmhQ3BYvXO/Hg9Yvc4L78VxqIvS1Rq9bbbvoeHxpvMW96aNO9wwcc81orpVPhWdf+7HMO9cj88Vn5OLFQI03fc1FdPK66ps+Ez8DqjckcRvJmr/aZBTHUoIaVFIoeTRXC8YPZJ4rwec1KpEQNHonHfpBUwe0zZVi0faR7zI5S32E8rUWSC12Hqc9OfnpMOlxguljN77kDrHkHytrQQsXQIvRgT+2mvGQg9T02JYuYl38uG6V7cxd6fR8O/uoXw510mV/bY6jGHj2gSM/V9t9TJY6so8fA6sGqk4dt8+B2Ds9rBvJmzW/kQSeiq4QA4EzgfktJckmGskpEI0kcH7Y91ebaCSBQOA4JIlGEggEjkMS+rG1iqUUCAQC+5Bk1X9ICwQCARdJdt++RyMJBAJHgCUaSSAQOBws0khCQkJCDhRqJC8dISEhL1jm+Qck9qmAvKzBzwAAAABJRU5ErkJggg==" InformativeScreenshot="78cdbb30f105e640b48a48bc14eeaeef.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Telecrédito - BCP' /&gt;" SearchSteps="Selector" Version="V2" />
+                            </uix:NClick.Target>
+                          </uix:NClick>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Clic Descarga Archivos&quot;]" />
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click File Download" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_6" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable BrowserURL="https://www.telecreditobcp.com/tlcnp/welcome.do" CvType="Text" DesignTimeRectangle="397, 305, 200, 20" DesignTimeScaleFactor="1" FriendlyName="'Descarga de archivos'" FullSelectorArgument="&lt;webctrl name='mainBcp' tag='FRAME' /&gt;&lt;webctrl aaname='Descarga de archivos' tag='DIV' /&gt;" Guid="59b7208a-1f4e-4af0-9e71-c1aefe9a9366" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAMwAAAAYCAYAAAC2jRLLAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPmSURBVHhe7ZtLThtBEIZ9gZwiV2HPLXICcwTkLQdA2XqBj8Dem0hZZIsU40QxHkOCokhB2XTq2V3d022GMEGAqqRPtGuqqts99c/gwUyC2sUHx3FaiCXBuLm53WuT9fV3HtVU5TgOA7a62rlgHGcQYCSYLzsXjOPcC9i6u3HBOM4gwC631yiYG3pRDWqxPA2Hk3dhYjk4DZta7Atic3IUJtNF9djY0FyVPXvKNTgPAGx11dUF83b+KXvdgwRzFObL5FtOX75onoNgnGcKWHd7GyZf4TZDVgS8ef+x54tUBBMuFmFmfNQQeveJTYgx4gNmZ5Jr71imiUiEMf44LGONozCbYn30nYf5gcRMj7M11PMLzo7luNTUtWZ30UZucac9PDkHP69nBmvBmrSWOAcg9VkwsN64duPHMeaUe2FjsjkxprG3zjiA/br73RYM0hRNVTDSKHiispOd/LEZ0B9j+LieeGwMHi/CMp50U1saQ+O58WQuakxdVyvfwrXYzzG8PhZlJn5dt2FztogNXb6fFN+fI+6FzmH2M81l14B5Mqb3aC8epl5vbzHGGQWwuz8gGPzkT1YLAqqiuUcw3AzpakfgyTRXZG4gJG/OEnuX4Jx+A+ZX2bxWP9+QNZ9puuLOwQy4y1QuAHy8n0tzxaZO67aNj2unNWMNic2EITE0V3VvndEAu7r9uf8p2cPuMPWTXoUaVZuwIRhpAG68JMbBgmnmG/YKpiEQA4tR4uJVfTzBUE0Yo0/rlXsbBSOv870Vn/N4wNYdPSWrC+ahn2GoebQB6KTp8dRA9sSnRsobjOqUTUvjmmCKxrPzNvMtffFxM7I/a9LY3AnbrOn9F4KpzIHH8poNwYj/UH8dQx+9RxVDql3fW8lxHg+YPCXrC2bYUzK8ihmKhqITr8diA0hTij81MJ949uuJNrFQex6b0zZgEZd96G/la54Qr8j/8KE/5sJ6TrRJkyhinK0l+zRMMGWc8Um9NE9rb51RAHt9f+nPrr6OMyJg8ofLly2Y7E7mV1bnfwFGX435ev2DXlSDHMdhwD5v4VcyF4zjDADscudfvnScYYCt9j1WdhzHAOaCcZyhgL2Kp2SO8ySA5YJxc3PbayQYfEqGoHDwKQD+jz+OEfUj+Azaji0ai5SvNcdS1sWFIJprj+FPraV5tTnQV9KLgfdGmGOZvzjeqqOoD7Gx+D9GCn7/qMTm6zjlprHWtn5G69xkMeX5s3k6xlibb9eor+2cmqNjrpXnldhcxK4RsevBsZ5/BP+afrm1JD8+1sXPETZej3Ge+L5tw3rTEfh1Fq216uDnLs9FeE/tOiQecnO68BfTGCa6+mz3oAAAAABJRU5ErkJggg==" InformativeScreenshot="c995f7efe921861fd88bfac57e945554.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Telecrédito - BCP' /&gt;" SearchSteps="Selector" Version="V2" />
+                            </uix:NClick.Target>
+                          </uix:NClick>
+                        </Sequence>
+                      </ActivityAction>
+                    </uix:NApplicationCard.Body>
+                    <uix:NApplicationCard.TargetApp>
+                      <uix:TargetApp Area="-8, -8, 1382, 736" BrowserType="Edge" IconBase64="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" InformativeScreenshot="da363b92c30084f1fc610a945392df98.jpg" Selector="&lt;html app='msedge.exe' title='Telecrédito - BCP' /&gt;" Title="Nuevo Telecrédito" />
+                    </uix:NApplicationCard.TargetApp>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NApplicationCard>
+                </Sequence>
+              </ActivityAction>
+            </ui:RetryScope.ActivityBody>
+            <ui:RetryScope.Condition>
+              <ActivityFunc x:TypeArguments="x:Boolean">
+                <uix:NCheckState DisplayName="Check App State out_BooEnterDownloadFile" EnableIfExists="False" EnableIfNotExists="False" Exists="[out_BooEnterDownloadFile]" sap:VirtualizedContainerService.HintSize="334,177" sap2010:WorkflowViewState.IdRef="NCheckState_1" Version="V3">
+                  <uix:NCheckState.IfExists>
+                    <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </uix:NCheckState.IfExists>
+                  <uix:NCheckState.IfNotExists>
+                    <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </uix:NCheckState.IfNotExists>
+                  <uix:NCheckState.Target>
+                    <uix:TargetAnchorable BrowserURL="https://www.telecreditobcp.com/tlcnp/consult/solicitHistorySave.do?undefined" DesignTimeRectangle="690, 589, 16, 13" DesignTimeScaleFactor="1" ElementType="Icon" FriendlyName="'IMG'" FullSelectorArgument="[string.Format(&quot;&lt;webctrl name='mainBcp' tag='FRAME' /&gt;&lt;webctrl tag='TD' aaname='{0}' /&gt;&lt;nav up='1' /&gt;&lt;webctrl tag='IMG' aaname='Descargar' /&gt;&quot;, in_StrFileName)]" FuzzyMatches="10000" FuzzySelectorArgument="&lt;webctrl name='mainBcp' tag='FRAME' /&gt;&lt;webctrl parentid='mainBody' tag='TABLE' /&gt;&lt;webctrl type='' tag='IMG' class='' aaname='Descargar' /&gt;" Guid="060dd9e2-a030-4332-9a3c-68de50e339a3" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABvSURBVDhPtZFRCgAhCAXby+6dOkqnc/HDeLlGivYxBKbDExuNTpXcEz7tPYKDOxYhfmi80rDwJP4JPYO7OuNOiISE/FpIn+7FOhMSWnVBPKGVtQSRnpKE4mBSR7FmUkexSCW0WIQRUIJMYRXFwk4fqRGygj1nhdUAAAAASUVORK5CYII=" InformativeScreenshot="f9aff9a117cba30590144300db4aebad.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Telecrédito - BCP' /&gt;" SearchSteps="Selector" Version="V2" />
+                  </uix:NCheckState.Target>
+                </uix:NCheckState>
+              </ActivityFunc>
+            </ui:RetryScope.Condition>
+          </ui:RetryScope>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="654,394" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Exception" sap:VirtualizedContainerService.HintSize="496,325" sap2010:WorkflowViewState.IdRef="Sequence_11">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Error" Message="[&quot;Mensaje Excepción &quot; + exception.Source + &quot; - &quot; + exception.Message]" />
+              <Assign DisplayName="Assign out_StrExceptionMessage" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_2">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[out_StrExceptionMessage]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">["Mensaje Excepción BCP_IngresarDescargaArchivo " + exception.Source + " - " + exception.Message]</InArgument>
+                </Assign.Value>
+              </Assign>
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+      <TryCatch.Finally>
+        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;¿Ingresó Descarga Archivo? &quot; + out_BooEnterDownloadFile.ToString]" />
+      </TryCatch.Finally>
+    </TryCatch>
+  </Sequence>
+</Activity>
