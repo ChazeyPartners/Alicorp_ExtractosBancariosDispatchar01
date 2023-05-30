@@ -9,7 +9,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>734,3766</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>734,3768</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>BCP_IniciarSesionBCP_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -124,7 +124,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="BCP_IniciarSesionBCP" sap:VirtualizedContainerService.HintSize="744,3701" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="BCP_IniciarSesionBCP" sap:VirtualizedContainerService.HintSize="744,3703" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="vStrCardData" />
       <Variable x:TypeArguments="ss:SecureString" Name="vSstPassword" />
@@ -135,9 +135,9 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch BCP_IniciarSesionBCP" sap:VirtualizedContainerService.HintSize="682,3590" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch BCP_IniciarSesionBCP" sap:VirtualizedContainerService.HintSize="682,3592" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="644,2853" sap2010:WorkflowViewState.IdRef="Sequence_4">
+        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="644,2855" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -169,13 +169,13 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </uix:NApplicationCard>
-          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge in_StrURL" sap:VirtualizedContainerService.HintSize="582,2248" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="50578787-3f80-485e-9440-4c4ad5cac324" Version="V2" WindowResize="Maximize">
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge in_StrURL" sap:VirtualizedContainerService.HintSize="582,2128" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="50578787-3f80-485e-9440-4c4ad5cac324" Version="V2" WindowResize="Maximize">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="548,2031" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="548,1911" sap2010:WorkflowViewState.IdRef="Sequence_2">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -244,14 +244,6 @@
                       <uix:TargetAnchorable BrowserURL="https://www.tlcbcp.com/#/" CvElementArea="1030, 597, 140, 37" CvTextArea="1072, 608, 56, 16" CvType="Button" DesignTimeRectangle="1033, 600, 135, 32" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Ingresar'" FullSelectorArgument="&lt;webctrl tag='APP-BASE' /&gt;&lt;webctrl shadowhostid='' tag='BUTTON' aaname=' Ingresar ' /&gt;" Guid="da2982cc-82ef-4c27-9e90-2064134e0f8f" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIsAAAAkCAYAAAC5U8nEAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAS5SURBVHhe7VxJaxRBFHbDXQ+uePIkoij+BI8ePbgdPHhTXFBBJKNGRaMYULMguCBBkCSKh8QVveWgmCiKc2jQEQcZNeq4jDCHEQLJ83tVr01NWz2ZgQjd0/XBx0zVqy15X796qanJBHJwqBJOLA5Vo3axDA8TfcsQ9V8k6txA1LqK6NhsohSGcowm2T/sp86N2m/f32o/1giMVAMeNuiJG2fYF+UYDzZOJzo+l+jRIXFsdUDPKvDhOVHTAqIj0+yTO8aT7M+mRUSfXoqjKwM9xkDvTqJDk+yTOdYH2b+3d4vDw4GWFXBuuRNKUsh+blkpjrcDrUJwdpl9UMf6JgeIEMBqAW89qYn/DuSYAMLvIVsSrAF89YgOT7EM4pgYHp5M9O2NCGIUsATQtNA+gGOyeHqJCGIUqDVwbz8SHajK1tkxWTwylej+ARGGBmoFfKIX+cO2HUSF3+BDi81x3HlsFtHIiAjEFAsf4bOabJ0iw31EJay11GexOY47+dDuxzutDwA1goHL9g6RokUsHQ1EaUSa/GvNzCWidrPPGvxsvUSDvv0Gttu1o/ZmvP9rx6tf34Nxcn6fa0TdS40+WzAn1qDmfEXkYcxbYuvD+0y/YQus5wp+Bk/6eli7Xx9Vsi4EKAm6NtkbR4oBsdzDqwJvTfjll/DKGIKzVHsIIS91pfd4/0W/p1/oK2PmpWoIdXnZ3l5gLIbqAyqgrxIEjylVvn0IcwzIeDmMo8bCGEVjPc1sh+gUUM99M626T5TZjQdDgJKAP5W0NY4UQ8SSRb3fJgtH+WLohvMZg4ZT0ux8sXNZOR6O9e0p/HKKqCoaeVEHIg5DzSNrKCCC/O1TgRkWqD+fiCWPV1vbKLJ1tV4zgJIgFtcMqhCLigriHD9CvBBb0M7lf8RyBpEAVcqh2ML4yeoWsag6RJaCLlIBEWMAc6uoIWxHEu5vQxzpeKw4i4V1IUBJ4MQiFIea4G2Gt5aM5BjNEEQWfZQQ2I5opbaobToq8fhZCCyNfMUzI1kMxXJ8jl4zgJKgXrYhUwy+3TMS2jHFInMUjGS3Eh8jiWWoNYgYcohOvr1svhiKpR3RVYCSoGuzvXGkWKNYUogE/PQPIW/w4KABcBC2imIBc5yYgmn0V9sQ2AMB+Alun1GvIgeQRbRJITdicL5zHe06YI97znJzq14zgJKAr9vZGkeKtYoF7EEi6v+VxAIoyyFAm1iaMR4f/gWRXg+75DQmiljHFemr5g+giBxG2WMolmdX9ZoBlAR8L7MxATfhyp50x4rkQ7mfWa0PADUCPu6PRZJbIz05NEuDHp5wFRWwdfiRwDGcfE/XuNiNGgN190EicoYchKH+mhGWsE08Xmdp61hGvjn34KAIQwO1AbgrCo7MU4tFEKNAbQCf02jsbsklmhxV+BJcALBY0LMdnZxgkkm+VrlLhFAOWENwfoVlIMe6p/FZUBCwVkALBOO+CpIMsp/bwoXCQKsxcGePE0y9k/17d684PBxoWQU+Pic6Mc8+kWO8eXL+OH591QR/n4S/VO0udceb7L+jM/WuUQPQs0bwBV6+l/mkTf8LB06I6vHkt57I/mE/sb+eXtBH+P/9X244JBpOLA5VgugPUjIE9ypBMkgAAAAASUVORK5CYII=" InformativeScreenshot="21040de5a92aaf0aae6a447b0678f8a4.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Nuevo Telecrédito' /&gt;" SearchSteps="Selector" Version="V2" />
                     </uix:NClick.Target>
                   </uix:NClick>
-                  <Assign DisplayName="Assign out_BooLogin" sap:VirtualizedContainerService.HintSize="486,82" sap2010:WorkflowViewState.IdRef="Assign_6">
-                    <Assign.To>
-                      <OutArgument x:TypeArguments="x:Boolean">[out_BooLogin]</OutArgument>
-                    </Assign.To>
-                    <Assign.Value>
-                      <InArgument x:TypeArguments="x:Boolean">True</InArgument>
-                    </Assign.Value>
-                  </Assign>
                 </Sequence>
               </ActivityAction>
             </uix:NApplicationCard.Body>
@@ -265,6 +257,14 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </uix:NApplicationCard>
+          <Assign DisplayName="Assign out_BooLogin" sap:VirtualizedContainerService.HintSize="582,82" sap2010:WorkflowViewState.IdRef="Assign_6">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Boolean">[out_BooLogin]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+            </Assign.Value>
+          </Assign>
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>

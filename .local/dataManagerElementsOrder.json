@@ -359,6 +359,7 @@
       "Path": "Apps/Edge/Edge_Descargar.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "vBooDownload&Sequence_1",
         "vBooDownloadedFileExists&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [
@@ -380,6 +381,22 @@
         "in_StrOrchestratorQueueName",
         "in_StrOrchestratorQueueFolder"
       ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/BCP/BCP_CerrarSesionBCP.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/KillAllProcesses.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     }

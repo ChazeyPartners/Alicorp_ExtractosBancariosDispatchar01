@@ -10,7 +10,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1286,1345</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1350,1617</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="50">
@@ -105,7 +105,7 @@
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="1296,1280" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="1360,1552" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Name="Config" />
       <Variable x:TypeArguments="x:String" Name="vStrExceptionMessage" />
@@ -125,46 +125,47 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="1234,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
-    <ui:Comment DisplayName="Comment (placeholder)" sap:VirtualizedContainerService.HintSize="1234,56" sap2010:WorkflowViewState.IdRef="Comment_1" Text="//  Invoke steps of the process" />
-    <Flowchart DisplayName="Flowchart Process" sap:VirtualizedContainerService.HintSize="1234,869" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="1298,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
+    <ui:Comment DisplayName="Comment (placeholder)" sap:VirtualizedContainerService.HintSize="1298,56" sap2010:WorkflowViewState.IdRef="Comment_1" Text="//  Invoke steps of the process" />
+    <Flowchart DisplayName="Flowchart Process" sap:VirtualizedContainerService.HintSize="1298,1049" sap2010:WorkflowViewState.IdRef="Flowchart_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
-          <av:Point x:Key="ShapeLocation">570,2.5</av:Point>
+          <av:Point x:Key="ShapeLocation">600,2.5</av:Point>
           <av:Size x:Key="ShapeSize">60,75</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">600,77.5 600,128.5</av:PointCollection>
-          <x:Double x:Key="Height">832.5</x:Double>
-          <x:Double x:Key="Width">1200</x:Double>
+          <av:PointCollection x:Key="ConnectorLocation">630,77.5 630,128.5</av:PointCollection>
+          <x:Double x:Key="Height">1011.54</x:Double>
+          <x:Double x:Key="Width">1264</x:Double>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <Flowchart.StartNode>
-        <x:Reference>__ReferenceID36</x:Reference>
+        <x:Reference>__ReferenceID37</x:Reference>
       </Flowchart.StartNode>
-      <FlowSwitch x:TypeArguments="x:String" x:Name="__ReferenceID36" DisplayName="Flow Switch" Expression="[in_TransactionItem.SpecificContent(&quot;Banco&quot;).ToString]" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowSwitch`1_1">
+      <FlowSwitch x:TypeArguments="x:String" x:Name="__ReferenceID37" DisplayName="Flow Switch" Expression="[in_TransactionItem.SpecificContent(&quot;Banco&quot;).ToString]" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowSwitch`1_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <av:Point x:Key="ShapeLocation">565,128.5</av:Point>
+            <av:Point x:Key="ShapeLocation">595,128.5</av:Point>
             <av:Size x:Key="ShapeSize">70,87</av:Size>
-            <av:PointCollection x:Key="BCPConnector">582.5,128.5 582.5,98.49999999999997 110,98.49999999999997 110,219.5</av:PointCollection>
-            <av:PointCollection x:Key="BOFAConnector">565,193.75 470,193.75 470,609.5</av:PointCollection>
-            <av:PointCollection x:Key="BBVAConnector">565,150.25 230,150.25 230,349.5</av:PointCollection>
-            <av:PointCollection x:Key="SCOTIABANKConnector">617.5,128.5 617.5,98.49999999999997 1100,98.49999999999997 1100,219.5</av:PointCollection>
-            <av:PointCollection x:Key="BANCONACIONALConnector">565,172 350,172 350,479.5</av:PointCollection>
-            <av:PointCollection x:Key="INTERBANKConnector">635,150.25 980,150.25 980,349.5</av:PointCollection>
-            <av:PointCollection x:Key="BANBIFConnector">635,172 860,172 860,479.5</av:PointCollection>
-            <av:PointCollection x:Key="SANTANDERConnector">635,193.75 740,193.75 740,609.5</av:PointCollection>
+            <av:PointCollection x:Key="BCPConnector">612.5,128.5 612.5,98.5 140,98.5 140,219.5</av:PointCollection>
+            <av:PointCollection x:Key="BOFAConnector">595,193.75 500,193.75 500,609.5</av:PointCollection>
+            <av:PointCollection x:Key="BBVAConnector">595,150.25 260,150.25 260,349.5</av:PointCollection>
+            <av:PointCollection x:Key="SCOTIABANKConnector">647.5,128.5 647.5,98.5 1130,98.5 1130,219.5</av:PointCollection>
+            <av:PointCollection x:Key="BANCONACIONALConnector">595,172 380,172 380,479.5</av:PointCollection>
+            <av:PointCollection x:Key="INTERBANKConnector">665,150.25 1010,150.25 1010,349.5</av:PointCollection>
+            <av:PointCollection x:Key="BANBIFConnector">665,172 890,172 890,479.5</av:PointCollection>
+            <av:PointCollection x:Key="SANTANDERConnector">665,193.75 770,193.75 770,609.5</av:PointCollection>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <FlowStep x:Key="BCP" x:Name="__ReferenceID33">
+        <FlowStep x:Key="BCP" x:Name="__ReferenceID34">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <av:Point x:Key="ShapeLocation">10,219.5</av:Point>
+              <av:Point x:Key="ShapeLocation">40,219.5</av:Point>
               <av:Size x:Key="ShapeSize">200,81</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">40,260 10,260 10,719.5 630,719.5 630,749.5</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="BCP" sap:VirtualizedContainerService.HintSize="1556,2727" sap2010:WorkflowViewState.IdRef="Sequence_11">
+          <Sequence DisplayName="BCP" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_11">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -238,290 +239,330 @@
                             <av:Point x:Key="ShapeLocation">1040.6416666666667,389.5</av:Point>
                             <av:Size x:Key="ShapeSize">79,87</av:Size>
                             <av:PointCollection x:Key="FalseConnector">1119.6416666666667,433 1220,433 1220,478.54</av:PointCollection>
-                            <av:PointCollection x:Key="TrueConnector">1040.6416666666667,433 940,433 940,918.54</av:PointCollection>
+                            <av:PointCollection x:Key="TrueConnector">1040.6416666666667,433 950,433 950,739.04 980,739.04</av:PointCollection>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <FlowDecision.True>
                           <FlowStep x:Name="__ReferenceID0">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <av:Point x:Key="ShapeLocation">840,918.54</av:Point>
+                                <av:Point x:Key="ShapeLocation">980,698.54</av:Point>
                                 <av:Size x:Key="ShapeSize">200,81</av:Size>
-                                <av:PointCollection x:Key="ConnectorLocation">940,999.54 940,1029.54 940.1416666666667,1029.54 940.1416666666667,1049.54</av:PointCollection>
+                                <av:PointCollection x:Key="ConnectorLocation">1080,779.54 1080,829.54</av:PointCollection>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <Sequence DisplayName="Ingresar Generacion Archivos" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                            <Sequence DisplayName="Ingresar Modulo Antiguo Telecredito" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_21">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\BCP\BCP_IngresarGeneracionArchivos.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Apps\BCP\BCP_IngresarGeneracionArchivos.xaml">
+                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\BCP\BCP_IngresarModuloAntiguoTelecredito.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Apps\BCP\BCP_IngresarModuloAntiguoTelecredito.xaml">
                                 <ui:InvokeWorkflowFile.Arguments>
-                                  <OutArgument x:TypeArguments="x:Boolean" x:Key="out_BooEnterFileGeneration">[vBooEnterFileGeneration]</OutArgument>
+                                  <OutArgument x:TypeArguments="x:Boolean" x:Key="out_BooEntryModule">[vBooEntryModule]</OutArgument>
                                   <OutArgument x:TypeArguments="x:String" x:Key="out_StrExceptionMessage">[vStrExceptionMessage]</OutArgument>
                                 </ui:InvokeWorkflowFile.Arguments>
                               </ui:InvokeWorkflowFile>
                             </Sequence>
                             <FlowStep.Next>
-                              <FlowDecision x:Name="__ReferenceID9" Condition="[vBooEnterFileGeneration]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_4">
+                              <FlowDecision x:Name="__ReferenceID6" Condition="[vBooEntryModule]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                    <av:Point x:Key="ShapeLocation">900.6416666666667,1049.54</av:Point>
+                                    <av:Point x:Key="ShapeLocation">1040.5,829.54</av:Point>
                                     <av:Size x:Key="ShapeSize">79,87</av:Size>
-                                    <av:PointCollection x:Key="TrueConnector">900.6416666666667,1093.04 800,1093.04 800,1138.54</av:PointCollection>
-                                    <av:PointCollection x:Key="FalseConnector">979.6416666666667,1093.04 1080,1093.04 1080,1138.54</av:PointCollection>
+                                    <av:PointCollection x:Key="FalseConnector">1119.5,873.04 1220,873.04 1220,918.54</av:PointCollection>
+                                    <av:PointCollection x:Key="TrueConnector">1040.5,873.04 940,873.04 940,918.54</av:PointCollection>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                                 <FlowDecision.True>
-                                  <FlowStep x:Name="__ReferenceID11">
+                                  <FlowStep x:Name="__ReferenceID8">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <av:Point x:Key="ShapeLocation">700,1138.54</av:Point>
+                                        <av:Point x:Key="ShapeLocation">840,918.54</av:Point>
                                         <av:Size x:Key="ShapeSize">200,81</av:Size>
-                                        <av:PointCollection x:Key="ConnectorLocation">800,1219.54 800,1269.54</av:PointCollection>
+                                        <av:PointCollection x:Key="ConnectorLocation">940,999.54 940,1029.54 940.1416666666667,1029.54 940.1416666666667,1049.54</av:PointCollection>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <Sequence DisplayName="Solicitar Generacion Archivos" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                                    <Sequence DisplayName="Ingresar Generacion Archivos" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_24">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\BCP\BCP_SolicitarGeneracionArchivos.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Apps\BCP\BCP_SolicitarGeneracionArchivos.xaml">
+                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\BCP\BCP_IngresarGeneracionArchivos.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Apps\BCP\BCP_IngresarGeneracionArchivos.xaml">
                                         <ui:InvokeWorkflowFile.Arguments>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_StrDate">[CDate(in_TransactionItem.SpecificContent("Fecha").ToString).ToString(Config("DateFormat").ToString)]</InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_StrFileName">[in_TransactionItem.SpecificContent("OrdenCuenta").ToString + in_TransactionItem.SpecificContent("Sociedad").ToString + in_TransactionItem.SpecificContent("Moneda").ToString + CDate(in_TransactionItem.SpecificContent("Fecha").ToString).ToString("ddMMyy")]</InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_StrInformationRequired">[Config("InformationRequired").ToString]</InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_StrCompany">[in_TransactionItem.SpecificContent("NombreSociedad").ToString]</InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_StrAccount">[in_TransactionItem.SpecificContent("Cuenta").ToString]</InArgument>
-                                          <OutArgument x:TypeArguments="x:Boolean" x:Key="out_BooRequestGenerationFiles">[vBooRequestGenerationFiles]</OutArgument>
+                                          <OutArgument x:TypeArguments="x:Boolean" x:Key="out_BooEnterFileGeneration">[vBooEnterFileGeneration]</OutArgument>
                                           <OutArgument x:TypeArguments="x:String" x:Key="out_StrExceptionMessage">[vStrExceptionMessage]</OutArgument>
                                         </ui:InvokeWorkflowFile.Arguments>
                                       </ui:InvokeWorkflowFile>
                                     </Sequence>
                                     <FlowStep.Next>
-                                      <FlowDecision x:Name="__ReferenceID12" Condition="[vBooRequestGenerationFiles]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_5">
+                                      <FlowDecision x:Name="__ReferenceID9" Condition="[vBooEnterFileGeneration]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_4">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            <av:Point x:Key="ShapeLocation">760.5,1269.54</av:Point>
+                                            <av:Point x:Key="ShapeLocation">900.6416666666667,1049.54</av:Point>
                                             <av:Size x:Key="ShapeSize">79,87</av:Size>
-                                            <av:PointCollection x:Key="FalseConnector">839.5,1313.04 940,1313.04 940,1358.54</av:PointCollection>
-                                            <av:PointCollection x:Key="TrueConnector">760.5,1313.04 660,1313.04 660,1358.54</av:PointCollection>
+                                            <av:PointCollection x:Key="TrueConnector">900.6416666666667,1093.04 800,1093.04 800,1138.54</av:PointCollection>
+                                            <av:PointCollection x:Key="FalseConnector">979.6416666666667,1093.04 1080,1093.04 1080,1138.54</av:PointCollection>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
                                         <FlowDecision.True>
-                                          <FlowStep x:Name="__ReferenceID14">
+                                          <FlowStep x:Name="__ReferenceID11">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <av:Point x:Key="ShapeLocation">560,1358.54</av:Point>
+                                                <av:Point x:Key="ShapeLocation">700,1138.54</av:Point>
                                                 <av:Size x:Key="ShapeSize">200,81</av:Size>
-                                                <av:PointCollection x:Key="ConnectorLocation">660,1439.54 660,1489.54</av:PointCollection>
+                                                <av:PointCollection x:Key="ConnectorLocation">800,1219.54 800,1269.54</av:PointCollection>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <Sequence DisplayName="Validar Solicitud Generacion Archivo" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                                            <Sequence DisplayName="Solicitar Generacion Archivos" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_26">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\BCP\BCP_ValidarSolicitudGeneracionArchivo.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="Apps\BCP\BCP_ValidarSolicitudGeneracionArchivo.xaml">
+                                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\BCP\BCP_SolicitarGeneracionArchivos.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Apps\BCP\BCP_SolicitarGeneracionArchivos.xaml">
                                                 <ui:InvokeWorkflowFile.Arguments>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_StrValidationMessage">[Config("ValidationMessage").ToString]</InArgument>
-                                                  <OutArgument x:TypeArguments="x:Boolean" x:Key="out_BooRequestSent">[vBooRequestSent]</OutArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_StrDate">[CDate(in_TransactionItem.SpecificContent("Fecha").ToString).ToString(Config("DateFormat").ToString)]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_StrFileName">[in_TransactionItem.SpecificContent("OrdenCuenta").ToString + in_TransactionItem.SpecificContent("Sociedad").ToString + in_TransactionItem.SpecificContent("Moneda").ToString + CDate(in_TransactionItem.SpecificContent("Fecha").ToString).ToString("ddMMyy")]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_StrInformationRequired">[Config("InformationRequired").ToString]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_StrCompany">[in_TransactionItem.SpecificContent("NombreSociedad").ToString]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_StrAccount">[in_TransactionItem.SpecificContent("Cuenta").ToString]</InArgument>
+                                                  <OutArgument x:TypeArguments="x:Boolean" x:Key="out_BooRequestGenerationFiles">[vBooRequestGenerationFiles]</OutArgument>
                                                   <OutArgument x:TypeArguments="x:String" x:Key="out_StrExceptionMessage">[vStrExceptionMessage]</OutArgument>
                                                 </ui:InvokeWorkflowFile.Arguments>
                                               </ui:InvokeWorkflowFile>
                                             </Sequence>
                                             <FlowStep.Next>
-                                              <FlowDecision x:Name="__ReferenceID15" Condition="[vBooRequestSent]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_6">
+                                              <FlowDecision x:Name="__ReferenceID12" Condition="[vBooRequestGenerationFiles]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_5">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                    <av:Point x:Key="ShapeLocation">620.5,1489.54</av:Point>
+                                                    <av:Point x:Key="ShapeLocation">760.5,1269.54</av:Point>
                                                     <av:Size x:Key="ShapeSize">79,87</av:Size>
-                                                    <av:PointCollection x:Key="FalseConnector">699.5,1533.04 800,1533.04 800,1578.54</av:PointCollection>
-                                                    <av:PointCollection x:Key="TrueConnector">620.5,1533.04 520,1533.04 520,1578.54</av:PointCollection>
+                                                    <av:PointCollection x:Key="FalseConnector">839.5,1313.04 940,1313.04 940,1358.54</av:PointCollection>
+                                                    <av:PointCollection x:Key="TrueConnector">760.5,1313.04 660,1313.04 660,1358.54</av:PointCollection>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
                                                 <FlowDecision.True>
-                                                  <FlowStep x:Name="__ReferenceID17">
+                                                  <FlowStep x:Name="__ReferenceID14">
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                        <av:Point x:Key="ShapeLocation">420,1578.54</av:Point>
+                                                        <av:Point x:Key="ShapeLocation">560,1358.54</av:Point>
                                                         <av:Size x:Key="ShapeSize">200,81</av:Size>
-                                                        <av:PointCollection x:Key="ConnectorLocation">520,1659.54 520,1709.54</av:PointCollection>
+                                                        <av:PointCollection x:Key="ConnectorLocation">660,1439.54 660,1489.54</av:PointCollection>
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
-                                                    <Sequence DisplayName="Ingresar Descarga Archivo" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                                                    <Sequence DisplayName="Validar Solicitud Generacion Archivo" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_28">
                                                       <sap:WorkflowViewStateService.ViewState>
                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                         </scg:Dictionary>
                                                       </sap:WorkflowViewStateService.ViewState>
-                                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\BCP\BCP_IngresarDescargaArchivo.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" UnSafe="False" WorkflowFileName="Apps\BCP\BCP_IngresarDescargaArchivo.xaml">
+                                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\BCP\BCP_ValidarSolicitudGeneracionArchivo.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="Apps\BCP\BCP_ValidarSolicitudGeneracionArchivo.xaml">
                                                         <ui:InvokeWorkflowFile.Arguments>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_StrFileName">
-                                                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem.SpecificContent(&quot;OrdenCuenta&quot;).ToString + in_TransactionItem.SpecificContent(&quot;Sociedad&quot;).ToString + in_TransactionItem.SpecificContent(&quot;Moneda&quot;).ToString + CDate(in_TransactionItem.SpecificContent(&quot;Fecha&quot;).ToString).ToString(&quot;ddMMyy&quot;)" />
-                                                          </InArgument>
-                                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_IntRetryDownload">
-                                                            <VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="CInt(Config(&quot;RetryDownload&quot;).ToString)" />
-                                                          </InArgument>
-                                                          <InArgument x:TypeArguments="x:TimeSpan" x:Key="in_TspRetryIntervalDownload">
-                                                            <VisualBasicValue x:TypeArguments="x:TimeSpan" ExpressionText="TimeSpan.Parse(Config(&quot;RetryIntervalDownload&quot;).ToString)" />
-                                                          </InArgument>
-                                                          <OutArgument x:TypeArguments="x:Boolean" x:Key="out_BooEnterDownloadFile">
-                                                            <VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="vBooEnterDownloadFile" />
-                                                          </OutArgument>
-                                                          <OutArgument x:TypeArguments="x:String" x:Key="out_StrExceptionMessage">
-                                                            <VisualBasicReference x:TypeArguments="x:String" ExpressionText="vStrExceptionMessage" />
-                                                          </OutArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_StrValidationMessage">[Config("ValidationMessage").ToString]</InArgument>
+                                                          <OutArgument x:TypeArguments="x:Boolean" x:Key="out_BooRequestSent">[vBooRequestSent]</OutArgument>
+                                                          <OutArgument x:TypeArguments="x:String" x:Key="out_StrExceptionMessage">[vStrExceptionMessage]</OutArgument>
                                                         </ui:InvokeWorkflowFile.Arguments>
                                                       </ui:InvokeWorkflowFile>
                                                     </Sequence>
                                                     <FlowStep.Next>
-                                                      <FlowDecision x:Name="__ReferenceID18" Condition="[vBooEnterDownloadFile]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_7">
+                                                      <FlowDecision x:Name="__ReferenceID15" Condition="[vBooRequestSent]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_6">
                                                         <sap:WorkflowViewStateService.ViewState>
                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                            <av:Point x:Key="ShapeLocation">480.5,1709.54</av:Point>
+                                                            <av:Point x:Key="ShapeLocation">620.5,1489.54</av:Point>
                                                             <av:Size x:Key="ShapeSize">79,87</av:Size>
-                                                            <av:PointCollection x:Key="FalseConnector">559.5,1753.04 660,1753.04 660,1798.54</av:PointCollection>
-                                                            <av:PointCollection x:Key="TrueConnector">480.5,1753.04 380,1753.04 380,1798.54</av:PointCollection>
+                                                            <av:PointCollection x:Key="FalseConnector">699.5,1533.04 800,1533.04 800,1578.54</av:PointCollection>
+                                                            <av:PointCollection x:Key="TrueConnector">620.5,1533.04 520,1533.04 520,1578.54</av:PointCollection>
                                                           </scg:Dictionary>
                                                         </sap:WorkflowViewStateService.ViewState>
                                                         <FlowDecision.True>
-                                                          <FlowStep x:Name="__ReferenceID20">
+                                                          <FlowStep x:Name="__ReferenceID17">
                                                             <sap:WorkflowViewStateService.ViewState>
                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                <av:Point x:Key="ShapeLocation">280,1798.54</av:Point>
+                                                                <av:Point x:Key="ShapeLocation">420,1578.54</av:Point>
                                                                 <av:Size x:Key="ShapeSize">200,81</av:Size>
-                                                                <av:PointCollection x:Key="ConnectorLocation">380,1879.54 380,1929.54</av:PointCollection>
+                                                                <av:PointCollection x:Key="ConnectorLocation">520,1659.54 520,1709.54</av:PointCollection>
                                                               </scg:Dictionary>
                                                             </sap:WorkflowViewStateService.ViewState>
-                                                            <Sequence DisplayName="Descargar Archivo Movimientos" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                                                            <Sequence DisplayName="Ingresar Descarga Archivo" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_29">
                                                               <sap:WorkflowViewStateService.ViewState>
                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                 </scg:Dictionary>
                                                               </sap:WorkflowViewStateService.ViewState>
-                                                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\BCP\BCP_DescargarArchivoMovimientos.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_15" UnSafe="False" WorkflowFileName="Apps\BCP\BCP_DescargarArchivoMovimientos.xaml">
+                                                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\BCP\BCP_IngresarDescargaArchivo.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" UnSafe="False" WorkflowFileName="Apps\BCP\BCP_IngresarDescargaArchivo.xaml">
                                                                 <ui:InvokeWorkflowFile.Arguments>
-                                                                  <InArgument x:TypeArguments="x:String" x:Key="in_StrFileName">
-                                                                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem.SpecificContent(&quot;OrdenCuenta&quot;).ToString + in_TransactionItem.SpecificContent(&quot;Sociedad&quot;).ToString + in_TransactionItem.SpecificContent(&quot;Moneda&quot;).ToString + CDate(in_TransactionItem.SpecificContent(&quot;Fecha&quot;).ToString).ToString(&quot;ddMMyy&quot;)" />
-                                                                  </InArgument>
-                                                                  <InArgument x:TypeArguments="x:String" x:Key="in_StrPathDownload">
-                                                                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;RutaArchivosGenerados&quot;).ToString" />
-                                                                  </InArgument>
-                                                                  <InArgument x:TypeArguments="x:String" x:Key="in_StrCopyFile">
-                                                                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;FileMovements&quot;).ToString" />
-                                                                  </InArgument>
-                                                                  <InArgument x:TypeArguments="x:String" x:Key="in_StrExtension">
-                                                                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;Extension&quot;).ToString" />
-                                                                  </InArgument>
-                                                                  <OutArgument x:TypeArguments="x:Boolean" x:Key="out_BooDownloadFileMovements">
-                                                                    <VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="vBooDownloadFileMovements" />
-                                                                  </OutArgument>
-                                                                  <OutArgument x:TypeArguments="x:String" x:Key="out_StrExceptionMessage">
-                                                                    <VisualBasicReference x:TypeArguments="x:String" ExpressionText="vStrExceptionMessage" />
-                                                                  </OutArgument>
+                                                                  <InArgument x:TypeArguments="x:String" x:Key="in_StrFileName">[in_TransactionItem.SpecificContent("OrdenCuenta").ToString + in_TransactionItem.SpecificContent("Sociedad").ToString + in_TransactionItem.SpecificContent("Moneda").ToString + CDate(in_TransactionItem.SpecificContent("Fecha").ToString).ToString("ddMMyy")]</InArgument>
+                                                                  <InArgument x:TypeArguments="x:Int32" x:Key="in_IntRetryDownload">[CInt(Config("RetryDownload").ToString)]</InArgument>
+                                                                  <InArgument x:TypeArguments="x:TimeSpan" x:Key="in_TspRetryIntervalDownload">[TimeSpan.Parse(Config("RetryIntervalDownload").ToString)]</InArgument>
+                                                                  <OutArgument x:TypeArguments="x:Boolean" x:Key="out_BooEnterDownloadFile">[vBooEnterDownloadFile]</OutArgument>
+                                                                  <OutArgument x:TypeArguments="x:String" x:Key="out_StrExceptionMessage">[vStrExceptionMessage]</OutArgument>
                                                                 </ui:InvokeWorkflowFile.Arguments>
                                                               </ui:InvokeWorkflowFile>
                                                             </Sequence>
                                                             <FlowStep.Next>
-                                                              <FlowDecision x:Name="__ReferenceID21" Condition="[vBooDownloadFileMovements]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_8">
+                                                              <FlowDecision x:Name="__ReferenceID18" Condition="[vBooEnterDownloadFile]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_7">
                                                                 <sap:WorkflowViewStateService.ViewState>
                                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                    <av:Point x:Key="ShapeLocation">340.5,1929.54</av:Point>
+                                                                    <av:Point x:Key="ShapeLocation">480.5,1709.54</av:Point>
                                                                     <av:Size x:Key="ShapeSize">79,87</av:Size>
-                                                                    <av:PointCollection x:Key="FalseConnector">419.5,1973.04 520,1973.04 520,2018.54</av:PointCollection>
-                                                                    <av:PointCollection x:Key="TrueConnector">340.5,1973.04 240,1973.04 240,2018.54</av:PointCollection>
+                                                                    <av:PointCollection x:Key="FalseConnector">559.5,1753.04 660,1753.04 660,1798.54</av:PointCollection>
+                                                                    <av:PointCollection x:Key="TrueConnector">480.5,1753.04 380,1753.04 380,1798.54</av:PointCollection>
                                                                   </scg:Dictionary>
                                                                 </sap:WorkflowViewStateService.ViewState>
                                                                 <FlowDecision.True>
-                                                                  <FlowStep x:Name="__ReferenceID23">
+                                                                  <FlowStep x:Name="__ReferenceID20">
                                                                     <sap:WorkflowViewStateService.ViewState>
                                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                        <av:Point x:Key="ShapeLocation">140,2018.54</av:Point>
+                                                                        <av:Point x:Key="ShapeLocation">280,1798.54</av:Point>
                                                                         <av:Size x:Key="ShapeSize">200,81</av:Size>
-                                                                        <av:PointCollection x:Key="ConnectorLocation">240,2099.54 240,2149.54</av:PointCollection>
+                                                                        <av:PointCollection x:Key="ConnectorLocation">380,1879.54 380,1929.54</av:PointCollection>
                                                                       </scg:Dictionary>
                                                                     </sap:WorkflowViewStateService.ViewState>
-                                                                    <Sequence DisplayName="Cargar Queue Registrar Movimientos" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                                                                    <Sequence DisplayName="Descargar Archivo Movimientos" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_31">
                                                                       <sap:WorkflowViewStateService.ViewState>
                                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                         </scg:Dictionary>
                                                                       </sap:WorkflowViewStateService.ViewState>
-                                                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\UiPath\UiPath_CargarQueueRegistrarMovimientos.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="Apps\UiPath\UiPath_CargarQueueRegistrarMovimientos.xaml">
+                                                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\BCP\BCP_DescargarArchivoMovimientos.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_15" UnSafe="False" WorkflowFileName="Apps\BCP\BCP_DescargarArchivoMovimientos.xaml">
                                                                         <ui:InvokeWorkflowFile.Arguments>
-                                                                          <InArgument x:TypeArguments="x:String" x:Key="in_StrOrchestratorQueueFolder">[in_Config("OrchestratorQueueFolder").ToString]</InArgument>
-                                                                          <InArgument x:TypeArguments="x:String" x:Key="in_StrOrchestratorQueueName">[in_Config("OrchestratorQueueNamePerformance").ToString]</InArgument>
-                                                                          <InArgument x:TypeArguments="s:String[]" x:Key="in_AstQueueData">[{in_TransactionItem.SpecificContent("OrdenBanco").ToString, in_TransactionItem.SpecificContent("Banco").ToString, in_TransactionItem.SpecificContent("Pais").ToString, in_TransactionItem.SpecificContent("Sociedad").ToString, in_TransactionItem.SpecificContent("NombreSociedad").ToString, in_TransactionItem.SpecificContent("Moneda").ToString, in_TransactionItem.SpecificContent("OrdenCuenta").ToString, in_TransactionItem.SpecificContent("Cuenta").ToString, in_TransactionItem.SpecificContent("Asset").ToString, in_TransactionItem.SpecificContent("Convenio").ToString, in_TransactionItem.SpecificContent("CodigoPais").ToString, in_TransactionItem.SpecificContent("BcoPropio").ToString, in_TransactionItem.SpecificContent("CodigoBanco").ToString, in_TransactionItem.SpecificContent("TipoCarga").ToString, in_TransactionItem.SpecificContent("Multicash").ToString, in_TransactionItem.SpecificContent("CierreMes").ToString, in_TransactionItem.SpecificContent("Fecha").ToString, in_TransactionItem.SpecificContent("OrdenCuenta").ToString + in_TransactionItem.SpecificContent("Sociedad").ToString + in_TransactionItem.SpecificContent("Moneda").ToString + CDate(in_TransactionItem.SpecificContent("Fecha").ToString).ToString("ddMMyy") + Config("Extension").ToString}]</InArgument>
-                                                                          <OutArgument x:TypeArguments="x:Boolean" x:Key="out_BooUploadQueues">[vBooUploadQueues]</OutArgument>
+                                                                          <InArgument x:TypeArguments="x:String" x:Key="in_StrFileName">[in_TransactionItem.SpecificContent("OrdenCuenta").ToString + in_TransactionItem.SpecificContent("Sociedad").ToString + in_TransactionItem.SpecificContent("Moneda").ToString + CDate(in_TransactionItem.SpecificContent("Fecha").ToString).ToString("ddMMyy")]</InArgument>
+                                                                          <InArgument x:TypeArguments="x:String" x:Key="in_StrPathDownload">[in_Config("RutaArchivosGenerados").ToString]</InArgument>
+                                                                          <InArgument x:TypeArguments="x:String" x:Key="in_StrCopyFile">[in_Config("FileMovements").ToString]</InArgument>
+                                                                          <InArgument x:TypeArguments="x:String" x:Key="in_StrExtension">[Config("Extension").ToString]</InArgument>
+                                                                          <OutArgument x:TypeArguments="x:Boolean" x:Key="out_BooDownloadFileMovements">[vBooDownloadFileMovements]</OutArgument>
                                                                           <OutArgument x:TypeArguments="x:String" x:Key="out_StrExceptionMessage">[vStrExceptionMessage]</OutArgument>
                                                                         </ui:InvokeWorkflowFile.Arguments>
                                                                       </ui:InvokeWorkflowFile>
                                                                     </Sequence>
                                                                     <FlowStep.Next>
-                                                                      <FlowDecision x:Name="__ReferenceID24" Condition="[vBooUploadQueues]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_9">
+                                                                      <FlowDecision x:Name="__ReferenceID21" Condition="[vBooDownloadFileMovements]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_8">
                                                                         <sap:WorkflowViewStateService.ViewState>
                                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                            <av:Point x:Key="ShapeLocation">200.5,2149.54</av:Point>
+                                                                            <av:Point x:Key="ShapeLocation">340.5,1929.54</av:Point>
                                                                             <av:Size x:Key="ShapeSize">79,87</av:Size>
-                                                                            <av:PointCollection x:Key="TrueConnector">200.5,2193.04 100,2193.04 100,2238.54</av:PointCollection>
-                                                                            <av:PointCollection x:Key="FalseConnector">279.5,2193.04 380,2193.04 380,2238.54</av:PointCollection>
+                                                                            <av:PointCollection x:Key="FalseConnector">419.5,1973.04 520,1973.04 520,2018.54</av:PointCollection>
+                                                                            <av:PointCollection x:Key="TrueConnector">340.5,1973.04 240,1973.04 240,2018.54</av:PointCollection>
                                                                           </scg:Dictionary>
                                                                         </sap:WorkflowViewStateService.ViewState>
                                                                         <FlowDecision.True>
-                                                                          <FlowStep x:Name="__ReferenceID26">
+                                                                          <FlowStep x:Name="__ReferenceID23">
                                                                             <sap:WorkflowViewStateService.ViewState>
                                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                <av:Point x:Key="ShapeLocation">0,2238.54</av:Point>
+                                                                                <av:Point x:Key="ShapeLocation">140,2018.54</av:Point>
                                                                                 <av:Size x:Key="ShapeSize">200,81</av:Size>
+                                                                                <av:PointCollection x:Key="ConnectorLocation">240,2099.54 240,2149.54</av:PointCollection>
                                                                               </scg:Dictionary>
                                                                             </sap:WorkflowViewStateService.ViewState>
-                                                                            <Sequence DisplayName="Agregar Seguimiento Cargo Queue Registrar Movimientos" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                                                                            <Sequence DisplayName="Cargar Queue Registrar Movimientos" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_33">
                                                                               <sap:WorkflowViewStateService.ViewState>
                                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                                 </scg:Dictionary>
                                                                               </sap:WorkflowViewStateService.ViewState>
-                                                                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\Excel\Excel_AgregarSeguimiento.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="Apps\Excel\Excel_AgregarSeguimiento.xaml">
+                                                                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\UiPath\UiPath_CargarQueueRegistrarMovimientos.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="Apps\UiPath\UiPath_CargarQueueRegistrarMovimientos.xaml">
                                                                                 <ui:InvokeWorkflowFile.Arguments>
-                                                                                  <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DtbProcessMonitoring">[in_DtbProcessMonitoring]</InArgument>
-                                                                                  <InArgument x:TypeArguments="x:String" x:Key="in_StrPathProcessMonitoring">[Path.Combine(in_Config("RutaArchivosGenerados").ToString, in_Config("ProcessMonitoring").ToString)]</InArgument>
-                                                                                  <InArgument x:TypeArguments="x:String" x:Key="in_StrSheetsProcessMonitoring">[in_Config("SheetsProcessMonitoring").ToString]</InArgument>
-                                                                                  <InArgument x:TypeArguments="s:Object[]" x:Key="in_AobAddDataRow">[{in_TransactionItem.SpecificContent("OrdenBanco").ToString, in_TransactionItem.SpecificContent("Banco").ToString, in_TransactionItem.SpecificContent("Pais").ToString, in_TransactionItem.SpecificContent("Sociedad").ToString, in_TransactionItem.SpecificContent("NombreSociedad").ToString, in_TransactionItem.SpecificContent("Moneda").ToString, in_TransactionItem.SpecificContent("OrdenCuenta").ToString, in_TransactionItem.SpecificContent("Cuenta").ToString, in_TransactionItem.SpecificContent("Asset").ToString, in_TransactionItem.SpecificContent("Convenio").ToString, in_TransactionItem.SpecificContent("CodigoPais").ToString, in_TransactionItem.SpecificContent("BcoPropio").ToString, in_TransactionItem.SpecificContent("CodigoBanco").ToString, in_TransactionItem.SpecificContent("TipoCarga").ToString, in_TransactionItem.SpecificContent("Multicash").ToString, in_TransactionItem.SpecificContent("CierreMes").ToString, in_TransactionItem.SpecificContent("Fecha").ToString, in_TransactionItem.SpecificContent("CerrarBanco").ToString, If(String.IsNullOrEmpty(vStrExceptionMessage), in_Config("Successful").ToString, in_Config("Failed").ToString), If(String.IsNullOrEmpty(vStrExceptionMessage), Config("ObservationUploadQueuesSuccessful").ToString, vStrExceptionMessage)}]</InArgument>
+                                                                                  <InArgument x:TypeArguments="x:String" x:Key="in_StrOrchestratorQueueFolder">[in_Config("OrchestratorQueueFolder").ToString]</InArgument>
+                                                                                  <InArgument x:TypeArguments="x:String" x:Key="in_StrOrchestratorQueueName">[in_Config("OrchestratorQueueNamePerformance").ToString]</InArgument>
+                                                                                  <InArgument x:TypeArguments="s:String[]" x:Key="in_AstQueueData">[{in_TransactionItem.SpecificContent("OrdenBanco").ToString, in_TransactionItem.SpecificContent("Banco").ToString, in_TransactionItem.SpecificContent("Pais").ToString, in_TransactionItem.SpecificContent("Sociedad").ToString, in_TransactionItem.SpecificContent("NombreSociedad").ToString, in_TransactionItem.SpecificContent("Moneda").ToString, in_TransactionItem.SpecificContent("OrdenCuenta").ToString, in_TransactionItem.SpecificContent("Cuenta").ToString, in_TransactionItem.SpecificContent("Asset").ToString, in_TransactionItem.SpecificContent("Convenio").ToString, in_TransactionItem.SpecificContent("CodigoPais").ToString, in_TransactionItem.SpecificContent("BcoPropio").ToString, in_TransactionItem.SpecificContent("CodigoBanco").ToString, in_TransactionItem.SpecificContent("TipoCarga").ToString, in_TransactionItem.SpecificContent("Multicash").ToString, in_TransactionItem.SpecificContent("CierreMes").ToString, in_TransactionItem.SpecificContent("Fecha").ToString, in_TransactionItem.SpecificContent("OrdenCuenta").ToString + in_TransactionItem.SpecificContent("Sociedad").ToString + in_TransactionItem.SpecificContent("Moneda").ToString + CDate(in_TransactionItem.SpecificContent("Fecha").ToString).ToString("ddMMyy") + Config("Extension").ToString}]</InArgument>
+                                                                                  <OutArgument x:TypeArguments="x:Boolean" x:Key="out_BooUploadQueues">[vBooUploadQueues]</OutArgument>
+                                                                                  <OutArgument x:TypeArguments="x:String" x:Key="out_StrExceptionMessage">[vStrExceptionMessage]</OutArgument>
                                                                                 </ui:InvokeWorkflowFile.Arguments>
                                                                               </ui:InvokeWorkflowFile>
                                                                             </Sequence>
+                                                                            <FlowStep.Next>
+                                                                              <FlowDecision x:Name="__ReferenceID24" Condition="[vBooUploadQueues]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_9">
+                                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                    <av:Point x:Key="ShapeLocation">200.5,2149.54</av:Point>
+                                                                                    <av:Size x:Key="ShapeSize">79,87</av:Size>
+                                                                                    <av:PointCollection x:Key="TrueConnector">200.5,2193.04 100,2193.04 100,2238.54</av:PointCollection>
+                                                                                    <av:PointCollection x:Key="FalseConnector">279.5,2193.04 380,2193.04 380,2238.54</av:PointCollection>
+                                                                                  </scg:Dictionary>
+                                                                                </sap:WorkflowViewStateService.ViewState>
+                                                                                <FlowDecision.True>
+                                                                                  <FlowStep x:Name="__ReferenceID26">
+                                                                                    <sap:WorkflowViewStateService.ViewState>
+                                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                        <av:Point x:Key="ShapeLocation">0,2238.54</av:Point>
+                                                                                        <av:Size x:Key="ShapeSize">200,81</av:Size>
+                                                                                      </scg:Dictionary>
+                                                                                    </sap:WorkflowViewStateService.ViewState>
+                                                                                    <Sequence DisplayName="Agregar Seguimiento Cargo Queue Registrar Movimientos" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                                                                                      <sap:WorkflowViewStateService.ViewState>
+                                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                        </scg:Dictionary>
+                                                                                      </sap:WorkflowViewStateService.ViewState>
+                                                                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\Excel\Excel_AgregarSeguimiento.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="Apps\Excel\Excel_AgregarSeguimiento.xaml">
+                                                                                        <ui:InvokeWorkflowFile.Arguments>
+                                                                                          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DtbProcessMonitoring">[in_DtbProcessMonitoring]</InArgument>
+                                                                                          <InArgument x:TypeArguments="x:String" x:Key="in_StrPathProcessMonitoring">[Path.Combine(in_Config("RutaArchivosGenerados").ToString, in_Config("ProcessMonitoring").ToString)]</InArgument>
+                                                                                          <InArgument x:TypeArguments="x:String" x:Key="in_StrSheetsProcessMonitoring">[in_Config("SheetsProcessMonitoring").ToString]</InArgument>
+                                                                                          <InArgument x:TypeArguments="s:Object[]" x:Key="in_AobAddDataRow">[{in_TransactionItem.SpecificContent("OrdenBanco").ToString, in_TransactionItem.SpecificContent("Banco").ToString, in_TransactionItem.SpecificContent("Pais").ToString, in_TransactionItem.SpecificContent("Sociedad").ToString, in_TransactionItem.SpecificContent("NombreSociedad").ToString, in_TransactionItem.SpecificContent("Moneda").ToString, in_TransactionItem.SpecificContent("OrdenCuenta").ToString, in_TransactionItem.SpecificContent("Cuenta").ToString, in_TransactionItem.SpecificContent("Asset").ToString, in_TransactionItem.SpecificContent("Convenio").ToString, in_TransactionItem.SpecificContent("CodigoPais").ToString, in_TransactionItem.SpecificContent("BcoPropio").ToString, in_TransactionItem.SpecificContent("CodigoBanco").ToString, in_TransactionItem.SpecificContent("TipoCarga").ToString, in_TransactionItem.SpecificContent("Multicash").ToString, in_TransactionItem.SpecificContent("CierreMes").ToString, in_TransactionItem.SpecificContent("Fecha").ToString, in_TransactionItem.SpecificContent("CerrarBanco").ToString, If(String.IsNullOrEmpty(vStrExceptionMessage), in_Config("Successful").ToString, in_Config("Failed").ToString), If(String.IsNullOrEmpty(vStrExceptionMessage), Config("ObservationUploadQueuesSuccessful").ToString, vStrExceptionMessage)}]</InArgument>
+                                                                                        </ui:InvokeWorkflowFile.Arguments>
+                                                                                      </ui:InvokeWorkflowFile>
+                                                                                    </Sequence>
+                                                                                  </FlowStep>
+                                                                                </FlowDecision.True>
+                                                                                <FlowDecision.False>
+                                                                                  <FlowStep x:Name="__ReferenceID25">
+                                                                                    <sap:WorkflowViewStateService.ViewState>
+                                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                        <av:Point x:Key="ShapeLocation">280,2238.54</av:Point>
+                                                                                        <av:Size x:Key="ShapeSize">200,81</av:Size>
+                                                                                      </scg:Dictionary>
+                                                                                    </sap:WorkflowViewStateService.ViewState>
+                                                                                    <Sequence DisplayName="Agregar Seguimiento Cargar Queue Registrar Movimientos" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                                                                                      <sap:WorkflowViewStateService.ViewState>
+                                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                        </scg:Dictionary>
+                                                                                      </sap:WorkflowViewStateService.ViewState>
+                                                                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\Excel\Excel_AgregarSeguimiento.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="Apps\Excel\Excel_AgregarSeguimiento.xaml">
+                                                                                        <ui:InvokeWorkflowFile.Arguments>
+                                                                                          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DtbProcessMonitoring">[in_DtbProcessMonitoring]</InArgument>
+                                                                                          <InArgument x:TypeArguments="x:String" x:Key="in_StrPathProcessMonitoring">[Path.Combine(in_Config("RutaArchivosGenerados").ToString, in_Config("ProcessMonitoring").ToString)]</InArgument>
+                                                                                          <InArgument x:TypeArguments="x:String" x:Key="in_StrSheetsProcessMonitoring">[in_Config("SheetsProcessMonitoring").ToString]</InArgument>
+                                                                                          <InArgument x:TypeArguments="s:Object[]" x:Key="in_AobAddDataRow">[{in_TransactionItem.SpecificContent("OrdenBanco").ToString, in_TransactionItem.SpecificContent("Banco").ToString, in_TransactionItem.SpecificContent("Pais").ToString, in_TransactionItem.SpecificContent("Sociedad").ToString, in_TransactionItem.SpecificContent("NombreSociedad").ToString, in_TransactionItem.SpecificContent("Moneda").ToString, in_TransactionItem.SpecificContent("OrdenCuenta").ToString, in_TransactionItem.SpecificContent("Cuenta").ToString, in_TransactionItem.SpecificContent("Asset").ToString, in_TransactionItem.SpecificContent("Convenio").ToString, in_TransactionItem.SpecificContent("CodigoPais").ToString, in_TransactionItem.SpecificContent("BcoPropio").ToString, in_TransactionItem.SpecificContent("CodigoBanco").ToString, in_TransactionItem.SpecificContent("TipoCarga").ToString, in_TransactionItem.SpecificContent("Multicash").ToString, in_TransactionItem.SpecificContent("CierreMes").ToString, in_TransactionItem.SpecificContent("Fecha").ToString, in_TransactionItem.SpecificContent("CerrarBanco").ToString, If(String.IsNullOrEmpty(vStrExceptionMessage), in_Config("Successful").ToString, in_Config("Failed").ToString), If(String.IsNullOrEmpty(vStrExceptionMessage), Config("ObservationUploadQueuesFailed").ToString, vStrExceptionMessage)}]</InArgument>
+                                                                                        </ui:InvokeWorkflowFile.Arguments>
+                                                                                      </ui:InvokeWorkflowFile>
+                                                                                    </Sequence>
+                                                                                  </FlowStep>
+                                                                                </FlowDecision.False>
+                                                                              </FlowDecision>
+                                                                            </FlowStep.Next>
                                                                           </FlowStep>
                                                                         </FlowDecision.True>
                                                                         <FlowDecision.False>
-                                                                          <FlowStep x:Name="__ReferenceID25">
+                                                                          <FlowStep x:Name="__ReferenceID22">
                                                                             <sap:WorkflowViewStateService.ViewState>
                                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                <av:Point x:Key="ShapeLocation">280,2238.54</av:Point>
+                                                                                <av:Point x:Key="ShapeLocation">420,2018.54</av:Point>
                                                                                 <av:Size x:Key="ShapeSize">200,81</av:Size>
                                                                               </scg:Dictionary>
                                                                             </sap:WorkflowViewStateService.ViewState>
-                                                                            <Sequence DisplayName="Agregar Seguimiento Cargar Queue Registrar Movimientos" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                                                                            <Sequence DisplayName="Agregar Seguimiento Ingresar Descarga Archivo" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_34">
                                                                               <sap:WorkflowViewStateService.ViewState>
                                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                                 </scg:Dictionary>
                                                                               </sap:WorkflowViewStateService.ViewState>
-                                                                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\Excel\Excel_AgregarSeguimiento.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="Apps\Excel\Excel_AgregarSeguimiento.xaml">
+                                                                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\Excel\Excel_AgregarSeguimiento.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_16" UnSafe="False" WorkflowFileName="Apps\Excel\Excel_AgregarSeguimiento.xaml">
                                                                                 <ui:InvokeWorkflowFile.Arguments>
                                                                                   <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DtbProcessMonitoring">[in_DtbProcessMonitoring]</InArgument>
                                                                                   <InArgument x:TypeArguments="x:String" x:Key="in_StrPathProcessMonitoring">[Path.Combine(in_Config("RutaArchivosGenerados").ToString, in_Config("ProcessMonitoring").ToString)]</InArgument>
                                                                                   <InArgument x:TypeArguments="x:String" x:Key="in_StrSheetsProcessMonitoring">[in_Config("SheetsProcessMonitoring").ToString]</InArgument>
-                                                                                  <InArgument x:TypeArguments="s:Object[]" x:Key="in_AobAddDataRow">[{in_TransactionItem.SpecificContent("OrdenBanco").ToString, in_TransactionItem.SpecificContent("Banco").ToString, in_TransactionItem.SpecificContent("Pais").ToString, in_TransactionItem.SpecificContent("Sociedad").ToString, in_TransactionItem.SpecificContent("NombreSociedad").ToString, in_TransactionItem.SpecificContent("Moneda").ToString, in_TransactionItem.SpecificContent("OrdenCuenta").ToString, in_TransactionItem.SpecificContent("Cuenta").ToString, in_TransactionItem.SpecificContent("Asset").ToString, in_TransactionItem.SpecificContent("Convenio").ToString, in_TransactionItem.SpecificContent("CodigoPais").ToString, in_TransactionItem.SpecificContent("BcoPropio").ToString, in_TransactionItem.SpecificContent("CodigoBanco").ToString, in_TransactionItem.SpecificContent("TipoCarga").ToString, in_TransactionItem.SpecificContent("Multicash").ToString, in_TransactionItem.SpecificContent("CierreMes").ToString, in_TransactionItem.SpecificContent("Fecha").ToString, in_TransactionItem.SpecificContent("CerrarBanco").ToString, If(String.IsNullOrEmpty(vStrExceptionMessage), in_Config("Successful").ToString, in_Config("Failed").ToString), If(String.IsNullOrEmpty(vStrExceptionMessage), Config("ObservationUploadQueuesFailed").ToString, vStrExceptionMessage)}]</InArgument>
+                                                                                  <InArgument x:TypeArguments="s:Object[]" x:Key="in_AobAddDataRow">[{in_TransactionItem.SpecificContent("OrdenBanco").ToString, in_TransactionItem.SpecificContent("Banco").ToString, in_TransactionItem.SpecificContent("Pais").ToString, in_TransactionItem.SpecificContent("Sociedad").ToString, in_TransactionItem.SpecificContent("NombreSociedad").ToString, in_TransactionItem.SpecificContent("Moneda").ToString, in_TransactionItem.SpecificContent("OrdenCuenta").ToString, in_TransactionItem.SpecificContent("Cuenta").ToString, in_TransactionItem.SpecificContent("Asset").ToString, in_TransactionItem.SpecificContent("Convenio").ToString, in_TransactionItem.SpecificContent("CodigoPais").ToString, in_TransactionItem.SpecificContent("BcoPropio").ToString, in_TransactionItem.SpecificContent("CodigoBanco").ToString, in_TransactionItem.SpecificContent("TipoCarga").ToString, in_TransactionItem.SpecificContent("Multicash").ToString, in_TransactionItem.SpecificContent("CierreMes").ToString, in_TransactionItem.SpecificContent("Fecha").ToString, in_TransactionItem.SpecificContent("CerrarBanco").ToString, If(String.IsNullOrEmpty(vStrExceptionMessage), in_Config("Successful").ToString, in_Config("Failed").ToString), If(String.IsNullOrEmpty(vStrExceptionMessage), Config("ObservationDownloadFileMovements").ToString, vStrExceptionMessage)}]</InArgument>
                                                                                 </ui:InvokeWorkflowFile.Arguments>
                                                                               </ui:InvokeWorkflowFile>
                                                                             </Sequence>
@@ -532,25 +573,25 @@
                                                                   </FlowStep>
                                                                 </FlowDecision.True>
                                                                 <FlowDecision.False>
-                                                                  <FlowStep x:Name="__ReferenceID22">
+                                                                  <FlowStep x:Name="__ReferenceID19">
                                                                     <sap:WorkflowViewStateService.ViewState>
                                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                        <av:Point x:Key="ShapeLocation">420,2018.54</av:Point>
+                                                                        <av:Point x:Key="ShapeLocation">560,1798.54</av:Point>
                                                                         <av:Size x:Key="ShapeSize">200,81</av:Size>
                                                                       </scg:Dictionary>
                                                                     </sap:WorkflowViewStateService.ViewState>
-                                                                    <Sequence DisplayName="Agregar Seguimiento Ingresar Descarga Archivo" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                                                                    <Sequence DisplayName="Agregar Seguimiento Ingresar Descarga Archivo" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_32">
                                                                       <sap:WorkflowViewStateService.ViewState>
                                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                         </scg:Dictionary>
                                                                       </sap:WorkflowViewStateService.ViewState>
-                                                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\Excel\Excel_AgregarSeguimiento.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_16" UnSafe="False" WorkflowFileName="Apps\Excel\Excel_AgregarSeguimiento.xaml">
+                                                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\Excel\Excel_AgregarSeguimiento.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_14" UnSafe="False" WorkflowFileName="Apps\Excel\Excel_AgregarSeguimiento.xaml">
                                                                         <ui:InvokeWorkflowFile.Arguments>
                                                                           <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DtbProcessMonitoring">[in_DtbProcessMonitoring]</InArgument>
                                                                           <InArgument x:TypeArguments="x:String" x:Key="in_StrPathProcessMonitoring">[Path.Combine(in_Config("RutaArchivosGenerados").ToString, in_Config("ProcessMonitoring").ToString)]</InArgument>
                                                                           <InArgument x:TypeArguments="x:String" x:Key="in_StrSheetsProcessMonitoring">[in_Config("SheetsProcessMonitoring").ToString]</InArgument>
-                                                                          <InArgument x:TypeArguments="s:Object[]" x:Key="in_AobAddDataRow">[{in_TransactionItem.SpecificContent("OrdenBanco").ToString, in_TransactionItem.SpecificContent("Banco").ToString, in_TransactionItem.SpecificContent("Pais").ToString, in_TransactionItem.SpecificContent("Sociedad").ToString, in_TransactionItem.SpecificContent("NombreSociedad").ToString, in_TransactionItem.SpecificContent("Moneda").ToString, in_TransactionItem.SpecificContent("OrdenCuenta").ToString, in_TransactionItem.SpecificContent("Cuenta").ToString, in_TransactionItem.SpecificContent("Asset").ToString, in_TransactionItem.SpecificContent("Convenio").ToString, in_TransactionItem.SpecificContent("CodigoPais").ToString, in_TransactionItem.SpecificContent("BcoPropio").ToString, in_TransactionItem.SpecificContent("CodigoBanco").ToString, in_TransactionItem.SpecificContent("TipoCarga").ToString, in_TransactionItem.SpecificContent("Multicash").ToString, in_TransactionItem.SpecificContent("CierreMes").ToString, in_TransactionItem.SpecificContent("Fecha").ToString, in_TransactionItem.SpecificContent("CerrarBanco").ToString, If(String.IsNullOrEmpty(vStrExceptionMessage), in_Config("Successful").ToString, in_Config("Failed").ToString), If(String.IsNullOrEmpty(vStrExceptionMessage), Config("ObservationDownloadFileMovements").ToString, vStrExceptionMessage)}]</InArgument>
+                                                                          <InArgument x:TypeArguments="s:Object[]" x:Key="in_AobAddDataRow">[{in_TransactionItem.SpecificContent("OrdenBanco").ToString, in_TransactionItem.SpecificContent("Banco").ToString, in_TransactionItem.SpecificContent("Pais").ToString, in_TransactionItem.SpecificContent("Sociedad").ToString, in_TransactionItem.SpecificContent("NombreSociedad").ToString, in_TransactionItem.SpecificContent("Moneda").ToString, in_TransactionItem.SpecificContent("OrdenCuenta").ToString, in_TransactionItem.SpecificContent("Cuenta").ToString, in_TransactionItem.SpecificContent("Asset").ToString, in_TransactionItem.SpecificContent("Convenio").ToString, in_TransactionItem.SpecificContent("CodigoPais").ToString, in_TransactionItem.SpecificContent("BcoPropio").ToString, in_TransactionItem.SpecificContent("CodigoBanco").ToString, in_TransactionItem.SpecificContent("TipoCarga").ToString, in_TransactionItem.SpecificContent("Multicash").ToString, in_TransactionItem.SpecificContent("CierreMes").ToString, in_TransactionItem.SpecificContent("Fecha").ToString, in_TransactionItem.SpecificContent("CerrarBanco").ToString, If(String.IsNullOrEmpty(vStrExceptionMessage), in_Config("Successful").ToString, in_Config("Failed").ToString), If(String.IsNullOrEmpty(vStrExceptionMessage), Config("ObservationEnterDownloadFile").ToString, vStrExceptionMessage)}]</InArgument>
                                                                         </ui:InvokeWorkflowFile.Arguments>
                                                                       </ui:InvokeWorkflowFile>
                                                                     </Sequence>
@@ -561,25 +602,25 @@
                                                           </FlowStep>
                                                         </FlowDecision.True>
                                                         <FlowDecision.False>
-                                                          <FlowStep x:Name="__ReferenceID19">
+                                                          <FlowStep x:Name="__ReferenceID16">
                                                             <sap:WorkflowViewStateService.ViewState>
                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                <av:Point x:Key="ShapeLocation">560,1798.54</av:Point>
+                                                                <av:Point x:Key="ShapeLocation">700,1578.54</av:Point>
                                                                 <av:Size x:Key="ShapeSize">200,81</av:Size>
                                                               </scg:Dictionary>
                                                             </sap:WorkflowViewStateService.ViewState>
-                                                            <Sequence DisplayName="Agregar Seguimiento Ingresar Descarga Archivo" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                                                            <Sequence DisplayName="Agregar Seguimiento Validar Solicitud Generacion Archivo" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_30">
                                                               <sap:WorkflowViewStateService.ViewState>
                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                 </scg:Dictionary>
                                                               </sap:WorkflowViewStateService.ViewState>
-                                                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\Excel\Excel_AgregarSeguimiento.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_14" UnSafe="False" WorkflowFileName="Apps\Excel\Excel_AgregarSeguimiento.xaml">
+                                                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\Excel\Excel_AgregarSeguimiento.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="Apps\Excel\Excel_AgregarSeguimiento.xaml">
                                                                 <ui:InvokeWorkflowFile.Arguments>
                                                                   <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DtbProcessMonitoring">[in_DtbProcessMonitoring]</InArgument>
                                                                   <InArgument x:TypeArguments="x:String" x:Key="in_StrPathProcessMonitoring">[Path.Combine(in_Config("RutaArchivosGenerados").ToString, in_Config("ProcessMonitoring").ToString)]</InArgument>
                                                                   <InArgument x:TypeArguments="x:String" x:Key="in_StrSheetsProcessMonitoring">[in_Config("SheetsProcessMonitoring").ToString]</InArgument>
-                                                                  <InArgument x:TypeArguments="s:Object[]" x:Key="in_AobAddDataRow">[{in_TransactionItem.SpecificContent("OrdenBanco").ToString, in_TransactionItem.SpecificContent("Banco").ToString, in_TransactionItem.SpecificContent("Pais").ToString, in_TransactionItem.SpecificContent("Sociedad").ToString, in_TransactionItem.SpecificContent("NombreSociedad").ToString, in_TransactionItem.SpecificContent("Moneda").ToString, in_TransactionItem.SpecificContent("OrdenCuenta").ToString, in_TransactionItem.SpecificContent("Cuenta").ToString, in_TransactionItem.SpecificContent("Asset").ToString, in_TransactionItem.SpecificContent("Convenio").ToString, in_TransactionItem.SpecificContent("CodigoPais").ToString, in_TransactionItem.SpecificContent("BcoPropio").ToString, in_TransactionItem.SpecificContent("CodigoBanco").ToString, in_TransactionItem.SpecificContent("TipoCarga").ToString, in_TransactionItem.SpecificContent("Multicash").ToString, in_TransactionItem.SpecificContent("CierreMes").ToString, in_TransactionItem.SpecificContent("Fecha").ToString, in_TransactionItem.SpecificContent("CerrarBanco").ToString, If(String.IsNullOrEmpty(vStrExceptionMessage), in_Config("Successful").ToString, in_Config("Failed").ToString), If(String.IsNullOrEmpty(vStrExceptionMessage), Config("ObservationEnterDownloadFile").ToString, vStrExceptionMessage)}]</InArgument>
+                                                                  <InArgument x:TypeArguments="s:Object[]" x:Key="in_AobAddDataRow">[{in_TransactionItem.SpecificContent("OrdenBanco").ToString, in_TransactionItem.SpecificContent("Banco").ToString, in_TransactionItem.SpecificContent("Pais").ToString, in_TransactionItem.SpecificContent("Sociedad").ToString, in_TransactionItem.SpecificContent("NombreSociedad").ToString, in_TransactionItem.SpecificContent("Moneda").ToString, in_TransactionItem.SpecificContent("OrdenCuenta").ToString, in_TransactionItem.SpecificContent("Cuenta").ToString, in_TransactionItem.SpecificContent("Asset").ToString, in_TransactionItem.SpecificContent("Convenio").ToString, in_TransactionItem.SpecificContent("CodigoPais").ToString, in_TransactionItem.SpecificContent("BcoPropio").ToString, in_TransactionItem.SpecificContent("CodigoBanco").ToString, in_TransactionItem.SpecificContent("TipoCarga").ToString, in_TransactionItem.SpecificContent("Multicash").ToString, in_TransactionItem.SpecificContent("CierreMes").ToString, in_TransactionItem.SpecificContent("Fecha").ToString, in_TransactionItem.SpecificContent("CerrarBanco").ToString, If(String.IsNullOrEmpty(vStrExceptionMessage), in_Config("Successful").ToString, in_Config("Failed").ToString), If(String.IsNullOrEmpty(vStrExceptionMessage), Config("ObservationRequestSent").ToString, vStrExceptionMessage)}]</InArgument>
                                                                 </ui:InvokeWorkflowFile.Arguments>
                                                               </ui:InvokeWorkflowFile>
                                                             </Sequence>
@@ -590,25 +631,25 @@
                                                   </FlowStep>
                                                 </FlowDecision.True>
                                                 <FlowDecision.False>
-                                                  <FlowStep x:Name="__ReferenceID16">
+                                                  <FlowStep x:Name="__ReferenceID13">
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                        <av:Point x:Key="ShapeLocation">700,1578.54</av:Point>
+                                                        <av:Point x:Key="ShapeLocation">840,1358.54</av:Point>
                                                         <av:Size x:Key="ShapeSize">200,81</av:Size>
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
-                                                    <Sequence DisplayName="Agregar Seguimiento Validar Solicitud Generacion Archivo" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                                                    <Sequence DisplayName="Agregar Seguimiento Solicitar Generacion Archivos" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_27">
                                                       <sap:WorkflowViewStateService.ViewState>
                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                         </scg:Dictionary>
                                                       </sap:WorkflowViewStateService.ViewState>
-                                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\Excel\Excel_AgregarSeguimiento.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="Apps\Excel\Excel_AgregarSeguimiento.xaml">
+                                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\Excel\Excel_AgregarSeguimiento.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Apps\Excel\Excel_AgregarSeguimiento.xaml">
                                                         <ui:InvokeWorkflowFile.Arguments>
                                                           <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DtbProcessMonitoring">[in_DtbProcessMonitoring]</InArgument>
                                                           <InArgument x:TypeArguments="x:String" x:Key="in_StrPathProcessMonitoring">[Path.Combine(in_Config("RutaArchivosGenerados").ToString, in_Config("ProcessMonitoring").ToString)]</InArgument>
                                                           <InArgument x:TypeArguments="x:String" x:Key="in_StrSheetsProcessMonitoring">[in_Config("SheetsProcessMonitoring").ToString]</InArgument>
-                                                          <InArgument x:TypeArguments="s:Object[]" x:Key="in_AobAddDataRow">[{in_TransactionItem.SpecificContent("OrdenBanco").ToString, in_TransactionItem.SpecificContent("Banco").ToString, in_TransactionItem.SpecificContent("Pais").ToString, in_TransactionItem.SpecificContent("Sociedad").ToString, in_TransactionItem.SpecificContent("NombreSociedad").ToString, in_TransactionItem.SpecificContent("Moneda").ToString, in_TransactionItem.SpecificContent("OrdenCuenta").ToString, in_TransactionItem.SpecificContent("Cuenta").ToString, in_TransactionItem.SpecificContent("Asset").ToString, in_TransactionItem.SpecificContent("Convenio").ToString, in_TransactionItem.SpecificContent("CodigoPais").ToString, in_TransactionItem.SpecificContent("BcoPropio").ToString, in_TransactionItem.SpecificContent("CodigoBanco").ToString, in_TransactionItem.SpecificContent("TipoCarga").ToString, in_TransactionItem.SpecificContent("Multicash").ToString, in_TransactionItem.SpecificContent("CierreMes").ToString, in_TransactionItem.SpecificContent("Fecha").ToString, in_TransactionItem.SpecificContent("CerrarBanco").ToString, If(String.IsNullOrEmpty(vStrExceptionMessage), in_Config("Successful").ToString, in_Config("Failed").ToString), If(String.IsNullOrEmpty(vStrExceptionMessage), Config("ObservationRequestSent").ToString, vStrExceptionMessage)}]</InArgument>
+                                                          <InArgument x:TypeArguments="s:Object[]" x:Key="in_AobAddDataRow">[{in_TransactionItem.SpecificContent("OrdenBanco").ToString, in_TransactionItem.SpecificContent("Banco").ToString, in_TransactionItem.SpecificContent("Pais").ToString, in_TransactionItem.SpecificContent("Sociedad").ToString, in_TransactionItem.SpecificContent("NombreSociedad").ToString, in_TransactionItem.SpecificContent("Moneda").ToString, in_TransactionItem.SpecificContent("OrdenCuenta").ToString, in_TransactionItem.SpecificContent("Cuenta").ToString, in_TransactionItem.SpecificContent("Asset").ToString, in_TransactionItem.SpecificContent("Convenio").ToString, in_TransactionItem.SpecificContent("CodigoPais").ToString, in_TransactionItem.SpecificContent("BcoPropio").ToString, in_TransactionItem.SpecificContent("CodigoBanco").ToString, in_TransactionItem.SpecificContent("TipoCarga").ToString, in_TransactionItem.SpecificContent("Multicash").ToString, in_TransactionItem.SpecificContent("CierreMes").ToString, in_TransactionItem.SpecificContent("Fecha").ToString, in_TransactionItem.SpecificContent("CerrarBanco").ToString, If(String.IsNullOrEmpty(vStrExceptionMessage), in_Config("Successful").ToString, in_Config("Failed").ToString), If(String.IsNullOrEmpty(vStrExceptionMessage), Config("ObservationRequestGenerationFiles").ToString, vStrExceptionMessage)}]</InArgument>
                                                         </ui:InvokeWorkflowFile.Arguments>
                                                       </ui:InvokeWorkflowFile>
                                                     </Sequence>
@@ -619,25 +660,25 @@
                                           </FlowStep>
                                         </FlowDecision.True>
                                         <FlowDecision.False>
-                                          <FlowStep x:Name="__ReferenceID13">
+                                          <FlowStep x:Name="__ReferenceID10">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <av:Point x:Key="ShapeLocation">840,1358.54</av:Point>
+                                                <av:Point x:Key="ShapeLocation">980,1138.54</av:Point>
                                                 <av:Size x:Key="ShapeSize">200,81</av:Size>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <Sequence DisplayName="Agregar Seguimiento Solicitar Generacion Archivos" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                                            <Sequence DisplayName="Agregar Seguimiento Ingresar Generacion Archivos" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_25">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\Excel\Excel_AgregarSeguimiento.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Apps\Excel\Excel_AgregarSeguimiento.xaml">
+                                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\Excel\Excel_AgregarSeguimiento.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Apps\Excel\Excel_AgregarSeguimiento.xaml">
                                                 <ui:InvokeWorkflowFile.Arguments>
                                                   <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DtbProcessMonitoring">[in_DtbProcessMonitoring]</InArgument>
                                                   <InArgument x:TypeArguments="x:String" x:Key="in_StrPathProcessMonitoring">[Path.Combine(in_Config("RutaArchivosGenerados").ToString, in_Config("ProcessMonitoring").ToString)]</InArgument>
                                                   <InArgument x:TypeArguments="x:String" x:Key="in_StrSheetsProcessMonitoring">[in_Config("SheetsProcessMonitoring").ToString]</InArgument>
-                                                  <InArgument x:TypeArguments="s:Object[]" x:Key="in_AobAddDataRow">[{in_TransactionItem.SpecificContent("OrdenBanco").ToString, in_TransactionItem.SpecificContent("Banco").ToString, in_TransactionItem.SpecificContent("Pais").ToString, in_TransactionItem.SpecificContent("Sociedad").ToString, in_TransactionItem.SpecificContent("NombreSociedad").ToString, in_TransactionItem.SpecificContent("Moneda").ToString, in_TransactionItem.SpecificContent("OrdenCuenta").ToString, in_TransactionItem.SpecificContent("Cuenta").ToString, in_TransactionItem.SpecificContent("Asset").ToString, in_TransactionItem.SpecificContent("Convenio").ToString, in_TransactionItem.SpecificContent("CodigoPais").ToString, in_TransactionItem.SpecificContent("BcoPropio").ToString, in_TransactionItem.SpecificContent("CodigoBanco").ToString, in_TransactionItem.SpecificContent("TipoCarga").ToString, in_TransactionItem.SpecificContent("Multicash").ToString, in_TransactionItem.SpecificContent("CierreMes").ToString, in_TransactionItem.SpecificContent("Fecha").ToString, in_TransactionItem.SpecificContent("CerrarBanco").ToString, If(String.IsNullOrEmpty(vStrExceptionMessage), in_Config("Successful").ToString, in_Config("Failed").ToString), If(String.IsNullOrEmpty(vStrExceptionMessage), Config("ObservationRequestGenerationFiles").ToString, vStrExceptionMessage)}]</InArgument>
+                                                  <InArgument x:TypeArguments="s:Object[]" x:Key="in_AobAddDataRow">[{in_TransactionItem.SpecificContent("OrdenBanco").ToString, in_TransactionItem.SpecificContent("Banco").ToString, in_TransactionItem.SpecificContent("Pais").ToString, in_TransactionItem.SpecificContent("Sociedad").ToString, in_TransactionItem.SpecificContent("NombreSociedad").ToString, in_TransactionItem.SpecificContent("Moneda").ToString, in_TransactionItem.SpecificContent("OrdenCuenta").ToString, in_TransactionItem.SpecificContent("Cuenta").ToString, in_TransactionItem.SpecificContent("Asset").ToString, in_TransactionItem.SpecificContent("Convenio").ToString, in_TransactionItem.SpecificContent("CodigoPais").ToString, in_TransactionItem.SpecificContent("BcoPropio").ToString, in_TransactionItem.SpecificContent("CodigoBanco").ToString, in_TransactionItem.SpecificContent("TipoCarga").ToString, in_TransactionItem.SpecificContent("Multicash").ToString, in_TransactionItem.SpecificContent("CierreMes").ToString, in_TransactionItem.SpecificContent("Fecha").ToString, in_TransactionItem.SpecificContent("CerrarBanco").ToString, If(String.IsNullOrEmpty(vStrExceptionMessage), in_Config("Successful").ToString, in_Config("Failed").ToString), If(String.IsNullOrEmpty(vStrExceptionMessage), Config("ObservationEnterFileGeneration").ToString, vStrExceptionMessage)}]</InArgument>
                                                 </ui:InvokeWorkflowFile.Arguments>
                                               </ui:InvokeWorkflowFile>
                                             </Sequence>
@@ -648,25 +689,25 @@
                                   </FlowStep>
                                 </FlowDecision.True>
                                 <FlowDecision.False>
-                                  <FlowStep x:Name="__ReferenceID10">
+                                  <FlowStep x:Name="__ReferenceID7">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <av:Point x:Key="ShapeLocation">980,1138.54</av:Point>
+                                        <av:Point x:Key="ShapeLocation">1120,918.54</av:Point>
                                         <av:Size x:Key="ShapeSize">200,81</av:Size>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <Sequence DisplayName="Agregar Seguimiento Ingresar Generacion Archivos" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                                    <Sequence DisplayName="Ingresar Modulo Antiguo Telecredito" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_23">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\Excel\Excel_AgregarSeguimiento.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Apps\Excel\Excel_AgregarSeguimiento.xaml">
+                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\Excel\Excel_AgregarSeguimiento.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Apps\Excel\Excel_AgregarSeguimiento.xaml">
                                         <ui:InvokeWorkflowFile.Arguments>
                                           <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DtbProcessMonitoring">[in_DtbProcessMonitoring]</InArgument>
                                           <InArgument x:TypeArguments="x:String" x:Key="in_StrPathProcessMonitoring">[Path.Combine(in_Config("RutaArchivosGenerados").ToString, in_Config("ProcessMonitoring").ToString)]</InArgument>
                                           <InArgument x:TypeArguments="x:String" x:Key="in_StrSheetsProcessMonitoring">[in_Config("SheetsProcessMonitoring").ToString]</InArgument>
-                                          <InArgument x:TypeArguments="s:Object[]" x:Key="in_AobAddDataRow">[{in_TransactionItem.SpecificContent("OrdenBanco").ToString, in_TransactionItem.SpecificContent("Banco").ToString, in_TransactionItem.SpecificContent("Pais").ToString, in_TransactionItem.SpecificContent("Sociedad").ToString, in_TransactionItem.SpecificContent("NombreSociedad").ToString, in_TransactionItem.SpecificContent("Moneda").ToString, in_TransactionItem.SpecificContent("OrdenCuenta").ToString, in_TransactionItem.SpecificContent("Cuenta").ToString, in_TransactionItem.SpecificContent("Asset").ToString, in_TransactionItem.SpecificContent("Convenio").ToString, in_TransactionItem.SpecificContent("CodigoPais").ToString, in_TransactionItem.SpecificContent("BcoPropio").ToString, in_TransactionItem.SpecificContent("CodigoBanco").ToString, in_TransactionItem.SpecificContent("TipoCarga").ToString, in_TransactionItem.SpecificContent("Multicash").ToString, in_TransactionItem.SpecificContent("CierreMes").ToString, in_TransactionItem.SpecificContent("Fecha").ToString, in_TransactionItem.SpecificContent("CerrarBanco").ToString, If(String.IsNullOrEmpty(vStrExceptionMessage), in_Config("Successful").ToString, in_Config("Failed").ToString), If(String.IsNullOrEmpty(vStrExceptionMessage), Config("ObservationEnterFileGeneration").ToString, vStrExceptionMessage)}]</InArgument>
+                                          <InArgument x:TypeArguments="s:Object[]" x:Key="in_AobAddDataRow">[{in_TransactionItem.SpecificContent("OrdenBanco").ToString, in_TransactionItem.SpecificContent("Banco").ToString, in_TransactionItem.SpecificContent("Pais").ToString, in_TransactionItem.SpecificContent("Sociedad").ToString, in_TransactionItem.SpecificContent("NombreSociedad").ToString, in_TransactionItem.SpecificContent("Moneda").ToString, in_TransactionItem.SpecificContent("OrdenCuenta").ToString, in_TransactionItem.SpecificContent("Cuenta").ToString, in_TransactionItem.SpecificContent("Asset").ToString, in_TransactionItem.SpecificContent("Convenio").ToString, in_TransactionItem.SpecificContent("CodigoPais").ToString, in_TransactionItem.SpecificContent("BcoPropio").ToString, in_TransactionItem.SpecificContent("CodigoBanco").ToString, in_TransactionItem.SpecificContent("TipoCarga").ToString, in_TransactionItem.SpecificContent("Multicash").ToString, in_TransactionItem.SpecificContent("CierreMes").ToString, in_TransactionItem.SpecificContent("Fecha").ToString, in_TransactionItem.SpecificContent("CerrarBanco").ToString, If(String.IsNullOrEmpty(vStrExceptionMessage), in_Config("Successful").ToString, in_Config("Failed").ToString), If(String.IsNullOrEmpty(vStrExceptionMessage), Config("ObservationEnterOldTelecreditModule").ToString, vStrExceptionMessage)}]</InArgument>
                                         </ui:InvokeWorkflowFile.Arguments>
                                       </ui:InvokeWorkflowFile>
                                     </Sequence>
@@ -702,7 +743,7 @@
                               </ui:InvokeWorkflowFile>
                             </Sequence>
                             <FlowStep.Next>
-                              <FlowDecision x:Name="__ReferenceID4" Condition="[vBooLogin]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
+                              <FlowDecision x:Name="__ReferenceID4" Condition="[vBooLogin]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2" True="{x:Reference __ReferenceID0}">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -712,70 +753,8 @@
                                     <av:PointCollection x:Key="FalseConnector">1259.6416666666667,653.04 1360,653.04 1360,698.54</av:PointCollection>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <FlowDecision.True>
-                                  <FlowStep x:Name="__ReferenceID5">
-                                    <sap:WorkflowViewStateService.ViewState>
-                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <av:Point x:Key="ShapeLocation">980,698.54</av:Point>
-                                        <av:Size x:Key="ShapeSize">200,81</av:Size>
-                                        <av:PointCollection x:Key="ConnectorLocation">1080,779.54 1080,829.54</av:PointCollection>
-                                      </scg:Dictionary>
-                                    </sap:WorkflowViewStateService.ViewState>
-                                    <Sequence DisplayName="Ingresar Modulo Antiguo Telecredito" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_21">
-                                      <sap:WorkflowViewStateService.ViewState>
-                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                        </scg:Dictionary>
-                                      </sap:WorkflowViewStateService.ViewState>
-                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\BCP\BCP_IngresarModuloAntiguoTelecredito.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Apps\BCP\BCP_IngresarModuloAntiguoTelecredito.xaml">
-                                        <ui:InvokeWorkflowFile.Arguments>
-                                          <OutArgument x:TypeArguments="x:Boolean" x:Key="out_BooEntryModule">[vBooEntryModule]</OutArgument>
-                                          <OutArgument x:TypeArguments="x:String" x:Key="out_StrExceptionMessage">[vStrExceptionMessage]</OutArgument>
-                                        </ui:InvokeWorkflowFile.Arguments>
-                                      </ui:InvokeWorkflowFile>
-                                    </Sequence>
-                                    <FlowStep.Next>
-                                      <FlowDecision x:Name="__ReferenceID7" Condition="[vBooEntryModule]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_3" True="{x:Reference __ReferenceID0}">
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            <av:Point x:Key="ShapeLocation">1040.5,829.54</av:Point>
-                                            <av:Size x:Key="ShapeSize">79,87</av:Size>
-                                            <av:PointCollection x:Key="FalseConnector">1119.5,873.04 1220,873.04 1220,918.54</av:PointCollection>
-                                            <av:PointCollection x:Key="TrueConnector">1040.5,873.04 940,873.04 940,918.54</av:PointCollection>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                        <FlowDecision.False>
-                                          <FlowStep x:Name="__ReferenceID8">
-                                            <sap:WorkflowViewStateService.ViewState>
-                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <av:Point x:Key="ShapeLocation">1120,918.54</av:Point>
-                                                <av:Size x:Key="ShapeSize">200,81</av:Size>
-                                              </scg:Dictionary>
-                                            </sap:WorkflowViewStateService.ViewState>
-                                            <Sequence DisplayName="Ingresar Modulo Antiguo Telecredito" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_23">
-                                              <sap:WorkflowViewStateService.ViewState>
-                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                </scg:Dictionary>
-                                              </sap:WorkflowViewStateService.ViewState>
-                                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\Excel\Excel_AgregarSeguimiento.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Apps\Excel\Excel_AgregarSeguimiento.xaml">
-                                                <ui:InvokeWorkflowFile.Arguments>
-                                                  <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DtbProcessMonitoring">[in_DtbProcessMonitoring]</InArgument>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_StrPathProcessMonitoring">[Path.Combine(in_Config("RutaArchivosGenerados").ToString, in_Config("ProcessMonitoring").ToString)]</InArgument>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_StrSheetsProcessMonitoring">[in_Config("SheetsProcessMonitoring").ToString]</InArgument>
-                                                  <InArgument x:TypeArguments="s:Object[]" x:Key="in_AobAddDataRow">[{in_TransactionItem.SpecificContent("OrdenBanco").ToString, in_TransactionItem.SpecificContent("Banco").ToString, in_TransactionItem.SpecificContent("Pais").ToString, in_TransactionItem.SpecificContent("Sociedad").ToString, in_TransactionItem.SpecificContent("NombreSociedad").ToString, in_TransactionItem.SpecificContent("Moneda").ToString, in_TransactionItem.SpecificContent("OrdenCuenta").ToString, in_TransactionItem.SpecificContent("Cuenta").ToString, in_TransactionItem.SpecificContent("Asset").ToString, in_TransactionItem.SpecificContent("Convenio").ToString, in_TransactionItem.SpecificContent("CodigoPais").ToString, in_TransactionItem.SpecificContent("BcoPropio").ToString, in_TransactionItem.SpecificContent("CodigoBanco").ToString, in_TransactionItem.SpecificContent("TipoCarga").ToString, in_TransactionItem.SpecificContent("Multicash").ToString, in_TransactionItem.SpecificContent("CierreMes").ToString, in_TransactionItem.SpecificContent("Fecha").ToString, in_TransactionItem.SpecificContent("CerrarBanco").ToString, If(String.IsNullOrEmpty(vStrExceptionMessage), in_Config("Successful").ToString, in_Config("Failed").ToString), If(String.IsNullOrEmpty(vStrExceptionMessage), Config("ObservationEnterOldTelecreditModule").ToString, vStrExceptionMessage)}]</InArgument>
-                                                </ui:InvokeWorkflowFile.Arguments>
-                                              </ui:InvokeWorkflowFile>
-                                            </Sequence>
-                                          </FlowStep>
-                                        </FlowDecision.False>
-                                      </FlowDecision>
-                                    </FlowStep.Next>
-                                  </FlowStep>
-                                </FlowDecision.True>
                                 <FlowDecision.False>
-                                  <FlowStep x:Name="__ReferenceID6">
+                                  <FlowStep x:Name="__ReferenceID5">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <av:Point x:Key="ShapeLocation">1260,698.54</av:Point>
@@ -812,11 +791,11 @@
               <x:Reference>__ReferenceID2</x:Reference>
               <x:Reference>__ReferenceID3</x:Reference>
               <x:Reference>__ReferenceID4</x:Reference>
+              <x:Reference>__ReferenceID0</x:Reference>
               <x:Reference>__ReferenceID5</x:Reference>
               <x:Reference>__ReferenceID6</x:Reference>
               <x:Reference>__ReferenceID7</x:Reference>
               <x:Reference>__ReferenceID8</x:Reference>
-              <x:Reference>__ReferenceID0</x:Reference>
               <x:Reference>__ReferenceID9</x:Reference>
               <x:Reference>__ReferenceID10</x:Reference>
               <x:Reference>__ReferenceID11</x:Reference>
@@ -836,14 +815,31 @@
               <x:Reference>__ReferenceID25</x:Reference>
               <x:Reference>__ReferenceID26</x:Reference>
             </Flowchart>
-            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="1494,85" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;ver&quot;]" />
           </Sequence>
+          <FlowStep.Next>
+            <FlowStep x:Name="__ReferenceID28">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <av:Point x:Key="ShapeLocation">530,749.5</av:Point>
+                  <av:Size x:Key="ShapeSize">200,81</av:Size>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Sequence DisplayName="Cerrar Sesiones" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_41">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </Sequence>
+            </FlowStep>
+          </FlowStep.Next>
         </FlowStep>
-        <FlowStep x:Key="BBVA" x:Name="__ReferenceID30">
+        <FlowStep x:Key="BBVA" x:Name="__ReferenceID31">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <av:Point x:Key="ShapeLocation">130,349.5</av:Point>
+              <av:Point x:Key="ShapeLocation">160,349.5</av:Point>
               <av:Size x:Key="ShapeSize">200,81</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">160,390 130,390 130,719.5 630,719.5 630,749.5</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Sequence DisplayName="BBVA" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_6">
@@ -853,12 +849,16 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </Sequence>
+          <FlowStep.Next>
+            <x:Reference>__ReferenceID28</x:Reference>
+          </FlowStep.Next>
         </FlowStep>
-        <FlowStep x:Key="BANCONACIONAL" x:Name="__ReferenceID31">
+        <FlowStep x:Key="BANCONACIONAL" x:Name="__ReferenceID32">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <av:Point x:Key="ShapeLocation">250,479.5</av:Point>
+              <av:Point x:Key="ShapeLocation">280,479.5</av:Point>
               <av:Size x:Key="ShapeSize">200,81</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">280,520 250,520 250,719.5 630,719.5 630,749.5</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Sequence DisplayName="BANCONACIONAL" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_7">
@@ -867,13 +867,31 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="634,92" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;BANCONACIONAL&quot;]" />
+            <Flowchart DisplayName="Flowchart BANCONACIONAL" sap:VirtualizedContainerService.HintSize="634,637" sap2010:WorkflowViewState.IdRef="Flowchart_3">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
+                  <av:Size x:Key="ShapeSize">60,75</av:Size>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Flowchart.StartNode>
+                <x:Null />
+              </Flowchart.StartNode>
+            </Flowchart>
           </Sequence>
+          <FlowStep.Next>
+            <x:Reference>__ReferenceID28</x:Reference>
+          </FlowStep.Next>
         </FlowStep>
-        <FlowStep x:Key="BOFA" x:Name="__ReferenceID34">
+        <FlowStep x:Key="BOFA" x:Name="__ReferenceID35">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <av:Point x:Key="ShapeLocation">370,609.5</av:Point>
+              <av:Point x:Key="ShapeLocation">400,609.5</av:Point>
               <av:Size x:Key="ShapeSize">200,81</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">500,690.5 500,720.5 630,720.5 630,749.5</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Sequence DisplayName="BOFA" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_16">
@@ -883,12 +901,16 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </Sequence>
+          <FlowStep.Next>
+            <x:Reference>__ReferenceID28</x:Reference>
+          </FlowStep.Next>
         </FlowStep>
-        <FlowStep x:Key="SCOTIABANK" x:Name="__ReferenceID28">
+        <FlowStep x:Key="SCOTIABANK" x:Name="__ReferenceID29">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <av:Point x:Key="ShapeLocation">1000,219.5</av:Point>
+              <av:Point x:Key="ShapeLocation">1030,219.5</av:Point>
               <av:Size x:Key="ShapeSize">200,81</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">1230,260 1260,260 1260,719.5 630,719.5 630,749.5</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Sequence DisplayName="SCOTIABANK" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_4">
@@ -898,12 +920,16 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </Sequence>
+          <FlowStep.Next>
+            <x:Reference>__ReferenceID28</x:Reference>
+          </FlowStep.Next>
         </FlowStep>
-        <FlowStep x:Key="INTERBANK" x:Name="__ReferenceID29">
+        <FlowStep x:Key="INTERBANK" x:Name="__ReferenceID30">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <av:Point x:Key="ShapeLocation">880,349.5</av:Point>
+              <av:Point x:Key="ShapeLocation">910,349.5</av:Point>
               <av:Size x:Key="ShapeSize">200,81</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">1110,390 1140,390 1140,719.5 630,719.5 630,749.5</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Sequence DisplayName="INTERBANK" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_5">
@@ -913,12 +939,16 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </Sequence>
+          <FlowStep.Next>
+            <x:Reference>__ReferenceID28</x:Reference>
+          </FlowStep.Next>
         </FlowStep>
-        <FlowStep x:Key="BANBIF" x:Name="__ReferenceID32">
+        <FlowStep x:Key="BANBIF" x:Name="__ReferenceID33">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <av:Point x:Key="ShapeLocation">760,479.5</av:Point>
+              <av:Point x:Key="ShapeLocation">790,479.5</av:Point>
               <av:Size x:Key="ShapeSize">200,81</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">990,520 1020,520 1020,719.5 630,719.5 630,749.5</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Sequence DisplayName="BANBIF" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_8">
@@ -928,12 +958,16 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </Sequence>
+          <FlowStep.Next>
+            <x:Reference>__ReferenceID28</x:Reference>
+          </FlowStep.Next>
         </FlowStep>
-        <FlowStep x:Key="SANTANDER" x:Name="__ReferenceID35">
+        <FlowStep x:Key="SANTANDER" x:Name="__ReferenceID36">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <av:Point x:Key="ShapeLocation">640,609.5</av:Point>
+              <av:Point x:Key="ShapeLocation">670,609.5</av:Point>
               <av:Size x:Key="ShapeSize">200,81</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">770,690.5 770,720.5 630,720.5 630,749.5</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Sequence DisplayName="SANTANDER" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_17">
@@ -943,9 +977,11 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </Sequence>
+          <FlowStep.Next>
+            <x:Reference>__ReferenceID28</x:Reference>
+          </FlowStep.Next>
         </FlowStep>
       </FlowSwitch>
-      <x:Reference>__ReferenceID28</x:Reference>
       <x:Reference>__ReferenceID29</x:Reference>
       <x:Reference>__ReferenceID30</x:Reference>
       <x:Reference>__ReferenceID31</x:Reference>
@@ -953,6 +989,26 @@
       <x:Reference>__ReferenceID33</x:Reference>
       <x:Reference>__ReferenceID34</x:Reference>
       <x:Reference>__ReferenceID35</x:Reference>
+      <x:Reference>__ReferenceID36</x:Reference>
+      <x:Reference>__ReferenceID28</x:Reference>
     </Flowchart>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1298,52" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,196" sap2010:WorkflowViewState.IdRef="Sequence_42">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="388,85" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;ver&quot;]" />
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
   </Sequence>
 </Activity>
