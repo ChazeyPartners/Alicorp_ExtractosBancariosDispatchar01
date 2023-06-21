@@ -1,0 +1,268 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="INTERBANK_ConsultarMovimientos" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_StrCompany" Type="InArgument(x:String)" />
+    <x:Property Name="in_StrAccount" Type="InArgument(x:String)" />
+    <x:Property Name="in_StrDate" Type="InArgument(x:String)" />
+    <x:Property Name="out_BooCosultationMovements" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="out_StrExceptionMessage" Type="OutArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>655,4324</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>INTERBANK_ConsultarMovimientos_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="INTERBANK_ConsultarMovimientos" sap:VirtualizedContainerService.HintSize="646,4259" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Try Catch INTERBANK_ConsultarMovimientos" sap:VirtualizedContainerService.HintSize="584,4148" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="546,3411" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Consultar Movimientos&quot;]" />
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: Consultar Movimientos" sap:VirtualizedContainerService.HintSize="484,3046" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="50578787-3f80-485e-9440-4c4ad5cac324" Version="V2" WindowResize="Maximize">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,2829" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Clic Consultas&quot;]" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Consultation" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://empresas.interbank.pe/home" CvType="Text" DesignTimeRectangle="403, 174, 70, 20" DesignTimeScaleFactor="1" ElementType="ListItem" FriendlyName="'Consultas'" FullSelectorArgument="&lt;webctrl aaname='Consultas' tag='SPAN' /&gt;" Guid="95b363fa-845b-4991-9925-0cd8a49551eb" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEoAAAAYCAYAAABdlmuNAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANRSURBVFhH7VYtk6swFH3/CRWFq6qKi4qrQuGqquKi+AMoHAqFq8KhUDgUCofCnb35YIFut4/Z6c6s4Mx0ZpMN9+Pk3Jv7Dwd24SBqJw6iduIgaicOonbiIGonnhI19RWyq8SJBQiCAOwkEOsS7egP/CE0CQO73vHboX0hqi9jhEGIOG8xTG5v6mskkiFgN9z/GFmNNpep0fj1VCuwX4hzS1SXQ5KCoqL3GytMDdJrjs4v/woeiRqKiNYRisFvvAkbohpNqgkUKq+k1xjRFgryZL4x5SlxzWos8TVIGMOtqFGouYxDSFWgW9kf6hQxD62NgJ0g4hS1NzKUlDTPHi7H2/WSWRPVpN7O6heXzpj1I05gdj8EX/mxGGqkMadqMv9nOIkY6erAiqgOuaBDUbFK9jtMFCCnJIjU3mdNjkx5sqj03zfQximTSBtfB8Md6kykqposEHqj4DN05f8/9agTCZ62dunUsajFwdmNvGR2KapJiQAOVfXOL0VYKRN/gsYFglwGOOvK97oJfZ1A8hQukg1RPjFd+/ULtCnOlKDPZ4FNnEHbqJ09kW310OViSazR9PcFzyrd4G1EEYb+YYPajKBYk1Wsl+8CIfxIUc8TMHA2RG7I2SY0Y/Mt9b2E+7LVOcp2vnGHdxKFoUGRXHERc3m5n7tUqpCEFEalL68aedliLpQZP+pRtne8gyiDsUOVq6V/MEG37AvkXUSRei7U1wSNON0wussYCkSfRBmM6KocKha+n9J5kttMxYao+dWTNtFHtEg5h62kLgN/UXqqNuZ3ErUB9YqIgvSqdmcfLm6qoF4RZS9xS1Sbnu2ZdVOZKkV7a6K26POtnS1RBDdHMcik/pTf1DfIYnpRwnk+2d/MXxHV59S4b8UyyI40glBT3TZ7spG1rslOHcob+X1B1Nw/Xe/p0ZDxWWW5f27NQK0ExToTZfzwG4olEOr/ktStYO+c8IUog7EtoT8l+N1k/r/xoENG/Sfyz/OM8X6jgZBeG7MwiesYPHR+gpBbP4/jQ+R9hNw82RUpe7FryN6OEBPa7OL6UCih7uZcj/t6RLlmqOnyUynoRXbfdKVexhQ7PmiUq0CeEnXgKw6iduIgaicOonbiIGonDqJ24iBqF4APhra3iBeMsYQAAAAASUVORK5CYII=" InformativeScreenshot="65f8b1285ac61820924b4b54ba106ecf.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Interbank*' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Clic Movimientos&quot;]" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Movements" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://empresas.interbank.pe/consultas/saldos" CvType="Text" DesignTimeRectangle="58, 183, 246, 40" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Movimientos'" FullSelectorArgument="&lt;webctrl tag='A' aaname='*Movimientos*' class='sidenav-submenu__link' /&gt;" Guid="3b76da80-5461-40a0-8c81-2fed7c11d35b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPoAAAAsCAYAAABMi6UPAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMZSURBVHhe7dwxU+JAGIBh/lOqVHZWVulS0VmlsruKKh2Vf4CKjioVHRUdFRUdFZ4SUC+NzDjjd/stSw44UVBnNNn3mfkcCGuixStxnbEhqIxZlkgYBBKcNKEk2cyd4YPGbXuu9tg9z/uSBJF0hiPpXEVyptcJzyXpjCR3S2Q1kjQMpTUo3AEj31ofnEl0mUo2Xa1fe2V9MckkbZ6vv2dz/uavrozKC+AUhF4RH4t8M5+M/b/QMxO6OW/Ukr4LtZh07bFmz13HrUkyV+bMPDchJ72JrFNeybTfkihIxC7ZW78y14zMD5N0ODMrVS6j66aEYSJ9Yj8ZoVdBMZR2HEts5jzcj/idMe+E+nlx3Jbh1pvrSQ6E3hq6d2NrJcPUXC/J1u/qO+EWMmiFElz1XeQbK5n0M5noaXbWT6RzEchFZ2JX/TOTXjOQsPxCcCxCr5RcsmQv5PdmE95nHAh9v7dxe+t6O+GOpW0eX751V7G9/sD51bQXSxD3ZOqe4ziEXinVDf3a3IkcH7ruARD6VyL0Snkl9HQoRVGUY2+ft1//EaGvZJSecus+lW70xq17OnK/t+NYhF4pr4S+V5uNbfv1HxG6cXAzril2/25vPZtxX4vQK+WbQrcRhnK9uVQxkJaJtnzuTLuRuV5/fT3+vPajEHqlfFPoqDxCrxRCx8cQeqW4v0eXIYcSd3f3n+3t81boYWuwtwEGHxF6Ba02u+wHtp7L1w8tgHcIHfAAoQMeIHTAA4QOeIDQAQ8QOuABQgc8QOiABwgd8AChAx4gdMADhA54gNABDxA64AFCBzxA6IAHGje/72R2c1v+u2CGYeoz2rY23pjPF6Lz9PTEMEzNZtN3Y7F8EJ3n52eGYWo2m74bD4+F3D/8kZeXF4ZhajbatjZehg6gfsrQ9cHy/tEdBlAn2rY23tAHeg8PoH60bW3chp4v7t1hAHWibdvQtXhCB+pJ27a77vphni/dYQB1om3b0LV4QgfqSdvWxm3od/OFOwygTrRtQgdqjtABD5Sh6z08oQP1pG1r4zb027vcHQZQJ9r2PF/KX8Ysy004FM6JAAAAAElFTkSuQmCC" InformativeScreenshot="ab72bc6f233ba33717d2ee66d0ffc0d2.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Interbank*' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Seleccionar Empresa&quot;]" />
+                  <uix:NSelectItem DisplayName="Select Item in_StrCompany" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NSelectItem_1" Item="[in_StrCompany]" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
+                    <uix:NSelectItem.Items>
+                      <scg:List x:TypeArguments="x:String" Capacity="8">
+                        <x:String>ALICORP</x:String>
+                        <x:String>INDUSTRIAS TEAL</x:String>
+                        <x:String>INTRADEVCO INDUSTRIAL</x:String>
+                        <x:String>PROORIENTE</x:String>
+                        <x:String>VITAPRO</x:String>
+                        <x:String>R TRADING</x:String>
+                        <x:String>MASTERBREAD</x:String>
+                        <x:String>APUDEX</x:String>
+                      </scg:List>
+                    </uix:NSelectItem.Items>
+                    <uix:NSelectItem.Target>
+                      <uix:TargetAnchorable BrowserURL="https://empresas.interbank.pe/consultas/movimientos/historial/" DesignTimeRectangle="334, 379, 300, 22" DesignTimeScaleFactor="1" FriendlyName="'ALICORP'" FullSelectorArgument="&lt;webctrl tag='MAT-SELECT' aria-role='combobox' /&gt;" Guid="e06662d7-4b6c-426d-9fa9-36361288ed3e" ImageBase64="" InformativeScreenshot="dc81d6953e6262994fa8ac4a48507eb8.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Interbank*' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NSelectItem.Target>
+                  </uix:NSelectItem>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Elegir Cuenta&quot;]" />
+                  <uix:NSelectItem DisplayName="Select Item in_StrAccount" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NSelectItem_2" Item="[in_StrAccount]" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
+                    <uix:NSelectItem.Items>
+                      <scg:List x:TypeArguments="x:String" Capacity="2">
+                        <x:String xml:space="preserve">Corriente Soles    100-0001306130</x:String>
+                        <x:String xml:space="preserve">Corriente Dólares    100-0001306139</x:String>
+                      </scg:List>
+                    </uix:NSelectItem.Items>
+                    <uix:NSelectItem.Target>
+                      <uix:TargetAnchorable BrowserURL="https://empresas.interbank.pe/consultas/movimientos/historial/" DesignTimeRectangle="366, 564, 278, 22" DesignTimeScaleFactor="1" FriendlyName="'Corriente Soles'" FullSelectorArgument="&lt;webctrl tag='MAT-SELECT' aria-role='combobox' innertext='Corriente*' /&gt;" Guid="91c3ed22-b84a-4c8c-a625-c5d368c8fea9" ImageBase64="" InformativeScreenshot="28cd00d81d647c451fdb089771ac8cb6.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Interbank*' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NSelectItem.Target>
+                  </uix:NSelectItem>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Fecha Proceso&quot;]" />
+                  <uix:NCheck Action="Check" DisplayName="Check/Uncheck ProcessDate" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NCheck_1" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
+                    <uix:NCheck.Target>
+                      <uix:TargetAnchorable BrowserURL="https://empresas.interbank.pe/consultas/movimientos/historial/" DesignTimeRectangle="674, 467, 20, 20" DesignTimeScaleFactor="1" ElementType="RadioButton" FriendlyName="'INPUT mat-radio-2-input'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='radio' aaname='*Fecha de proceso*' /&gt;" Guid="28f522b4-9e43-4da3-9085-878a3523958d" ImageBase64="" InformativeScreenshot="4e26092b9ad10103fb1dc69aee5c0acc.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Interbank*' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NCheck.Target>
+                  </uix:NCheck>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Fecha Desde &quot; + in_StrDate]" />
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into Init Date in_StrDate" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Text="[in_StrDate]" Version="V3">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="https://empresas.interbank.pe/consultas/movimientos/historial/" CvElementArea="363, 588, 278, 30" CvTextArea="364, 594, 76, 16" CvType="InputBox" DesignTimeRectangle="366, 593, 256, 18" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'19/06/2023'" FullSelectorArgument="&lt;webctrl tag='DIV' innertext='*Desde:*' class='col-* col-sm-*' /&gt;&lt;webctrl tag='INPUT' id='mat-input*' /&gt;" Guid="252ccb05-25e3-4e62-a382-dfcb579dfcd7" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAQQAAAAWCAYAAAAmYeIuAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQjSURBVHhe7Zoht6MwEIX3P1WhcKgqHAqHQuFQVTgUfwBVh0LhqupQKFwVCofC3Z1ASBOg7dt9+ww73zk950HIvCDuZWaSX2AYhpGwITAMo2BDYBhGwYbAMIyCDYFhGMXKEB4o/AyNvJoYHygTH/bphJPlwE9KPEY5pjPekYQVenmJoZ3mORbNO9lwoxT3To4pOtzTCK4tnrHg+AnKveB67KFBEetxc9Tqn870dY7ItWn8BMvxERcNBjk2M6ApYviONT1juxFyLUhfXxH7DqxP78wwB0MZwoPEOjYp3FOqGYIwCBeX6oFZDwPaIoTlFzSygubaqZw5NshcFwk5wDxvRFdn8O0QldJdjyq04ecNeim2oS1x8S64mep9xhZxPR9ZrcW9J3BpPYvX9FUIOyzQLjGEMV1cuFmj5jSZBz+r0cn/O3ZkOK6PQgRpc3hkivUyKN/ZvtxWpsIwx0MZwoW+0pbnGYYw1gnspJZCWhhQRRaS2rzbpHTvPt8bqgjnvJ3+1jHuk/DOUbUV2WjGFajYTYagWFtRhzIIUU5G0yI/R6g2QfX7ZCrB1tC6MkA4BRkwbJZQI7FzM3NimAOyKhkapJoh9GUoRWIi7puCF4JLIP0ANQmYPshb+gqhN4vxKcBPmLG3iPF4ziq6EoFetmg02dOw9mjzM+JNaiKYMwRPZRgMc1zeGwKl397mi0wf8fsFp6U8EDwKePGSUvcow+WLveYZv0lPSKlur69Uy089BKrl/RhFsxKlEXsFlQNFRDX+tZ3FSqWFsS6NV+Y2Cz6C41/RKsWPuCfzmqYflSCqgmCYA/PWEDDcEFPdXzwLcrTlhQRsGcJ7FJ4mtq8bguWEyFU/YKnlXejJhxlbQkZQpQEcL8ZV7yj+kSHQu1QpAsdDfK13s4qZ+Z29F5kHwxyJ94ZAjI8SydJxt2XHvk61kmFtAOLr+qZkCMqpASiEHm2L/VUpsTWXsc3hO4FhJAqRTbwpGdJaXoxUZtA7BfmzsfgevU/BMMfloyHs0ebus6kosgjZF1jY9hhm9KbifsNSGsKyFbGOPYrmXoL7bv0goPVbn5qKI+rERvIiyKO8otmYBBsC83/w3hD6G5JLiXbZFyQxTdt8bk4Smxlu8Vb8ctvxuV05om8LhMa2I4ks9LRnKNb0jGwQiut17CaD9aIkWJi2Hf0czbLmsaOMRd92pLVZr01PzHciMgVj2zGimM+tTYY5KhtDyGzzYJJ+yGd7SEeUB2ej5ld84QDRcuhp/5md2MIQlkbf5kcZgJzb3VPjYFJStiTrBWEIe/PnX0RB9t5ZtVEY5sCsDOFPoYzC/lxi/B0/GZthmD2+ZwjiBOFOH+Cf8JOxGYbZ5VuGIOrtd4d9vsNPxmYYZp9vlgwMwxwJNgSGYRRsCAzDKNgQGIaRAL8BKK5NqaEWVoQAAAAASUVORK5CYII=" InformativeScreenshot="ee7be5e3549c7835f2f297cbcb9c0ff1.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Interbank*' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;Fecha Hasta &quot; + in_StrDate]" />
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into End Date in_StrDate" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Text="[in_StrDate]" Version="V3">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="https://empresas.interbank.pe/consultas/movimientos/historial/" CvElementArea="671, 588, 280, 31" CvTextArea="672, 594, 81, 16" CvType="InputBox" DesignTimeRectangle="674, 593, 256, 18" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'20/06/2023'" FullSelectorArgument="&lt;webctrl tag='DIV' innertext='*Hasta:*' class='col-* col-sm-*' /&gt;&lt;webctrl tag='INPUT' id='mat-input*' /&gt;" Guid="8caa6b67-32d8-4907-b8de-5846bd6de443" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAQQAAAAWCAYAAAAmYeIuAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPDSURBVHhe7Zott6s6EIbvf6pC4VBVuKi4KhQOVYWL6h9A1aFQcVU4FAqHQuFQuPcmEEL5aM+5t2yxu+ZZi7U2pAwj9rzzkfwDgiAIAwkCQRAWEgSCICwkCARBWEgQCIKwLAWhySFCH+7phJPjgccZ6t6sDbQokhC+q9ZPDjweIS07s7akz2MEsjV3QFdliLkHR9t2fYQiR2PWLF2JNOLwHG3fhR8mKGYTloXtI3x++90etRQIfVetGd+TQlkliO9jFoRWImBXZNUULB2qNIAbFyokNC1k4CJIK7UyooP86vu4lYsIHCiFC1GOf/flDb4fI2/M7/oGxY3DDeQcWH2Jm7J1lbX5Xo+muIGzO+rhfsbaPsJn/V3GcSua+btKcHyeDoLVPSKwawb7CeV7Hvvw72uvCOL3YwWhlSHi3ASJpYA4CQxxXSU4h9IGlmX3eQnhKAEYzHWQ4RlJNSw8sXzeqe+ftz9SAbj2abZ9iM9KrC7pOrgbZJcAmVarrtu+36Tg6n2qEohv4/0MoZMIzwl0mDbZZdECzKgMa4PfoAMuzk3GVQHq3MYAXdHKAMwEYyFOtqJ4y8L2Dv/X5wUVknOEx0YJFEOFwF7YJYjfzUtB6HVvzhiuj/Efv3wZsC2ywGRTQ50yRFM0tRmCINvPpqXAaaz9Rxt1DSkC08urfj8Qqs0YfzqxsL3iE58tXYU09MDv1ZPoNEi59mm8fJFTdUB8JVtBaAvcIwbvIiBt4/xfgqtGyp7u/1oQHLhczwNaG4hdlSJwnzP1yvbExz4rlBBIcYHHItz3JpkTZv7BbuXrKoUgfikLQWgeV7DFkG5GZ+bX5bdQjYFhLQB9jvhNy3DJdAnQqzLc25kzrFqJHXE5wudetSHcuyCxg8U/8TSnIIgvYhYEPSjj24m+RWVz5y+GisNUfjGk09n4z0PFJuXg6WYjUgmCA5WMBza2j/C5LxC7MfKtnig65Pe94SEJAvGdWEHQ2TrYbaonxi08npRoTRrVPXu82Hbs8Ii2wT9uO14hpwMCfTtuD662HQXjSMqpZTDbf/44INyzfYjPyjdnv69Q9GqZgQmJehIMPVQU7GlrkyC+h4UgTEOzzeUmJhvqYHg+5BMvS3XdHpgJ/5quTBE9H0zaO9zTFkhWh4ys+R3bh/isBWHv/eEKIdsOVRarlsIZn9HBJOKL2Q4VP0GV6O7LbPshP2mbIIiBQwVBnyCMi58ppH/SNkEQIwcKgu7X3x32+YSftE0QxMSxLQNBEL8aEgSCICwkCARBWEgQCIIwAP8CGHI55ZXkQlsAAAAASUVORK5CYII=" InformativeScreenshot="587afdb5494940720f1298fb3d883c34.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Interbank*' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;Clic Buscar&quot;]" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Search" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://empresas.interbank.pe/consultas/movimientos/historial/" CvElementArea="981, 396, 96, 36" CvTextArea="1006, 407, 46, 12" CvType="Button" DesignTimeRectangle="982, 398, 93, 32" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Buscar'" FullSelectorArgument="&lt;webctrl tag='BUTTON' aaname='*Buscar*' /&gt;" Guid="3c85402e-cf3a-44e8-ae35-37d7a4ea5173" ImageBase64="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" InformativeScreenshot="e72c6123f17a198268b12cb68bd98aaa.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Interbank*' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="-8, -8, 1382, 736" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAATdJREFUWEdj+P//PwODwyoeBqtlvQyWy24A8T8g/k83zKC3iBvIAFmMXQGtMZDowhCkJwYS1zAE6YmBxF8MQXpirIJUxUu/YheHYqyC5OEvQHyCwWLZLAbL5dkM1sttGYxX8TNYLW1AU4eKsQoSxveB2XYj0KImBqvlIQzmS1UZGBqYQFkaHVPoAHDwnQBaNBPsK/NlNgzmS/iwWYQLUxoCFdgMJQWPOmDUAaMOGHXAqANGHTCyHMBgPJOVwXKJLrCtEAPUC2zsLt0JpN8hmYeJsQoiME4HMFgtEgO2D1yBlhUDLVoEbAldAKr/iaafMMYqiMAVYF+ZL9OD+GppN9RXL9DUkY+xCiLwWyD+hSZGXYxVkH7470A74NpAO6BrIB1wHdwxxiJBSwzqBoL6ol0gy////88AALzTb37OdQCSAAAAAElFTkSuQmCC" InformativeScreenshot="4ef339a29200b3ad3e957d355c948d50.jpg" Selector="&lt;html app='msedge.exe' title='*Interbank*' /&gt;" Title="Nuevo Telecrédito" />
+            </uix:NApplicationCard.TargetApp>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </uix:NApplicationCard>
+          <Assign DisplayName="Assign out_BooCosultationMovements" sap:VirtualizedContainerService.HintSize="484,82" sap2010:WorkflowViewState.IdRef="Assign_6">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Boolean">[out_BooCosultationMovements]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="550,394" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Exception" sap:VirtualizedContainerService.HintSize="496,325" sap2010:WorkflowViewState.IdRef="Sequence_9">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Error" Message="[&quot;Mensaje Excepción &quot; + exception.Source + &quot; - &quot; + exception.Message]" />
+              <Assign DisplayName="Assign out_StrExceptionMessage" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_2">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[out_StrExceptionMessage]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">["Mensaje Excepción INTERBANK_ConsultarMovimientos " + exception.Source + " - " + exception.Message]</InArgument>
+                </Assign.Value>
+              </Assign>
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+      <TryCatch.Finally>
+        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Info" Message="[&quot;¿Consultó Movimientos? &quot; + out_BooCosultationMovements.ToString]" />
+      </TryCatch.Finally>
+    </TryCatch>
+  </Sequence>
+</Activity>

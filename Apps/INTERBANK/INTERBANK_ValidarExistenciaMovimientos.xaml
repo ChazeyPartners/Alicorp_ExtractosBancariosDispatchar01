@@ -1,0 +1,185 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="INTERBANK_ValidarExistenciaMovimientos" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="out_BooExistMovements" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="out_StrExceptionMessage" Type="OutArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>655,1333</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>INTERBANK_ValidarExistenciaMovimientos_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="INTERBANK_ValidarExistenciaMovimientos" sap:VirtualizedContainerService.HintSize="598,1268" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Try Catch INTERBANK_ValidarExistenciaMovimientos" sap:VirtualizedContainerService.HintSize="536,1157" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="450,420" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Validar Existencia Movimientos&quot;]" />
+          <uix:NCheckState DisplayName="Check App State out_BooExistMovements" EnableIfExists="False" EnableIfNotExists="False" Exists="[out_BooExistMovements]" sap:VirtualizedContainerService.HintSize="388,177" sap2010:WorkflowViewState.IdRef="NCheckState_1" Version="V3">
+            <uix:NCheckState.IfExists>
+              <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </Sequence>
+            </uix:NCheckState.IfExists>
+            <uix:NCheckState.IfNotExists>
+              <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </Sequence>
+            </uix:NCheckState.IfNotExists>
+            <uix:NCheckState.Target>
+              <uix:TargetAnchorable BrowserURL="https://empresas.interbank.pe/consultas/movimientos/historial/" DesignTimeRectangle="350, 344, 102, 56" DesignTimeScaleFactor="1" FriendlyName="'Fecha deoperación'" FullSelectorArgument="&lt;webctrl tag='IBK-TABLE-CELL' /&gt;" Guid="713c7cd6-355c-4776-ad92-53c84e90b1b1" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGoAAAA8CAYAAACO9i99AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAdpSURBVHhe7ZzPq9NKFMff/1RFo2hWFsQuNCuLSNTFXUWFgkhXXWUXEOqPhQpBMSAaEbKquAgi3UWEqFAXkoXWTfAHBTGIet45M5M2TX/d25s+ncd8IHAzvzI535kzk9uc/AMKKVBCSYISShKUUJKghJIEJZQkKKEkQQklCZUJlUUO6LUa1IqHVgez7UM8EoUUa1OZUGlgoTgWBKlIINIQ7AYK1g5BabU7NisUEjsolOnDUJwr1mOjQmVJAJamgRUImRIPDCzTK4o5CqGDZboxP6U6tlkHjblPHYyWC9G4fAZJz4GWoXPXqhvQciPg2ZgX2LCV56HbtZz+ZICk1JcOeL4Npk51O9AvTnPKx7QwicC1xPWpfS+e8gZp5EE77x+5djuAJBOZCA1Mo+uDx9rQoOklImd3VCwUdr50GHY4MVbsYFrZPaKBsJzDhBqAi67S8vMaIxgEHbDEzQ7xGpreAn8gTDcagG9pYFB+3AVNw7Zzqwm323AH4pxfR7MC3p+sYF2C5Wugb7njNZUPNLwH0UaG/Tc0E9xxgSH0bQNqRhdi0RzzIDUDnIjKZDOXWZfNuj5hSM3q8VG/TaGMlge9OIG0eJNZBDYardMv3TkaK2HtjWA4VUEYDYVh2eI6drl+DstvQnkCjHot7LMDEcrrmzUwx4MoJwYH+9UOuXjsmk0fqplHEza+RgHuBmtoAJ96vlIoOo/Aa5tQx5unGambNoRkG1bOhBk7FUgjH+xWE5p1jdVlR0mo8XXKsPw5/R/3GQWZWz+FwEIvICpODY4K+Y+EagDzHuSealuQL1mMJQbM0gH6erxx2jWumFHs+uj63HiIZXnWvBm1XChtJp/NKM3BecNn1Oyaw73A1IySTqgswdGGo7uBN0rGE8Y2nEgs0Cn38bkB0x60LFwjhrkYKfRauK7YEXp7sUahGPPWqLiL12l6MBBVRwOfrS87EwrLGzb0xT1kSQ86xuwa1c13N4vWqL9ZqEUPvM2pXRuWG3jjXZtutMCN+uCiMbgBZ3du9MCcG5/lL9r1ZTT7Crs1TE9CG4y2WB9xECx1nbmQQR+ccTsmtP3Vu7583BA0YPKBVSWVCSU9q2bcH0YJlaOEkoRVrvEPo4SSBCWUJCihJEEJJQlKKElQQkmCEkoSlFCSoISSBCWUJCihJEEJJQlKKElQQkmCEkoSlFCSoISSBCWUJCihJEEJJQlKKEnYqFA/f/6EMAzh+vXrcOHCBThy5Ag7Ll68CDdu3IBnz57Br1+/RGnFMjYm1Pv37+H06dOTt2YXHGfPnoWPHz+KWopFbESohw8fwoEDB5gQZ86cYedRFMGXL1/YQX9TmmmarMzBgwfh8ePHovbfTAo9SxsHBFQKvQBquCCiuWaoXKgHDx4w4+/fvx/u3Lmz1LVRnuu6rCzVIfGqYhR2+Pvh5aMl3kVfCx5iU9vE67TsTd050TCCSoUid0czae/evfDmzRuRuprXr1+zOjSzPnz4IFJ3B48uoXCZKvkfCEWz49SpU2zU3r59W6Run5s3b7K6586dg9+/f4vU9Vkl1LDvgMUC3jSomzb0iq8yj2Lw2yaPTpmKKBFCdTwIbJGvm2CzSDsOtTuJNsG8IJkb2TGKC1EtZhv8njctVLEPulGdUC9fvmQXJbHW2clRnZMnT7I24nj3I3aZUKOwDVohDmoUUdwTnpNFsxi6hgamm4fbjGDgW6B36BMMQqhCrHDaw7ZqLehRYZoVhbzRgIw/GxwHiQ9mzQB73AEe5zWJLxuAi32w/AHvQ5ZUJ9Tdu3eZkYMgECk759GjR6yNe/fuiZT14UKhUQuHjsZHK4HfLMfycgFok0AiUkDcdFxhCgkLrstdX8STGdFUyGiaFjcavHweNpozcBtsrZzakqB4TSFU1rdn4oArE+rSpUvMGLuZDS9evGBtXL58WaSsz+IZxWNxiwLmBxmU1VsYMZgLVWx1OrY3jQNwSnHEZaFYVGJ5mhXWqHmDrDKhjh49yhr89u2bSNk5nz59Ym1QW7tlmVBdbY47EmxvRs0XKotsFro6iSPewYyKHXShQqje7GCpTKh6vc6MnKbTndoJVJfaoLZ2y2KhyMvg8xutUXmsMFsjdP5Rku2sUQuEYgZuOMA+MYFbiCG6MAPzykLNrlExuFv6WCj0fWDTh1TyNQrbqkwoy+LTtd/vi5Sd8/z5c9bG+fPnRcr6MKMZ5ZmRw2OFTeGetHopVre86xt/nWUEYUd8gGRMAh4Ky0XG9a9tTHaDwQAiD9ue+lQNZ7Lr47vOEF0mfVlm/CydRuC2RFs1vTqhrl69ym6aHmDX5datW6yNa9euiRRFTmVCPXnyhBm50WjAjx8/ROr2+f79Oxw7doy18fTpU5GqyKlMqCzL4MSJE8zQNLt2ypUrV1jd48ePs7YU01QmFPH27VvYt28f7NmzB169eiVSV0NbeqpD//N79+6dSFUUqVQowvM8NjPW+afs/fv3RY6iTOVCEfSTxaFDh5jx85856GH269ev8Pnz55mfOQ4fPizJzxx/CoB/AWdZEB9M6JsjAAAAAElFTkSuQmCC" InformativeScreenshot="8b7ef3913975cd4b92b84987a4fe2c9c.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Interbank*' /&gt;" SearchSteps="Selector" Version="V2" />
+            </uix:NCheckState.Target>
+          </uix:NCheckState>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="502,394" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Exception" sap:VirtualizedContainerService.HintSize="496,325" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Error" Message="[&quot;Mensaje Excepción &quot; + exception.Source + &quot; - &quot; + exception.Message]" />
+              <Assign DisplayName="Assign out_StrExceptionMessage" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[out_StrExceptionMessage]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">["Mensaje Excepción INTERBANK_ValidarExistenciaMovimientos " + exception.Source + " - " + exception.Message]</InArgument>
+                </Assign.Value>
+              </Assign>
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+      <TryCatch.Finally>
+        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;¿Existen Movimientos? &quot; + out_BooExistMovements.ToString]" />
+      </TryCatch.Finally>
+    </TryCatch>
+  </Sequence>
+</Activity>

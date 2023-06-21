@@ -1,0 +1,224 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="BOFA_GenerarInformeCuentas" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_StrDate" Type="InArgument(x:String)" />
+    <x:Property Name="out_BooGenerateAccountsReport" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="out_StrExceptionMessage" Type="OutArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>655,3008</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>BOFA_GenerarInformeCuentas_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="BOFA_GenerarInformeCuentas" sap:VirtualizedContainerService.HintSize="646,2943" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Try Catch BOFA_GenerarInformeCuentas" sap:VirtualizedContainerService.HintSize="584,2832" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="546,2095" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Generar Informe Cuentas&quot;]" />
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: Generar Informe Cuentas" sap:VirtualizedContainerService.HintSize="484,1730" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="50578787-3f80-485e-9440-4c4ad5cac324" Version="V2" WindowResize="Maximize">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,1513" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Clic Informes&quot;]" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Reports" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://cpoinforeporting-proda.bankofamerica.com/inforeporting/?initPage=stmt&amp;portalSource=CPO&amp;returnURL=https://cashproonline.bankofamerica.com/cpwportal/util/homeRedirector.jsp" CvType="Text" DesignTimeRectangle="130, 263, 94, 18" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Informes'" FullSelectorArgument="&lt;webctrl tag='IFRAME' /&gt;&lt;webctrl tag='SPAN' aaname='Informes' /&gt;" Guid="3687e81e-2774-4e18-8080-7591e0eec334" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGIAAAAWCAYAAAA7FknZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFcSURBVGhD7ZbBDYMwDEXZsFKX6QiswAaswBmp6okTUk/cESzhJsGB2NAWUIOs4idxIMGm/EdCE1BEoCKEoCKEoCKEoCKEoCKEEFFEA+m1hLTG06/0kN9KSExNcq3ggaNnQY6IrobLCQV4jhOBQefFHd96c9xqaO1cXU1j5rgUvSuh43fIu2HY8shM78L2xLknigxrsgbv63sw0ey+5KUhdcFvisTBIsxD2XAcw/z4gHxFuJCC8Nm5FUGC5f3HIP01w9ZHJfN635+v5o2rewcHi5i/1TS4N6Eh4fWk1jLrP+/R2tXoaoY5Huw0Hz94jlARy0FMQa0XEfbgQYfb0nhgT3ctG4vJqUXw/osE35GY34m/35qWRSz3/4Sr9X8uIiBUhGHNx3q3CAPvT+TwFbNd3FbkirAE2wIN7QciDO587M+CJvdm94pARBHKFlSEEFSEEFSEEFSEEFSECABeJd9iXoHBG2sAAAAASUVORK5CYII=" InformativeScreenshot="bfc47ca73ed14405d7d854ae6bf498a7.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*CashPro*' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Fecha Inicial &quot; + in_StrDate]" />
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into Init Date in_StrDate" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="Simulate" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Text="[in_StrDate]" Version="V3">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="https://cpoinforeporting-proda.bankofamerica.com/inforeporting/PreviousDayReports.jsf" CvType="InputBox" DesignTimeRectangle="546, 418, 122, 28" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT irCustomStepOne:F…'" FullSelectorArgument="&lt;webctrl tag='IFRAME' /&gt;&lt;webctrl tag='IFRAME' /&gt;&lt;webctrl tag='INPUT' name='*FromDateInputDate' /&gt;" Guid="099beca3-9ea8-44df-9f1b-6a7c854d505b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAH4AAAAgCAYAAADUp8wPAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEESURBVHhe7ZQxCsIwGEY7iKdx8xhugh7CycUjOOkBRC+hozgIdtapnRwFXbMILhL5a1PT2EDX5PsePJL8ZHskiVJKUzwZHtQqfJ7nFMDG8CRuGB4UhgeF4UFheFAYHhSGD5jV/q6741RvDo9y8sU3t2H4gOmM0tpq8M1tGD5Alrub7k3POhmeirOscja6c7nvwvABIkGNz9e7dvbNXRg+QOygbXVh+ACxQx4zVe60Xmx/X7o9Z/hIYHhQJKREFgfzrNr3Z5fGOcNHAl88KAwPioQ03zi/eiD44kFheFAm62sRs61y34XhQWF4UBgeFIYHheFBYXhQvOFp/P6Fp1gyPKRKfwBbhSHtbMDYQgAAAABJRU5ErkJggg==" InformativeScreenshot="964c6a65fda8ea05dd1019dd85741781.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*CashPro*' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Fecha Final &quot; + in_StrDate]" />
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into End Date in_StrDate" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="Simulate" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Text="[in_StrDate]" Version="V3">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="https://cpoinforeporting-proda.bankofamerica.com/inforeporting/PreviousDayReports.jsf" CvType="InputBox" DesignTimeRectangle="758, 418, 122, 28" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT irCustomStepOne:T…'" FullSelectorArgument="&lt;webctrl tag='IFRAME' /&gt;&lt;webctrl tag='IFRAME' /&gt;&lt;webctrl tag='INPUT' name='*ToDateInputDate' /&gt;" Guid="3e3138b7-a689-4dc5-a521-193f489bdbe0" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAH4AAAAgCAYAAADUp8wPAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEESURBVHhe7ZQxCsIwGEY7iKdx8xhugh7CycUjOOkBRC+hozgIdtapnRwFXbMILhL5a1PT2EDX5PsePJL8ZHskiVJKUzwZHtQqfJ7nFMDG8CRuGB4UhgeF4UFheFAYHhSGD5jV/q6741RvDo9y8sU3t2H4gOmM0tpq8M1tGD5Alrub7k3POhmeirOscja6c7nvwvABIkGNz9e7dvbNXRg+QOygbXVh+ACxQx4zVe60Xmx/X7o9Z/hIYHhQJKREFgfzrNr3Z5fGOcNHAl88KAwPioQ03zi/eiD44kFheFAm62sRs61y34XhQWF4UBgeFIYHheFBYXhQvOFp/P6Fp1gyPKRKfwBbhSHtbMDYQgAAAABJRU5ErkJggg==" InformativeScreenshot="b1adac1bfca60b61f7d400b904e9f59b.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*CashPro*' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Clic Estados Cuentas&quot;]" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click AccountStatements" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://cpoinforeporting-proda.bankofamerica.com/inforeporting/PreviousDayReports.jsf" CvType="Text" DesignTimeRectangle="116, 586, 166, 14" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Reporte de'" FullSelectorArgument="&lt;webctrl tag='IFRAME' /&gt;&lt;webctrl tag='IFRAME' /&gt;&lt;webctrl tag='A' aaname='Reporte de actividad de cuenta' /&gt;" Guid="1084bd4a-bf34-42ab-90b1-b29349645ff2" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAKoAAAASCAYAAADL70WaAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANDSURBVGhD7VdbauQwEJwbDuQyA3sBX2FuMFfwd2AI+zFf/s1/SC6hlbr1qG6rZa0n2cWggkBktUrV1WWTnNzAwAEwgjpwCIygDhwCI6gDhwAE9d1NL6/upH8ui/uIFT+Oz8WdXx7uLS53YXl43U9ydOBjvrvT9Z0X4c4Nn96ur+48f8UVYJfeL3e7GHwCvXX/AyFvd3f7jMsNrII6LXFJ+MeNHjWoz2AEtQsbQa0MhIzVX1s2ZJpD0HhPmEMBjGdwKPQluvPe5bf7pWuscxpQN13V4Kt616A+U50yEPeoL+QM3lAfnnv1opVhiC9qQ29LR+Cg55eHmxoBNOt6/YxZEHW6t9RzXFo+U9++x3wv7XFeuD71iM9SXcHffVFJrCKmEKdLsKlUx7yJg0xMIqg5GIYwQ+oR5wQq/FUdqFeBdJQhEEeqEwMJdzGfeIFzDd+RPYSzNDDS2NDb0MEBxr5gLgC7rtdP2UPuU8zGA31p+Cz6i3qYu3gZgL1qrQHbf6Pmw1E0NqcGhMaFi2mtG8Sm1GBEbWsPUeXnta23jTwcj9yHAtYgLxqOZ9t+VPryaOmwdJl1e/1M0M+h55bP4f6SIXwJZFAl1AvvYX9RSZgkIkE6yCR+TWwahAKhIQKaQef0XZXGND9w2Ho14lcA68jc9QuYYAW1/C4H0ReYfh06kIxG3V4/E7aCuuLmWqmT9VWDSvySoy+oHiygiBPDEdAGwVo3SOvOoOKehSo/r229ElQHd+G5eiAUt9AaB7B4HcCZebb0duqwdJl1e/1MUM9Rq/BCQeqxglrPT3dQVwQktrwFQQSL5bpshKhj3sRRzni0gqr0kBk1A5VG4k91pl4JGRC+Nxlf2wuaxHBUH6wBjednvLb1tnTQHaIvyZ9h1vX6WakLmiIXP2/NW/pc+g7gc8wR7jGCSj0UDQEbQfWgQ0VEIuGf1GgUQP/B8p7giU3KMx6BCwach6OM5nOgQQPqzvPiOdQdmaM2mIB0b6xRulLwmF+aSUHSfdCe1CsGZurt1fFwNx+gEgAJs26Hn+gZhzuenWs9r8/YQY1hTzrwvPdUnhNBfQYoYGDg+zGCOnAIfFNQBwZ+FiOoA4fACOrAAeDcH965OlFkZMjaAAAAAElFTkSuQmCC" InformativeScreenshot="2450632a29e69cb1846187e8fb11c06c.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*CashPro*' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="-8, -8, 1382, 736" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGKSURBVDhPpZExSMNAFIYvEVzaRU29JK3SRClCQYfSXEoriIPOIh2KghSKNhlcXBQVdRZnNxEdnVwcHBxcnQTF1eTSokUnFxExviuktvYGg8NH7v3v/x/vEeT7/r/gimHgimHgigF1NTfmxY0UrxfQLaJiD8Vk3VXMTXcwNwvfLSqTE082lrq8wM9Dq2BRs/aRtjJxn073QqAIwQsPkw3Wb8Smoq5MyqAfPEoZpZVDaTsq6vauoFtXSKsaaKQ6LSStO6RZi8zQPEMmRzDsDbhxsVG6xTMRqpgLcN4AQkmrCuYKGi3HYINjQbMaSLdLbAsqGzvAOww4d1RSeMLjEdhiDQbVmQ7v7dYJom7twYBTlFqWXMWYBNMD8EwVYw4WFSg2V6F+AT5c2Tz04iTRPCEYEABTbTB9AWd1NSO5Ul71FHIJtQ9cOzirt/s7wk3gL9RUM8/eVCHzEHoFPtk5rPfb31G0U1OzQxCkVDYddhLPw+CKAc5woY8mcv1gE3l9BlcMA1cMA1f8Oz76Bi8FejtDME1IAAAAAElFTkSuQmCC" InformativeScreenshot="d0c1d47f1a9dc695d1aa8f630bb2b858.jpg" Selector="&lt;html app='msedge.exe' title='*CashPro*' /&gt;" Title="Nuevo Telecrédito" />
+            </uix:NApplicationCard.TargetApp>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </uix:NApplicationCard>
+          <Assign DisplayName="Assign out_BooGenerateAccountsReport" sap:VirtualizedContainerService.HintSize="484,82" sap2010:WorkflowViewState.IdRef="Assign_3">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Boolean">[out_BooGenerateAccountsReport]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="550,394" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Exception" sap:VirtualizedContainerService.HintSize="496,325" sap2010:WorkflowViewState.IdRef="Sequence_8">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Error" Message="[&quot;Mensaje Excepción &quot; + exception.Source + &quot; - &quot; + exception.Message]" />
+              <Assign DisplayName="Assign out_StrExceptionMessage" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_2">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[out_StrExceptionMessage]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">["Mensaje Excepción BOFA_GenerarInformeCuentas " + exception.Source + " - " + exception.Message]</InArgument>
+                </Assign.Value>
+              </Assign>
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+      <TryCatch.Finally>
+        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;¿Generó Informe Cuentas? &quot; + out_BooGenerateAccountsReport.ToString]" />
+      </TryCatch.Finally>
+    </TryCatch>
+  </Sequence>
+</Activity>

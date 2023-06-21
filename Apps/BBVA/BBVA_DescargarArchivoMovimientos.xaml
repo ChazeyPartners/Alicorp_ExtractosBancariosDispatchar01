@@ -1,0 +1,293 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="BBVA_DescargarArchivoMovimientos" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_StrAccount" Type="InArgument(x:String)" />
+    <x:Property Name="in_StrDate" Type="InArgument(x:String)" />
+    <x:Property Name="in_StrPathDownload" Type="InArgument(x:String)" />
+    <x:Property Name="in_StrCopyFile" Type="InArgument(x:String)" />
+    <x:Property Name="in_StrGeneratedFilesPath" Type="InArgument(x:String)" />
+    <x:Property Name="out_BooDownloadFileMovements" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="out_StrExceptionMessage" Type="OutArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>655,5495</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>BBVA_DescargarArchivoMovimientos_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="BBVA_DescargarArchivoMovimientos" sap:VirtualizedContainerService.HintSize="646,5430" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Try Catch BBVA_DescargarArchivoMovimientos" sap:VirtualizedContainerService.HintSize="584,5319" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="546,4582" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Consultar Histórico Movimientos&quot;]" />
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: BBVA Net Cash" sap:VirtualizedContainerService.HintSize="484,4186" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="1eb5f751-33f6-42ea-8da3-1c02483ebfff" Version="V2">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,3969" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Clic Zona Descarga&quot;]" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click DownloadZone" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1eb5f751-33f6-42ea-8da3-1c02483ebfff" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://bbvanetcash.pe/SPEKYOP/kyop_mult_web_pub/index.html#" DesignTimeRectangle="28, 457, 180, 20" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Zona de Descarga'" FullSelectorArgument="&lt;webctrl id='kyop-boby-table' tag='TABLE' /&gt;&lt;webctrl aaname='Zona de Descarga*' tag='A' /&gt;" Guid="b912ed64-1502-4963-b0fb-e9297773dac2" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAALgAAAAYCAYAAABJLzcpAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKMSURBVHhe7ZexjsIwDIZ5QZ6KN2G7jZkJiTfgBRhYEAiJjTHXOE5qu05buOsNuX/4JNokjp18TcTq9XoFAFoFgoOmgeCgaSA4aBoIDpoGgoOmgeCgaXzBL/ew/rqGlWV3D2ev/4Kcj+/Pe9ibvCP7h9sXtM3ME/wZtrtrWB+fTtuyfCy4EjrlD8n/H7MErwrDp+PmxO/p5L+FjThBS1sHycrvI9tL36Y43frxMVYRvDKvYZhvB99KZU51S93CofTVc6iPWo4RH12trpjHmmOlOCL2rlun7nepQdQcqdUG3mNacFp4KQALlDeYN4Y2lQXIUgz79XFcCSMcI20wC8Ex1Bg5rxxv+xVSrBT3ETZCIpknyVrGxn455zRGyRvrHKlLxo3P6jbi/CkH8/F9cmsBn3HBzcInpCj9M2227R83sbJRWiSBHVOetZTDPHomBTdSprzT8+y8KsjxOg9/3bz8584FphkRvLYBVjRxmglRqE1tVIqXr2DCEWlwehnB1fiOfFtIfMFF3iT4MJY8nfO7XGf9VK3XVdaF+o1/oHJOAoL/ClXBfUkiVvz0PCW4FWT2SWkE17eJj5u7vF3sHFXEnJUxY3Vpwf11o+cYu3owgJ/gCz6xwCRQbqfNYQlmC86nsfsByZMuSZDHKXFZ2F6YnqHgHKe806cp5cZ5ayljP65HfiDcL8Ybq0vHMmvA6zYUXNecx4LPcATnBY4bNcBsAr8vko0IXjY/x1FtBt58in3sYpZ+el4pj4Tk4z4FJXwHC5vb+5tB5mk+IJHXnLqs4Cr//Z1+p/i6ru3JrCP4mPE/mWA5zI0AlgGC/yH2ZlG3A1gECA6aBoKDpoHgoGkgOGgaCA6aBoKDhnmFbzogs/5HCghnAAAAAElFTkSuQmCC" InformativeScreenshot="79b330c0604be342aa0d50ec3a55da2d.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='BBVA *et *ash' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Clic Exportación&quot;]" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Export" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1eb5f751-33f6-42ea-8da3-1c02483ebfff" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://bbvanetcash.pe/SPEKYOP/kyop_mult_web_pub/index.html#" DesignTimeRectangle="287, 388, 72, 12" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Exportación'" FullSelectorArgument="&lt;webctrl id='kyop-boby-table' tag='TABLE' /&gt;&lt;webctrl tag='A' aaname='Exportación*' /&gt;" Guid="912bb38f-47ef-4ff8-b2e2-47b05cb0ede7" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEwAAAAQCAYAAAC825mnAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGXSURBVFhH7ZWxjoMwDIZ5wz4Wj1J1ZGYvC8stfQWKEBIDuy+x48ROOSAq5VQpvxS1SZzk9xdHFJCVpAwsURlYojKwxwDFbYDGdbf0PrB+hMvtaQ7V7XKfXcAHhGfuTzJohmv1hPLhukZN3cO1d50dOghY2qFvK7Eq/tYMXaJvD6xt28W2qTVgKrEJSld53b2Hoh7xtrEi6wkjULgmGrdj1QClja/Nr5qnqvFrqhE6WmWqJ4xTVekKQx9u3r8IeVa0n9VBwIIxbtIUQ2JTZJQhE0iMV/ApOVyDEMWlyIvoJ2j8Zdm9XJyK4ScsgMl56UGdJcadXoCx0oCJZBaENy1uiiosVJWd92CW4lRyRnFfVRl5ic8gBWCrHvzeuiKtTgDGyYQEDwWG/zmpUGGnAYvbpjaAWWPeiDOIZr2pvU9yBRhDxnG3Xsb4fQUAtWf8JHn8Y8D4OYhmkvixYHzFBAAIrDIgOVZWAhqOxlUSRnwmzlOyFE8fEk6QLobmEHwE4HXeaC+wM0XAwtP7JmVgifoXYN+sDCxJAL+RVPSSK4m6FwAAAABJRU5ErkJggg==" InformativeScreenshot="b611e755474cd70acdda171dfa0c0d22.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='BBVA *et *ash' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Seleccionar CSB 43&quot;]" />
+                  <uix:NCheck Action="Check" DisplayName="Check/Uncheck CSB 43" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NCheck_1" ScopeIdentifier="1eb5f751-33f6-42ea-8da3-1c02483ebfff" Version="V3">
+                    <uix:NCheck.Target>
+                      <uix:TargetAnchorable BrowserURL="https://bbvanetcash.pe/SPETLCL/tlcl_pe_web/servlet/PIBEE?proceso=tlcl_c43_generar_exportacion_pr_multipais&amp;operacion=tlcl_c43_generar_exportacion_op_multipais&amp;accion=verFormatos" DesignTimeRectangle="483, 330, 23, 21" DesignTimeScaleFactor="1" FriendlyName="'unchecked'" FullSelectorArgument="&lt;webctrl tag='IFRAME' /&gt;&lt;webctrl tableCol='3' tableRow='1' tag='LABEL' /&gt;" Guid="ed443946-4b6d-4e46-945e-57c506451261" ImageBase64="" InformativeScreenshot="f962da4d6cfc6de47415b953b69c4f16.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='BBVA *et *ash' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NCheck.Target>
+                  </uix:NCheck>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Clic Aceptar Formato&quot;]" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click AcceptFormat" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1eb5f751-33f6-42ea-8da3-1c02483ebfff" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://bbvanetcash.pe/SPETLCL/tlcl_pe_web/servlet/PIBEE?proceso=tlcl_c43_generar_exportacion_pr_multipais&amp;operacion=tlcl_c43_generar_exportacion_op_multipais&amp;accion=verFormatos" DesignTimeRectangle="779, 531, 63, 30" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Aceptar'" FullSelectorArgument="&lt;webctrl tag='IFRAME' /&gt;&lt;webctrl tag='INPUT' type='button' aaname='Aceptar' /&gt;" Guid="c265cd90-b415-410b-abad-8ba786d76879" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEMAAAAiCAYAAAAEYmSMAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANiSURBVGhD7VnJUlNREH0/w1+4doMDIkMQZ0VxlY/ApfM8YRicZ78goDJvgYC40KqE7AiLWIZVe/revi/3vbzWQBVlyeNWnTqv+/S9r/vkZpFK8PNXjXZhsWuGh9CMpR9laslcpGBPNjVoyQxQAXM3mMFCcOQRBRc+UtD/IR2MefkCNJhh3Dr/3qJfOA0x5k4249xbFLxLF6tm9EHse+MhBbFqxtnXdXBxGmLVjDOv0gfVjNMvgJfpYtWMU8/TB9WME08pOPkMEA5jwU7UdTOeCFCUyDtQV804NkrBcRQZBv4az1G+SkSlb03Wby3OlYgqi3NN128q1s0YqeOo95wE1j+tw4h1KtA65ZL0eM7HJnRrxqyqJ6JZXTWjdwhFw00zN1kYt2ya9fXRMlVwacyqlinr8uMw0C0vb88ow1hZpRWTzy5uSIL1GZw/a2+jW3yGea/NV6q2nvuK9KOxbkYOP14AZgcXx7l3xd4IjkcwuGnK6axtUH7ExmbQBQzCdS7fOyNfMR7a1lCo8X4eKLbf1cmeaF30vBCu3zg7qGb0PEYx0DOosKeP43MvfZV4Co3UKD8s+hi06iplY/uzC7Vo3quzQ7rzBm2txNaM6ej7DfN7YcYYx9P2Zpi66HvrDMTzuhkQM/gZnxH+Q5wrovnYqixMGT0ytLff5BtWhXJyntvP9aEZiEONzxterX/9ZBkzMs6Y5H7VWDWj+yGKAMMoTmRgiBvCTRjy8qZJHgzP7hOP7TcDFpcTzzXmsibvr8eeGd2T8ulPyj4bF8b4HGeG3R8/v84xXTWj60FTyM7zJ1+ibCS/bL+/eTzjXhuzclYLB0vKyznmmc2MnyVaZR4GdIkZ5hla3t4RWyfGyJ6moZrReQ8F9y13Crs45AlpaKJBD4fjWBo1ywwsdX6e1jC8zZuBi2uwwy7/fGO+y/n7i0tiFPLSVyEv71H7j+mqGR13/xnsUF8StW2Fasbh28Adiw5mLzbYPt2a8VnVLbZ+vqqrZrRDbL8l7LDDY9WMQzcBFLcJpyFWzWi7kT6oZhy4RsHB6+li3YyrFOwHmB1MjE2R2MP/rqtm7LuCYiBNnGSG+Z917wAFrZdRBLReEnZxnHeAjnn5b9UGMwrf+Y9nmME3JCXgC7CIuRvM2MWuGR5q9BuhJnoteMDb8wAAAABJRU5ErkJggg==" InformativeScreenshot="fd15bd20de0309226e1b2907e0b89a73.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='BBVA *et *ash' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Seleccionar Cuenta &quot; + in_StrAccount]" />
+                  <uix:NSelectItem DisplayName="Select Item in_StrAccount" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NSelectItem_1" Item="[in_StrAccount]" ScopeIdentifier="1eb5f751-33f6-42ea-8da3-1c02483ebfff" Version="V3">
+                    <uix:NSelectItem.Items>
+                      <scg:List x:TypeArguments="x:String" Capacity="18">
+                        <x:String>00110249000100003818 PEN </x:String>
+                        <x:String>00110377900100011922 USD </x:String>
+                        <x:String>00110377970100011914 PEN </x:String>
+                        <x:String>00110586520100031938 PEN </x:String>
+                        <x:String>00110586520100032004 PEN </x:String>
+                        <x:String>00110586540100030990 PEN </x:String>
+                        <x:String>00110586540100031008 USD </x:String>
+                        <x:String>00110586550100032012 USD </x:String>
+                        <x:String>00110586560100011740 PEN </x:String>
+                        <x:String>00110686330100011949 PEN </x:String>
+                        <x:String>00110686340100002826 USD </x:String>
+                        <x:String>00110686340100009286 USD </x:String>
+                        <x:String>00110686350100000025 PEN </x:String>
+                        <x:String>00110686360100012546 PEN </x:String>
+                        <x:String>00110686390100000491 PEN </x:String>
+                        <x:String>00110910720100004124 PEN </x:String>
+                        <x:String>00110910730100103289 USD </x:String>
+                        <x:String>00110910780100016874 USD </x:String>
+                      </scg:List>
+                    </uix:NSelectItem.Items>
+                    <uix:NSelectItem.Target>
+                      <uix:TargetAnchorable BrowserURL="https://bbvanetcash.pe/SPETLCL/tlcl_pe_web/servlet/OperacionCBTFServlet" DesignTimeRectangle="709, 330, 176, 60" DesignTimeScaleFactor="1" ElementType="DropDown" FriendlyName="'00110249000100003818 PE…'" FullSelectorArgument="&lt;webctrl tag='IFRAME' /&gt;&lt;webctrl tag='SELECT' /&gt;" Guid="c358d16b-564b-498b-98f1-5a9f1efd9b75" ImageBase64="" InformativeScreenshot="3a151840d1e109ed46195bd5e8c31d77.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='BBVA *et *ash' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NSelectItem.Target>
+                  </uix:NSelectItem>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Fecha Inicial &quot; + in_StrDate]" />
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into Init Date in_StrDate" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="Simulate" ScopeIdentifier="1eb5f751-33f6-42ea-8da3-1c02483ebfff" Text="[in_StrDate]" Version="V3">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="https://bbvanetcash.pe/SPETLCL/tlcl_pe_web/servlet/PIBEE?proceso=tlcl_sym_histmov_pr_multipais&amp;operacion=tlcl_sym_hmconfigurarseleccion_op_multipais&amp;accion=consultar" DesignTimeRectangle="538, 353, 168, 30" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT fechaDesde'" FullSelectorArgument="&lt;webctrl tag='IFRAME' /&gt;&lt;webctrl tag='INPUT' name='fechaDesde' /&gt;" Guid="729e0ce5-fcec-4fef-bbe5-3a10c56334ff" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAKwAAAAiCAYAAADCizJwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEfSURBVHhe7dzBasJAAEXR/v+HFmmqdZFIQiWjV0lqQKW7mQf3wFsly8vsZj6KFMRgFWUT7DD0peu+ym736Vz10SJNPlqD5cN+3133fdvh4Fy9LR3SZN//RbsGS83H4085nYYyjmOZJjY5V2HjrUFapEnaXKzBcgTzw/n8W+Z5dq76aJEmaXOxCZaq+VFqAS3S5MtgOYoNVq2gRZp8E+xksGrGPdjJYJXBYBXFYBXFYBXFYBXFYBXFYBXFYBXFYBXFYBXFYBXFYBXFYBXFYBXFYBXFYBXFYBXFYBXFYBXlH8F6CVHtuAf74hIijxVwB9xg1QpapMmnD2nwVBFPxCxvEzhXe7RIk0+fKgIfqJkj2Lnao8XHWLEJVmqdwSpIKRfPDmit/H9m1gAAAABJRU5ErkJggg==" InformativeScreenshot="175b5037c30dfc949c369dc67a1bc3ee.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='BBVA *et *ash' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;Fecha Final &quot; + in_StrDate]" />
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into End Date in_StrDate" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="Simulate" ScopeIdentifier="1eb5f751-33f6-42ea-8da3-1c02483ebfff" Text="[in_StrDate]" Version="V3">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="https://bbvanetcash.pe/SPETLCL/tlcl_pe_web/servlet/PIBEE?proceso=tlcl_sym_histmov_pr_multipais&amp;operacion=tlcl_sym_hmconfigurarseleccion_op_multipais&amp;accion=consultar" DesignTimeRectangle="513, 353, 168, 30" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT fechaHasta'" FullSelectorArgument="&lt;webctrl tag='IFRAME' /&gt;&lt;webctrl tag='INPUT' name='fechaHasta' /&gt;" Guid="ddd67b13-67a1-4ad1-90bf-f4cede3cc54a" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAKwAAAAiCAYAAADCizJwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEfSURBVHhe7dzBasJAAEXR/v+HFmmqdZFIQiWjV0lqQKW7mQf3wFsly8vsZj6KFMRgFWUT7DD0peu+ym736Vz10SJNPlqD5cN+3133fdvh4Fy9LR3SZN//RbsGS83H4085nYYyjmOZJjY5V2HjrUFapEnaXKzBcgTzw/n8W+Z5dq76aJEmaXOxCZaq+VFqAS3S5MtgOYoNVq2gRZp8E+xksGrGPdjJYJXBYBXFYBXFYBXFYBXFYBXFYBXFYBXFYBXFYBXFYBXFYBXFYBXFYBXFYBXFYBXFYBXFYBXFYBXlH8F6CVHtuAf74hIijxVwB9xg1QpapMmnD2nwVBFPxCxvEzhXe7RIk0+fKgIfqJkj2Lnao8XHWLEJVmqdwSpIKRfPDmit/H9m1gAAAABJRU5ErkJggg==" InformativeScreenshot="6f5a86bc550c1d39206799a118466ef5.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='BBVA *et *ash' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;Seleccionar Incluir Conceptos Asociados Saldo&quot;]" />
+                  <uix:NCheck Action="Check" DisplayName="Check/Uncheck IncludeBalanceAssociatedConcepts " sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NCheck_2" ScopeIdentifier="1eb5f751-33f6-42ea-8da3-1c02483ebfff" Version="V3">
+                    <uix:NCheck.Target>
+                      <uix:TargetAnchorable BrowserURL="https://bbvanetcash.pe/SPETLCL/tlcl_pe_web/servlet/OperacionCBTFServlet" DesignTimeRectangle="494, 417, 23, 19" DesignTimeScaleFactor="1" FriendlyName="'unchecked'" FullSelectorArgument="&lt;webctrl tag='IFRAME' idx='1' /&gt;&lt;webctrl tableRow='1' tag='LABEL' tableCol='1' idx='1' /&gt;" Guid="2d19a7e2-0222-4a1f-8e0e-8a87d9abe419" ImageBase64="" InformativeScreenshot="4dd2ed0709b5f9d7e4fe18f9c6bdb84a.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='BBVA *et *ash' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NCheck.Target>
+                  </uix:NCheck>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Info" Message="[&quot;Seleccionar Incluir Conceptos Asociados Movimiento&quot;]" />
+                  <uix:NCheck Action="Check" DisplayName="Check/Uncheck IncludeMovementAssociatedConcepts" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NCheck_3" ScopeIdentifier="1eb5f751-33f6-42ea-8da3-1c02483ebfff" Version="V3">
+                    <uix:NCheck.Target>
+                      <uix:TargetAnchorable BrowserURL="https://bbvanetcash.pe/SPETLCL/tlcl_pe_web/servlet/OperacionCBTFServlet" DesignTimeRectangle="494, 447, 23, 19" DesignTimeScaleFactor="1" FriendlyName="'unchecked'" FullSelectorArgument="&lt;webctrl tag='IFRAME' /&gt;&lt;webctrl tableRow='2' tag='LABEL' tableCol='1' /&gt;" Guid="c4e947bf-1302-4ac3-b57a-909bf76b3e67" ImageBase64="" InformativeScreenshot="eda49534a4a46c4e6d2f00249866d465.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='BBVA *et *ash' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NCheck.Target>
+                  </uix:NCheck>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info" Message="[&quot;Clic Aceptar&quot;]" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Accept" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1eb5f751-33f6-42ea-8da3-1c02483ebfff" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://bbvanetcash.pe/SPETLCL/tlcl_pe_web/servlet/OperacionCBTFServlet" DesignTimeRectangle="808, 578, 63, 30" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Aceptar'" FullSelectorArgument="&lt;webctrl tag='IFRAME' /&gt;&lt;webctrl tag='INPUT' type='button' aaname='Aceptar' /&gt;" Guid="1dee745f-bb21-461f-a1ef-cf44a0feb2e5" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEMAAAAiCAYAAAAEYmSMAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANvSURBVGhD7VnJUhRBEK2f4S88e1EQFHRENnc89Ufg0X1FAUfAffcHbMYIQDjDNKAHjZiBG80Bw5lT+rKWnuqyOmJwCSOmpyJevMp8VVmVr4sDMeL7jxq1odA2w0Jixtq3LeooXCSxL8gVOgpjFKH3lBmcFP2TJEbfkbjwPj+MnvkRpMyQTp1/28CoNW/1GL17zHhD4tzr/LHXjLOvAIiSDXIQZ5px5mUDeYm9Zpx+kU94zTj1HHiWP/aacfJpPuE1Y+QJieHHikc0J7FGK+peM4YfWcAiL7eg7jVjaJbEIDCERZKbiD/uEFGdwtkM/S/EQblOVP3S9Po9x14zBmfSGHBiFwPLFO7WKarWKS4ve3QndtGknpiRoWeiWd1rxsA0iRMPm+fZLYp3tyhgph0qOnqxikejR1Qy+SUYqJMYSb6EF4ZaYbJH1+O8GdXPsq40Jxn8Khvnxfg4POLy0q/3zWKvGf1FiIBhAzevmS8lD0XMF4lKDV19Tb484hltll6X5GWjaGbGzHUTzrpgVdfic+U61OL9gL1Ozvnj8DqtS5jYZQO/GQ9IHAckT2Ww0RfxhWsUTuv8XIxLbWj9k/z6UYnX2fs3KMJ9G3lrHe+HZUVTf3oTEcdTMKOmaqfOV3UTDbEyxqyzz7UZcPNeMwr4F55F5oLmrFhe1h3q8qKwrpqec/ervDvi1UVlxu4mBan6lhkVNCnP54+gN5pRWZf1ixVdKznPPT8jzjTj2AQYkGxilyfkwfISVl5dZgHxgvribEZqH5vBrwnzVB5sXoaMAStWZnDDk2rOpul9iYa4cT40U9fLju414+j9JqG/fJjOByt80SoFmCdmsYb3G7MJRV9e1wnVOzM17XWyrj3XZ5h7GE2asQIzpLYH+M24R6JvvMF9TmxYXnybiq6eNMfxfOo5R6FZl87HK/MqH26jyZgio3HDpr42iipriNesPzW8HLmP145rM3Q93pd1f1f3mtF79//hg27Kp/1reM04cge4rRnodeJ/qUszKhT87v4/0b1mHIYgccua5yD2mtGDRT03FXdrzkPsNaP7Rj7hNePQdRJd1/LHXjO6rip0ak7F2NSquteMziskDgJ5Y9cM+Tvr/jGIl0kcACRfcmKXW0BHz/zTasqM6Cv/8Awz+IXkCPwIyug9ZUYbbTMs1Ognt+o9U8u6Z+UAAAAASUVORK5CYII=" InformativeScreenshot="f866e7ee11ddf711fd518d08e15090d7.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='BBVA *et *ash' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Info" Message="[&quot;Clic Descargar Archivo&quot;]" />
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\UiPath\UiPath_LimbiarDescargas.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Apps\UiPath\UiPath_LimbiarDescargas.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_StrDownloadPath">[in_StrPathDownload]</InArgument>
+                      <OutArgument x:TypeArguments="x:Boolean" x:Key="out_BooDownload">[out_BooDownloadFileMovements]</OutArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="5" DelayBefore="5" DisplayName="Click DownloadFile" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1eb5f751-33f6-42ea-8da3-1c02483ebfff" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://bbvanetcash.pe/SPETLCL/tlcl_pe_web/servlet/OperacionCBTFServlet" DesignTimeRectangle="780, 378, 120, 30" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Descargar Archivo'" FullSelectorArgument="&lt;webctrl tag='IFRAME' idx='1' /&gt;&lt;webctrl name='DescargarArchivo' tag='INPUT' type='button' /&gt;" Guid="64d478ee-6183-4b05-b1df-f1c782139e68" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHwAAAAiCAYAAACdmr05AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAS9SURBVHhe7VtZbxxFEJ5fQ34R9x2SOFwZ7uPHwHL62oQzQMK1QBznLc4ljY0EtpHwEjvSyI72IX5p6uzp6ene3QeE4t4uqVRT9/HNWLIlFybTTFEGfMbIAr69d9ccK/umePC9zAnxA2fOErZKFnB0FC9/Y4p3fzXFO79kmYo88y19yEoWcHoj3h5kTpEBW6U24G/+ZIq3fs4yNTkW8Dd+zDI1GQX89R84wJXKvj37j44/Cvhr32dOkaOAv3LBFK9ezDI1ORbw8ruGs56GHgUcfmezjIFZT0OPAo5/eMmcHkcBf/FrU7x0frLs3zG15DV0aAb9KfOPnLxlBiNYcfjXlPGevHLXmNEdUwb8vX+MqX+/Fc77r2QU8Be+mo77ewA4AuzYrhxAFc+WCuNuwwNTmQPTC/knMeaP9kwZ8v0fHAX89BemeP7LhmP6sgC+3Pb3hlBouN3WheqNm03+Kr4cSnBEiUe/m1Otav1tOLZD2gPrjA75pw0eFPLLjUMKwZevGsKznecmf6VKEq/2GuogVasyi8yDEmdCO0raQ/2B/nwbIbTZuD0zsLvJzrIv1ZQYikemOnqb9ux2RpnPckwfC/jc5yyVQ7oLuOvXoeGZDo/PNl4AnEPwJFfi6o0b9pkAwlq68NwNBkRiiiWnN/ZzarXmOi0vidSjFwmfaV728Txc3/bt7IuxMAc+Y33Zj3x+f6rb6AwmzE1x4X42RnOXuL+9BcxDs2tfv2dn3oAeBfzUZxwwSS7u8mEXPftlAfzUdQZp/br102Kk42L3eLFWXT5EterbfenkYz8EQ/zl+j0+UkRvJM9XXUbdeaE6cSDxwMMtJ8/Z2+vf7O/VGTNncxd3ju58zV0mzBuSUcBPnpuOCXA4+mLbTouMdk158hoN1aEdOJzNF6J4zN8CIHHJdk1iOphL0psOrPnnTG8HXNoDmOYJ9RTiXjxrsC8w1fSoXr/Gfq9/s3+7RjBO5sL6Ws/aaVZ4QSi+exc3ZyqOAv5c3xQnznalsuoLAvhC288H34S4NT7iSiTfkbwk5JyQw6/4cZu8sLWjjr1BX9nnQ0p9W0vy/dr1+hrZ2/PF+oK0e3J9spNt3/RQ9/pb3a+zIoCL7s5pwcM4qg1AYx27hz+f7gI5Wl9ZdV+OBfz48mTpAq52HBJt86yXFSyFS5KfQaODz9/mg0kexpEd9OaFgXoUh/UUcKeu9qED3+ZDdubiPK631gCOcTSrAH6cfVrf7gOSgHHrk3TmGdvf2ceL6wIuc8mcSO48VEfzvTtz3gQZBfzZJQ6YJAkMn3CIdhwNqoQLip1BE8JFbP2rdmGk6lI3vq42G4AuySGd+ZrYfTPAZ+0rIBPt/MmHrq5CngO4U0ftdQVgtOwOAIH+rT7oQ7sXRzPKXM0cnM/zywdh64bv0vgnyCjgzywmxHwkOmbQP0McBfypeVM8vXB05W/O14X09x/T5aUuo4A/+SkzBupz1o++HgX8iU8yp8hRwB//OHOKHAX80Q9N8dhHWaYmo4A/8kHmFDkK+MM95ofeb55DnP1hu/L95g8BfqzkP8FRMLL7HOLsD9uV7xc/SPw3MiUL+NbuAf9/GQZmTobxQ0ZslSzgmWaDMuAzRcb8C0M8W/HheTDGAAAAAElFTkSuQmCC" InformativeScreenshot="302298e85dab50ec4b15ce976735fe43.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='BBVA *et *ash' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="-8, -8, 1382, 736" BrowserType="Edge" IconBase64="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" InformativeScreenshot="9e3fba2eefb497f18da9a3722ecbbf71.jpg" Selector="&lt;html app='msedge.exe' title='BBVA *et *ash' /&gt;" Title="BBVA Net Cash" />
+            </uix:NApplicationCard.TargetApp>
+          </uix:NApplicationCard>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\UiPath\UiPath_Descargar.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="484,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Apps\UiPath\UiPath_Descargar.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_StrDownloadPath">[in_StrPathDownload]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_StrCopyFile">[in_StrCopyFile]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_StrGeneratedFilesPath">[in_StrGeneratedFilesPath]</InArgument>
+              <OutArgument x:TypeArguments="x:Boolean" x:Key="out_BooDownload">[out_BooDownloadFileMovements]</OutArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="550,394" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Exception" sap:VirtualizedContainerService.HintSize="496,325" sap2010:WorkflowViewState.IdRef="Sequence_8">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Error" Message="[&quot;Mensaje Excepción &quot; + exception.Source + &quot; - &quot; + exception.Message]" />
+              <Assign DisplayName="Assign out_StrExceptionMessage" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_2">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[out_StrExceptionMessage]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">["Mensaje Excepción BBVA_DescargarArchivoMovimientos " + exception.Source + " - " + exception.Message]</InArgument>
+                </Assign.Value>
+              </Assign>
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+      <TryCatch.Finally>
+        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Info" Message="[&quot;¿Descargó Archivo Movimientos? &quot; + out_BooDownloadFileMovements.ToString]" />
+      </TryCatch.Finally>
+    </TryCatch>
+  </Sequence>
+</Activity>

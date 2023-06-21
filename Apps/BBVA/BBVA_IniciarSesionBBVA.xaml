@@ -1,0 +1,284 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="BBVA_IniciarSesionBBVA" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_StrURL" Type="InArgument(x:String)" />
+    <x:Property Name="in_StrCompanyCode" Type="InArgument(x:String)" />
+    <x:Property Name="in_StrOrchestratorFolderPath" Type="InArgument(x:String)" />
+    <x:Property Name="in_StrOrchestratorAssetName" Type="InArgument(x:String)" />
+    <x:Property Name="out_BooLogin" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="out_StrExceptionMessage" Type="OutArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>655,4298</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>BBVA_IniciarSesionBBVA_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="BBVA_IniciarSesionBBVA" sap:VirtualizedContainerService.HintSize="646,4233" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="ss:SecureString" Name="vSstPassword" />
+      <Variable x:TypeArguments="x:String" Name="vStrUsername" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Try Catch BBVA_IniciarSesionBBVA" sap:VirtualizedContainerService.HintSize="584,4122" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="546,3030" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Iniciar Sesión BBVA&quot;]" />
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Edge: in_StrURL" sap:VirtualizedContainerService.HintSize="484,322" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="50578787-3f80-485e-9440-4c4ad5cac324" Version="V2" WindowResize="Maximize">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="-8, -8, 1382, 736" BrowserType="Edge" IconBase64="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" InformativeScreenshot="338bd5cd0e7d7ccc71b2d83dda48d7fe.jpg" Selector="&lt;html app='msedge.exe' title='BBVA *et *ash' /&gt;" Title="Nuevo Telecrédito" Url="[in_StrURL]" />
+            </uix:NApplicationCard.TargetApp>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </uix:NApplicationCard>
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: in_StrURL" sap:VirtualizedContainerService.HintSize="484,2303" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="50578787-3f80-485e-9440-4c4ad5cac324" Version="V2" WindowResize="Maximize">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,2086" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Código Empresa&quot;]" />
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into in_StrCompanyCode" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="Simulate" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Text="[in_StrCompanyCode]" Version="V3">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="https://bbvanetcash.pe/local_pibee/KDPOSolicitarCredenciales_es.html" DesignTimeRectangle="134, 287, 346, 26" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT empresa'" FullSelectorArgument="&lt;webctrl tag='INPUT' aaname='empresa' /&gt;" Guid="49fe7553-5557-406a-a3d5-0a6583f375db" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAV4AAAAeCAYAAABkBHbCAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAH2SURBVHhe7Z27jsIwFAX3/7+NEkEJAlFQ8H4/vTqRTuREJOsQrasZaSobl6OrKMQ/AQAAskJ4AQAyUwnv7XYLi8UiDIfDMBgMEBGxh2qpmqq2xpTh1cJoNAqTySQsl8uwWq1K1+s1IiImGLdTLVVT1dY4vmV4VWVt+HQQIiJ+73Q6LRpryvBqJFadvXGz2SAiYg/dU7VVjTVlePU8Iv7Bdrst3e12iIiYYNzOuKlqrKmENw7tfr+veDgcEBGxxXo34xA3htfB9SHH47HwdDohImKC7mYcY7W1MbyOrmN7Pp8LL5cLIiIm6G46wo5vY3i1wcHVAdfrtXgFAhER01U7HWE1VW1tDK+j6+De7/fCx+OBiIgJupsOsOPbGF5Puo6uDnk+n4Wv1wsREVt0Lx1gtdSTb2t4Veg4ujrs/X4jImKCDrDj66m3MbzxtFuPLgAAtFOPbzz1/hleT7tEFwCgG+6mp95O4fW0CwAA3VA71VDCCwCQCcILAJAZwgsAkBnCCwCQGcILAJAZwgsAkBnCCwCQmeTw6loKfayX8AIA9KMeXrX149U/uohtNpsRXgCAntTDO5/PP192qcXxeFxs0Lcj+cswAEB33E01VC1VU9VWNdaU4RVaUJU1Eut5BCIifq9aqqbG0RWV8AIAwP9DeAEAshLCL5vvB/sztG0lAAAAAElFTkSuQmCC" InformativeScreenshot="44482d48f5d35858f2eb4ce03c082cc0.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='BBVA *et *ash' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                  <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_StrOrchestratorAssetName]" CacheStrategy="None" DisplayName="Get Credential in_StrOrchestratorAssetName" FolderPath="[in_StrOrchestratorFolderPath]" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[vSstPassword]" Username="[vStrUsername]" />
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Código Usuario&quot;]" />
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into vStrUsername" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="Simulate" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Text="[vStrUsername]" Version="V3">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="https://bbvanetcash.pe/local_pibee/KDPOSolicitarCredenciales_es.html" DesignTimeRectangle="134, 344, 346, 26" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT usuario'" FullSelectorArgument="&lt;webctrl tag='INPUT' aaname='usuario' /&gt;" Guid="73ec2c40-c2f5-4d38-b765-ce52306c34c4" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAV4AAAAeCAYAAABkBHbCAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAH2SURBVHhe7Z27jsIwFAX3/7+NEkEJAlFQ8H4/vTqRTuREJOsQrasZaSobl6OrKMQ/AQAAskJ4AQAyUwnv7XYLi8UiDIfDMBgMEBGxh2qpmqq2xpTh1cJoNAqTySQsl8uwWq1K1+s1IiImGLdTLVVT1dY4vmV4VWVt+HQQIiJ+73Q6LRpryvBqJFadvXGz2SAiYg/dU7VVjTVlePU8Iv7Bdrst3e12iIiYYNzOuKlqrKmENw7tfr+veDgcEBGxxXo34xA3htfB9SHH47HwdDohImKC7mYcY7W1MbyOrmN7Pp8LL5cLIiIm6G46wo5vY3i1wcHVAdfrtXgFAhER01U7HWE1VW1tDK+j6+De7/fCx+OBiIgJupsOsOPbGF5Puo6uDnk+n4Wv1wsREVt0Lx1gtdSTb2t4Veg4ujrs/X4jImKCDrDj66m3MbzxtFuPLgAAtFOPbzz1/hleT7tEFwCgG+6mp95O4fW0CwAA3VA71VDCCwCQCcILAJAZwgsAkBnCCwCQGcILAJAZwgsAkBnCCwCQmeTw6loKfayX8AIA9KMeXrX149U/uohtNpsRXgCAntTDO5/PP192qcXxeFxs0Lcj+cswAEB33E01VC1VU9VWNdaU4RVaUJU1Eut5BCIifq9aqqbG0RWV8AIAwP9DeAEAshLCL5vvB/sztG0lAAAAAElFTkSuQmCC" InformativeScreenshot="8fe2023284ebbd72efbc2f169cd66ee9.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='BBVA *et *ash' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Clave Acceso&quot;]" />
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into vSstPassword" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_3" InteractionMode="Simulate" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" SecureText="[vSstPassword]" Version="V3">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="https://bbvanetcash.pe/local_pibee/KDPOSolicitarCredenciales_es.html" DesignTimeRectangle="134, 402, 346, 26" DesignTimeScaleFactor="1" ElementType="InputBoxPassword" FriendlyName="'INPUT clave_acceso'" FullSelectorArgument="&lt;webctrl tag='INPUT' aaname='Clave de acceso' /&gt;" Guid="422f9b2e-043c-41f8-8789-110fa559281b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAV4AAAAeCAYAAABkBHbCAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAH2SURBVHhe7Z27jsIwFAX3/7+NEkEJAlFQ8H4/vTqRTuREJOsQrasZaSobl6OrKMQ/AQAAskJ4AQAyUwnv7XYLi8UiDIfDMBgMEBGxh2qpmqq2xpTh1cJoNAqTySQsl8uwWq1K1+s1IiImGLdTLVVT1dY4vmV4VWVt+HQQIiJ+73Q6LRpryvBqJFadvXGz2SAiYg/dU7VVjTVlePU8Iv7Bdrst3e12iIiYYNzOuKlqrKmENw7tfr+veDgcEBGxxXo34xA3htfB9SHH47HwdDohImKC7mYcY7W1MbyOrmN7Pp8LL5cLIiIm6G46wo5vY3i1wcHVAdfrtXgFAhER01U7HWE1VW1tDK+j6+De7/fCx+OBiIgJupsOsOPbGF5Puo6uDnk+n4Wv1wsREVt0Lx1gtdSTb2t4Veg4ujrs/X4jImKCDrDj66m3MbzxtFuPLgAAtFOPbzz1/hleT7tEFwCgG+6mp95O4fW0CwAA3VA71VDCCwCQCcILAJAZwgsAkBnCCwCQGcILAJAZwgsAkBnCCwCQmeTw6loKfayX8AIA9KMeXrX149U/uohtNpsRXgCAntTDO5/PP192qcXxeFxs0Lcj+cswAEB33E01VC1VU9VWNdaU4RVaUJU1Eut5BCIifq9aqqbG0RWV8AIAwP9DeAEAshLCL5vvB/sztG0lAAAAAElFTkSuQmCC" InformativeScreenshot="6b979b2e764e287dfb17a510581bc1ee.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='BBVA *et *ash' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Clic Ingresar&quot;]" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Enter" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://bbvanetcash.pe/local_pibee/KDPOSolicitarCredenciales_es.html" DesignTimeRectangle="134, 485, 346, 34" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Ingresar'" FullSelectorArgument="&lt;webctrl tag='BUTTON' aaname='Ingresar' /&gt;" Guid="89a946e1-2eef-40b8-b2e9-cf58ab33a0ec" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAV4AAAAmCAYAAACMLfMCAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMDSURBVHhe7dzBShtBGMDxPuZ6icQ3Kdoo0ntLFYPPYCVCLj6BxGh6MUXQiKKCpgrR09dMdmZ3NrubNbudaWr/H/zANM6sh/LvdpL4QRiGYRivQ3gZhmE8Tyq8Vw8v8mnvTOo7XQm+HQMASlANbYxbev34ousaTyK8vcuh1LY6EjTaEqy2JPj4HQBQhmroeluWx039MRjqyoYThffqYSTL2+PoZm0AAChteftYboavurZWeDf2++GdbsYiAEAFG23ZbPV1ba3w1psnHC8AgAtrLVlpdnVtrfBODoSzFgAAqhs31gzhBQAfCC8AeEZ4AcAzwgsAnhFeAPCM8AKAZ4QXblzIQP1lGt3LbubzwH+M8MINwgvkIrxwYyq8B/fyrB/37tQX4TyfnybWHUbPvUrvIG+PJxmM1Bfx+nidmic5tPYMOk/6z/VM/2Mw/by9fsY1gdIIL9zIiWZqVGDDNbvn8S8OmczoNYp19h7h2mR09RRd9+4i/Dnnfj7+eYHSCC/cyAuvCdep9PQd5KBjfX/02Apx7h7WOvM91rrJPmaNCWkR8/0zrwlURHjhRt4xQUEgreffskccxvSERwJx4M1kHxXE4Z/MrGsCVRFeuPH3w5u8y31jWIseA38C4YUbc4bXCmPhUUMiglPXKWTugMOjA3ON6C7YvNA285pARYQXbswbXiu0ZvJeXJuKYOaLa+ZMNvWOBT16j9Q1zRRcE6iE8MKN+cOrxBFVb+kq3iO9Lhx7z5lvF5s6A1brwr10uAkvXCC8WAxxAKP/9hM9vFeEF4si+8iADyzgHSK8WBzpt369+f23wL+E8AKAZ4QXADwjvADgGeEFAM+ywltvnkiw2speAAAob60lK82urq0V3s39vgSNdvYiAEB562353Pqpa2uF9/rxRWpbnexFAIDSalvHcvsr/qh6FF41vctHWfpyNKkzxw4AUIFq6LilS1+PpH+T/Ah7IrxqbsZ3vo29M6nvdMMX3AAAc1MNVS29HaZ/KVMqvAzDMIzbIbwMwzBeR+Q3gbtYnBpiksQAAAAASUVORK5CYII=" InformativeScreenshot="cc5dd9dbc4365ff14b3a818f82074e55.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='BBVA *et *ash' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Clic Close Pop&quot;]" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click ClosePop" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://bbvanetcash.pe/SPEKYOP/kyop_mult_web_pub/external/op_new_dashboard_ES.html?LOCALE=es_PE&amp;pb_cod_ffecha=dd%2FMM%2Fyyyy&amp;pb_cod_fimporte=0%2C000.00&amp;pb_husohora=%28GMT-05%3A00%29&amp;cb_cod_prod=007&amp;cb_segmento=10&amp;id=00000584OPERAD01" DesignTimeRectangle="1041, 118, 28, 28" DesignTimeScaleFactor="1" ElementType="Icon" FriendlyName="'IMG'" FullSelectorArgument="&lt;webctrl tag='IFRAME' id='kyop-lightbox-iframe-div' /&gt;&lt;webctrl tag='IMG' src='*close*' /&gt;" Guid="7624a49c-68dd-4e19-86bd-4f7a2d89092e" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHhSURBVFhH1Ze9SgQxFIW3sbP0AUQFfQFtfRhbwcLGbhWt1MaXsLEVsRB8AIsVXXbRBYVpFkHxDxQtvO43kDETb2YyOkv0wGFnk5t7zmaSm2xDIuP/GPgY8CR5keZBX+Z3ejK11pHR5bOUPNNGHzHEhqLUAMn2Wg8ys9GVxmIriMQyJsRIoYHruzeZ3bpQRULIWHIUwWvguPcsYyvnauIqJAe5fFANMGBk6VRN+BOSy2fimwGmrI5f7pKc2uvIGWDR/Oadl5Hc7sLMGWDlagPrJBo2MgM4m173b7WF3UT2248yOdjzWj8cb3Zk8+imMA9b1J6FzAAFRBtgiDhI7t9VE7TRBzDh9ttEyyAzQBXTgg0nVr8EXBO2OJ/MhD3WJVoGmQFKqRZs0xXiu9uGUW2sTbQMMgPUcy3YpStYVRyiZZAZ4FDRgjXaJgDPtGmxGtEy+DsG6ngFoSbUV1DXIgwxoS7Csm1YJFTVhLoNywpRu/+axvkEbBMULbffplqIKI9Ft57D7lNqomirYQJxyrbWD72lGEQ9jADOhnkcz21f5n49yBkAUS8kBlGvZAYMqGMmyOETB14D4Oo24rXcgEXDyo3yx8QGySggVDFKKfWcQwXyTBt9xIQIGwQbGBYiGxD5BNCZJogylp/CAAAAAElFTkSuQmCC" InformativeScreenshot="b811d0634b3db15f46c97481c452cf8c.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='BBVA *et *ash' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="-8, -8, 1382, 736" BrowserType="Edge" IconBase64="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" InformativeScreenshot="c1a0a8b467ca5d9d402256eef9f536b3.jpg" Selector="&lt;html app='msedge.exe' title='BBVA *et *ash' /&gt;" Title="Nuevo Telecrédito" Url="[in_StrURL]" />
+            </uix:NApplicationCard.TargetApp>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </uix:NApplicationCard>
+          <Assign DisplayName="Assign out_BooLogin" sap:VirtualizedContainerService.HintSize="484,82" sap2010:WorkflowViewState.IdRef="Assign_5">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Boolean">[out_BooLogin]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="550,394" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Exception" sap:VirtualizedContainerService.HintSize="496,325" sap2010:WorkflowViewState.IdRef="Sequence_7">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Error" Message="[&quot;Mensaje Excepción &quot; + exception.Source + &quot; - &quot; + exception.Message]" />
+              <Assign DisplayName="Assign out_StrExceptionMessage" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_2">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[out_StrExceptionMessage]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">["Mensaje Excepción BBVA_IniciarSesionBBVA " + exception.Source + " - " + exception.Message]</InArgument>
+                </Assign.Value>
+              </Assign>
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+      <TryCatch.Finally>
+        <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="496,447" sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;¿Inicio Sesión BBVA? &quot; + out_BooLogin.ToString]" />
+          <Assign DisplayName="Assign vStrUsername" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_3">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[vStrUsername]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[Nothing]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Assign vSstPassword" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_4">
+            <Assign.To>
+              <OutArgument x:TypeArguments="ss:SecureString">[vSstPassword]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="ss:SecureString">[Nothing]</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </TryCatch.Finally>
+    </TryCatch>
+  </Sequence>
+</Activity>

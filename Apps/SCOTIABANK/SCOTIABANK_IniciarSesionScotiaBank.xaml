@@ -1,0 +1,407 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="SCOTIABANK_IniciarSesionScotiaBank" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_StrURL" Type="InArgument(x:String)" />
+    <x:Property Name="in_StrConventionNumber" Type="InArgument(x:String)" />
+    <x:Property Name="in_StrOrchestratorFolderPath" Type="InArgument(x:String)" />
+    <x:Property Name="in_StrOrchestratorAssetName" Type="InArgument(x:String)" />
+    <x:Property Name="out_BooLogin" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="out_StrExceptionMessage" Type="OutArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>658,5978</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>SCOTIABANK_IniciarSesionScotiaBank_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Net</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Net.Primitives</AssemblyReference>
+      <AssemblyReference>System.Net.HttpListener</AssemblyReference>
+      <AssemblyReference>System.Net.WebProxy</AssemblyReference>
+      <AssemblyReference>System.Net.NameResolution</AssemblyReference>
+      <AssemblyReference>System.Net.WebClient</AssemblyReference>
+      <AssemblyReference>System.Net.Requests</AssemblyReference>
+      <AssemblyReference>System.Net.ServicePoint</AssemblyReference>
+      <AssemblyReference>System.Net.WebHeaderCollection</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="SCOTIABANK_IniciarSesionScotiaBank" sap:VirtualizedContainerService.HintSize="668,5913" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="ss:SecureString" Name="vSstPassword" />
+      <Variable x:TypeArguments="x:String" Name="vStrUsername" />
+      <Variable x:TypeArguments="x:Boolean" Name="vBooCharacter" />
+      <Variable x:TypeArguments="x:Boolean" Name="vBooEndAnotherSession" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Try Catch SCOTIABANK_IniciarSesionScotiaBank" sap:VirtualizedContainerService.HintSize="606,5802" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="568,4710" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="506,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Iniciar Sesión SCOTIABANK&quot;]" />
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Edge: in_StrURL" sap:VirtualizedContainerService.HintSize="506,322" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="50578787-3f80-485e-9440-4c4ad5cac324" Version="V2" WindowResize="Maximize">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="-8, -8, 1382, 736" BrowserType="Edge" IconBase64="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" InformativeScreenshot="5d41ca82344f88b8c035d2953fcf83d7.jpg" Selector="&lt;html app='msedge.exe' title='Telebanking' /&gt;" Title="Nuevo Telecrédito" Url="[in_StrURL]" />
+            </uix:NApplicationCard.TargetApp>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </uix:NApplicationCard>
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: in_StrURL" sap:VirtualizedContainerService.HintSize="506,3983" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="50578787-3f80-485e-9440-4c4ad5cac324" Version="V2" WindowResize="Maximize">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="472,3766" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="410,92" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;Número Convenio&quot;]" />
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into in_StrConventionNumber" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="410,218" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="Simulate" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Text="[in_StrConventionNumber]" Version="V3">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="https://bancainternetempresas.scotiabank.com.pe/main/loginPage" CvElementArea="875, 236, 379, 33" CvTextArea="879, 242, 168, 17" CvType="InputBox" DesignTimeRectangle="880, 235, 368, 34" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT input-nro-convenio'" FullSelectorArgument="&lt;webctrl id='input-nro-convenio' tag='INPUT' /&gt;" Guid="eeab34a0-ee3e-44d3-a0f4-259425ffc86a" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAXQAAAAmCAYAAADUUmAbAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAboSURBVHhe7Zz/h+tMFIff//+vqBBCCCGEUEIoIT+FUsqylLKUpZRLOO858yWdTJJtu5vrurmfh7A7nWZmTjbPTGYm+x8BAABYBRA6AACsBAgdAABWAoQOAAArAUIHAICVAKEDAMBKgNABAGAlQOgAALASIHQAAFgJEDoAAKwECB0AAFbCokLv3rYUbjYUZC19diZxhZzLiDabiMqzSQBPIX8fcRhRvr+ZFADAkjhCbyljGW+CjKbvtzOVEX8elfzTBN0bbUP9+WnFMheWFnr3eaQqiykIOH5yDTYBRWlJx5X1it0hp4Dbl7YQOgC/g7HQ1Qh7T+Nb7muhf7QZRUFM5dptziwp9O5UUaziHlG63VHTNFSXHEuT9i/EEwCwDJNClxFifvBF8mCE/g+xnNBNTIOUGn80fq0pkWsR7+hikgAA4CvGQk8yyuTRP9zS28AxY6HPia3NON8m4zNq+nz7lvI44J/l84DCtKL3X+yuY0lpeE+P85Y+PL/JtESZhuqRXT1FxDm1biZ+QpD0rD5QEelzZbYCdKVjlVHsTGnEeUNnLvshV12u/V6YllQXE+3uPulYphTaMvhpJW8/yO8WB5gpiLiaUnbHH0s7Yto5H3cfLRWJE4cwpfL4OSinj/dxGDOp+/FqMr3r9Y5R2ZedemIIt28mgejXufGum3Mewcae29vm8b1u0cw16q+L5nqsKOvPr69t89TFAQC4jIXOd9u1TdVNKTf1/Xb8qdAlLaRkW1PT1L0kg1CEE1JaDtMj96RXrpvqZFhedcP5dpTJfL0rOyMLdc4opTzPafcuH9xon2lZRLmd0mDxSt5H8/3dSbd5ot7Ddl+5eCnDtqOhXabzxa6NPfr4nUyCR3f7pMvlk262judKT8WECW1NHAolwoAleTesPm9AQRD0bd4VWrSyYK2n08z19J4AbnWi2mF93p1KVWYQF7Tj8zT1lhK5FkFO/UOciX0QhBQmW6q9GPdhmhD6bZ/pDoDlr88vnTv/ruLy1cUBAPhMCl0JKhVRuDfVT4UeUOpIR8qoE8nnp9vF1cqUc9OyDFIafl1PSQT5Qf9upSIdkk7RmJFoxNZ09XDl/CKS6dGx5qLktqGkds/Y0bEQWd/bfVPnmmmfiM+k+Og4jeM3zY2aVM7nxcF2Oo5gbQc6bPPNxDujvUnR+dwnAFMGP52pvtC55q5b7W6mvrOaif3bVsepsu0bCf19eiHdduBxhekmAF5gRuiMncPtb7YFplwm87Gg3JuZUem2nE7Xqxd3z4V2sZNvJAuNlspw2kJjOo7ZOeqOOzXTDq9+w/ZwPqnvhLgvu9jJN+Ylod+8DsxBj6pl3UP/Phfvk0q/Xxe66AXZpDZL4CbW4VbrnE+kRufjp4wD5SJcG+yZ2Hf8pDeoh5/P7xgc5q8bAGCOeaEzWkg80lNDrN8ldEcwhoHQjVSkHpPHA6HPlSGoz2ZH0OP2WobtMfn8evXHuN0WXbf5zweYOAymoiyeeOfirdPdWFyokk4xqdU0jN5WGJL1uY3p7PFA6DrdqYefb+57gvrs3kkBAB7zpdD7UTDflNX5zwpdFlBlLnh07E9KRnNymCujH4EvJfQwpWqqfs2eTuM9oIr+PM/MoX8ldDPP/brQZZAunXZKDddRLcL20y2MiWlcTLWLjzczfJ4Ts0p36uHnm/seo0f3EDoAr/BA6IxdiItzyv+E0J2pBm/mY8iMHJaYcrFzzpZhe8zctDOH/TSv7HJZYMplSuh22iVrjyoe/XSLYKdEvlhnUHxX6JhyAWBRHgudxaLnXkVufDhC16MouUFdk5nH+KWEzufTi3kxVd5exuuhob3dvz0nlR8sit4aPUocLnZa0d7bYxdP48rbpng98BPEcEvhEDO69xc6hdE+9FcXRZ8Uun0KC0OOk/+dIxV2R8tgFyH/TbSN2nKq+K7QsSgKwKI8IXSm376nb77+nr81lEpaYLbR1SVlNt9iQpfi9ZSC7O0udvpx327Di8p3Ul6ZkwqL8LdvW+zzBRQXuoxmV+h971xGL74J+rbx+TKz5fH+pih3Ym4FX9q2+KzQWelmrWRwbQ2247tvGbUxkI7uU2f6ttD56mDbIgCL8ZzQGbtVzb/p9UtBcgPKoV8K2nvi+KnQhfELNQkVzVnLXJgVurDsi0XH2hOV0H1QWyTOi0XcCRTPldH/LxdVhnyX65dVk//L5aUXi7x4zwndvkw0OT/PjF/8yahyy/yB0AW8WATAMjhCBwAA8DcDoQMAwEqA0AEAYCVA6AAAsBIgdAAAWAkQOgAArAQIHQAAVgKEDgAAKwFCBwCAlQChAwDASuiFrv7/CA4cOHDg+OsOC0boAACwEiB0AABYBUT/A/w9GubyedLsAAAAAElFTkSuQmCC" InformativeScreenshot="16b08f6cced3cbb8f90b33ee4668f191.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Telebanking' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                  <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_StrOrchestratorAssetName]" CacheStrategy="None" DisplayName="Get Credential in_StrOrchestratorAssetName" FolderPath="[in_StrOrchestratorFolderPath]" sap:VirtualizedContainerService.HintSize="410,143" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[vSstPassword]" Username="[vStrUsername]" />
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="410,92" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Número Usuario&quot;]" />
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into vStrUsername" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="410,218" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="Simulate" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Text="[vStrUsername]" Version="V3">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="https://bancainternetempresas.scotiabank.com.pe/main/loginPage" CvElementArea="875, 306, 375, 35" CvTextArea="879, 314, 155, 17" CvType="InputBox" DesignTimeRectangle="880, 307, 368, 34" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT input-nro-usuario'" FullSelectorArgument="&lt;webctrl id='input-nro-usuario' tag='INPUT' /&gt;" Guid="b807e542-7b69-4b78-b90e-d11885e6fb58" ImageBase64="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" InformativeScreenshot="6ffcded890a6af229d523a36157234a0.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Telebanking' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="410,92" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Clave&quot;]" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Password" sap:VirtualizedContainerService.HintSize="410,157" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://bancainternetempresas.scotiabank.com.pe/main/loginPage" CvElementArea="877, 380, 371, 33" CvTextArea="878, 386, 46, 17" CvType="InputBox" DesignTimeRectangle="880, 379, 368, 34" DesignTimeScaleFactor="1" ElementType="InputBoxPassword" FriendlyName="'INPUT input-password'" FullSelectorArgument="&lt;webctrl id='input-password' tag='INPUT' /&gt;" Guid="c1363b8e-f811-4ff0-ac5e-11881ccd6e5e" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAXQAAAAmCAYAAADUUmAbAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANZSURBVHhe7dzhh+NMAMfx+///igpDCCWEEEoIIeRVeChhWZa+CktZlvJ7ZpJJmqa9u3W33N7c98O8SDfp9tW30+mk3wQACAJBB4BAEHQACARBB4BAEHQACARBB4BAEHQACARBB4BAEHQACARBB4BAEHQACMSvB73LtNvtlHX+GADwR90H/f2kttgrjnZjsHe7SFGSqz29+xM8gg4AX8pt0M+dMuMibpTkpZq2VVsXSsbHIhvvsz/RIugA8KWsgv5mGx3ZSMc6PG9m45cnHVzUo1zHi3+MoAPAl3IN+lArsYGO8qPmZq8NVTLO0u2fJ4+C7pdrzLxcExmlZa9lXv98kLGPJ9XgH/D8/zaHJ/+Ae6pWeeLeYKZPByYt1a8+IAAAbl2D7gOddo9ybr2fNQyDzvPkfRv0y4vK2MU3Vl63attWdWbGc+Lq5E86TecktdZJf2v29jyjueeXl1KxvS5KCtVu2ac5aO/eJNafEAAAN5agn8r4NtA/sw36sZAxRvl/6+IOqhIbYnPQPPee/k+iein6m9p0Oud5PPbRj0u9rJ7q8uRn99cLAQArnxf07+gyG+ddpuW0oRqXV/bN23R86ZTZY3OYcm5fyDg7vw/3UbmbpX/4BQLAv+VTg3557VVliaJly+M8VkGfZ+37xs7N7TXHXJFbbvE9n5/3u4OgA8BDn7eGfm6VuuCaTPXxeTzXjcYtp9wEff6CNVVri37Mo9Vyi+WfNymmdfi78cSSCwA8cg36b+5yOVVuhh+rnL//9O6WXBy/7JJ1/bgdcllucea18u1OGADAD12DvtqHXq6/jXQ+sA99WrJx107Ho2XnyyboGlSPX5YaG+/tm0CvYt7RcrMd/qKXrtV2izwAYLIKuuXuFB3Xv42Sop6WOJY7RY2N9w/uFPV7zHcmUVG3asrcX+fGNujuA4Gb8du/xaU2k3r7MjJF43OlKhu31NKoTN0WyEhp9+rPAgCs3Qbd2d4cZCMa74sP/ZbLuS+VzhH3NxX1j2bujl/iibdrNN65r5QtNxa5PemZqv714XIQAOBR0AEAfyWCDgCBIOgAEAiCDgCBIOgAEAiCDgCBIOgAEAiCDgCBIOgAEAiCDgCBWIJ+9zO1DAaDwfgrxowZOgAEgqADQBCk/wFnfVbF/g4xuwAAAABJRU5ErkJggg==" InformativeScreenshot="43525ccf1825dbc4b5a4ab4efa104f4c.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Telebanking' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each vSstPassword" sap:VirtualizedContainerService.HintSize="410,950" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[New System.Net.NetworkCredential(String.Empty, vSstPassword).Password]">
+                    <ui:ForEach.Body>
+                      <ActivityAction x:TypeArguments="x:Object">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="x:Object" Name="currentItem" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,764" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <uix:NCheckState DisplayName="Check App State vBooCharacter" EnableIfExists="False" EnableIfNotExists="False" Exists="[vBooCharacter]" sap:VirtualizedContainerService.HintSize="334,177" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
+                            <uix:NCheckState.IfExists>
+                              <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </Sequence>
+                            </uix:NCheckState.IfExists>
+                            <uix:NCheckState.IfNotExists>
+                              <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </Sequence>
+                            </uix:NCheckState.IfNotExists>
+                            <uix:NCheckState.Target>
+                              <uix:TargetAnchorable BrowserURL="https://bancainternetempresas.scotiabank.com.pe/main/loginPage#" CvElementArea="855, 496, 38, 37" CvTextArea="869, 508, 8, 15" CvType="Button" DesignTimeRectangle="857, 498, 35, 35" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'1'" FullSelectorArgument="[string.Format(&quot;&lt;webctrl aaname='{0}' tag='A' /&gt;&quot;, currentItem)]" Guid="c38a2e55-8531-4728-945a-97aad1de5c63" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACcAAAAnCAYAAACMo1E1AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAD/SURBVFhH7ZgxDoJAEEU9IA2Nl7DZ2t6GxsZz0NBYGSsCJtRgQWNDSKi4wNdfLFkIJrrRZY1TvGQ3M8l/melm1fc9fOV35Lquw7WqkKUpzqeTM5jHXOabPoMcC5c8R1WWaNt21PRtmMdc5puCgxzN2aD/SzB1GOQ4WtcTm8J8euj/IMfd6/eSmB4i9w4iZ4vI2fKHck2F40FhG9fz9Rf5rNytQBJtEAYBggfKH7kasQqxVhGSIsHOL7kOTaPfGfZ+yZmInC0iZ4vI2SJyyyJytoicLSJny6yc17cSr69M+j7HBtcTZB5zn97nCAs052i5e1cwj7mmGBnJ+YbHcj3u1d1Ruh5A/LYAAAAASUVORK5CYII=" InformativeScreenshot="7426e54e683049e4f2cab5739b3d5010.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Telebanking' /&gt;" SearchSteps="Selector" Version="V2" />
+                            </uix:NCheckState.Target>
+                          </uix:NCheckState>
+                          <If Condition="[vBooCharacter]" DisplayName="If vBooCharacter" sap:VirtualizedContainerService.HintSize="334,262" sap2010:WorkflowViewState.IdRef="If_2">
+                            <If.Then>
+                              <Sequence sap:VirtualizedContainerService.HintSize="300,80" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </Sequence>
+                            </If.Then>
+                            <If.Else>
+                              <Sequence sap:VirtualizedContainerService.HintSize="376,245" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Caps" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NClick_6" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
+                                  <uix:NClick.Target>
+                                    <uix:TargetAnchorable BrowserURL="https://bancainternetempresas.scotiabank.com.pe/main/loginPage#" CvElementArea="1087, 632, 72, 37" CvTextArea="1108, 646, 28, 10" CvType="Button" DesignTimeRectangle="1088, 633, 70, 35" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Caps'" FullSelectorArgument="&lt;webctrl aaname='Caps' tag='A' /&gt;" Guid="d2e31a49-ee55-4177-b899-d47bde6e9ecb" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEoAAAAnCAYAAACout71AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIqSURBVGhD7ZqhjqRAEIbvAcdgMGPOoM5gxmBGYc6MweDXYDCYUeSSTTbsJRjM9gkMpjNJK17gP4oZ2IYMeyUmJDeU+ALdVZD0l6omIf2tbVsI/0ZEMZmIMsbgj1Io3t7wK883Ca2dHJAL280oigK/39+hPj5wuVwmSVuC1k4OyIUtaxRFFilhGG+duY9RFJXclitpDrkgJ8N4FEX9OdwLV2wnIuoLRBQTEcVERDERUUxEFBMRxUREMRFRTEQUk9VF6SpF6DnY7XZwvBDn2o43yA4Owtz+rVEj9Xd9fo/jIUwr6DvvSittPfdY1hVlcoSOj0RdRegiguclUENcJfB/nhAGGZphrhflIx2EGoWkHzfdvIe4ukmlZ90I5fjcY1lXVHGCG5XWnIYqqlFKGZFEuh6RNUPOPVHf8aI0zsc9gqREY64xo6c/2B7JqqLq1Ief1ndjbVsiOt4qqauOY6Ju8/PW2+MQl33rUew1DuC5zpO13hcVZfIQziCDGNtoVlEjBtqqIEOtt3+W1hv3qOv4c4/q2igIcNafuerFR1TS/ZKoAicnQFbfZDXn7t0nFJOcx7GuqA5dxt2mS18qB64f4ZX2oibD4WBv4B1dhfwIc5hFUbOvnusjLp6l9f5jRBQTEcVERDERUUxEFBMRxUREMRFRTO6KkrMHUxbPHshplimLp1mG81GUsOXKorWTg8XzUQQFyCKVHPXnFqG1kwNbEjERJSwjoli0+AvuH1FkzRJ9/QAAAABJRU5ErkJggg==" InformativeScreenshot="71b8bcb094b646d98f7d9ca9293d7ff8.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Telebanking' /&gt;" SearchSteps="Selector" Version="V2" />
+                                  </uix:NClick.Target>
+                                </uix:NClick>
+                              </Sequence>
+                            </If.Else>
+                          </If>
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click currentItem" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable BrowserURL="https://bancainternetempresas.scotiabank.com.pe/main/loginPage" CvElementArea="855, 496, 38, 37" CvTextArea="869, 508, 8, 15" CvType="Button" DesignTimeRectangle="857, 498, 35, 35" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'a'" FullSelectorArgument="[string.Format(&quot;&lt;webctrl aaname='{0}' tag='A' /&gt;&quot;, currentItem)]" Guid="20be4dae-f3b9-4d66-b5dd-87eb0d403201" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACcAAAAnCAYAAACMo1E1AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAF3SURBVFhH7Zghj4MwGIbvB9ZgMJgZ1JmamfMYzMwMfgaDwS+XkCzsEkzNOoE5Q0hQ/IH3+t0F0u24bNdwrJdUPAktX/I++ShN06e+72Er/0eu6zqcpUR5OOB1v18MyqNcytd9Rjl68XY8Qp5OaNv2ouivoTzKpXxdcJQjcyoYxo/g2mGUo9Yu3bFrKJ88hvEoR99+eH4kuoeT+w1OzhQnZ4qTM8XJmTKzXAORRQh9D4wxeMEaSdlM1N3HrHJyF4J5HLuqRtOos2DC4bEQqZyuv8WMcgIpX+Elr7W5ArHqIM/0ufuZtXPfKbGxRq4RyOM1Ao99rrkBC+Qk0pAhiHKI9+F4XSPjNsjVGbjq0qbU5wWSlRWdq7D11fbBExSihqxybJ+/thQ71pzMEYW+2j6UpM+xLUr1B6t1FxfT9TeYV25mnJwpTs4UJ2fKpJzVdyVW3zIN93NUsHQHKY9yf7yfI+gFmVNr6dsvBeVRri5GXMjZhsVyPT4AqSI9STUY5KQAAAAASUVORK5CYII=" InformativeScreenshot="f75f8262bc59f291448f847bd445af02.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Telebanking' /&gt;" SearchSteps="Selector" Version="V2" />
+                            </uix:NClick.Target>
+                          </uix:NClick>
+                        </Sequence>
+                      </ActivityAction>
+                    </ui:ForEach.Body>
+                  </ui:ForEach>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="410,92" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Clic Ingresar&quot;]" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Enter" sap:VirtualizedContainerService.HintSize="410,157" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://bancainternetempresas.scotiabank.com.pe/main/loginPage#" CvElementArea="848, 602, 400, 45" CvTextArea="1005, 615, 87, 16" CvType="Button" DesignTimeRectangle="850, 603, 398, 43" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Ingresar'" FullSelectorArgument="&lt;webctrl id='btn-login-pass' tag='BUTTON' /&gt;" Guid="8a979792-35af-4403-830d-367d3b599a32" ImageBase64="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" InformativeScreenshot="8d9ee159b7e2488968873662280c7449.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Telebanking' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="410,92" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;Validad Finalizar Otra Sisión&quot;]" />
+                  <uix:NCheckState DisplayName="Check App State vBooEndAnotherSession" EnableIfExists="False" EnableIfNotExists="False" Exists="[vBooEndAnotherSession]" sap:VirtualizedContainerService.HintSize="410,177" sap2010:WorkflowViewState.IdRef="NCheckState_3" Version="V3">
+                    <uix:NCheckState.IfExists>
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </uix:NCheckState.IfExists>
+                    <uix:NCheckState.IfNotExists>
+                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </uix:NCheckState.IfNotExists>
+                    <uix:NCheckState.Target>
+                      <uix:TargetAnchorable BrowserURL="https://bancainternetempresas.scotiabank.com.pe/main/" DesignTimeRectangle="422, 364, 254, 46" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'sí, finaliza'" FullSelectorArgument="&lt;webctrl tag='A' aaname='sí, finaliza la otra sesión' /&gt;" Guid="0cfe9539-0b08-4f38-ac11-6022810637eb" ImageBase64="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" InformativeScreenshot="0e69d623326de598fd69a3826af6b226.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Telebanking' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NCheckState.Target>
+                  </uix:NCheckState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="410,92" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Info" Message="[&quot;¿Finalizar Otra Sisión? &quot; + vBooEndAnotherSession.ToString]" />
+                  <If Condition="[vBooEndAnotherSession]" DisplayName="If vBooEndAnotherSession" sap:VirtualizedContainerService.HintSize="410,559" sap2010:WorkflowViewState.IdRef="If_3">
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="376,377" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info" Message="[&quot;Clic Finalizar Otra Sesión&quot;]" />
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Enter" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NClick_7" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://bancainternetempresas.scotiabank.com.pe/main/" CvElementArea="421, 363, 255, 49" CvTextArea="447, 379, 203, 18" CvType="Button" DesignTimeRectangle="422, 364, 254, 46" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'sí, finaliza'" FullSelectorArgument="&lt;webctrl tag='A' aaname='sí, finaliza la otra sesión' /&gt;" Guid="dd62e1c6-1c45-497c-8e49-712923ccb4ff" ImageBase64="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" InformativeScreenshot="59a77306366bdbf05dc0af6e0deae6d1.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Telebanking' /&gt;" SearchSteps="Selector" Version="V2" />
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence sap2010:WorkflowViewState.IdRef="Sequence_19" />
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="-8, -8, 1382, 736" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAA69SURBVHhe7ZoJcJ1VFcdjBVtAFtkRWVyKsqnINuKIBUXZ3HABQVGHGRxAGUdZBtAOOyplFcEiiEATpPuWpG26pkvapEvatEmbJl3SdEnTLd1o2iTH87v3ndf7Xt7y5SVVh/Kfufm+l+9+997zP+u97+XJQY4PCIhdD1q8rwjo6Ojo1LLhfUFANkEzkXFACLAJM01siNovFcJ32tvbpaWlRTZs2CBr1jTI+vXrZOvWrbJv375Yj9RE9RgB2YRoa2uTvXv3usaiWHAqZBvHYH327NkjVVVVMnFiiRQVFcrQoUNk+PBh7jpmzGgpKZkg8+bNlR07drj+yWN3m4DkBXO/c+dOaWxslCVLlsicOXNk2rSpboETJoyX8ePHuevkyZNkxowZsmDBfFmxol61tSWBlORxQ9j/V61aJWPHjpHZs2frGCucwOXlc2TSpIkyd26FjB49StewWObPn+fua2qq3XvhuDkTkLzA7dtbZOnSGiktnSaFhWNlxIjhro0cOUJGjRrpFsACadzTeGb9+AwpixdXOdM1JM9j9wgDmc3Nze4z8yIoz9E6Sqivr5fi4iJncVgA40NMiJwICBe0cWOTlJWVOcEQBGHRCuYYNkgJW/Jz3oEEI2PWrJnS1NQUm8XD5q2rq5OCgnzVfJn7XFW1SK1purvH1SDASFywYIHMnDnD3UNuQcEgqaxc4D4zXpcI4AVbxLZt21TwWU6LtFBoBPQa9tqlmSXQQs2bwOH73Nu4zMFchs2bN7vna9euVfea7eaiH8K99957TvOMsX79eo03rbJy5Qr3HEuAJEjlfvXq1W68yASY4FyXLl0aE3BEglZDDeKHFRUVsmzZUmloaHATb9q0yTXuidS1tcvUJOdq30kJ74ZjGhFr1qxx8xNP0LgB00fjWAMuUVxc7MZASGIN/a0ZEJ5nxJxIBJjwRFxMkyiLFmyRZv4MunjxYqel9vY2904UsJAtW7a4gMUYIRFok/kaGlY77fI/NA1Y15Qpk13qA2QYyGVtEIY7APwfkli/AQWtXLkyOwEmPIMQyVmcmTmNzzBfX1/nFhCCd6O0EIxBVjAiEIbW2tqq1rRM/XlmrKcPvPRDMBsHoVknNQHwmaXDBcB169a5/wFchrEyEmCDIjxC4r8mOFrHNCsrK93iDKmEioLk9yCC/G4EA8wctzFQ7EydOiX2yQMC6I8VAkutpGNLgwCroV9aAmwxmFtJSUmC8NxjBcZorkKnQzgecxDsANEck8dVqquXuDoCIfhMXMD9KHpQDrEBLfN/6hEsgL72mTGLisZms4B2FzmJ5qHw+NP27dtjfXpO8AQEJFg5CwEEzIULK116w9THjSt29/Pnz3dX1ssauZLu7P+4CiTYuzxHiSkJsIlhlAAUCk/w2L17t3seWfg2NcN9GpC4drF1qEnbPKREMpBh7dpGtQjvAtYH14EUqwPMBagQiSGGpqYNTpGdCLCBNm7cmGD2RGVY3LVrl3seSXgmjy2gO4AEgA9DggErRFjLCsCCoNUORoAPgmvdPcA9GCulBfASvmYEWCS2wBJZeEDf2fNEHn1W5Na7RW66Q+QnWRp9br7TX7/7S+moqnFDbdX5ye9hOiMIWiwiGBP96RNmJYhCeSFRELJ69apEAkywurrlLvqa9rlnQBBJ+JjGZJFG3etvFTni0yIf/oTIR07Xdkb21udMbXrNO07kuVf9WDFCCW4EMQOFFKZMfeI3XBOcteLfCA1B/v/j47EEwXkHRXeyAFikM5EU4Ul1Vkt3SfhhhSLHni3SWwU58XyRk78gctLnszf60Q7/lMg/3/Fj6UJtbqyQdVHNsbHBBVAQmQDzb2nZ5p5v2tTsZKHYMUIgjxIZC6GwAnECbILly/drH7PnZcpXkJUAM/txGpgQAAIQ5vhzPQlOwAztFO174nneCga+7cdKcaDBGvPzB8XjAalt+vRSd9/Wts9p14IgmcAUiOXk57+dfjPEP/D90aN9nkf7RE97lhH2vFnjRN/LRI46a79Wjz1H5FA1/0PUDQ45zV/zThH50Me9a9Ds/7RX3vRjkTmSYOsgIKJ9gjWYNm2aE4znWDDFG2cE9MH0d+7c4dyhoqI8vlTgCLBB2VuHkZ970gXISoCZPsGu16mqzS96rSMQmr3lLpF7HhG57zGRB54UeXagyJMv+vsHnxL541/0+aMi74z049h4KWBr4UAEV8USSHGslw0YSsQ9+Ew1CTHch7HDkEAAeR/zR/uYPpHS0khGGDmY64Xf8tpHeILe7feKjCjygj7+vO/3WoEno26l/5xMboQ5bc1EetaN1nHZIUMGJxyJ8X/ISFe4JbgAfgRTEAARixb5bWdW7duCa5aLnKD+js9/9DMif3tD27/UDZSMM74kMmq8yCXXiBSolr98tc5+osjdfxDZ5Qsr2asEZtB8KhDobNdHmiNesRMk5xMHLPKDVHLECSC34i9h9OfQAWQlgKoNlM0VOVq1T+R/5BmRux7UGXprO14j+rsiV35f73tpjLjEm/pRffVzH5ErbtBk7Q8tdTJ/zQJbEzEAhXG2SGTfvHlTJ6ulbzoZ8uwB+3HM3qI/VwIJiExARaUGNg1u3/m5SON6kcee0zz+D5E3/i2yUGuCp/6qAe4tkSde8MXR0LE+z+MaPAft0QgwYAGkNcweq8X0N2zQuRVR3DdOAHU1WkdwiKB4MNPKCpuotl7kSDX9N4do0NNK7uqbRS5Xrb81WOS3/VXTP/SF0Tdv8kFxjLrEN36shP1C5Kvf0zwVq9UjLDwE+Z01QwQycAwGsipOESeAQwgLgMQBBgVRBtFO/rq1xWv/edU6/k0+5/riayKnXejvSXdkCdxkoFrDxz7r02De0SL9NROAFOkvFWxt5eXlTnCLXTU1vnTuEgG1tbX68jA3CINx1g4iEQCs32jVKhH/9ItEzu0ncsFVagFqEeddIXL25SLnfM3fn6lx4HXNBljDWV/RIHmxyG2/82NEtABbG2nOlMd14cKF7v+RCDA/4aQFP9pPQJnb+XG2zllcJNiEY0u8nw94xWu/XCuvp1/2n2nP/F1rAH0+s0JJ0HL3zy/5+DBomPqi+m9E0k1AslVIAAERRCLAOlVXV7uXwyCIX3Ef7r4ywlLOwwN05JNEjtMK8AQtbSlrKXHJEMd8LrZH0Brhpde9NRA3emlV+DONG09oQGzyX3ZkI8LWjsZDAjimA5EIQMOUh5YCEdgIwBKorECUweLZYMpMX+ayHyAFDlDt4w6Qgu/j85BADDj8k373R78X1Fou+7ZaRrkfJ4sr2Jo4BgsJsIovEgGc2fNSmAKNAP6/apWv1iIRYGjVfThx4DcPifzqPpGRxSIva0FEVfj7h0XufEBTpJbMU3Uzc8f9vt+D2h8XyDtZK0ftDyJmIbbCYRDkmyMQiQD+cEJq5h6SQItcCxisX0OjyHU/FbnmFn+wUVomcq1+vuE2kX5a+LBj/LUWSgTBq270VSTPOQMgaIIIBNgJkCkQIuzkJxIB1olvc0l/RkKYCrsMW/ir+boLVFeg2ntANzz3P673yvmNt/sCKe8IdZUTNG2q6VMnkDYPU5fIH+7fz0CArZsToNB1uedMAES2AOtIKQmDZv4cPYMoAznQz/zW3pmjERkNH6Z+/oIK3f9pHxQ5J/j6j7y536u7QDZO/I89BCU1sJiSArYmih7WivljBRzhh/V/NsT3AuGAkIAFNDf7vXYkAkx4rhQyNGIBYEHT56hFDNIdi2aUAtUw6Y86gAqQoIjwZAmygm2OMsxra2IrbP7PNfL5RQxxAsD+mqDWlZUw2SXhwUN/Ejn/St3tXS9y6bUiF+mu7xK9om38/WLdDfb7gS+IDtWqkEzBoQnnB2QO6gcQwfzZ4prp5xq0Ewhgb93YuMa9zC82KID4dhekHZD/m6liygjBeQCmHDYExb/tHm0jOHUCByY84yxhR6zoyiCArcXOLxAe38cK7DuLqOjkAhQRVkiwq8IVrBLsREIoPKc51PiYMoch2RqCc0XzfVR49gqx4+9s+R/s3r3LWSmCm/apB0BaZaVAJwI4O6MkpjKE4cGD33U/PQEpCQBEd8z51Av2nwNmaxBwZF9vMZdeF3knaGvgKy7TPi5AAOQsAOREALAXsQD21eZbWAHfxALXx8Zn7377PTqK7uQwa6o8O9vP1HprRjhGd4GYPOcBO/23TVGF5+wyrFsggmoWdEV4kECAgU0Q5mUTMBlna/HvBG2h1OwULSPHiQwv0lYYu2ZofF8wZoKyrCl2T+xrdYiMKDxxiu8nrfCxNeb6ZW0nAmwAysnwi1FSDN+oWqbo6kQpwRBE+whj2XykOTN9Gmu03wzksqaUFmAgx4aTcc8CbKIONIcAuTSIjCi4zRf6Pc2UkovghowEcMqK6RMDQhL4cYEdl3Vn8myIE61XO/SwdeACuGnaDBURaQmwATlaLiz0ZWZIAt+yhBulXBeQCuF4KGHWrERLtKhvvyPsztwZLcAG5qzdWLdFmFVQOlu/cOG5IPl9Dmr5WQumbvMiPJ/tZ3PdmQ9kJADYBBybc2gSLoYiBM2Ulpa6r9CSF2MCWQuR6RmE+xp/eLzQsfkgvqeEB1kJADYRRRLfu4XZgcaiIAYi+Dq6q+UoaG3d435QyTe5Nl44B5/x+Z4w+xCRCAA2IRskDh3RfOgSNBbO/6nJOaXheJrDiW3btrragrNFBIUg+23/8uW1LqhiXbybLDhah3CifXcDXipEJgAwsU3Oz1I4iWFxZqYIbotGEBOIzzxDSJrV8Ml9ksfgmJ6+/DrF5u1J4UGXCDDYIrAGts6kSgTBAqwyQxAThv/REMpaun5GCkTxqw/7XU9Ifk8iJwJAuBjKU/bhmClCIIARgpsYAWGDBJ6ZwDRIIAaQWXAVw4EQ3JAzAYbkxVEb8MMF4gRnilgHGjahaQiKhqnpyfH8iIFzCPsJnuFAaT1EtwkwpFsoboJgBD1+u8eBJSQRENN9e3ughQ7RYwQYTGtdESKXd3oKPU5AKoQC/q8ETYf/CgH/z/iAgNj1IIXIfwBfeN0V0kssRAAAAABJRU5ErkJggg==" InformativeScreenshot="5d41ca82344f88b8c035d2953fcf83d7.jpg" Selector="&lt;html app='msedge.exe' title='Telebanking' /&gt;" Title="Nuevo Telecrédito" Url="[in_StrURL]" />
+            </uix:NApplicationCard.TargetApp>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </uix:NApplicationCard>
+          <Assign DisplayName="Assign out_BooLogin" sap:VirtualizedContainerService.HintSize="506,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Boolean">[out_BooLogin]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="572,394" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Exception" sap:VirtualizedContainerService.HintSize="496,325" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Error" Message="[&quot;Mensaje Excepción &quot; + exception.Source + &quot; - &quot; + exception.Message]" />
+              <Assign DisplayName="Assign out_StrExceptionMessage" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_2">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[out_StrExceptionMessage]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">["Mensaje Excepción SCOTIABANK_IniciarSesionScotiaBank " + exception.Source + " - " + exception.Message]</InArgument>
+                </Assign.Value>
+              </Assign>
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+      <TryCatch.Finally>
+        <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="496,447" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;¿Inicio Sesión SCOTIABANK? &quot; + out_BooLogin.ToString]" />
+          <Assign DisplayName="Assign vStrUsername" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_3">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[vStrUsername]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[Nothing]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Assign vSstPassword" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_4">
+            <Assign.To>
+              <OutArgument x:TypeArguments="ss:SecureString">[vSstPassword]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="ss:SecureString">[Nothing]</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </TryCatch.Finally>
+    </TryCatch>
+  </Sequence>
+</Activity>

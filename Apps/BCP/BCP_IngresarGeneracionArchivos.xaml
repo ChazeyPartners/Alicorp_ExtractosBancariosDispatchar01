@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>658,4782</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>658,4935</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>BCP_IngresarGeneracionArchivos_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -106,7 +106,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="BCP_IngresarGeneracionArchivos" sap:VirtualizedContainerService.HintSize="668,4717" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="BCP_IngresarGeneracionArchivos" sap:VirtualizedContainerService.HintSize="668,4870" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="vBooClosePop" />
       <Variable x:TypeArguments="x:Boolean" Name="vBooCloseNotes" />
@@ -116,7 +116,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch BCP_IngresarGeneracionArchivos" sap:VirtualizedContainerService.HintSize="606,4606" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch BCP_IngresarGeneracionArchivos" sap:VirtualizedContainerService.HintSize="606,4759" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
         <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="568,3869" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <sap:WorkflowViewStateService.ViewState>
@@ -243,8 +243,8 @@
                       <uix:TargetAnchorable BrowserURL="https://www.telecreditobcp.com/tlcnp/welcome.do" CvType="Text" DesignTimeRectangle="180, 237, 270, 20" DesignTimeScaleFactor="1" FriendlyName="'Generación especial'" FullSelectorArgument="&lt;webctrl name='mainBcp' tag='FRAME' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div' idx='13' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl name='mainBcp' tag='FRAME' /&gt;&lt;webctrl type='' class='' tag='DIV' aaname='Generación especial de movimientos históricos' check:innerText='Generación especial de movimientos históricos' /&gt;" Guid="6088793d-de60-406e-9181-d72fe52d3ee8" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAARIAAAAYCAYAAAA223LxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAU/SURBVHhe7Vq9bhw5DJ4XyFNcfQ+QKk2AlPsW7q5zimsPMNy6DWAccJUL+wUC+OptAqRIm37rtGkmkkiJHzXkarzrTZwFCXzIjERRH3/E1a4zzR8/zEW+fgoEAoGngUUaSUhISMiBEjeSQCBwOFiikQQCgcPBMk3TBT1ZSoFAILAPLNN8856eLKVzxP1V6p5X89aaCwSeGdvLi3m6fDDnzgIsR91ISpDS+orNzaOp9+vwMF9P7+e7rYxtL/X7y8WSe49d+hAYFekandPicb57ezFf31tzBnKjf3s776y5Eba38+boDwniu6zlsR/LWKcc7vVlnOMXDxbzRvLH3Rf1bqE0ERWkHJQnFMwvweO8+52T1uH3aCQ/Ec9y2/QayRiL28c21RvMnyWSvPvn/3na/f1XeekVXv37eTHW4HT+XLSSAGosdFuRrkuFfSVzEHi84TQ75RMq6afkFt2yt6HHBUDjdT/d8cve3bp9fBC4VnTQx9pE+ZPrRnhiczV9HHLH+QRu4MTd4FsOFNm6Tjcwm6/EBUE2b2W/tFZ8l5xjPKof2Tfxifa6vud4pBissq1uJBZftpdyVven+IIu+2tx1PVjxYDsb5J9nT/xQ/PisRZzrU9jsg/FgOptc/Nf+tfKMfLCvez4H3yDew4kmf68TDxe240kw20mKtkWMOgJoE8B4ICUpFLQKMBY8BzMkiBIxH0qvqLDc2i3cmrjvZ2aCEpO5ufxIR4M2Ad9U5ybDhcEcmH7no9D7tuHeds4deuaPZzvirno+DnB9RSPui8dOjqEYBd8WoxXm3ltee7itcZ2t07zRZ+M2FVeDkdsdnb82D7bFPudH3Ud+Iw3EnxGLhQD5LWvBmhPxbeMy7pFXk8E91tKktJIRn/+NZsJBC+/U3BS4DKao/zeYAQMAoKf1BUlgKogGFyERY9t6U/Dii5RUDRV3+ODdpR/FdkW8JBE9okd+zjijnZpne1TQRcv0cn29N7YoCv8eDgHKUH4Z305MDTWrRvYltry+JJuixfWIvjuciw6tu8Ezz5wNPPO+S17gm6ZE1+9GKyqgbIv+Vf2yhyardPD7AVJ3o0aiXsjAYfUuCoCO1FPC2QCFEd+pwDye9tvnAivsPziFvRrF2jFmXn5ReT5OOJe7ZNN36eCLl6iY/vWw4+H+NXvi/zzM32dcdYNbEtOPb6k2+IFNYC+7+OYUebNg+jZB45Vt+wn9Zj3oD173S5nRgyGNZDfF+eO9skclmtPg0VPSLL3RuI2EUYJWpcEGWMHayL7BBuBpMTWIOVxKCwIHgYcOSi7bQ0kQtkR+x6f6pPwr+NSaHltS2BL8sD3EQePu5qHmMFhIYjdVmhQ3BYvXO/Hg9Yvc4L78VxqIvS1Rq9bbbvoeHxpvMW96aNO9wwcc81orpVPhWdf+7HMO9cj88Vn5OLFQI03fc1FdPK66ps+Ez8DqjckcRvJmr/aZBTHUoIaVFIoeTRXC8YPZJ4rwec1KpEQNHonHfpBUwe0zZVi0faR7zI5S32E8rUWSC12Hqc9OfnpMOlxguljN77kDrHkHytrQQsXQIvRgT+2mvGQg9T02JYuYl38uG6V7cxd6fR8O/uoXw510mV/bY6jGHj2gSM/V9t9TJY6so8fA6sGqk4dt8+B2Ds9rBvJmzW/kQSeiq4QA4EzgfktJckmGskpEI0kcH7Y91ebaCSBQOA4JIlGEggEjkMS+rG1iqUUCAQC+5Bk1X9ICwQCARdJdt++RyMJBAJHgCUaSSAQOBws0khCQkJCDhRqJC8dISEhL1jm+Qck9qmAvKzBzwAAAABJRU5ErkJggg==" InformativeScreenshot="78cdbb30f105e640b48a48bc14eeaeef.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Telecrédito - BCP' /&gt;" SearchSteps="Selector" Version="V2" />
                     </uix:NClick.Target>
                   </uix:NClick>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Clic Generación Archivos&quot;]" />
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Special File Generation" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_8" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="410,92" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Clic Generación Archivos&quot;]" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Special File Generation" sap:VirtualizedContainerService.HintSize="410,157" sap2010:WorkflowViewState.IdRef="NClick_8" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://www.telecreditobcp.com/tlcnp/welcome.do" CvType="Text" DesignTimeRectangle="397, 241, 200, 20" DesignTimeScaleFactor="1" FriendlyName="'Generación de archivos'" FullSelectorArgument="&lt;webctrl name='mainBcp' tag='FRAME' /&gt;&lt;webctrl aaname='Generación de archivos' tag='DIV' /&gt;" Guid="85ab3314-47b6-40d4-9d40-d2076d6d9447" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAMwAAAAYCAYAAAC2jRLLAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANeSURBVHhe7Zg9jtswEIV5gZwidW7hfm+xJ/AewXDrAyzSurCP4F5NgBRpUwRpHCBBrqCQ80MOqaGkZI3dxeYN8MEUNSSH5BtRchi/fhrfLDDYjS2E7VmKMBhsycJVn8Tt0xkAUBDjV7JkrQMAoCAWQnjgkucEAGDEwnjacclzeovE+YawGwfvHgA9xOIrmXz0e04LDNv7KL7C3eHi+r0c53EfT9DjUOqGbX3991zG4+Z+3J+8e7eGx5qu63PGAAgxN2HeH79U1x6ULJvHkf40IJI4X/smXsbrk5Il8RoSBjw7Yt1XsncfP0/qMsPjeOe81lwPD2ZzOYH49ClP9eQTtrtyL/2tLe3tiZX7Sa9Qm+gfhUO+NLbjJ+Lieh2vPmFo7KbdXDyWHJvEoglj++y15ddA8YlwW45tH088fUW082cfSZgYn87Z1qdyatOuufXh/sypWq3fU0/b/wix2Y/+btKQiO3p0lI2lK6NPwtMko02jzeNhauCM0InsRnRn85l3LZfjSnXt/1okhdh9eLhOATbVgRHczPjT+ZsGGLMWi7z5BiqB0M1RiqL6CdzNGPZGFI7KVPy6Xqavm2C1WsOZhFb/FvZTZpKKCo6eWpRPYsh1xEmMXLbImj7dFVoY62QFBEt+RmBlCetUvpvxaH+vXhsP5X4jFireSs9AdI8rA+vkSZYGx/DY1VJRbHa5Ez98PqkPtjX3lcfmVeOYzpPMINYPGHuueQ4dU+Y/ARs6vOG+sJL9ATqCz7SJAwnllzn8V4wYXoJkmF/HaO0SWPdImE4vv0p1Wns9X1vXjReSpw8dzCLWPeEmf2GiZCImsUudSISFYARfU+gvIGaGEZMTsKogGwMVb+5jRFK1U/pvxePzqmNf/JKlv0bcWeseO26mDm6Y6R+mz6Tj1nfqm1MFn0dS3W0Ns76p/q6XWkDZhBzE2bNv2SJ/JRSqsVnQfC9IsI5gdImS5tKJFnoes0++0N90tn2LIq6fxuv9r8qYSK573/46C8+se+DirRJmMpP41uZMK2fqcvj5jn5+wIWEFv8hgEARMSQMACsQQwJA8AaxJAwAKxBLMiv7wQAYMSQMACsQSyED1sueU4AACZayhWcMACsQawkDAwGW7Tw/ddvLnlZBQBgon378XP8A1c+GjrLl1Z/AAAAAElFTkSuQmCC" InformativeScreenshot="5fd6274eeee38c9a41461ee66cf23808.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Telecrédito - BCP' /&gt;" SearchSteps="Selector" Version="V2" />
                     </uix:NClick.Target>
@@ -262,7 +262,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </uix:NApplicationCard>
-          <Assign DisplayName="Assign out_BooEnterFileGeneration" sap:VirtualizedContainerService.HintSize="484,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+          <Assign DisplayName="Assign out_BooEnterFileGeneration" sap:VirtualizedContainerService.HintSize="506,82" sap2010:WorkflowViewState.IdRef="Assign_1">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Boolean">[out_BooEnterFileGeneration]</OutArgument>
             </Assign.To>
@@ -273,10 +273,10 @@
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="550,394" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="572,547" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -284,12 +284,17 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Exception" sap:VirtualizedContainerService.HintSize="496,325" sap2010:WorkflowViewState.IdRef="Sequence_12">
+            <Sequence DisplayName="Exception" sap:VirtualizedContainerService.HintSize="496,478" sap2010:WorkflowViewState.IdRef="Sequence_12">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\BCP\BCP_TerminarSesion.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Apps\BCP\BCP_TerminarSesion.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
               <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Error" Message="[&quot;Mensaje Excepción &quot; + exception.Source + &quot; - &quot; + exception.Message]" />
               <Assign DisplayName="Assign out_StrExceptionMessage" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_2">
                 <Assign.To>

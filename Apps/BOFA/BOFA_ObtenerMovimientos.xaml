@@ -1,0 +1,309 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="BOFA_ObtenerMovimientos" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_StrAccount" Type="InArgument(x:String)" />
+    <x:Property Name="out_DtbMovements" Type="OutArgument(sd:DataTable)" />
+    <x:Property Name="out_BooObtainedMovements" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="out_StrExceptionMessage" Type="OutArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>756,4389</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>BOFA_ObtenerMovimientos_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="BOFA_ObtenerMovimientos" sap:VirtualizedContainerService.HintSize="766,4324" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="vGetAttributeAccount" />
+      <Variable x:TypeArguments="x:Boolean" Name="vBooExistRecord" />
+      <Variable x:TypeArguments="x:Int32" Name="vIntRow" />
+      <Variable x:TypeArguments="x:String" Name="vStrDate" />
+      <Variable x:TypeArguments="x:String" Name="vStrDescription" />
+      <Variable x:TypeArguments="x:String" Name="vStrTransaction" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Try Catch BOFA_ObtenerMovimientos" sap:VirtualizedContainerService.HintSize="704,4213" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="666,3233" sap2010:WorkflowViewState.IdRef="Sequence_7">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="604,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Obtener Movimientos&quot;]" />
+          <ui:BuildDataTable DataTable="[out_DtbMovements]" DisplayName="Build Data Table out_DtbMovements" sap:VirtualizedContainerService.HintSize="604,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Fecha&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Descripción&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Transacción&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Importe&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Saldo_x0020_del_x0020_libro_x0020_mayor&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: Validar Existencia Cuenta" sap:VirtualizedContainerService.HintSize="604,2768" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="50578787-3f80-485e-9440-4c4ad5cac324" Version="V2" WindowResize="Maximize">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="570,2551" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="parentid" DisplayName="Get Attribute vGetAttributeAccount" sap:VirtualizedContainerService.HintSize="508,207" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_1" Result="[vGetAttributeAccount]" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
+                    <uix:NGetAttributeGeneric.Target>
+                      <uix:TargetAnchorable BrowserURL="https://cpoinforeporting-prodb.bankofamerica.com/inforeporting/accountActivityRpt.jsp?cacheKey=RpZTi6nELnAClucADgagaw%3D%3DzSjTuBDe88AIPntC4aLukIl%2FhO287lYZBrZylfYHuLTx%2BC4LsYYZr96oOCPAAX2Jvu8xAPxFwVMNotrL3zkKgS%2BEexCU4ULmMKTkt%2BEXqRFvl%2FGsiHMWXHMt6C0sv%2FTTJ%2FW45r4EALAMzVZGSpZdGw%3D%3D&amp;reportType=BANK_DEFINED_ACCOUNT_ACTIVITY&amp;dayType=PREVIOUS_DAY&amp;reportDt=&amp;reportName=D%C3%ADa%20anterior%20Reporte%20de%20actividad%20de%20cuenta&amp;reportId=ACCOUNT_ACTIVITY_REPORT&amp;page=1&amp;pageSize=10" CvType="Text" DesignTimeRectangle="141, 332, 67, 14" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'1257668289'" FullSelectorArgument="[string.Format(&quot;&lt;webctrl tag='IFRAME' id='reportFrame' /&gt;&lt;webctrl aaname='{0}' tag='A' /&gt;&quot;, in_StrAccount)]" Guid="9db5c4ea-db59-4d09-9e00-058e26b59f88" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEcAAAASCAYAAAAJ88NbAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHVSURBVFhH7VRBjsMgDOwPK/UzeUK+0B/0Cz1XqnrqiWvvVfsJFhtj7IGwUc+MFClAGM+MIYc4sYkZzgAznAFmOAP0w/mEeDw940OGhMf5Fg+n8ozWbvF4/QqHn9c1xiuuOn+Pl49ME9xeW+sbL0t/z0hfDM+6dn7JJGGgIaENR4WZAkRuSFmIjrPgNchwCyywcOY9GhStLSG+eZAFF7739a61XF3LN9LHfopxW1eC7vEJfDj8QSIK7clxcERkpk3dAwIkwRoGAIxWQKDONMDqA9M1ONQNGhN2XysL7mYxpydNnp5pEmjnOYCQO8f7qkjiPl6DOe5Vh6sLpi3cd+4k2oD74dRr/0s42DEnMhfwnW87kvfA1REz/G74/RUu62mu1wRC90TlgGzNRqs0+fdwhMAZRWBHe1z0jTVnDLF5G67yQWfNHkVPH+hp/0c5tMPyjCs0cX84XAQ70gEYb8wSkN8axeCKOfsNA8La0IcnT/lkWNH+O/eF0wir8OZBcAKJs+MMf9XYgAZiRdqj3zs5wjHQh2HUWl4D+7BNSdgVjt5z90DBMu9OiRfgUf8DTSfFOK85wXZPDeo/fX7d1LJ1UENCP5wJxgxngBnOADOcAWY4m4jxD9fhaCDhZe6GAAAAAElFTkSuQmCC" InformativeScreenshot="fdaf6c33c690d9e7f29270000377f75d.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Día anterior Reporte de actividad de cuenta' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NGetAttributeGeneric.Target>
+                  </uix:NGetAttributeGeneric>
+                  <Assign DisplayName="Assign vGetAttributeAccount" sap:VirtualizedContainerService.HintSize="508,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[vGetAttributeAccount]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[vGetAttributeAccount.Substring(0, (vGetAttributeAccount.Count - 2))]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="508,92" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Atributo Cuenta &quot; + vGetAttributeAccount]" />
+                  <ui:InterruptibleDoWhile Condition="[vBooExistRecord]" CurrentIndex="[vIntRow]" DisplayName="Do While vBooExistRecord" sap:VirtualizedContainerService.HintSize="508,1935" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+                    <ui:InterruptibleDoWhile.Body>
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="472,1769" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NCheckState DisplayName="Check App State vBooExistRecord" EnableIfExists="False" EnableIfNotExists="False" Exists="[vBooExistRecord]" sap:VirtualizedContainerService.HintSize="410,177" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
+                          <uix:NCheckState.IfExists>
+                            <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </Sequence>
+                          </uix:NCheckState.IfExists>
+                          <uix:NCheckState.IfNotExists>
+                            <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </Sequence>
+                          </uix:NCheckState.IfNotExists>
+                          <uix:NCheckState.Target>
+                            <uix:TargetAnchorable BrowserURL="https://cpoinforeporting-prodb.bankofamerica.com/inforeporting/accountActivityRpt.jsp?cacheKey=RpZTi6nELnAClucADgagaw%3D%3DzSjTuBDe88AIPntC4aLukIl%2FhO287lYZBrZylfYHuLTx%2BC4LsYYZr96oOCPAAX2Jvu8xAPxFwVMNotrL3zkKgS%2BEexCU4ULmMKTkt%2BEXqRFvl%2FGsiHMWXHMt6C0sv%2FTTJ%2FW45r4EALAMzVZGSpZdGw%3D%3D&amp;reportType=BANK_DEFINED_ACCOUNT_ACTIVITY&amp;dayType=PREVIOUS_DAY&amp;reportDt=&amp;reportName=D%C3%ADa%20anterior%20Reporte%20de%20actividad%20de%20cuenta&amp;reportId=ACCOUNT_ACTIVITY_REPORT&amp;page=1&amp;pageSize=10" CvType="Text" DesignTimeRectangle="144, 414, 64, 14" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'05-jun-2023'" FullSelectorArgument="[string.Format(&quot;&lt;webctrl id='reportFrame' tag='IFRAME' /&gt;&lt;webctrl tag='SPAN' id='{0}_dc_d_R{1}_C1' /&gt;&quot;, vGetAttributeAccount, vIntRow)]" Guid="f71540cf-7042-4f28-bb19-1236945936e3" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEQAAAASCAYAAADixHhYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGoSURBVFhH7ZRLrsIwDEUZsw0WxIwxe2HQCftAqtgHYsI2QGzCr7HzsW+SfkTfoFKOFEGan32cdkcNQxMCNCFAEwKAkBd1+wPtXDvd6e2fOh5X/9y3Y//1I5ov3U4H6p6+uwbPiznX7l2LV+KI68yYWrM/0+3jH3uUENkkJMoCri/+/y+JzsIFf6GH74mc0K/H++7PqmD5vJiH2U9QQtzhypiZDGNVlLjPnY6YTKgU/79QN8ytVaqMVFcSGovX4gThjRfyvJIQTID7fjL/D8EPrbi5Y4GQmJisSbdxhCymSryAve2KgsQkBAf1AWZsLIElQtIYV3BSiOwdX4WxeDU4j/E5DEVJr5Yw74Yg4RD+lY3l0AVC1C2LQrL9AoUizImX96vkwIDkgZnfEAASStSFmPe4JqSIfDewklPx8p61+BX4Oikh1hZ+tdOi3GoChcB3YrGQ6bNK8daLqeJjRHbqGyEOmcBXFm4AHxjGisE77IFSJbdmqGSvJMwV4qXGc33DhPi52s/Emo2rNUND2SDkV7AC22M9IaGacLO2xso3ZPs0IUATYiD6AxFIR4DjRg4MAAAAAElFTkSuQmCC" InformativeScreenshot="5aeb61d4ca983a67850abf0aaa964e2a.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Día anterior Reporte de actividad de cuenta' /&gt;" SearchSteps="Selector" Version="V2" />
+                          </uix:NCheckState.Target>
+                        </uix:NCheckState>
+                        <If Condition="[vBooExistRecord]" DisplayName="If vBooExistRecord" sap:VirtualizedContainerService.HintSize="410,1441" sap2010:WorkflowViewState.IdRef="If_2">
+                          <If.Then>
+                            <Sequence sap:VirtualizedContainerService.HintSize="376,1259" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                              <Sequence.Variables>
+                                <Variable x:TypeArguments="x:String" Name="vStrAmount" />
+                                <Variable x:TypeArguments="x:String" Name="vStrGeneralLedgerBalance" />
+                              </Sequence.Variables>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <uix:NGetText DisplayName="Get Text vStrDate" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" TextString="[vStrDate]" Version="V3">
+                                <uix:NGetText.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://cpoinforeporting-prodb.bankofamerica.com/inforeporting/accountActivityRpt.jsp?cacheKey=RpZTi6nELnAClucADgagaw%3D%3DzSjTuBDe88AIPntC4aLukIl%2FhO287lYZBrZylfYHuLTx%2BC4LsYYZr96oOCPAAX2Jvu8xAPxFwVMNotrL3zkKgS%2BEexCU4ULmMKTkt%2BEXqRFvl%2FGsiHMWXHMt6C0sv%2FTTJ%2FW45r4EALAMzVZGSpZdGw%3D%3D&amp;reportType=BANK_DEFINED_ACCOUNT_ACTIVITY&amp;dayType=PREVIOUS_DAY&amp;reportDt=&amp;reportName=D%C3%ADa%20anterior%20Reporte%20de%20actividad%20de%20cuenta&amp;reportId=ACCOUNT_ACTIVITY_REPORT&amp;page=1&amp;pageSize=10" CvType="AnyWordGroup" DesignTimeRectangle="144, 414, 64, 14" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'05-jun-2023'" FullSelectorArgument="[string.Format(&quot;&lt;webctrl id='reportFrame' tag='IFRAME' /&gt;&lt;webctrl tag='SPAN' id='{0}_dc_d_R{1}_C1' /&gt;&quot;, vGetAttributeAccount, vIntRow)]" Guid="a21ba927-85b4-4d16-8fac-8a1f4559a818" ImageBase64="" InformativeScreenshot="5aeb61d4ca983a67850abf0aaa964e2a.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Día anterior Reporte de actividad de cuenta' /&gt;" SearchSteps="Selector" Version="V2" />
+                                </uix:NGetText.Target>
+                              </uix:NGetText>
+                              <uix:NGetText DisplayName="Get Text vStrDescription" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" TextString="[vStrDescription]" Version="V3">
+                                <uix:NGetText.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://cpoinforeporting-prodb.bankofamerica.com/inforeporting/accountActivityRpt.jsp?cacheKey=RpZTi6nELnAClucADgagaw%3D%3DzSjTuBDe88AIPntC4aLukIl%2FhO287lYZBrZylfYHuLTx%2BC4LsYYZr96oOCPAAX2Jvu8xAPxFwVMNotrL3zkKgS%2BEexCU4ULmMKTkt%2BEXqRFvl%2FGsiHMWXHMt6C0sv%2FTTJ%2FW45r4EALAMzVZGSpZdGw%3D%3D&amp;reportType=BANK_DEFINED_ACCOUNT_ACTIVITY&amp;dayType=PREVIOUS_DAY&amp;reportDt=&amp;reportName=D%C3%ADa%20anterior%20Reporte%20de%20actividad%20de%20cuenta&amp;reportId=ACCOUNT_ACTIVITY_REPORT&amp;page=1&amp;pageSize=10" CvType="AnyWordGroup" DesignTimeRectangle="264, 414, 207, 14" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'WIRE TYPE:WIRE'" FullSelectorArgument="[string.Format(&quot;&lt;webctrl id='reportFrame' tag='IFRAME' /&gt;&lt;webctrl tag='SPAN' id='{0}_dc_d_R{1}_C2' /&gt;&quot;, vGetAttributeAccount, vIntRow)]" Guid="4c254890-9425-42fd-b51b-d161b95e60c5" ImageBase64="" InformativeScreenshot="85af18217a2e72808eee38b114751dc9.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Día anterior Reporte de actividad de cuenta' /&gt;" SearchSteps="Selector" Version="V2" />
+                                </uix:NGetText.Target>
+                              </uix:NGetText>
+                              <uix:NGetText DisplayName="Get Text vStrTransaction" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" TextString="[vStrTransaction]" Version="V3">
+                                <uix:NGetText.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://cpoinforeporting-prodb.bankofamerica.com/inforeporting/accountActivityRpt.jsp?cacheKey=RpZTi6nELnAClucADgagaw%3D%3DzSjTuBDe88AIPntC4aLukIl%2FhO287lYZBrZylfYHuLTx%2BC4LsYYZr96oOCPAAX2Jvu8xAPxFwVMNotrL3zkKgS%2BEexCU4ULmMKTkt%2BEXqRFvl%2FGsiHMWXHMt6C0sv%2FTTJ%2FW45r4EALAMzVZGSpZdGw%3D%3D&amp;reportType=BANK_DEFINED_ACCOUNT_ACTIVITY&amp;dayType=PREVIOUS_DAY&amp;reportDt=&amp;reportName=D%C3%ADa%20anterior%20Reporte%20de%20actividad%20de%20cuenta&amp;reportId=ACCOUNT_ACTIVITY_REPORT&amp;page=1&amp;pageSize=10" CvType="AnyWordGroup" DesignTimeRectangle="522, 415, 217, 13" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Crédito por'" FullSelectorArgument="[string.Format(&quot;&lt;webctrl id='reportFrame' tag='IFRAME' /&gt;&lt;webctrl tag='DIV' id='{0}_dc_d_R{1}_C3' /&gt;&quot;, vGetAttributeAccount, vIntRow)]" Guid="bddb8f82-9124-4692-80d0-770623a47702" ImageBase64="" InformativeScreenshot="1f409eb005a6ac3dd53dbeeb0b60215f.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Día anterior Reporte de actividad de cuenta' /&gt;" SearchSteps="Selector" Version="V2" />
+                                </uix:NGetText.Target>
+                              </uix:NGetText>
+                              <uix:NGetText DisplayName="Get Text vStrAmount" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NGetText_4" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" TextString="[vStrAmount]" Version="V3">
+                                <uix:NGetText.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://cpoinforeporting-prodb.bankofamerica.com/inforeporting/accountActivityRpt.jsp?cacheKey=RpZTi6nELnAClucADgagaw%3D%3DzSjTuBDe88AIPntC4aLukIl%2FhO287lYZBrZylfYHuLTx%2BC4LsYYZr96oOCPAAX2Jvu8xAPxFwVMNotrL3zkKgS%2BEexCU4ULmMKTkt%2BEXqRFvl%2FGsiHMWXHMt6C0sv%2FTTJ%2FW45r4EALAMzVZGSpZdGw%3D%3D&amp;reportType=BANK_DEFINED_ACCOUNT_ACTIVITY&amp;dayType=PREVIOUS_DAY&amp;reportDt=&amp;reportName=D%C3%ADa%20anterior%20Reporte%20de%20actividad%20de%20cuenta&amp;reportId=ACCOUNT_ACTIVITY_REPORT&amp;page=1&amp;pageSize=10" CvType="AnyWordGroup" DesignTimeRectangle="769, 409, 108, 21" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'38,299.15'" FullSelectorArgument="[string.Format(&quot;&lt;webctrl id='reportFrame' tag='IFRAME' /&gt;&lt;webctrl tag='DIV' id='{0}_dc_d_R{1}_C4' /&gt;&quot;, vGetAttributeAccount, vIntRow)]" Guid="d4672f3a-ebb2-4d70-be68-c8c8edc44675" ImageBase64="" InformativeScreenshot="4aa273d5eb70909dbe21e9f8408f5558.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Día anterior Reporte de actividad de cuenta' /&gt;" SearchSteps="Selector" Version="V2" />
+                                </uix:NGetText.Target>
+                              </uix:NGetText>
+                              <uix:NGetText DisplayName="Get Text vStrGeneralLedgerBalance" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NGetText_5" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" TextString="[vStrGeneralLedgerBalance]" Version="V3">
+                                <uix:NGetText.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://cpoinforeporting-prodb.bankofamerica.com/inforeporting/accountActivityRpt.jsp?cacheKey=RpZTi6nELnAClucADgagaw%3D%3DzSjTuBDe88AIPntC4aLukIl%2FhO287lYZBrZylfYHuLTx%2BC4LsYYZr96oOCPAAX2Jvu8xAPxFwVMNotrL3zkKgS%2BEexCU4ULmMKTkt%2BEXqRFvl%2FGsiHMWXHMt6C0sv%2FTTJ%2FW45r4EALAMzVZGSpZdGw%3D%3D&amp;reportType=BANK_DEFINED_ACCOUNT_ACTIVITY&amp;dayType=PREVIOUS_DAY&amp;reportDt=&amp;reportName=D%C3%ADa%20anterior%20Reporte%20de%20actividad%20de%20cuenta&amp;reportId=ACCOUNT_ACTIVITY_REPORT&amp;page=1&amp;pageSize=10" CvType="AnyWordGroup" DesignTimeRectangle="879, 409, 133, 21" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'1,927,818.67'" FullSelectorArgument="[string.Format(&quot;&lt;webctrl id='reportFrame' tag='IFRAME' /&gt;&lt;webctrl tag='DIV' id='{0}_dc_d_R{1}_C5' /&gt;&quot;, vGetAttributeAccount, vIntRow)]" FuzzySelectorArgument="&lt;webctrl id='reportFrame' tag='IFRAME' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='DIV' class='x-grid3-cell-inner x-grid3-col-balance' /&gt;" Guid="67bf0747-c83d-4beb-945d-c0a0190cc8ad" ImageBase64="" InformativeScreenshot="b376b27187486c445e0c84fadf0f471f.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Día anterior Reporte de actividad de cuenta' /&gt;" SearchSteps="Selector" Version="V2" />
+                                </uix:NGetText.Target>
+                              </uix:NGetText>
+                              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{vStrDate, vStrDescription, vStrTransaction, CDbl(vStrAmount).ToString, CDbl(vStrGeneralLedgerBalance).ToString}]" DataTable="[out_DtbMovements]" DisplayName="Add Data Row out_DtbMovements" sap:VirtualizedContainerService.HintSize="334,186" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+                            </Sequence>
+                          </If.Then>
+                          <If.Else>
+                            <Sequence sap2010:WorkflowViewState.IdRef="Sequence_16" />
+                          </If.Else>
+                        </If>
+                      </Sequence>
+                    </ui:InterruptibleDoWhile.Body>
+                  </ui:InterruptibleDoWhile>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="-8, -8, 1382, 736" BrowserType="Edge" IconBase64="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" InformativeScreenshot="d5b95a090a7f564ce83f7540b2f65482.jpg" Selector="&lt;html app='msedge.exe' title='Día anterior Reporte de actividad de cuenta' /&gt;" Title="Nuevo Telecrédito" />
+            </uix:NApplicationCard.TargetApp>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </uix:NApplicationCard>
+          <Assign DisplayName="Assign out_BooObtainedMovements" sap:VirtualizedContainerService.HintSize="604,82" sap2010:WorkflowViewState.IdRef="Assign_4">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Boolean">[out_BooObtainedMovements]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Boolean">[If(out_DtbMovements IsNot Nothing, out_DtbMovements.Rows.Count &lt;&gt; 0, False)]</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="670,394" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Exception" sap:VirtualizedContainerService.HintSize="496,325" sap2010:WorkflowViewState.IdRef="Sequence_17">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[&quot;Mensaje Excepción &quot; + exception.Source + &quot; - &quot; + exception.Message]" />
+              <Assign DisplayName="Assign out_StrExceptionMessage" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_3">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[out_StrExceptionMessage]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">["Mensaje Excepción BOFA_ObtenerMovimientos " + exception.Source + " - " + exception.Message]</InArgument>
+                </Assign.Value>
+              </Assign>
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+      <TryCatch.Finally>
+        <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="450,335" sap2010:WorkflowViewState.IdRef="Sequence_18">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Info" Message="[&quot;¿Obtuvo Movimientos? &quot; + out_BooObtainedMovements.ToString]" />
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info" Message="[&quot;Total Movimientos Obtenidos &quot; + If(out_DtbMovements IsNot Nothing, out_DtbMovements.Rows.Count.ToString, &quot;No Datos&quot;)]" />
+        </Sequence>
+      </TryCatch.Finally>
+    </TryCatch>
+  </Sequence>
+</Activity>

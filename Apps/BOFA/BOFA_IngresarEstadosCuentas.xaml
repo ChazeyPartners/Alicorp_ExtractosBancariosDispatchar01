@@ -1,0 +1,221 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="BOFA_IngresarEstadosCuentas" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="out_BooEnterAccountStatements" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="out_StrExceptionMessage" Type="OutArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>655,2557</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>BOFA_IngresarEstadosCuentas_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="BOFA_IngresarEstadosCuentas" sap:VirtualizedContainerService.HintSize="646,2492" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Try Catch BOFA_IngresarEstadosCuentas" sap:VirtualizedContainerService.HintSize="584,2381" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="546,1644" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Ingresar Estados Cuentas&quot;]" />
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: Ingresar Estados Cuentas" sap:VirtualizedContainerService.HintSize="484,1279" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="50578787-3f80-485e-9440-4c4ad5cac324" Version="V2" WindowResize="Maximize">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,1062" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Clic Menú&quot;]" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Menu" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://cashproonline.bankofamerica.com/cpwportal/appmanagerService/cpo/default?gotoUserDesktop=true&amp;isReturnUser=true&amp;bulletinCount=0&amp;redirectToIRAccounts=true/#/accountsdashboard" CvElementArea="123, 165, 30, 27" CvTextArea="155, 171, 37, 14" CvType="Icon" DesignTimeRectangle="156, 167, 35, 23" DesignTimeScaleFactor="1" ElementType="ListItem" FriendlyName="'Menú'" FullSelectorArgument="&lt;webctrl tag='A' aaname='Menú' /&gt;" Guid="4223317c-5289-4e5a-868f-1c39359c7397" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACcAAAAbCAYAAAD/G5bjAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAErSURBVFhH7ZM9DoMwDEa5Xieu0luwcwmWbhUrK6xsvQGol3D9JU7ID4jKEhJDnsTgxImfnbaiG1PktBQ5LUVOS5E7Y+nfVD3e1K2yIERyNmmgUeKUs30dX+qeuRjI5Tixfk60yJpnHljsdYncsiMGduQm6tq8k7F9UdNCMJaz04Q0vvDchxrEvWsqaWydqE6eEjWq9iPRgdzCU6r7r6wCFOKLzfS2Aj5fYjtdt48zXMzv4/mC4mo5XJwWxaGs+P6EbWNWrpntOoia0cshcTtonhRFQjlzOV+2810u56dliohQJpdPbuNKOSflJZnsWePiMZfKSXJYIJKT/CCOhU7kZN//8dzP5F+5VCaLGdeA+zaZMznG3CdneX3E/pHc3ShyWoqcliKn5cZyRD/hx4SGZTQbZAAAAABJRU5ErkJggg==" InformativeScreenshot="80afe4c360771d405211c54e3c1d07a0.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*CashPro*' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Clic Reportes&quot;]" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Reports" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://cashproonline.bankofamerica.com/cpwportal/appmanagerService/cpo/default?gotoUserDesktop=true&amp;isReturnUser=true&amp;bulletinCount=0&amp;redirectToIRAccounts=true/#/accountsdashboard" CvType="Text" DesignTimeRectangle="28, 329, 252, 24" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Reportes'" FullSelectorArgument="&lt;webctrl tag='SPAN' aaname='Reportes' /&gt;" Guid="019ab95d-c79e-407e-ae80-e9b768486b82" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAQAAAAAcCAYAAACOEWEyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHiSURBVHhe7dgxksIgGIZhr2flVaz3AvZ2nsBmO8fWVtt03kDHS7AJ/BIgbNRZx8D+7zNjESFi832QzAwAtSgAQDEKAFCMAgAUowAAxSgAQDEKAFCMAgAUowAAxSgAQLEPF8DNbJffZjbPfJYnc5FZU7jsd2a2PssVoMMkBbBq5NKTYpgwgBQANCqkAFrNoT0JHMxRLgenheiEcDar+c5sm5NZ/HqC6Ob09y/2N/nehX2xP/nxr00b/vtc/ztj6xtzXAdj0f8G6lFoAbh5YWht4PwOfQ93Hzw77kPqxvv742u723cFcrWXVnwCGF/fzg0KIb0GalHmI0BXBoNAya5vQ+sCHf3OtTsNuPFsIIOCyY1HBfBgfQKP/6Kcl4B+95WA5eZEBRDv4GEpxKcFYQviuQJ4bv30O6A+k58AXNjiEOUCGvtAATy1w4eF1j+OALUo4hHABjYM0OCFYKoPu/fuR4CXAp35P0AFCnkHIEdqH0rZWcNdPAplOj/d9d346EvAsQJ4sP7g/pcLAyhDIQXQsjv4MMT983cYMDe2WnfBk/Ek0On94Rv9XAH49dOS8Z9wfSkIP8Z7ANTpwwXwLlIAHLmBP6EAAMUoAECxSgsAwDtQAIBiFACgGAUAKEYBAGoZ8wMAWDG+m/4xCAAAAABJRU5ErkJggg==" InformativeScreenshot="e69dfcddf1d389b5c37d9f449cde2279.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*CashPro*' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Clic Estados Cuentas&quot;]" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click AccountStatements" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://cashproonline.bankofamerica.com/cpwportal/appmanagerService/cpo/default?gotoUserDesktop=true&amp;isReturnUser=true&amp;bulletinCount=0&amp;redirectToIRAccounts=true/#/accountsdashboard" CvType="Text" DesignTimeRectangle="75, 399, 116, 16" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Estados de cuenta'" FullSelectorArgument="&lt;webctrl aaname='Estados de cuenta' tag='SPAN' /&gt;" Guid="f7494647-11d9-43ff-acd6-e36d7eee25ad" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHgAAAAUCAYAAABGUvnzAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJXSURBVGhD7VY7jsIwEOV6W+1VuAV9LkGzHaKlJS0dNwBxCW/i8Tjz8yQhYrWy/CRLOGPPvHnPMdmFhqrRDK4czeDK0QyuHM3gykEMfoXj/ifsvuxxuKVlDh7nU9h19zRbj7h/34dHmn8O93BY2NN/wjv6KoO3NN0M/iz+xuBnH77Jm/19fsXHsTg+zybpWwHXA0BoiJ3CoZMG07i3dxgzjTN+3UUZzOIDl+MzBUyUauuDow9tmTcY2DPNtum72mDZAJ8DQSScissGsniwNxPCg5PJizibQ+4pJuccUPcSrml+7UAMxpuacLuw9RxebamPzC3jPBfwJPHIYzpsMb5YX8DC/2BsVjdAwQkYiCYmAoaIVAz6OyPvkSJ7sNbSPsbf+o0dD4GZ3zXfN9jUJ2oC+XTPPJ+5n4Lqm7D6io5FounDEMVKBPCNgQEEdDMDRvHSs7jHEQOETjllHgbrUJJe8eYwhmWwyTvDN5jrQMc2gy19Ee9/ZBGB2RVDCOTCSJqcMFOoNQYjqEFG88sM1m9wCSbvjAUGmxwBOrdvsKcv4n2DEygpTmAkJ4SjBIyrTuVizQ4w9mQUY9CXf0Wv6NvjMGOw2ROBjnsGz+ibsPEji4unCdC1MJ+uECE8vom5QVg/GUPn2jT37RCm4MlnwjHTJHcKrzbEpAblnrip6w329AUs/MgaBiaOYhnPR6BJKBZbOxaWDSIp2HMsNIg5qDBTrTTYPg0wEfP0Qhxy3aVhm4vgvFhtxmvQYdSgGOd75wxery8zuKFGNIMrRzO4cjSDK0czuGqE8AvPIr1s4cc2AgAAAABJRU5ErkJggg==" InformativeScreenshot="80fd1421cefd4ed5ea341800b8c50f5f.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*CashPro*' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="-8, -8, 1382, 736" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGKSURBVDhPpZExSMNAFIYvEVzaRU29JK3SRClCQYfSXEoriIPOIh2KghSKNhlcXBQVdRZnNxEdnVwcHBxcnQTF1eTSokUnFxExviuktvYGg8NH7v3v/x/vEeT7/r/gimHgimHgigF1NTfmxY0UrxfQLaJiD8Vk3VXMTXcwNwvfLSqTE082lrq8wM9Dq2BRs/aRtjJxn073QqAIwQsPkw3Wb8Smoq5MyqAfPEoZpZVDaTsq6vauoFtXSKsaaKQ6LSStO6RZi8zQPEMmRzDsDbhxsVG6xTMRqpgLcN4AQkmrCuYKGi3HYINjQbMaSLdLbAsqGzvAOww4d1RSeMLjEdhiDQbVmQ7v7dYJom7twYBTlFqWXMWYBNMD8EwVYw4WFSg2V6F+AT5c2Tz04iTRPCEYEABTbTB9AWd1NSO5Ul71FHIJtQ9cOzirt/s7wk3gL9RUM8/eVCHzEHoFPtk5rPfb31G0U1OzQxCkVDYddhLPw+CKAc5woY8mcv1gE3l9BlcMA1cMA1f8Oz76Bi8FejtDME1IAAAAAElFTkSuQmCC" InformativeScreenshot="6205da5e2d3783772adf8cba411c33b7.jpg" Selector="&lt;html app='msedge.exe' title='*CashPro*' /&gt;" Title="Nuevo Telecrédito" />
+            </uix:NApplicationCard.TargetApp>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </uix:NApplicationCard>
+          <Assign DisplayName="Assign out_BooEnterAccountStatements" sap:VirtualizedContainerService.HintSize="484,82" sap2010:WorkflowViewState.IdRef="Assign_3">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Boolean">[out_BooEnterAccountStatements]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="550,394" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Exception" sap:VirtualizedContainerService.HintSize="496,325" sap2010:WorkflowViewState.IdRef="Sequence_9">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[&quot;Mensaje Excepción &quot; + exception.Source + &quot; - &quot; + exception.Message]" />
+              <Assign DisplayName="Assign out_StrExceptionMessage" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_2">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[out_StrExceptionMessage]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">["Mensaje Excepción BOFA_IngresarEstadosCuentas " + exception.Source + " - " + exception.Message]</InArgument>
+                </Assign.Value>
+              </Assign>
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+      <TryCatch.Finally>
+        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;¿Ingresó Estados Cuenta? &quot; + out_BooEnterAccountStatements.ToString]" />
+      </TryCatch.Finally>
+    </TryCatch>
+  </Sequence>
+</Activity>

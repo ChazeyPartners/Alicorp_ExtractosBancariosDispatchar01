@@ -1,0 +1,277 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="BOFA_IniciarSesionBOFA" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_StrURL" Type="InArgument(x:String)" />
+    <x:Property Name="in_StrCompanyId" Type="InArgument(x:String)" />
+    <x:Property Name="in_StrOrchestratorFolderPath" Type="InArgument(x:String)" />
+    <x:Property Name="in_StrOrchestratorAssetName" Type="InArgument(x:String)" />
+    <x:Property Name="out_BooLogin" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="out_StrExceptionMessage" Type="OutArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>655,3969</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>BOFA_IniciarSesionBOFA_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="BOFA_IniciarSesionBOFA" sap:VirtualizedContainerService.HintSize="646,3904" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="ss:SecureString" Name="vSstPassword" />
+      <Variable x:TypeArguments="x:String" Name="vStrUsername" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Try Catch BOFA_IniciarSesionBOFA" sap:VirtualizedContainerService.HintSize="584,3793" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="546,2701" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Iniciar Sesión BOFA&quot;]" />
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Edge: in_StrURL" sap:VirtualizedContainerService.HintSize="484,322" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="50578787-3f80-485e-9440-4c4ad5cac324" Version="V2" WindowResize="Maximize">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="-8, -8, 1382, 736" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGKSURBVDhPpZExSMNAFIYvEVzaRU29JK3SRClCQYfSXEoriIPOIh2KghSKNhlcXBQVdRZnNxEdnVwcHBxcnQTF1eTSokUnFxExviuktvYGg8NH7v3v/x/vEeT7/r/gimHgimHgigF1NTfmxY0UrxfQLaJiD8Vk3VXMTXcwNwvfLSqTE082lrq8wM9Dq2BRs/aRtjJxn073QqAIwQsPkw3Wb8Smoq5MyqAfPEoZpZVDaTsq6vauoFtXSKsaaKQ6LSStO6RZi8zQPEMmRzDsDbhxsVG6xTMRqpgLcN4AQkmrCuYKGi3HYINjQbMaSLdLbAsqGzvAOww4d1RSeMLjEdhiDQbVmQ7v7dYJom7twYBTlFqWXMWYBNMD8EwVYw4WFSg2V6F+AT5c2Tz04iTRPCEYEABTbTB9AWd1NSO5Ul71FHIJtQ9cOzirt/s7wk3gL9RUM8/eVCHzEHoFPtk5rPfb31G0U1OzQxCkVDYddhLPw+CKAc5woY8mcv1gE3l9BlcMA1cMA1f8Oz76Bi8FejtDME1IAAAAAElFTkSuQmCC" InformativeScreenshot="d6c4078e0cb6f4b76b904405f22037a0.jpg" Selector="&lt;html app='msedge.exe' title='Bienvenido a CashPro Online' /&gt;" Title="Nuevo Telecrédito" Url="[in_StrURL]" />
+            </uix:NApplicationCard.TargetApp>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </uix:NApplicationCard>
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: in_StrURL" sap:VirtualizedContainerService.HintSize="484,1974" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="50578787-3f80-485e-9440-4c4ad5cac324" Version="V2" WindowResize="Maximize">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,1757" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Código Empresa&quot;]" />
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into in_StrCompanyId" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="Simulate" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Text="[in_StrCompanyId]" Version="V3">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="https://cashproonline.bankofamerica.com/cpoauthweb/cpo/#/login/public/signin" CvType="InputBox" DesignTimeRectangle="153, 381, 280, 40" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT companyId'" FullSelectorArgument="&lt;webctrl tag='INPUT' id='companyId' /&gt;" Guid="a9448da2-e8ca-4b00-92ad-0a0050b4c364" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAARwAAAAsCAYAAAC3+Qf5AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACzSURBVHhe7dSxDcAgAMCw/r9xMZ1A6sBWMtlSXsgzASKGA2T2cMYYknSl5TMcgL8ZDpAxHCBjOEDGcICM4QAZwwEyhgNkDAfIGA6QMRwgYzhAxnCAjOEAGcMBMoYDZAwHyBgOkDEcIGM4QMZwgIzhABnDATKGA2QMB8gYDpAxHCBjOEDGcICM4QAZwwEyhgNkDAfIGA6QMRwgYzhAxnCAjOEAmeNwJOlGyx4OwG2GA0TmfAFNzFQaiXOl+gAAAABJRU5ErkJggg==" InformativeScreenshot="b26f190f6f96c7b8aa60f2e0166c3dbd.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*CashPro*' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                  <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_StrOrchestratorAssetName]" CacheStrategy="None" DisplayName="Get Credential in_StrOrchestratorAssetName" FolderPath="[in_StrOrchestratorFolderPath]" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[vSstPassword]" Username="[vStrUsername]" />
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Id Usuario&quot;]" />
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into vStrUsername" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="Simulate" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Text="[vStrUsername]" Version="V3">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="https://cashproonline.bankofamerica.com/cpoauthweb/cpo/#/login/public/signin" CvType="InputBox" DesignTimeRectangle="153, 473, 280, 40" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT userId'" FullSelectorArgument="&lt;webctrl tag='INPUT' id='userId' /&gt;" Guid="0e901d1a-1f8a-40bf-9afe-9c8a6d2a9970" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAARwAAAAsCAYAAAC3+Qf5AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAD1SURBVHhe7doxCoNAFEXR7L9zpzraKOgEBQUhsQiZV50DbwuXX/xXBQgRHCDmCk7XdWZmTXa6BQfg3wQHiBEcIEZwgBjBAWIEB4gRHCBGcIAYwQFiBAeIERwgRnCAGMEBYgQHiBEcIEZwgBjBAWIEB4gRHCBGcIAYwQFiBAeIERwgRnCAGMEBYgQHiBEcIEZwgBjBAWIEB4gRHCBmb8u2bXVZFsEB2trbMk1THYZBcIC29rbssREcoDnBAWIEB4gRHCBGcICYr8ExM2uxUsqxKzgAn6zrWud5PoLR9/2182p52hkawQEend/B4zjeQvNrbEop9Q3+F0t0/n7MVwAAAABJRU5ErkJggg==" InformativeScreenshot="ad1829b13854616a7156acc44af24dba.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*CashPro*' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Contraseña&quot;]" />
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into vSstPassword" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_3" InteractionMode="Simulate" IsPassword="True" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" SecureText="[vSstPassword]" Version="V3">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="https://cashproonline.bankofamerica.com/cpoauthweb/cpo/#/login/public/signin" CvType="InputBox" DesignTimeRectangle="153, 566, 280, 40" DesignTimeScaleFactor="1" ElementType="InputBoxPassword" FriendlyName="'INPUT passcode'" FullSelectorArgument="&lt;webctrl tag='INPUT' id='passcode' /&gt;" Guid="b500b174-914f-4dc0-bcd1-f174fd50d09e" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAARwAAAAsCAYAAAC3+Qf5AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAG2SURBVHhe7d3JiqtQGEbRev9ZXtS+S4LxYiCXwjqJmuanCtaCbyqouEeiXxP8MafTaWqaZsrzfHVFUayuLMvVVVW1aXVdb958DnvWtu2udV331Pq+f2rDMKxOcPgTLpfLNI7j9UGaQ5Jl2Y+4fF8qLMulwrJcKiqppYJyb6mYPNoyJGtLRWTLUhHZslRY7u1/cA6Hg5nZR5YMDsC7CQ4QRnCAMIIDhJnbcjwerxMc4KMEBwgjOEAYwQHCCA4QRnCAMIIDhBEcIIzgAGEEBwgjOEAYwQHCCA4QZm7L/FnYeYIDfJTgAGEEBwgjOEAYwQHCCA4QRnCAMIIDhBEcIIzgAGEEBwgjOEAYwQHCCA4QZm7L+Xy+TnCAjxIcIIzgAGEEBwgjOEAYwQHCCA4Q5m5wzMw+sR/B4fcYx3Hq+34qimLKsuzu8jxf3XyMRyvLcnVVVW1aXde71jTN5rVtu3td1+3efN2f2TAML+/276Z37fZ277t2i8YrE5xfZr6xcwhSgbktFZbllmFZLhWW5VJRSS0Vk0dLBeXeUiFZWyokj5YKyNalwrF3qVi8smUoXl0qHM/tPP0D+hYKRnEj9r4AAAAASUVORK5CYII=" InformativeScreenshot="5459baada43e69811f423c1b8b0cd420.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*CashPro*' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Clic Iniciar Sesión&quot;]" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Login" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://cashproonline.bankofamerica.com/cpoauthweb/cpo/#/login/public/signin" CvElementArea="152, 638, 121, 43" CvTextArea="165, 650, 94, 15" CvType="Button" DesignTimeRectangle="153, 639, 119, 40" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Iniciar sesión'" FullSelectorArgument="&lt;webctrl tag='BUTTON' id='loginButton' /&gt;" Guid="0c09f73c-5ef4-4262-b278-222f142ea8b6" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHsAAAAsCAYAAABFTMcwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMtSURBVHhe7ZzbkesgDEBvYW7JhbgVF+Iq3ELe78mDa8DEkhA23iSzWdDOnNnEgBA62MnHLv9UIj+Px0Ndr1e12WzUYrEwLJfLUVar1Sjr9XoSPd8U2+02it1uN4v9fh/N4XBQSci+3W5mMVrgu0RrOLkQTiyFkxqCExqCExpC1wbJLopCSBRWtrsrhHQQ2RkhsjNCZGeEyM4IkZ0RTvbxeBTZqaO9atEiOwNEdkaI7IwQ2RkhsjPijbIbVXXjqoZrCzFzTFN1uVWq4dq+nbHcTVuhiqrx297IL8sWFotW1WWhyrpl2t6LyM4IJ/t0Or1bttuxjfmtYxrKWrXBMcO1Z3/46GMehU0F+3Z48UtV1/1jUr9uh7EI9yhl41jwXH4smgu6W5nc27oM94+q3zz0eC36Y7J1rOe1tlZl935YFBnjtbuC9EUiBTPFZTbP8NnnNg4usoeJC+X1uYPPUCsSxOk3h8vdy6Vfy3NtXO5wTm/tMfWbx+dlky8duCh4jBE7tnNRweh8Fi7+VHHQhuKg4nqGufi1ImDugXg4j5j6zePjsmmhw7JnFgxh4+i8DWz8Efri67Fc3+BmAPnYPjoGlx/ua18zHyloE8TUbx46v6+SPXoXEtkmVjfe0McMx5+CbBggYxDJAeSa/EAblOLJZjZFbrJffRT+XDbEibdzTT7mOZx4tx5PdujOdteTlh2xEK9gVEAv6WXZHbDwATlmE4zki9phvoGNijdV4rJdEdAYWGimYLCvid1dGwoWJ5u7c2lRbWzQBwnjnkp27md+ZHPaeGADeetJXTa4ZqWRgpCC2fegb1dsK86NiZOtseNALCJfYwUN4Li9cNCO5NPcO+icXLxPyD6fz6/KFr4d7VWLFtkZILIzQmRnhMjOCCT7fr+bFyI7TZBs/X/B7iLtKPx9kGx4EXYS0kBkZwSS7Y6dENlpIrIzQmRnhPZ6uVwMIjtxRHZGINnuzC99UUgTTzYHd9AbhTvojUIPdwvBHe4WgjvcLYQ7ZiIW9x8Uc3F/JDAX9wXqVZzUEEHZnFgIJ5XCCeXgZI7BCQ3ByZyCEzkFJzEWTtwcOLE+F/UfosdNYZlrXQ8AAAAASUVORK5CYII=" InformativeScreenshot="3ad7514c292e39ebd2cf1494dd780ab7.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*CashPro*' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="-8, -8, 1382, 736" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGKSURBVDhPpZExSMNAFIYvEVzaRU29JK3SRClCQYfSXEoriIPOIh2KghSKNhlcXBQVdRZnNxEdnVwcHBxcnQTF1eTSokUnFxExviuktvYGg8NH7v3v/x/vEeT7/r/gimHgimHgigF1NTfmxY0UrxfQLaJiD8Vk3VXMTXcwNwvfLSqTE082lrq8wM9Dq2BRs/aRtjJxn073QqAIwQsPkw3Wb8Smoq5MyqAfPEoZpZVDaTsq6vauoFtXSKsaaKQ6LSStO6RZi8zQPEMmRzDsDbhxsVG6xTMRqpgLcN4AQkmrCuYKGi3HYINjQbMaSLdLbAsqGzvAOww4d1RSeMLjEdhiDQbVmQ7v7dYJom7twYBTlFqWXMWYBNMD8EwVYw4WFSg2V6F+AT5c2Tz04iTRPCEYEABTbTB9AWd1NSO5Ul71FHIJtQ9cOzirt/s7wk3gL9RUM8/eVCHzEHoFPtk5rPfb31G0U1OzQxCkVDYddhLPw+CKAc5woY8mcv1gE3l9BlcMA1cMA1f8Oz76Bi8FejtDME1IAAAAAElFTkSuQmCC" InformativeScreenshot="d6c4078e0cb6f4b76b904405f22037a0.jpg" Selector="&lt;html app='msedge.exe' title='*CashPro*' /&gt;" Title="Nuevo Telecrédito" Url="[in_StrURL]" />
+            </uix:NApplicationCard.TargetApp>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </uix:NApplicationCard>
+          <Assign DisplayName="Assign out_BooLogin" sap:VirtualizedContainerService.HintSize="484,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Boolean">[out_BooLogin]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="550,394" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Exception" sap:VirtualizedContainerService.HintSize="496,325" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Error" Message="[&quot;Mensaje Excepción &quot; + exception.Source + &quot; - &quot; + exception.Message]" />
+              <Assign DisplayName="Assign out_StrExceptionMessage" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_2">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[out_StrExceptionMessage]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">["Mensaje Excepción BOFA_IniciarSesionBOFA " + exception.Source + " - " + exception.Message]</InArgument>
+                </Assign.Value>
+              </Assign>
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+      <TryCatch.Finally>
+        <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="496,447" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;¿Inicio Sesión BOFA? &quot; + out_BooLogin.ToString]" />
+          <Assign DisplayName="Assign vStrUsername" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_3">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[vStrUsername]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[Nothing]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Assign vSstPassword" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_4">
+            <Assign.To>
+              <OutArgument x:TypeArguments="ss:SecureString">[vSstPassword]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="ss:SecureString">[Nothing]</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </TryCatch.Finally>
+    </TryCatch>
+  </Sequence>
+</Activity>

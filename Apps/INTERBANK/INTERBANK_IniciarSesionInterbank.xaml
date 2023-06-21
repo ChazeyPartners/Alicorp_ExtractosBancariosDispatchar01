@@ -1,0 +1,342 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="INTERBANK_IniciarSesionInterbank" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_StrURL" Type="InArgument(x:String)" />
+    <x:Property Name="in_StrOrchestratorFolderPath" Type="InArgument(x:String)" />
+    <x:Property Name="in_StrOrchestratorAssetName" Type="InArgument(x:String)" />
+    <x:Property Name="out_BooLogin" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="out_StrExceptionMessage" Type="OutArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>658,4795</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>INTERBANK_IniciarSesionInterbank_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Net</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Net.Primitives</AssemblyReference>
+      <AssemblyReference>System.Net.HttpListener</AssemblyReference>
+      <AssemblyReference>System.Net.WebProxy</AssemblyReference>
+      <AssemblyReference>System.Net.NameResolution</AssemblyReference>
+      <AssemblyReference>System.Net.WebClient</AssemblyReference>
+      <AssemblyReference>System.Net.Requests</AssemblyReference>
+      <AssemblyReference>System.Net.ServicePoint</AssemblyReference>
+      <AssemblyReference>System.Net.WebHeaderCollection</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="INTERBANK_IniciarSesionInterbank" sap:VirtualizedContainerService.HintSize="668,4730" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="ss:SecureString" Name="vSstPassword" />
+      <Variable x:TypeArguments="x:String" Name="vStrUsername" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence sap:VirtualizedContainerService.HintSize="606,437" sap2010:WorkflowViewState.IdRef="Sequence_19">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_5">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_StrURL]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">https://empresas.interbank.pe/login</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_6">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_StrOrchestratorFolderPath]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">JorgeLoaiza</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_7">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[in_StrOrchestratorAssetName]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">Alicorp_INTERBANK</InArgument>
+        </Assign.Value>
+      </Assign>
+    </Sequence>
+    <TryCatch DisplayName="Try Catch INTERBANK_IniciarSesionInterbank" sap:VirtualizedContainerService.HintSize="606,4142" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="568,3050" sap2010:WorkflowViewState.IdRef="Sequence_13">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="506,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Iniciar Sesión INTERBANK&quot;]" />
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Edge: in_StrURL" sap:VirtualizedContainerService.HintSize="506,322" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="50578787-3f80-485e-9440-4c4ad5cac324" Version="V2" WindowResize="Maximize">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="-8, -8, 1382, 736" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAATdJREFUWEdj+P//PwODwyoeBqtlvQyWy24A8T8g/k83zKC3iBvIAFmMXQGtMZDowhCkJwYS1zAE6YmBxF8MQXpirIJUxUu/YheHYqyC5OEvQHyCwWLZLAbL5dkM1sttGYxX8TNYLW1AU4eKsQoSxveB2XYj0KImBqvlIQzmS1UZGBqYQFkaHVPoAHDwnQBaNBPsK/NlNgzmS/iwWYQLUxoCFdgMJQWPOmDUAaMOGHXAqANGHTCyHMBgPJOVwXKJLrCtEAPUC2zsLt0JpN8hmYeJsQoiME4HMFgtEgO2D1yBlhUDLVoEbAldAKr/iaafMMYqiMAVYF+ZL9OD+GppN9RXL9DUkY+xCiLwWyD+hSZGXYxVkH7470A74NpAO6BrIB1wHdwxxiJBSwzqBoL6ol0gy////88AALzTb37OdQCSAAAAAElFTkSuQmCC" InformativeScreenshot="3d24320685601ed9267194ce9f855a80.jpg" Selector="&lt;html app='msedge.exe' title='*Interbank*' /&gt;" Title="Nuevo Telecrédito" Url="[in_StrURL]" />
+            </uix:NApplicationCard.TargetApp>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </uix:NApplicationCard>
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: in_StrURL" sap:VirtualizedContainerService.HintSize="506,2323" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="50578787-3f80-485e-9440-4c4ad5cac324" Version="V2" WindowResize="Maximize">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="472,2106" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_StrOrchestratorAssetName]" CacheStrategy="None" DisplayName="Get Credential in_StrOrchestratorAssetName" FolderPath="[in_StrOrchestratorFolderPath]" sap:VirtualizedContainerService.HintSize="410,143" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[vSstPassword]" Username="[vStrUsername]" />
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="410,92" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Tarjeta Interactiva Empresarial&quot;]" />
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into vStrUsername" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="410,218" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="Simulate" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Text="[vStrUsername]" Version="V3">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="https://empresas.interbank.pe/login" CvType="InputBox" DesignTimeRectangle="936, 418, 308, 18" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT mat-input-0'" FullSelectorArgument="&lt;webctrl tag='INPUT' parentname='cardInp' type='text' /&gt;" Guid="f960bc65-bc90-4a71-9eea-68dc0f4cee7b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAATgAAAAWCAYAAABUroCYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABcSURBVHhe7dQBDQAADMOg+ze9+2hABDeAKMEBWYIDsgQHZAkOyBIckCU4IEtwQJbggCzBAVmCA7IEB2QJDsgSHJAlOCBLcECW4IAswQFZggOyBAdkCQ7IEhwQtT1MXtr3h7MWXgAAAABJRU5ErkJggg==" InformativeScreenshot="6eeae67a6b8c6840ec1e066771e05c73.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Interbank*' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="410,92" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Contraseña&quot;]" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Password" sap:VirtualizedContainerService.HintSize="410,157" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://empresas.interbank.pe/login" CvType="InputBox" DesignTimeRectangle="936, 563, 308, 26" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT mat-input-1'" FullSelectorArgument="&lt;webctrl tag='INPUT' parentname='passwordInp' type='text' /&gt;" Guid="deb5ba29-97e0-49ed-8268-c17c2b178a75" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAATgAAAAeCAYAAAC4/QL1AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB1SURBVHhe7dQBDQAADMOg+ze9+2hABDeAKMEBWYIDsgQHZAkOyBIckCU4IEtwQJbggCzBAVmCA7IEB2QJDsgSHJAlOCBLcECW4IAswQFZggOyBAdkCQ7IEhyQJTggS3BAluCALMEBWYIDsgQHZAkOyBIcELU9DKK2QNmIDAYAAAAASUVORK5CYII=" InformativeScreenshot="8b89c81ff93e48955987380b01c81f0b.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Interbank*' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each vSstPassword" sap:VirtualizedContainerService.HintSize="410,431" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[New System.Net.NetworkCredential(String.Empty, vSstPassword).Password]">
+                    <ui:ForEach.Body>
+                      <ActivityAction x:TypeArguments="x:Object">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="x:Object" Name="currentItem" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,245" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click currentItem" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable BrowserURL="https://empresas.interbank.pe/login" CvElementArea="938, 625, 100, 36" CvTextArea="983, 636, 7, 14" CvTextArgument="[currentItem.ToString]" CvType="Button" DesignTimeRectangle="1042, 565, 96, 37" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'.st0{fill:url(#SVGID_1_…'" Guid="348cb14e-2797-458d-95fd-ba8c0eb9ed88" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGMAAAAkCAYAAACdZoRBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGgSURBVGhD7ZtNroIwFEa7BVZmGMjEBbAFNsIGnDBjDe7ExJkYE40/4A/e974mJby8DrXeks/kRNJ2YM4JMvBq5Pf1er2k73vL8/mUx+NBPgw8O+fwj5dxIXDgfr9L13XStq1cr1fyIeAXnuEb3l0Qgwss3m63YZOEYewdHQwWx5VIWOAd/nFtUOZyufw7RMIB/+hgUOV0OnkPkTDAPzoYPEyOx6P3EAkD/KODwdOdMb4L/KODjXE4HLyHSBjgnzGUwBiKYAxFTCrGYrGQuq69ezEQfYzlcillWUqe52KMkfl87j0XA9HHKIrCRkiSxL6naeo9FwPRx8DnXq1Wsl6vGUMLm83GxpjNZt79GGAMRTCGIhhDEYyhCMZQBGMoYjIx8HNllmVSVZV3PwYmE2MKMIYiGEMRjKEIxlAEYyjiTwyO6nyXYVSHQ2zfB/7tEJsb73TDtyQsY//D4LNb4DR6GNz0ObwPg8/YwOL5fLa3y36/l91uJ03TyHa7JW8GXuEXnuEb3uEfHYY/y2DB3SE4BPCUJ+/FuXV3hPs26vtefgC9SF+/wDA8fQAAAABJRU5ErkJggg==" InformativeScreenshot="33df63c0a87653498404a313083d85f8.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Interbank*' /&gt;" SearchSteps="CV" Version="V2" />
+                            </uix:NClick.Target>
+                          </uix:NClick>
+                        </Sequence>
+                      </ActivityAction>
+                    </ui:ForEach.Body>
+                  </ui:ForEach>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="410,92" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Clic Iniciar Sesión&quot;]" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Login" sap:VirtualizedContainerService.HintSize="410,157" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://empresas.interbank.pe/login" CvElementArea="905, 533, 340, 52" CvTextArea="1029, 551, 93, 14" CvType="Button" DesignTimeRectangle="908, 536, 336, 48" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Iniciar sesión'" FullSelectorArgument="&lt;webctrl tag='BUTTON' aaname='*Iniciar sesión*' /&gt;" Guid="456e5758-c5a3-4913-a050-aa54882d8b88" ImageBase64="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" InformativeScreenshot="6171ba431e3947ce2a6a005a5a916c41.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Interbank*' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="410,92" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;Clic Postpone&quot;]" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Postpone" sap:VirtualizedContainerService.HintSize="410,157" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://empresas.interbank.pe/home/stock" CvElementArea="512, 546, 157, 52" CvTextArea="556, 563, 71, 17" CvType="Button" DesignTimeRectangle="516, 548, 150, 48" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Postergar'" FullSelectorArgument="&lt;webctrl tag='BUTTON' aaname=' Postergar ' /&gt;" Guid="a0da423a-4d79-44f8-9fc9-7d5849aad2d8" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJoAAAA0CAYAAABy6SGJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAg8SURBVHhe7ZxpbFVFFMeNcYv7giYa17jEuMa4fNBo3BONyiqLAkEEJC4QhYgCgjuIClFEQKNRQBRKoUBbltKytaxCabFQoEBpWYSWTUA/Hu9vkrm573beVp71vfZ8+IXOzL33zWP+75yZM+fOKcdP/COK8l+jQlOahJQLbebOFTK4dLK0Xfap3F/wtlyf20fOze4kp0xrraQhjA1j9EDBIDNmQ7yxm1W90jm2J0NKhDZxy3xpvfQTOW16W3myaLhMqJwvk7YVycLaUik7sFP+PHrYeZ/y/8PYMEYLakrNmE3YMk+eKBomZ2S194Q3Qn7YUuC8L1lOSmhjKmabX8SLJV/KL1VL5Mjx487rlMzj0LFjMrlqsXQtGS3nZ3eWrzbNdV6XKI0S2s+e8q+a01N6rx4n+9VaNXv2HT0kvVaNlWvm9DJWz3VNPJIWWrvlI6TD8pFSWb/b2a40XzbV15jxf774M2d7LBIWGpbr2rm9JHtHibNdaTn8tn2Z3JD7ihw89pez3UVCQis/UG3mYhV1Nc52peXBAuKsrA7Gyrnaw8QVGiJ7rOg9Z5uiPFo4NCEDFFNouEssmatNUSxYtnhuNKbQmJOpu1TigRtlzuZqs0QVGquL7J068VcSY5q3QOi4PPpq1Ck04mSEMFxtihINdhKmVC12tjmFRjBW42RKsvxRt0uum9vb2dZAaGwrEfEP1ytKIvRc+bWM3ZzboL6B0Fhl6raS0lj2HKmXC2e+0KA+QmhkYbBBHqxTlGTpVDxKfty6KKIuQmik+pCFEaxTlGRh452oRbAuQmjkk6V7qg9f4vTp7SKS9y6e9aK8vnaiyTJw3aM0LQRvCeIG63yhkRlL0mKwMR35ZnOeERf/UuaHQbIeOVPPLv04qY3eWIzcOENazeoqi3eXO9uV2LA1Nbd6jV/2hTZ4/WSTGWvL6UpYaBYS9JiEFu4ui6hvLK+umSDnzOgos6tXOdtTAasz+py1o9jZnsmMr5wnwzf86pd9oZEv3tiktqYkmtCCwjh24m8TdCZR79RpbYyrvXfBQFm6Z6N//ca6anmo8F3fDeN++/3+ndT/dVSeWfKRqQsycN2P/n1PL/nQuAbqW+V0k1Ebs81n0v7U4g/kngUDzC+az6YPbOMF76P+8pwecpEnstc8l2/7S+4+bfY+Mlxtf6M917anG+Ggvy80XiQhx9+W05VELNroihwjuiGlU4xwdh76U57zFjoXzOwiuZ45x70+XDhEbsl/3QwW7pfc+Btz+/oW0WXR1u/fboLZDPbWg7vNfcQdz8vuJJ+WZ5lrHi8aZvrX3vtP3nvkoKzet8WjMuI++tRn9Tg5M6u9+dz5NetN37qvGCO1h+vMXLPHiq/8/kZ7Ls+xfUs3+E4PLnrHL/tC49fE5qgtpythoYXnaOXed7h6zsvSxrPQ1soAYrs571UzD605fEBuz+9nBj54TXB+5xIadQiGCLit436eyfN4LoKwgrfXfOKJkP4Ff8jsvNBPPAnPCAtn5b7Ncok3R+y/9ntTdj03nQlvtPtCI1CbCW8rWaEFCa46EQYCCVs8wOphtbYf2mvcJKtsyvzNQAdF5xKatSoucIUIkGsum9Xd5PHZ+xBa+FlBoVHm+m4lY+SK2S9FrKrpB+2u56Yz4RSzjBWaS0iQv+t348riCQ1L+G1lvty94C1/vsXfWD6udQkNUeBud3mWy9aFQRDWutk663JvnfeGrPLcKJ/dd81433VivS7N6S635b9h+s84ICiEFRRa+LnpTFShZarrDMMciI3daK6TuRkuMvij4roR5TOMhbPPxWWFhUbIAxEH62BRbZlfF00Q6/ZXyWOF75mJPP1HeEyY+ezBpZPk7BnPR7y4O3X7UiPETBXahgM7zI/aln2h8aYyL5HacroST2gQbzGAm8RtfVw+3bRjYVhVMtg21MAWCpZuXGWebDu4x9QzyHfNf9P8By7fW2FEkrdrrXGbrAq5L5Yghm2YauZqLCCCQifMgbukP/QFq8czEGWmCi3qYiBTwhtM/IOCcIEAYoU3aEeMV87uadqBv6mjjWsQYJfiL0wbn8cxD9SzKnzBq6cOweMeWAlal9uxeJTcOa+/2VymDMwdWZXiNRA7/eG5uFL6xGfh1m3o46a8vuZ7EgkYtP6nqM9NZ6KGNzhzgS9ny0pqsFbwDk8kNu6FsApqNxgrRSyNv8P3ZToEbN8vcwRsmR9w5oItK6nBri6ZmgRXtlhAMmWaq9AeKRrqxwDBFxpwsAdnLgTrlJOHxcJ9CwcYN4u7BdwkdTmhhUVzoM6z2EwtgnURQiPnO7jtoSiNITw/gwihEdNhUhqsU5Rk6VzyeYOFZYTQgOW35nUpjYVVOTs14foGQuMcLI4oCtcrSiKQDEDsMVzfQGhA/CnRwzsUxcK2GbFCV5tTaK6cb0WJB++csHXmanMKDThsjXOwXG2KEoaXmlgEuNogqtCAfKJM2GhX/l9IGCBhwdVmiSk019ssihKGrJejx0842ywxhQYsCshEdbUpCtpI5JyWuEIDNoOxbOpGFQvuEkuW6GFACQkNcKPM2TgHy9WutByY+DMni+cugyQsNAt5UeyJBl/QUFoGxMkIYcRaXUYjaaEBh62RLs0RRZmSiKc0HraViPgTjI0WJ4tHo4RmsW9ac3oMQd7g62pKZkOqD1kYWC/2Ll3bSslwUkKzkF/PTgILBlYh4yvzTSfJG2cBoeetpS+MDS+SMFaMGWNH0iL5ZKT6pCq9PyVCC8LBHsPLpppO8nICC4hgwp+SXjA2vGzDWDFmpF8HM2NTRcqFpiguVGhKE/CP/AswlbRb0unHgAAAAABJRU5ErkJggg==" InformativeScreenshot="f83744cc0504f7a56f523ae5a613a1e5.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Interbank*' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="-8, -8, 1382, 736" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAATdJREFUWEdj+P//PwODwyoeBqtlvQyWy24A8T8g/k83zKC3iBvIAFmMXQGtMZDowhCkJwYS1zAE6YmBxF8MQXpirIJUxUu/YheHYqyC5OEvQHyCwWLZLAbL5dkM1sttGYxX8TNYLW1AU4eKsQoSxveB2XYj0KImBqvlIQzmS1UZGBqYQFkaHVPoAHDwnQBaNBPsK/NlNgzmS/iwWYQLUxoCFdgMJQWPOmDUAaMOGHXAqANGHTCyHMBgPJOVwXKJLrCtEAPUC2zsLt0JpN8hmYeJsQoiME4HMFgtEgO2D1yBlhUDLVoEbAldAKr/iaafMMYqiMAVYF+ZL9OD+GppN9RXL9DUkY+xCiLwWyD+hSZGXYxVkH7470A74NpAO6BrIB1wHdwxxiJBSwzqBoL6ol0gy////88AALzTb37OdQCSAAAAAElFTkSuQmCC" InformativeScreenshot="d01d22cdc0b6d8197fcec3f3dc2f8ca3.jpg" Selector="&lt;html app='msedge.exe' title='*Interbank*' /&gt;" Title="Nuevo Telecrédito" Url="[in_StrURL]" />
+            </uix:NApplicationCard.TargetApp>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </uix:NApplicationCard>
+          <Assign DisplayName="Assign out_BooLogin" sap:VirtualizedContainerService.HintSize="506,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Boolean">[out_BooLogin]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="572,394" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Exception" sap:VirtualizedContainerService.HintSize="496,325" sap2010:WorkflowViewState.IdRef="Sequence_17">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Error" Message="[&quot;Mensaje Excepción &quot; + exception.Source + &quot; - &quot; + exception.Message]" />
+              <Assign DisplayName="Assign out_StrExceptionMessage" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_2">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[out_StrExceptionMessage]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">["Mensaje Excepción INTERBANK_IniciarSesionInterbank " + exception.Source + " - " + exception.Message]</InArgument>
+                </Assign.Value>
+              </Assign>
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+      <TryCatch.Finally>
+        <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="496,447" sap2010:WorkflowViewState.IdRef="Sequence_18">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;¿Inicio Sesión INTERBANK? &quot; + out_BooLogin.ToString]" />
+          <Assign DisplayName="Assign vStrUsername" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_3">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[vStrUsername]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[Nothing]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Assign vSstPassword" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_4">
+            <Assign.To>
+              <OutArgument x:TypeArguments="ss:SecureString">[vSstPassword]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="ss:SecureString">[Nothing]</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </TryCatch.Finally>
+    </TryCatch>
+  </Sequence>
+</Activity>

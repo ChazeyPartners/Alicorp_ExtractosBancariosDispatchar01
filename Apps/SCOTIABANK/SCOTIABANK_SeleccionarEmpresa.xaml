@@ -1,0 +1,218 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="SCOTIABANK_SeleccionarEmpresa" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_StrCompany" Type="InArgument(x:String)" />
+    <x:Property Name="out_BooSelectCompany" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="out_StrExceptionMessage" Type="OutArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>636,2597</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>SCOTIABANK_SeleccionarEmpresa_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="SCOTIABANK_SeleccionarEmpresa" sap:VirtualizedContainerService.HintSize="646,2532" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Try Catch SCOTIABANK_SeleccionarEmpresa" sap:VirtualizedContainerService.HintSize="584,2421" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="546,1684" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Seleccionar Empresa&quot;]" />
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: Seleccionar Empresa" sap:VirtualizedContainerService.HintSize="484,1319" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="50578787-3f80-485e-9440-4c4ad5cac324" Version="V2" WindowResize="Maximize">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,1062" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Clic Empresa&quot;]" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click SelectCompany" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://bancainternetempresas.scotiabank.com.pe/main/#" DesignTimeRectangle="185, 138, 170, 55" DesignTimeScaleFactor="1" ElementType="ListItem" FriendlyName="'ALICORP S.A.'" FullSelectorArgument="&lt;webctrl parentid='navbar-collapse-1' tag='LI' class='dropdown*' /&gt;" Guid="1d1fecbb-0c85-40e7-9c6f-6f282a4dd520" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAK4AAAA7CAYAAADip7EeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAVpSURBVHhe7Zo/btw6EIfT5Bq+wDtOrpDL+ADust0rdgEXCeAgRcpsgDRJ8/KCxI2RNIkf3OQEfOJwKJHDISU5u7Jm/fsAApb4b8T5SGkBP/n3rzOHgmKtQFwUk+WJA8AgEBeYBOICk0BcYBKIC0wCcYFJIC4wCcQFJoG4wCQQF5gE4gKTQFxgEogLTAJxgUkgLjDJEcX96X48f+q+np27W74z8MHdnD1zP8qKwMdzvR/d92PGoo3dUbRT5iraDOXmI7fxVNtV5o7c7ty16JON2+D3q2ez2j9GjieuT/jzc3fTyXv96iffjMwX9/ailCUkOB8ntBNjs0RZHBTfzv3myx6aO+lfaRfmrshL802IQSWszc1FN74WHyCOJq4XyCeJElwkYKa4isgREvXiQ7hotCtkqggZ3xS9YNV29WfQn7l+PyPOp8l/otztd+71NV9oXL92u/0dXwSOJG6SVDUB88TN5Gww1i5uJuKI4ob47/eqH2IUcZwwXtzNZqPL20nr6xYRV54spVBzxJ2awPF2FFd6OmtC0txJbJV29Eyq0AGaq5O3L422PdpbofYGOSnu3H63KeVlaTe7fdci5wjiBoHKHzhpAlYibipWX0Rc1XbThSLJud/k+Ai/To/lR5qQtyGt5/DiVhOdJm2NnwpBkqJ/0e4PEM+Vw/Nr5VDzr55B3pa0noOLW5OH7vcJmCduK+HZZ0lLjCk/zqiNOBW1dk0aJ3/rB1ctdrrfWKuTg+VtSOuZJe5/Xz+5/T/f+Uqj8WrLkjZT3A4SX9yL35HpfKGdGHuGkMWYs8XtoPjLdahtak+9buqn0uPioOKGpFdOPE5ASE7ttcjCKeJ6olRDqczF4gxF2SQNITP57yOuhzdLGkcuXyIkt619y6brSn/fJ54T48AnLgDLAHGBSSAuMAnEBSaBuMAkEBeYBOICk0BcYBKIC0wCcYFJIC4wySxxAVgLEBeYBOICk0BcYJLDi/v5rXvx91YtV5+5jce3u3yv/Jf7rdtfbt32nfwH2i/uqjWexq/3bpu0L8bMYn3p9r/4vuDu3Uv34s0XvoqEOPv+s+vz55GxfXuT9KWSxifGpvLWfePaYq1G5h7WURuXSzHGw3IccTUhSZJk8eeIy4JlorKUpeAM1w99QrL6a6oX8WTJD5C0SuJIrP5eGXO7Xl6L2Oi6jKXHx66unSeMNTZXfy3XQSLzthKWE1cu4GRxZVITKrJ5SDgxfnpy5mJ5wry52F2bbvwr2VZLdvo8Y/VK3Nmp3hSzw/fPYk/Q1qQ5t1zvFLkJ1sP6xdUScU8GWfVkZTJ38uxZ4kJyLaZU1pF6bVNlfbq/t5d80lPJN4Hvn9e310edL6JtMqbZ74FZ/afCwRYvS1CYQ57iNJdykqniFjH504nHH6lX56H4goBUn8oo1o7iScYv2mfU3ljhvhdfP1Fr/dbBgj/OEmk9S4pLUqQJWre4GkUMGfobpJez2i+gjk15bJ/kD8kCJ25l8SaK+8cLWEjr0RNdk0MVV8aUnugj9epmHHnO2qaK+Bjz55kmLaHM3d4oD88ynwqaPNUTJiz4cBrK64RUFg1KiN63TIx+CnuKttq86XOP1SuiDGLWN1W4p62HiF1bb2bapmms+UpY7BuXFixbjLDYcleHdkJoWlixkJyc6qnA9dXFl3IpMkW00ye/V8rWrpfXuSjFGojYaOxkjXMZw1iatAEppdJe23grY7kfZx204GJBwr2kVPr2oialKmVHMW4s6fi8IUKpJyqXMMIbL/afXR+EifVStLjRQyljy59vkDrvp7eRa1lI3tjEa+Hw4gKwABAXmATiApNAXGASiAtMAnGBSSAuMIhz/wPdHMWQ/nLx5QAAAABJRU5ErkJggg==" InformativeScreenshot="13c8afd5fdac7cbab2d533d29091f1ff.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Telebanking' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Clic Seleccionar Empresa&quot;]" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click SelectCompany" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://bancainternetempresas.scotiabank.com.pe/main/#" CvType="Text" DesignTimeRectangle="202, 158, 132, 16" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Seleccionar empresa'" FullSelectorArgument="&lt;webctrl aaname='Seleccionar empresa' /&gt;" Guid="ea2c06e1-7e90-4870-88e1-3d033bccb106" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIgAAAAUCAYAAABWHnVqAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKnSURBVGhD7VZBbgIxDOz/39BjDxx64IDEgWPhBwiJH4DUP6Qb22HHdta7oBa1lUdaicSOPbaH7L6URCJACiQRIgWSCJECSYRIgSRCeIFcDmX1tiqv8GyOYluAz491eX0/lE9Z/wSekSPB0AIhcazL/iLrChHM6uMqGzFyeP8LSiBTw/X7p7LBW2Z7kv37fCvI/2bX4pyyuRzHXdev4ryt4j4oDupGdDcmnq/cd2XfeEwJX+XX8Tn/qezfdfy63/zHP1/NN9iPwAlzVq7Det/OSi8f6SEhrJ2hbxApNH6l8MBHnysV34rUw4t9Od+unHml14FN5aB9KMyseRDjmhsmcaVBlp/lb0WtYHlSzOn8TRj9Hkg+iEf+jY/wxdtc93sAxrPccD1bO8N9g2jF+QNktw2jZJwYCce+RiwKkQ1z9P2oqZIXfxPMAC2Qvxe4Bee3dqzb5bdDoxyNTycf8nXc8eyImpN64nLF0LUz/EcqgIoTobQh4J5+vEBi36j58WDGHH2/cEBdgXCcG7/FAjHn8IkEooZQY6BA+tyIg+VOa5NXHp6X3AqyF/X6dvYegdwASnQFGziBTPpC4Q6R7TsFMjan/QGQ/xyPefszBGL9+yAeVOvS2hkgkOBaByK9IAi0x77RaySyYdy+Hw4lFIgbluU8J4CYZ8X9AjH5kK8TxBw/C+A7Wztj0UeqLpJJYVOmRRH7cj54R9rhTdh8DGiaWc8KBHPQevA3/MMB2PxGNI8IBO3qvBOI9AJrQM62vrtqZ/hXDAUZHOFx/xDrA0G1QAYEvhVc4GjHYUzZXI5WHD26gaFABpC9na0xKZYeWCiQAZYn9usRgWy2UI/rpa6vQtVQzwPfxTZXO2PZN0jiSVgmyGciBfKrkAJJhEiBJP4YUiCJAKV8ASW+eM6q6txkAAAAAElFTkSuQmCC" InformativeScreenshot="10140864e8757b96176adec49c7b0f89.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Telebanking' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Clic Empresa &quot; + in_StrCompany]" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click in_StrCompany" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://bancainternetempresas.scotiabank.com.pe/main/#" CvType="Button" DesignTimeRectangle="248, 282, 109, 80" DesignTimeScaleFactor="1" FriendlyName="'ALICORP S.A.'" FullSelectorArgument="[string.Format(&quot;&lt;webctrl tag='DIV' aaname='*{0}*' /&gt;&quot;, in_StrCompany)]" Guid="80868321-fe56-470c-8407-43dbdbb65f36" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHEAAABUCAYAAAC1H9hVAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAATVSURBVHhe7ZrNTeRAEIUnI7KAFMiACEiAWAiAILhzRVw5seLM1asP8YY3NdWNB3bFTKk+qTV2u7r+XtuWMJulOXlaxAK0iAVoEQvQIhagRSxAi1iAFrEAqYg3NzfL1dXV8vb29jGzLK+vr8vFxcVyf3//MfPJ4+Pjcnl5+W4jsNtsNttxe3v7ceWTmY3i+XWG50Xcs7OzPZssFkT7WGMGObKGtcfKnogkS3EMT/wQEWPhNAp/3lyO8ac1smEDQRYv+sH/+fn5Xp7k4nPAOTm5v2yzOsxfX1+/j9HGOAb2RCRZDTUU1oqYCQZuM2q0z4/ieV7YRREVP67j3DcNZOsd5hHw4eFhm/sxsiOidh7JkzDNUOKjpgL2KvKrxgA+sjvAN0AWL26QLNYovvwd8mgkjmKxcbLaj4EdESkOEdVcT/wQEb/atSMRgZguor/rGP50IJa/4zRmzca37GaCkps2NODTYx8TOyJ6gRpK/BARv3snQhRR8TK/a2LNwDcxsg2Hz7hBRra/zVbETCTmEIeCsuuC6xIxPvIE15jn1/06Ps9xjIdPbyR2a0VkbZZTlgewmeKdpw12bGxFzHalC5I1VdAEiQjY+KNKfrwpUZBok8WLG+QQETPbmIMY1Yo98cnjmNiKmO08UKFPT0/vv/54YVAojXERgXm3y3xHG4kDo0Zyrg2SCTMDO39EuoBeAzH8mtB6rlOP5/ub7LwTm9OkRSxAi1iAFrEALWIBWsQCtIgFaBEL0CIWoEUsQItYgBaxAC1iAbYi6quBf1Vg+KeX0VeD+Bf96Ou7n2/wKx/xq4J/kci+kPhXCeF5xZxm/qhNefhXFZ+P6zx3hvrjcXwe3N/MF4M6xJ6InuTa73cEkY38xOQOFVKfewTHOvdcY46gRmEjEaPdWn/MyU+sn/UeV8iH9xKY93/5cH8M/WtMzMHJrk1FBIxVrAd1vBh+CUIwocDRN4waEYnN9LvMY2KHgHd3dzs2/HKu3Nf641j1ewNnNcVYI9xfxOM6xFNu4p/eibOkfgo+lXwsxAURUZjsXLXM/MVNxjlD/fLHm/v2R6b7duTDew6jPmo+2n/5TvTd4IU7UcQY5KfEuC4oeNMFti5atHGfI3/Pz897zZSIMSfm5MNjqSfeRyFfDmvpe6wHuOZ5iuGdGJOEbA5IxEX0on8KsdjVygtiMZzHoln3P+/EiPuLZPnhIxNEjNZkvZ0+TlngjvilEZ5oFI7fLDkScN9rwB4BY2M4d0GymNEm5u5NmvnjWKLFWp3owyGW/MlHthEc/PmmiPk7B70TswRio+XHC+XYN8MaYhGO5zpqLOu8qdGOGlTHzB9zyt1zYh477MH9sVbHs7hO9Ie9n8d6nKmIwLmLpKT0zszuFPmSjZqQQUEq0GFO6zM/xCQ281lTsqI9L28QzPx5Lt4fn4/+8KFr8hf7oqH63V/sWRTZ2YrYnC4tYgFaxAK0iAVoEQvQIhagRSxAi1iAFrEALWIBWsQCtIgFaBEL0CIWoEUsQItYgBaxAC1iAVrEArSIBWgRC9AiFqBFLECLWIAWsQAtYgFaxAK0iAVoEQvQIhagRSxAi1iAFrEALWIBWsQCtIgFaBEL0CIWoEUsQItYgBaxAC1iAVrEArSIBdj8eXlZepzyeFn+Ag5E3qGCKaOdAAAAAElFTkSuQmCC" InformativeScreenshot="78afd14622c5af0e962fc0bac664f962.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Telebanking' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="-8, -8, 1382, 736" BrowserType="Edge" IconBase64="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" InformativeScreenshot="2a8a48d6b0186806907b4e4f1a32aecf.jpg" Selector="&lt;html app='msedge.exe' title='Telebanking' /&gt;" Title="Nuevo Telecrédito" />
+            </uix:NApplicationCard.TargetApp>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </uix:NApplicationCard>
+          <Assign DisplayName="Assign out_BooSelectCompany" sap:VirtualizedContainerService.HintSize="484,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Boolean">[out_BooSelectCompany]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="550,394" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Exception" sap:VirtualizedContainerService.HintSize="496,325" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Error" Message="[&quot;Mensaje Excepción &quot; + exception.Source + &quot; - &quot; + exception.Message]" />
+              <Assign DisplayName="Assign out_StrExceptionMessage" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_2">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[out_StrExceptionMessage]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">["Mensaje Excepción SCOTIABANK_SeleccionarEmpresa " + exception.Source + " - " + exception.Message]</InArgument>
+                </Assign.Value>
+              </Assign>
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+      <TryCatch.Finally>
+        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;¿Seleccionó Empresa? &quot; + out_BooSelectCompany.ToString]" />
+      </TryCatch.Finally>
+    </TryCatch>
+  </Sequence>
+</Activity>

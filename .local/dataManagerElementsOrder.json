@@ -119,17 +119,36 @@
       "Path": "Framework/Process.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "vBooUploadQueues&Sequence_1",
-        "vBooDownloadFileMovements&Sequence_1",
-        "vBooEnterDownloadFile&Sequence_1",
-        "vBooRequestSent&Sequence_1",
-        "vBooRequestGenerationFiles&Sequence_1",
-        "vBooEnterFileGeneration&Sequence_1",
-        "vBooEntryModule&Sequence_1",
-        "vBooLogin&Sequence_1",
-        "vBooSessionStarted&Sequence_1",
+        "vBooCosultationMovements&Sequence_1",
+        "vBooSortMovementFile&Sequence_1",
+        "vBooEnterPerformSearch&Sequence_1",
+        "Config&Sequence_1",
         "vStrExceptionMessage&Sequence_1",
-        "Config&Sequence_1"
+        "vBooSessionStarted&Sequence_1",
+        "vBooLogin&Sequence_1",
+        "vBooEntryModule&Sequence_1",
+        "vBooEnterFileGeneration&Sequence_1",
+        "vBooRequestGenerationFiles&Sequence_1",
+        "vBooRequestSent&Sequence_1",
+        "vBooEnterDownloadFile&Sequence_1",
+        "vBooDownloadFileMovements&Sequence_1",
+        "vBooUploadQueues&Sequence_1",
+        "vBooConsultedMovementHistory&Sequence_1",
+        "vBooExistMovements&Sequence_1",
+        "vBooLogout&Sequence_1",
+        "vStrIdEmail&Sequence_1",
+        "vBooObtainMail&Sequence_1",
+        "vBooDownloadFile&Sequence_1",
+        "vBooMovedMailProcessed&Sequence_1",
+        "vBooEnterSecurityQuestions&Sequence_1",
+        "vBooEnterAccountStatements&Sequence_1",
+        "vBooGenerateAccountsReport&Sequence_1",
+        "vBooExistAccount&Sequence_1",
+        "vGetAttributeAccount&Sequence_1",
+        "vDtbMovements&Sequence_1",
+        "vBooObtainedMovements&Sequence_1",
+        "vBooGenerateMovementReport&Sequence_1",
+        "vBooSelectCompany&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [
         "in_DtbProcessMonitoring",
@@ -334,6 +353,7 @@
       "ArgumentsSectionElementsOrder": [
         "out_StrExceptionMessage",
         "out_BooDownloadFileMovements",
+        "in_StrGeneratedFilesPath",
         "in_StrExtension",
         "in_StrCopyFile",
         "in_StrPathDownload",
@@ -359,7 +379,7 @@
       "Path": "Apps/Edge/Edge_Descargar.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "vBooDownload&Sequence_1",
+        "vBooFolderExist&Sequence_1",
         "vBooDownloadedFileExists&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [
@@ -397,6 +417,564 @@
       "SortBy": 0,
       "VariablesSectionElementsOrder": [],
       "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/BBVA/BBVA_IniciarSesionBBVA.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vStrUsername&Sequence_1",
+        "vSstPassword&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrExceptionMessage",
+        "out_BooLogin",
+        "in_StrOrchestratorAssetName",
+        "in_StrOrchestratorFolderPath",
+        "in_StrCompanyCode",
+        "in_StrURL"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/BBVA/BBVA_ValidarInicioSesionBBVA.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrExceptionMessage",
+        "out_BooSessionStarted"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/BBVA/BBVA_ConsultarHistoricoMovimientos.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrExceptionMessage",
+        "out_BooConsultedMovementHistory",
+        "in_StrDate",
+        "in_StrAccount"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/BBVA/BBVA_ValidarExistenciaMovimientos.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrExceptionMessage",
+        "out_BooExistMovements"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/BBVA/BBVA_DescargarArchivoMovimientos.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrExceptionMessage",
+        "out_BooDownloadFileMovements",
+        "in_StrGeneratedFilesPath",
+        "in_StrCopyFile",
+        "in_StrPathDownload",
+        "in_StrDate",
+        "in_StrAccount"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/BBVA/BBVA_CerrarSesionBBVA.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/BCP/BCP_TerminarSesion.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/Mail/Mail_ObtenerCorreos.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vLmmEmail&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrIdEmail",
+        "out_StrExceptionMessage",
+        "out_BooObtainMail",
+        "in_StrMailFolder",
+        "in_StrSociety"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/Mail/Mail_DescargarArchivo.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vBooDownloadedFileExists&Sequence_1",
+        "vIstAttachments&Sequence_1",
+        "vStrNameFile&Sequence_1",
+        "vBooFolderExist&Sequence_1",
+        "vLmmEmail&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrExceptionMessage",
+        "out_BooDownloadFile",
+        "in_StrFile",
+        "in_StrMailFolder",
+        "in_StrCopyFile",
+        "in_StrDownloadPath",
+        "in_StrIdEmail"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/Mail/Mail_MoverCorreoProcesado.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vLmmEmail&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrExceptionMessage",
+        "out_BooMovedMailProcessed",
+        "in_StrFolderProcessed",
+        "in_StrIdEmail",
+        "in_StrMailFolder"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/BOFA/BOFA_IniciarSesionBOFA.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vStrUsername&Sequence_1",
+        "vSstPassword&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrExceptionMessage",
+        "out_BooLogin",
+        "in_StrOrchestratorAssetName",
+        "in_StrOrchestratorFolderPath",
+        "in_StrCompanyId",
+        "in_StrURL"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/BOFA/BOFA_IngresarPreguntasSeguridad.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vStrUsername&Sequence_1",
+        "vSstPassword&Sequence_1",
+        "vStrSecurityQuestion&Sequence_1",
+        "vBooSecurity&Sequence_1",
+        "vDtbSecurity&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrExceptionMessage",
+        "out_BooEnterSecurityQuestions",
+        "in_StrOrchestratorFolderPath",
+        "in_StrBank",
+        "in_StrSecuritySheet",
+        "in_StrSecurityFile"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/BOFA/BOFA_ValidarInicioSesionBOFA.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrExceptionMessage",
+        "out_BooSessionStarted"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/BOFA/BOFA_IngresarEstadosCuentas.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrExceptionMessage",
+        "out_BooEnterAccountStatements"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/BOFA/BOFA_GenerarInformeCuentas.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrExceptionMessage",
+        "out_BooGenerateAccountsReport",
+        "in_StrDate"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/BOFA/BOFA_ValidarExistenciaCuenta.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrExceptionMessage",
+        "out_BooExistAccount",
+        "in_StrAccount"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/BOFA/BOFA_ObtenerMovimientos.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vStrGeneralLedgerBalance&Sequence_15",
+        "vStrAmount&Sequence_15",
+        "vStrTransaction&Sequence_1",
+        "vStrDescription&Sequence_1",
+        "vStrDate&Sequence_1",
+        "vIntRow&Sequence_1",
+        "vBooExistRecord&Sequence_1",
+        "vGetAttributeAccount&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrExceptionMessage",
+        "out_BooObtainedMovements",
+        "out_DtbMovements",
+        "in_StrAccount"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/Excel/Excel_GenerarReporteMovimientosBOFA.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vBooTemplateFile&Sequence_1",
+        "vBooMovementsFile&Sequence_1",
+        "vBooFolderExist&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrExceptionMessage",
+        "out_BooGenerateMovementReport",
+        "in_DtbMovements",
+        "in_StrCopyFile",
+        "in_AstCellValue",
+        "in_AstCell",
+        "in_StrSheetsTemplate",
+        "in_StrTemplatePath",
+        "in_StrMovementsPath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/BOFA/BOFA_CerrarSesionBOFA.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/UiPath/UiPath_Descargar.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vFifDownload&Sequence_1",
+        "vBooFolderExist&Sequence_1",
+        "vBooDownloadedFileExists&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_BooDownload",
+        "in_StrGeneratedFilesPath",
+        "in_StrCopyFile",
+        "in_StrDownloadPath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/UiPath/UiPath_LimbiarDescargas.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "out_BooDownload",
+        "in_StrDownloadPath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/SCOTIABANK/SCOTIANBANK_IniciarSesionScotiaBank.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vBooCharacter&Sequence_1",
+        "vStrUsername&Sequence_1",
+        "vSstPassword&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrExceptionMessage",
+        "out_BooLogin",
+        "in_StrOrchestratorAssetName",
+        "in_StrOrchestratorFolderPath",
+        "in_StrConventionNumber",
+        "in_StrURL"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/SCOTIABANK/SCOTIANBANK_ValidarInicioSesionScotiaBank.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrExceptionMessage",
+        "out_BooSessionStarted"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/SCOTIABANK/SCOTIANBANK_SeleccionarEmpresa.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrExceptionMessage",
+        "out_BooSelectCompany",
+        "in_StrCompany"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/SCOTIABANK/SCOTIABANK_IniciarSesionScotiaBank.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vBooEndAnotherSession&Sequence_1",
+        "vSstPassword&Sequence_1",
+        "vStrUsername&Sequence_1",
+        "vBooCharacter&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_StrURL",
+        "in_StrConventionNumber",
+        "in_StrOrchestratorFolderPath",
+        "in_StrOrchestratorAssetName",
+        "out_BooLogin",
+        "out_StrExceptionMessage"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/SCOTIABANK/SCOTIABANK_SeleccionarEmpresa.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_StrCompany",
+        "out_BooSelectCompany",
+        "out_StrExceptionMessage"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/SCOTIABANK/SCOTIABANK_IngresarRealizarBusqueda.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrExceptionMessage",
+        "out_BooEnterPerformSearch"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/SCOTIABANK/SCOTIABANK_DescargarArchivoMovimientos.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vStrExtratedFolder&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrExceptionMessage",
+        "out_BooDownloadFileMovements",
+        "in_StrFileNameZip",
+        "in_StrFileName",
+        "in_StrCopyFile",
+        "in_StrGeneratedFilesPath",
+        "in_StrPathDownload"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Sequence.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "Test&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_StrGeneratedFilesPath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/File/File_OrganizarArchivoMovimientoScotiBank.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vStrNewFile&Sequence_1",
+        "vIntIndex&Sequence_1",
+        "vDtbFile&Sequence_1",
+        "vStrFile&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrExceptionMessage",
+        "out_BooSortMovementFile",
+        "in_StrCopyFile",
+        "in_StrDate",
+        "in_IntDateQuantityCharacters",
+        "in_IntInitialIndexDate",
+        "in_StrAccountFile"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/SCOTIABANK/SCOTIABANK_CerrarSesionScotiaBank.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/SCOTIABANK/SCOTIABANK_ValidarInicioSesionScotiaBank.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "out_BooSessionStarted",
+        "out_StrExceptionMessage"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/SCOTIABANK/SCOTIABANK_ValidarExistenciaMovimientos.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrExceptionMessage",
+        "out_BooExistMovements"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/INTERBANK/INTERBANK_IniciarSesionInterbank.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vStrUsername&Sequence_1",
+        "vSstPassword&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrExceptionMessage",
+        "out_BooLogin",
+        "in_StrOrchestratorAssetName",
+        "in_StrOrchestratorFolderPath",
+        "in_StrURL"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/INTERBANK/INTERBANK_ValidarInicioSesionInterbank.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrExceptionMessage",
+        "out_BooSessionStarted"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/INTERBANK/INTERBANK_ValidarExistenciaMovimientos.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "out_BooExistMovements",
+        "out_StrExceptionMessage"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/INTERBANK/INTERBANK_DescargarArchivoMovimientos.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vBooLoad&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_StrFormat",
+        "in_StrPathDownload",
+        "in_StrCopyFile",
+        "in_StrGeneratedFilesPath",
+        "in_StrFileName",
+        "in_StrFileNameZip",
+        "out_BooDownloadFileMovements",
+        "out_StrExceptionMessage"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/INTERBANK/INTERBANK_ConsultarMovimientos.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_StrCompany",
+        "in_StrAccount",
+        "in_StrDate",
+        "out_BooCosultationMovements",
+        "out_StrExceptionMessage"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/File/File_ExtraerArchivo.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vStrExtratedFolder&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_BooExtractedFile",
+        "in_StrCopyFile",
+        "in_StrFileName",
+        "in_StrFileNameZip",
+        "in_StrGeneratedFilesPath"
+      ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     }
