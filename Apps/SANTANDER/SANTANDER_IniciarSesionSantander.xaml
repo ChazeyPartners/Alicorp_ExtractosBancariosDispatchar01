@@ -1,0 +1,279 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="SANTANDER_IniciarSesionSantander" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_StrURL" Type="InArgument(x:String)" />
+    <x:Property Name="in_StrOrchestratorFolderPath" Type="InArgument(x:String)" />
+    <x:Property Name="in_StrOrchestratorAssetName" Type="InArgument(x:String)" />
+    <x:Property Name="out_BooLogin" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="out_StrExceptionMessage" Type="OutArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>655,3908</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>SANTANDER_IniciarSesionSantander_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="SANTANDER_IniciarSesionSantander" sap:VirtualizedContainerService.HintSize="646,3843" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="ss:SecureString" Name="vSstPassword" />
+      <Variable x:TypeArguments="x:String" Name="vStrUsername" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Try Catch SANTANDER_IniciarSesionSantander" sap:VirtualizedContainerService.HintSize="584,3732" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="546,2640" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Iniciar Sesión Santander&quot;]" />
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Edge: in_StrURL" sap:VirtualizedContainerService.HintSize="484,322" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="50578787-3f80-485e-9440-4c4ad5cac324" Version="V2" WindowResize="Maximize">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="-8, -8, 1382, 736" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADySURBVGhD7ZNBDoMwEAPz/1fxs5QiNbKRQ1ltopTKluYCrtk5tNRS6pOxwGossBoLKLZta6j3I7GA4q8EENXNYgGFOv6N6maZIkBg1PskFvgKRr1PMk4AA8/pP4CBTgYLNDDw/JECdHS0E8QCDUj3OEi3EyQsgB9GqAdJdW5ggQ/Ug6Q6N+gK0OidiI0DSHST+mp7xwItYuMAEt2kvtreIQH6QSawOSy4CVhABjaHBTeBKQKjdihwJ2IBlVE7FLgTIQFkyhHRiLvOWGBqxF1nugI9ZojRpvjmFRYYEdoU37wiLPBrWGA1FliNBVZjgbWU+gLyHWoOi3IGywAAAABJRU5ErkJggg==" InformativeScreenshot="0e65b2848fc9ae06fed76fe5fcea7c74.jpg" Selector="&lt;html app='msedge.exe' title='*Santander*' /&gt;" Title="Nuevo Telecrédito" Url="[in_StrURL]" />
+            </uix:NApplicationCard.TargetApp>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </uix:NApplicationCard>
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: in_StrURL" sap:VirtualizedContainerService.HintSize="484,1913" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="50578787-3f80-485e-9440-4c4ad5cac324" Version="V2" WindowResize="Maximize">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,1696" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Clic Empresas&quot;]" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Companies" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://www.santander.com.pe/BSP/home/index2.html" CvElementArea="536, 366, 96, 39" CvTextArea="553, 379, 63, 16" CvType="Button" DesignTimeRectangle="536, 367, 98, 39" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Empresas'" FullSelectorArgument="&lt;webctrl tag='A' aaname='Empresas' /&gt;" Guid="0605d926-8c01-476c-b3c8-ba874ce1bd8f" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGYAAAArCAYAAACKGf3QAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAASWSURBVHhe7Zh9i6RGEMbz/T/JMiCIIAgimEiDQRDJH2JOYs5z4614MZF1TQT3nlQ57bxfwt3tzvZe+oGCsd/srV9XdbnfQUtJaTCK6gjMw/g3frtr8bZ6j+Jdre0Kxr5mn7PvD7UD8zD+hfL2DvfDiPnxUbZqPbfY1+zzoqwXBqt2YJja8DDKJ61ri33PDFbtwPxKIfX48aN80rq22PfMYNUODOc7rZfVIQMNRiFpMIpKg1FUGoyi0mAUlQajqDQYRaXBKCoNRlE9L5i5R+4buLm5OTfDR97PcqDWqa4HxjBhWdbObDdCNchxWme6EpgNnKTFeXzM6OsCaSTgew5s24Hrh0jSFJEI4LkOHNeHSEpsg+tgPPUt470AUd5g/V/41FXIkxCB51I/H4AAaUO984gmi6id5jkOPJGg2kXsjKFKEfo8x4azrNliolXrxIdD61gWtdNewmz/Lkwtipj26di0pgs/pDWHp8kCLwtm7pC4m316+6TR/LjB9MnxJvyso/Un1JF90mdBVB2q0MbmqJ3M9JF1E/oigHXSZ4kKI+/fO03FBryU3jU1iJ2TvWxcpN2rAnOweWl2JB29/HEmgoLyGp3A7fMNTD9FM9Apj53FoRsnQTetYAz4NH4aGuSRC4PXNDy6s+iESzBWWBGmGWPXoX+fwNnwewlS0WNoMgQWr8PA3+LNyeGZuho1AWONXYNuiYIZXeZv32VHuL2NYfOaZoCSU/I8oK0bPFHAXBHM0R3jIOATfgrm4MTziWXXTHUEm+dbIepxBbOO5wENInuF9ccJmK363JPwbPhBAEHm2dt9Gf4blBL+zcaESymulFAYxtBw6pTpilLaMs4SKKk9MOk3r2H723T6RFBYVwLzX6lsdfSMVjrJDMoll0/NHkx1fwEMrZEubRt42QfcnoHhk+6epzFphpejH1tkwWGqs+CnDe6bWEbaiRGYiigMVQRXwmEznJCi52novDyYo4j5NzDkjEtgxgrCYseYEGV/MWKGMoDJa9gUdWvjJVGqLNa7yPweyY/bvRheBr465laCWsDIObTnoU7gLYA4NV4qcj5fVwLDp8lHQClkZyJCdtd8IRhyvCcQc/XmmcszX+RFf5AKD8DQ7Q5fOs7yY2RFgSLPkMQZpccJbR7TWjmKIkcW+9tCwPwBP0UyxVk+4iynak8WCZzKPlQ0P0GW81ophCMPIBUprwrMuVF18zP9cV8I5sg29nKpH1ZlR2CoZygjOMb5vJgu7LXgODSb5t8TULHcX8d9vJdfcrGNwkOjAiR7FVUZO6Sp6CTSqTqzkqouKlWbkn5XaOXNOfU1SuqvWpkrKL3UJY2nkndfLtPJpIgLhYAIYxTrWBJXVCWtXe0u8L3mvlq+gYQIESXZdk1uH+h7JImonSNZIMrqfXVF3z9tmSIO+V0REoqQuhuXQ9BV2dLOGUDQN8y+aPh6PTOYJ9ZZsfDt6pWB6VEIB5btUQraR8m3qNcF5n8kDUZRaTCKSoNRVBqMotJgFJUGo6g0GEWlwSgqDUZRaTCK6iKY9vc/5S+tlxIzYDhsOmIUlQajpIB/ACcPvHF53k73AAAAAElFTkSuQmCC" InformativeScreenshot="7fd25aba8b2576cd42f76d4a5dbd1bd1.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Santander*' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_StrOrchestratorAssetName]" CacheStrategy="None" DisplayName="Get Credential in_StrOrchestratorAssetName" FolderPath="[in_StrOrchestratorFolderPath]" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[vSstPassword]" Username="[vStrUsername]" />
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Id Usuario&quot;]" />
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into vStrUsername" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="Simulate" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Text="[vStrUsername]" Version="V3">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="https://www.santander.com.pe/BSP/home/index2.html" CvElementArea="550, 428, 281, 41" CvTextArea="564, 441, 57, 15" CvType="InputBox" DesignTimeRectangle="544, 308, 278, 38" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT usuario'" FullSelectorArgument="&lt;webctrl tag='INPUT' name='usuario' /&gt;" Guid="f941e49f-c771-4799-96af-907c704d6a5a" ImageBase64="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" InformativeScreenshot="a5e8088775be4b5029eb0e788936fc0e.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Santander*' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Contraseña&quot;]" />
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into vSstPassword" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_3" InteractionMode="Simulate" IsPassword="True" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" SecureText="[vSstPassword]" Version="V3">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="https://www.santander.com.pe/BSP/home/index2.html" CvElementArea="551, 491, 280, 41" CvTextArea="564, 503, 84, 15" CvType="InputBox" DesignTimeRectangle="552, 492, 278, 38" DesignTimeScaleFactor="1" ElementType="InputBoxPassword" FriendlyName="'INPUT password'" FullSelectorArgument="&lt;webctrl tag='INPUT' name='password' /&gt;" Guid="9baab16c-67b9-44d6-be22-64896fe9e65b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAARoAAAAqCAYAAABsvpSjAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALqSURBVHhe7dlBT7MwGMDx9/t/Eo7cOe/q6Q0xGhPjwYTEs5p5qDy0hdKWwVwfp/j/JT0MNmAm/a/gPwMAyggNAHWz0ByPH+a5ezHt/aO5+X/HYDAYZw1phzREWhIaQyM7bh+ehje9vr27rQCwnbRDGiItCWMzhkZ2ygCAS8U9GUMjSx5WMgBKkJZIU7wxNHJ/BQClhE0hNABUEBoA6ggNAHWEBoA6QgNAHaEBoI7QAFBHaACoIzQauoOpq8pUVWPa4WVt6kNn9wF/kE5oxokWjLqfdKXnWtv0x67NT5vDbVOZxhbG/h3qgyEz+MuKh0YmmYQl+QVvD+WD8ENDA2CubGiGie9+zb8DoQF+hYKh6cyh3n6bIM8twlureAXkV0azERfMhW0aPjruWsJ9/rqSz9jnKJPWNLP9ccjiY0f7k+PLiM+RXh/PcLBnBUPjJuiG5YyNTDhB088OoQmj5Z53zCbk4orGTeTVa4njuPa5dH/yXZJris+R4eK04U8H/EpXCI19X/oMZz5Bk9D0km0Xh6Y3HMOvOFY+lz1f9H1y71m8Ts+el1UN9ur7QzNMusyvt1ux+O1qocn9Ryy4tZlu6eLbHXf+5LN2nBua3LEIDfaqYGjc5M5M0Jlrhmbx9uvUM5Tp+DYOW77f6dCkx2FFg30rGJqei8jpCXPFW6fFCCzFY36t6bOljMVz+G25ayM02LeyoemNtx7RJJftflM6YdPbrk2hya1QBguh2byi8eIouus8tapZDY28jI9BaLBvxUNj+QkZjEx4wv3xJNsUGjFM4vg4C6ER0fvt8JN+/brHY8/eF0RjQ2jyxyA02C+l0ADAhNAAUEdoAKgjNADUERoA6ggNAHWEBoA6QgNAHaEBoC4bmvb+0by+vbtXAPB10hJpijeG5rl7GQYAXCruyRia4/HD3D48DTtZ2QD4CmmHNERaIk3xxtAI2SFvkiWP3F8xGAzGOUPaIQ0JIyNmoQEADYQGgDJjPgHddhBXTtNghAAAAABJRU5ErkJggg==" InformativeScreenshot="5f3c6a258eb382a75dc25d0c1431f348.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Santander*' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Clic Ingresar&quot;]" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Login" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://www.santander.com.pe/BSP/home/index2.html" CvElementArea="551, 561, 280, 36" CvTextArea="659, 570, 63, 18" CvType="Button" DesignTimeRectangle="544, 440, 278, 33" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Ingresar'" FullSelectorArgument="&lt;webctrl tag='INPUT' aaname='Ingresar' /&gt;" Guid="01eb0e29-9de2-4712-9dff-4dd58d2e2534" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAARoAAAAlCAYAAACd6CZ2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHsSURBVHhe7dhNi9NAHMBhv/8n6TH3nHv1JGFRBPEgBPbsynoY8zK1ebXT0v9a9HlgoJmENJf5kcm7VOj9h4/5F8B1hAYIJzRAOKEBwgkNEE5oBk2qD4d0qJt8DNxTeGjaY5UOh7pbykvj4q6ObT7+m4QGIgkNEE5ogHCPFZqm7q7ttjCnUR3T77PDuSrNurSay1ugyZjvhtp0rObnx//I88ut0/J5bK3gJo8TmvaYqu54dy0XhWZu/O/p+Z2gbM3nyJyn8jXT+AFF/unQnP5jFYuLodm57tIzApseaOuUF3c3tw5Bpyg0k3tMxvl2haHJQVl/P1o+M1Di8T4G50U+ROKqbzQ5FrOtzY1vNEIDdxUemjEGG9uNvfmTZVi2ti2za7YicGNo9q6zdYKbxIfmtGhnbzVjAP74YXUZmq37zK7J5+/xRtNbhXDr/kCJNwjNqKn7SEzGcrHnhT0dqx50xq3Y+ZqtN5jp+X6sYrG68c788pm2Hgi46M1CA/y/hAYIJzRAOKEBwgkNEE5ogHBCA4QTGiCc0ADhikPTfPqSvr/8yEcA5YpD8619HgbAtYpD8/r6Mz19/jrExpsNcI3i0PT62PSh6bdR/TcbwzCMknFVaABuITRAOKEBwgkNEE5ogHBCA4QTGiBYSr8At6keScAzOBsAAAAASUVORK5CYII=" InformativeScreenshot="6c97e7308f10a283de6267695da1b89d.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Santander*' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="-8, -8, 1382, 736" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADySURBVGhD7ZNBDoMwEAPz/1fxs5QiNbKRQ1ltopTKluYCrtk5tNRS6pOxwGossBoLKLZta6j3I7GA4q8EENXNYgGFOv6N6maZIkBg1PskFvgKRr1PMk4AA8/pP4CBTgYLNDDw/JECdHS0E8QCDUj3OEi3EyQsgB9GqAdJdW5ggQ/Ug6Q6N+gK0OidiI0DSHST+mp7xwItYuMAEt2kvtreIQH6QSawOSy4CVhABjaHBTeBKQKjdihwJ2IBlVE7FLgTIQFkyhHRiLvOWGBqxF1nugI9ZojRpvjmFRYYEdoU37wiLPBrWGA1FliNBVZjgbWU+gLyHWoOi3IGywAAAABJRU5ErkJggg==" InformativeScreenshot="0e65b2848fc9ae06fed76fe5fcea7c74.jpg" Selector="&lt;html app='msedge.exe' title='*Santander*' /&gt;" Title="Nuevo Telecrédito" Url="[in_StrURL]" />
+            </uix:NApplicationCard.TargetApp>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </uix:NApplicationCard>
+          <Assign DisplayName="Assign out_BooLogin" sap:VirtualizedContainerService.HintSize="484,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Boolean">[out_BooLogin]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="550,394" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Exception" sap:VirtualizedContainerService.HintSize="496,325" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Error" Message="[&quot;Mensaje Excepción &quot; + exception.Source + &quot; - &quot; + exception.Message]" />
+              <Assign DisplayName="Assign out_StrExceptionMessage" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_2">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[out_StrExceptionMessage]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">["Mensaje Excepción SANTANDER_IniciarSesionSantander " + exception.Source + " - " + exception.Message]</InArgument>
+                </Assign.Value>
+              </Assign>
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+      <TryCatch.Finally>
+        <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="496,447" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;¿Inicio Sesión SANTANDER? &quot; + out_BooLogin.ToString]" />
+          <Assign DisplayName="Assign vStrUsername" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_3">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[vStrUsername]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[Nothing]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Assign vSstPassword" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_4">
+            <Assign.To>
+              <OutArgument x:TypeArguments="ss:SecureString">[vSstPassword]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="ss:SecureString">[Nothing]</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </TryCatch.Finally>
+    </TryCatch>
+  </Sequence>
+</Activity>

@@ -9,7 +9,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>658,4795</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>658,4647</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>INTERBANK_IniciarSesionInterbank_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -124,7 +124,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="INTERBANK_IniciarSesionInterbank" sap:VirtualizedContainerService.HintSize="668,4730" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="INTERBANK_IniciarSesionInterbank" sap:VirtualizedContainerService.HintSize="668,4582" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="ss:SecureString" Name="vSstPassword" />
       <Variable x:TypeArguments="x:String" Name="vStrUsername" />
@@ -134,40 +134,9 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap:VirtualizedContainerService.HintSize="606,437" sap2010:WorkflowViewState.IdRef="Sequence_19">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_5">
-        <Assign.To>
-          <OutArgument x:TypeArguments="x:String">[in_StrURL]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="x:String">https://empresas.interbank.pe/login</InArgument>
-        </Assign.Value>
-      </Assign>
-      <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_6">
-        <Assign.To>
-          <OutArgument x:TypeArguments="x:String">[in_StrOrchestratorFolderPath]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="x:String">JorgeLoaiza</InArgument>
-        </Assign.Value>
-      </Assign>
-      <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_7">
-        <Assign.To>
-          <OutArgument x:TypeArguments="x:String">[in_StrOrchestratorAssetName]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="x:String">Alicorp_INTERBANK</InArgument>
-        </Assign.Value>
-      </Assign>
-    </Sequence>
-    <TryCatch DisplayName="Try Catch INTERBANK_IniciarSesionInterbank" sap:VirtualizedContainerService.HintSize="606,4142" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch INTERBANK_IniciarSesionInterbank" sap:VirtualizedContainerService.HintSize="606,4471" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="568,3050" sap2010:WorkflowViewState.IdRef="Sequence_13">
+        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="568,3379" sap2010:WorkflowViewState.IdRef="Sequence_13">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -199,18 +168,24 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </uix:NApplicationCard>
-          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: in_StrURL" sap:VirtualizedContainerService.HintSize="506,2323" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="50578787-3f80-485e-9440-4c4ad5cac324" Version="V2" WindowResize="Maximize">
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: in_StrURL" sap:VirtualizedContainerService.HintSize="506,2652" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="50578787-3f80-485e-9440-4c4ad5cac324" Version="V2" WindowResize="Maximize">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="472,2106" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="472,2435" sap2010:WorkflowViewState.IdRef="Sequence_12">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="410,92" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Info" Message="[&quot;Clic TIE&quot;]" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click TIE" sap:VirtualizedContainerService.HintSize="410,157" sap2010:WorkflowViewState.IdRef="NClick_6" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://empresas.interbank.pe/login" CvElementArea="1081, 280, 165, 32" CvTextArea="1152, 290, 23, 12" CvType="Button" DesignTimeRectangle="1084, 282, 160, 28" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'TIE'" FullSelectorArgument="&lt;webctrl tag='BUTTON' type='button' aaname='*TIE* ' /&gt;" Guid="dd2e79de-026e-4b94-9905-757ed3f44949" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAKQAAAAgCAYAAACclNOPAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJ0SURBVHhe7ZzNThNRGIbZuvIuiOEOXHgNbFzIggVLZW9ceAeaGBMvwIUbQ8JKcQNGN2qMYqAVhSBQCwtK084M7dgf8JO3zl9nvrYzOqdpwvsmz2b6nTNdPDnzd86ZEoaZoFBIZqJCIZmJSiYhna4r5eaJfHcOpWAdyJf6nnyq7RISACfgBhyBK07H9exJl1RCnrRs2bw4ifYHCBkF3IFDaTJUyFr7VIp2ST0JIVkpWqWeU8MyUEg0XK/9UDsm5F+BU1an6VmWjCpkvdOQz0pnhOQB3Bo0UiaEdM9aHBmJceCYe9b2rAuTEPKr/VPtgJC8gWvx9AmJJyGtISGmiD99B0Ke/z6XDWtfbUSIKeAc3PMTCFltOWqDy8zbSlFmXi3K1PNZFfyGmvkPj+Tayh15UynI0701ubo8p9YvfHysnueyA/f8BELuN47VYhJyffVuj/jxuXcPZfrlbXl9vCFPdl7IlaWbcn/zWaKO6JSaFc/CiJDbzpFaTEIopBngnp9AyILFLzKjoJBmwBccP4GQ63W+exxFFiF5/5geTMjwQyEzwBHSDKqQvGSPhkKaQb1kf7PLajEJoZBmUB9q8OitFZOQG2v3esSPp30Peev9g0Rbsitlt+pZGBHS7jTVYkJM0+j+8iyMCIlscWIFGTNbF7eK0fQJWW831EaEmALORdMnJMJRkoyL+OiIJITEpElO0CWm+TtBt+VZFyYhJILp5VonhOQBljBgmYwWVUgEC3E4UpK8gVPWABmRgUIiuHzjLbrWMSFZgUvaOppohgrphxsFkP8ht40C4sG2GNxKhQzD30oFnwMP3aqcdg1spcIw44nIH7PZiFDHoUKgAAAAAElFTkSuQmCC" InformativeScreenshot="a49db1f7e437d579f52a352d8f526d9a.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Interbank*' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
                   <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_StrOrchestratorAssetName]" CacheStrategy="None" DisplayName="Get Credential in_StrOrchestratorAssetName" FolderPath="[in_StrOrchestratorFolderPath]" sap:VirtualizedContainerService.HintSize="410,143" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[vSstPassword]" Username="[vStrUsername]" />
                   <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="410,92" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Tarjeta Interactiva Empresarial&quot;]" />
                   <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into vStrUsername" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="410,218" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="Simulate" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Text="[vStrUsername]" Version="V3">

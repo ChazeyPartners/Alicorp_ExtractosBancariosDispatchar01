@@ -1,12 +1,11 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="UiPath_LimbiarDescargas" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_StrDownloadPath" Type="InArgument(x:String)" />
-    <x:Property Name="out_BooDownload" Type="OutArgument(x:Boolean)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>655,1576</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>655,1454</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>UiPath_LimbiarDescargas_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -95,7 +94,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="UiPath_LimbiarDescargas" sap:VirtualizedContainerService.HintSize="646,1511" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="UiPath_LimbiarDescargas" sap:VirtualizedContainerService.HintSize="646,1389" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -109,9 +108,9 @@
         <InArgument x:TypeArguments="x:String">["C:\Users\jorge\Downloads"]</InArgument>
       </Assign.Value>
     </Assign>
-    <TryCatch DisplayName="Try Catch UiPath_LimbiarDescargas" sap:VirtualizedContainerService.HintSize="584,1278" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch UiPath_LimbiarDescargas" sap:VirtualizedContainerService.HintSize="584,1156" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="546,806" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="546,684" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -138,14 +137,6 @@
               </ActivityAction>
             </ui:ForEachFileX.Body>
           </ui:ForEachFileX>
-          <Assign DisplayName="Assign out_BooDownload" sap:VirtualizedContainerService.HintSize="484,82" sap2010:WorkflowViewState.IdRef="Assign_1">
-            <Assign.To>
-              <OutArgument x:TypeArguments="x:Boolean">[out_BooDownload]</OutArgument>
-            </Assign.To>
-            <Assign.Value>
-              <InArgument x:TypeArguments="x:Boolean">True</InArgument>
-            </Assign.Value>
-          </Assign>
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>

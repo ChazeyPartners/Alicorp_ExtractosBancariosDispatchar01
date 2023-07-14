@@ -5,13 +5,14 @@
     <x:Property Name="in_StrGeneratedFilesPath" Type="InArgument(x:String)" />
     <x:Property Name="in_StrFileName" Type="InArgument(x:String)" />
     <x:Property Name="in_StrFileNameZip" Type="InArgument(x:String)" />
+    <x:Property Name="in_StrRenameFile" Type="InArgument(x:String)" />
     <x:Property Name="out_BooDownloadFileMovements" Type="OutArgument(x:Boolean)" />
     <x:Property Name="out_StrExceptionMessage" Type="OutArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>655,2565</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>655,2236</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SCOTIABANK_DescargarArchivoMovimientos_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -114,7 +115,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="SCOTIABANK_DescargarArchivoMovimientos" sap:VirtualizedContainerService.HintSize="646,2500" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SCOTIABANK_DescargarArchivoMovimientos" sap:VirtualizedContainerService.HintSize="646,2171" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="si:DirectoryInfo" Name="vStrExtratedFolder" />
     </Sequence.Variables>
@@ -123,41 +124,34 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch SCOTIABANK_DescargarArchivoMovimientos" sap:VirtualizedContainerService.HintSize="584,2389" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch SCOTIABANK_DescargarArchivoMovimientos" sap:VirtualizedContainerService.HintSize="584,2060" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="546,1652" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="546,1323" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Descargar Archivo Movimientos&quot;]" />
-          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: Descargar Archivo Movimientos" sap:VirtualizedContainerService.HintSize="484,1103" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="50578787-3f80-485e-9440-4c4ad5cac324" Version="V2" WindowResize="Maximize">
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: Descargar Archivo Movimientos" sap:VirtualizedContainerService.HintSize="484,774" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="50578787-3f80-485e-9440-4c4ad5cac324" Version="V2" WindowResize="Maximize">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,886" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,557" sap2010:WorkflowViewState.IdRef="Sequence_2">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Clic Solicitar&quot;]" />
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Solicit" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
-                    <uix:NClick.Target>
-                      <uix:TargetAnchorable BrowserURL="https://bancainternetempresas.scotiabank.com.pe/main/#" CvElementArea="1075, 481, 164, 50" CvTextArea="1119, 501, 76, 13" CvType="Button" DesignTimeRectangle="1078, 483, 160, 46" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Solicitar'" FullSelectorArgument="&lt;webctrl tag='BUTTON' aaname='Solicitar' /&gt;" Guid="bb1562aa-e667-4c0f-b23f-4b89fc36fb82" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAKQAAAAyCAYAAADSinAfAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMPSURBVHhe7Z27ThwxGEbTJG2IgpIC5fIiIVWS96HiUUKREArqgAQhpEJCvMNQoSmod0s6x7fPa4/tgUEs/F59RzoSmvXcds54lmqeKUIEwSCJKJIgr44P1cHXTbX7fl3trL2gdGmaxkxr/d9jX58jBNmfHBVXpHTZ9qcnvsIoSFOr+fD7Sz3IOFiJ0gdVN2Zb03+b9kAI8sfGK/shBlG6bNHar49vfYVRkMPBlD6mgEFSEQIGSUUIGCQVIWCQVISAQVIRAgZJRQgYJBUhYJBUhIBBUhECBklFCBgkFSFgkFSEgEFSEQIGSUUIGCQVIWg6yO7SHzyYn6mLwrid/c4PADN1vZ2OuTifKXW5lyxbuKWu50rdnG8Vl8ekY9L1suNNiI8J2+1UF7YF9/TICtXjly9oNkh7cQcXwF3w9CK6ZYMAt8/UjV4axzM5yMI2QixhO7WQteYmGbuB5p2aFdc1+8hvKOy7uK8GBI0G6b782f4ty+3MWJpltDaoxYWdFuRIaMl27xekuYnMOvaYsjG1IP051CIXLmg0SHehb/vyS7NoLC68+XtSkIOY694nyCi44n4YpFDdbBiTzpgjMXjjCCcFOTbzJk4PchhVflPVgnTfx9j5ShY0/U9N0P+ecyCUFoN045MbK9tXfiOCVmM0gtUIMpgG0Nwj28ZXZrGNfIa053mnG0SuoM0gR2aoJMKRccOoJgU5FpqfwdwsNy3I2g1kl4expUe2208+47YjWK1/agozl5s9BhfQP+LjUKYFqS1sIzxOw3FNCTIOeWByXqUgMUZTPQfZgqYf2S62mMpsmD0K8wtqgyxhL3AtLB9gRDrm7kG6/dceu/4GtMdSCdLoz7O4P+GCFfsNSVsVMEgqQsAgqQgBg6QiBAySihAwSCpCwCCpCAGDpCIEDJKKEDBIKkLAIKkIAYOkIgQhSPNqBvMBXwtCH8vR14IkL05aex5WonQp6s4QZPHFSXy1HH0q+3+FV8sZTJS/v3xSP9+9Lq5I6UO5++GNOvj2WfWnf3x9jiRIQp4aBkkEodR/JLjWNHfG+XwAAAAASUVORK5CYII=" InformativeScreenshot="4a920669027fa7c19bf3f36a2ab3d007.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Telebanking' /&gt;" SearchSteps="Selector" Version="V2" />
-                    </uix:NClick.Target>
-                  </uix:NClick>
                   <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\UiPath\UiPath_LimbiarDescargas.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Apps\UiPath\UiPath_LimbiarDescargas.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <InArgument x:TypeArguments="x:String" x:Key="in_StrDownloadPath">[in_StrPathDownload]</InArgument>
-                      <OutArgument x:TypeArguments="x:Boolean" x:Key="out_BooDownload">[out_BooDownloadFileMovements]</OutArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>
                   <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Clic Exportar&quot;]" />
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Export" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="5" DelayBefore="5" DisplayName="Click Export" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://bancainternetempresas.scotiabank.com.pe/main/#" CvElementArea="887, 478, 34, 32" CvTextArea="901, 489, 18, 19" CvType="Icon" DesignTimeRectangle="890, 480, 30, 30" DesignTimeScaleFactor="1" FriendlyName="'SPAN'" FullSelectorArgument="&lt;webctrl id='table-body' tag='TABLE' /&gt;&lt;webctrl tableCol='3' tableRow='1' tag='SPAN' /&gt;" Guid="65fdfd21-a7d0-40e1-acad-b65f090948fd" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACIAAAAiCAYAAAA6RwvCAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFbSURBVFhH7dXva4JAHMfx/f9PJTgmE4kYM3swBcEHIxhs9AMhCIQQBHEUwR70J3zmkTV3d6Wd180HPnhD2PG9F57Zw/77gC7UQ9i6B9m8j0AMA0ajCIZvCTesTWfI3BFteC21GB5i+/icLS72at8Hw0OciFtUjb9zajDykOcAgVV+VoCRh9B1+40yTDsIvaYI0x5CU4CRh7C/rg8f9qD8TgIjD6nNQpiKZ4i6GZItJw3fwBaCRDxD1M2Q2pIQTz2kmgiyDvBYXCNuhIxdX6YFkhb/7MfnpsAU80UYTUezw9wlVzHykHQKuxwsE/HiP/PkIfHx3NkNGsfs0+potvkX0oxpdQKa8Fen6xmWnvmLsELEzCwtz0g+G19F0PRAovJtfAFB0wKhbfMd8uo6Jm2QuniIOcLYncjnWBgogShLEpKtp3ixCQhRkYmht0BS2aiuM+S/6yFsHYEc8AOMgdoZy4fhsAAAAABJRU5ErkJggg==" InformativeScreenshot="4956aa58df009f4d1fe23f6dc294e491.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Telebanking' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                     </uix:NClick.Target>
@@ -196,6 +190,9 @@
               </InArgument>
               <InArgument x:TypeArguments="x:String" x:Key="in_StrCopyFile">
                 <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_StrCopyFile" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_StrRenameFile">
+                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_StrRenameFile" />
               </InArgument>
               <OutArgument x:TypeArguments="x:Boolean" x:Key="out_BooExtractedFile">
                 <VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="out_BooDownloadFileMovements" />

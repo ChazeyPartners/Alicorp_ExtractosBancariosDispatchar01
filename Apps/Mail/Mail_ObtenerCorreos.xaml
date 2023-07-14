@@ -170,7 +170,7 @@
                 </sap:WorkflowViewStateService.ViewState>
                 <Assign DisplayName="Assign out_MmsEmail" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_4">
                   <Assign.To>
-                    <OutArgument x:TypeArguments="x:Object">[out_StrIdEmail]</OutArgument>
+                    <OutArgument x:TypeArguments="x:String">[out_StrIdEmail]</OutArgument>
                   </Assign.To>
                   <Assign.Value>
                     <InArgument x:TypeArguments="x:String">[vLmmEmail(0).Headers("Message-ID").ToString]</InArgument>

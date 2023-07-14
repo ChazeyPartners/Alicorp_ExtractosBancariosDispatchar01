@@ -4,12 +4,13 @@
     <x:Property Name="in_StrFileNameZip" Type="InArgument(x:String)" />
     <x:Property Name="in_StrFileName" Type="InArgument(x:String)" />
     <x:Property Name="in_StrCopyFile" Type="InArgument(x:String)" />
+    <x:Property Name="in_StrRenameFile" Type="InArgument(x:String)" />
     <x:Property Name="out_BooExtractedFile" Type="OutArgument(x:Boolean)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>655,1774</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>655,2334</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>File_ExtraerArchivo_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -93,6 +94,10 @@
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>System.Private.Uri</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -100,7 +105,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="File_ExtraerArchivo" sap:VirtualizedContainerService.HintSize="596,1709" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="File_ExtraerArchivo" sap:VirtualizedContainerService.HintSize="596,2269" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="si:DirectoryInfo" Name="vStrExtratedFolder" />
     </Sequence.Variables>
@@ -109,9 +114,9 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch File_ExtraerArchivo" sap:VirtualizedContainerService.HintSize="534,1598" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch File_ExtraerArchivo" sap:VirtualizedContainerService.HintSize="534,2158" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="496,1126" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="496,1686" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -119,7 +124,15 @@
           </sap:WorkflowViewStateService.ViewState>
           <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Extraer Archivo&quot;]" />
           <uascw:ExtractFiles Content="{x:Null}" File="{x:Null}" Password="{x:Null}" CodePage="Default" DestinationFolder="[in_StrGeneratedFilesPath]" DestinationFolderInfo="[vStrExtratedFolder]" DisplayName="Extract/Unzip Files vStrExtratedFolder" ExtractToADedicatedFolder="True" FileToExtract="[Path.Combine(in_StrGeneratedFilesPath, in_StrFileNameZip)]" sap:VirtualizedContainerService.HintSize="434,207" sap2010:WorkflowViewState.IdRef="ExtractFiles_1" SkipUnsupportedFiles="False" />
-          <ui:CopyFile ContinueOnError="{x:Null}" Destination="[Path.Combine(in_StrGeneratedFilesPath, in_StrFileName)]" DisplayName="Copy File in_StrGeneratedFilesPath" sap:VirtualizedContainerService.HintSize="434,154" sap2010:WorkflowViewState.IdRef="CopyFile_1" Path="[Path.Combine(vStrExtratedFolder.ToString, in_StrFileName)]">
+          <ui:CopyFile ContinueOnError="{x:Null}" Destination="[Path.Combine(in_StrGeneratedFilesPath, in_StrFileName)]" DisplayName="Copy File in_StrGeneratedFilesPath" sap:VirtualizedContainerService.HintSize="434,154" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="True" Path="[Path.Combine(vStrExtratedFolder.ToString, in_StrFileName)]">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:CopyFile>
+          <ui:CopyFile ContinueOnError="{x:Null}" Destination="[Path.Combine(in_StrCopyFile, in_StrFileName)]" DisplayName="Copy File in_StrCopyFile" sap:VirtualizedContainerService.HintSize="434,154" sap2010:WorkflowViewState.IdRef="CopyFile_2" Overwrite="True" Path="[Path.Combine(vStrExtratedFolder.ToString, in_StrFileName)]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -130,6 +143,8 @@
           <ui:DeleteFileX DisplayName="Delete File in_StrCopyFile" sap:VirtualizedContainerService.HintSize="434,80" sap2010:WorkflowViewState.IdRef="DeleteFileX_1" Path="[Path.Combine(in_StrCopyFile, in_StrFileNameZip)]" />
           <ui:DeleteFileX DisplayName="Delete File in_StrGeneratedFilesPath" sap:VirtualizedContainerService.HintSize="434,80" sap2010:WorkflowViewState.IdRef="DeleteFileX_2" Path="[Path.Combine(in_StrGeneratedFilesPath, in_StrFileNameZip)]" />
           <ui:DeleteFolderX DisplayName="Delete Folder" sap:VirtualizedContainerService.HintSize="434,80" sap2010:WorkflowViewState.IdRef="DeleteFolderX_1" Path="[vStrExtratedFolder.ToString]" Recursive="True" />
+          <ui:RenameFileX DisplayName="Rename File in_StrGeneratedFilesPath" FilePath="[Path.Combine(in_StrGeneratedFilesPath, in_StrFileName)]" sap:VirtualizedContainerService.HintSize="434,143" sap2010:WorkflowViewState.IdRef="RenameFileX_1" KeepExtension="True" NewName="[Path.Combine(in_StrGeneratedFilesPath, in_StrRenameFile)]" />
+          <ui:RenameFileX DisplayName="Rename File in_StrCopyFile" FilePath="[Path.Combine(in_StrCopyFile, in_StrFileName)]" sap:VirtualizedContainerService.HintSize="434,143" sap2010:WorkflowViewState.IdRef="RenameFileX_2" KeepExtension="True" NewName="[Path.Combine(in_StrCopyFile, in_StrRenameFile)]" />
           <Assign DisplayName="Assign out_BooExtractedFile" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_1">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Boolean">[out_BooExtractedFile]</OutArgument>

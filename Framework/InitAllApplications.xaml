@@ -2,11 +2,12 @@
   <x:Members>
     <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="out_DtbProcessMonitoring" Type="OutArgument(sd:DataTable)" />
+    <x:Property Name="in_BooExecute" Type="InArgument(x:Boolean)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>846,1598</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>922,1868</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Initialization_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -109,7 +110,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="856,1533" sap2010:WorkflowViewState.IdRef="Sequence_9">
+  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="932,1803" sap2010:WorkflowViewState.IdRef="Sequence_9">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="vDtbParametersBanks" />
       <Variable x:TypeArguments="x:Boolean" Name="vBooReadParametersBanks" />
@@ -125,398 +126,367 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log message (Initialize applications)" sap:VirtualizedContainerService.HintSize="794,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Opening applications...&quot;]" />
-    <Flowchart DisplayName="Flowchart Initialize All Applications" sap:VirtualizedContainerService.HintSize="794,1259" sap2010:WorkflowViewState.IdRef="Flowchart_1">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-          <av:Point x:Key="ShapeLocation">350,2.5</av:Point>
-          <av:Size x:Key="ShapeSize">60,75</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">410,40 520,40 520,127.5</av:PointCollection>
-          <x:Double x:Key="Width">760</x:Double>
-          <x:Double x:Key="Height">1222.5</x:Double>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <Flowchart.StartNode>
-        <x:Reference>__ReferenceID12</x:Reference>
-      </Flowchart.StartNode>
-      <FlowStep x:Name="__ReferenceID12">
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <av:Point x:Key="ShapeLocation">420,127.5</av:Point>
-            <av:Size x:Key="ShapeSize">200,81</av:Size>
-            <av:PointCollection x:Key="ConnectorLocation">520,208.5 520,258.5</av:PointCollection>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-        <Sequence DisplayName="Enviar Notificacion Inicio" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_10">
+    <ui:LogMessage DisplayName="Log message (Initialize applications)" sap:VirtualizedContainerService.HintSize="870,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Opening applications...&quot;]" />
+    <If Condition="[in_BooExecute]" DisplayName="If in_BooExecute" sap:VirtualizedContainerService.HintSize="870,1529" sap2010:WorkflowViewState.IdRef="If_3">
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="836,1347" sap2010:WorkflowViewState.IdRef="Sequence_23">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\Mail\Mail_EnviarNotificacion.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Apps\Mail\Mail_EnviarNotificacion.xaml">
-            <ui:InvokeWorkflowFile.Arguments>
-              <InArgument x:TypeArguments="scg:IEnumerable(x:String)" x:Key="in_CstAttachmentsCollection">[Nothing]</InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_StrTemplate">[Path.Combine(in_Config("RutaFormatos").ToString, in_Config("StartTemplate").ToString)]</InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_StrBody">[in_Config("BodyEmailStart").ToString]</InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_StrSubject">[in_Config("SubjectEmailStart").ToString]</InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_StrTo">[in_Config("ToMailNotification").ToString]</InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_StrBcc">[Nothing]</InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_SrtCc">[Nothing]</InArgument>
-              <InArgument x:TypeArguments="x:Boolean" x:Key="in_BooAlert">False</InArgument>
-            </ui:InvokeWorkflowFile.Arguments>
-          </ui:InvokeWorkflowFile>
-        </Sequence>
-        <FlowStep.Next>
-          <FlowStep x:Name="__ReferenceID0">
+          <Flowchart DisplayName="Flowchart Initialize All Applications" sap:VirtualizedContainerService.HintSize="794,1259" sap2010:WorkflowViewState.IdRef="Flowchart_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <av:Point x:Key="ShapeLocation">420,258.5</av:Point>
-                <av:Size x:Key="ShapeSize">200,81</av:Size>
-                <av:PointCollection x:Key="ConnectorLocation">520,339.5 520,369.50000000000006 520.1416666666667,369.50000000000006 520.1416666666667,389.5</av:PointCollection>
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                <av:Point x:Key="ShapeLocation">350,2.5</av:Point>
+                <av:Size x:Key="ShapeSize">60,75</av:Size>
+                <av:PointCollection x:Key="ConnectorLocation">410,40 520,40 520,127.5</av:PointCollection>
+                <x:Double x:Key="Width">760</x:Double>
+                <x:Double x:Key="Height">1222.5</x:Double>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="Leer Parametrico Bancos" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_11">
+            <Flowchart.StartNode>
+              <x:Reference>__ReferenceID12</x:Reference>
+            </Flowchart.StartNode>
+            <FlowStep x:Name="__ReferenceID12">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <av:Point x:Key="ShapeLocation">420,127.5</av:Point>
+                  <av:Size x:Key="ShapeSize">200,81</av:Size>
+                  <av:PointCollection x:Key="ConnectorLocation">520,208.5 520,258.5</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\Excel\Excel_LeerParametrico.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Apps\Excel\Excel_LeerParametrico.xaml">
-                <ui:InvokeWorkflowFile.Arguments>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_StrParameterizableFile">[Path.Combine(in_Config("RutaParametrizacion").ToString, in_Config("Parameter").ToString)]</InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_StrParameterizableSheet">[in_Config("SheetsParameterBanks").ToString]</InArgument>
-                  <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_DtbParameters">[vDtbParametersBanks]</OutArgument>
-                  <OutArgument x:TypeArguments="x:Boolean" x:Key="out_BooReadParameters">[vBooReadParametersBanks]</OutArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_StrSortColumn">Orden Banco</InArgument>
-                </ui:InvokeWorkflowFile.Arguments>
-              </ui:InvokeWorkflowFile>
-            </Sequence>
-            <FlowStep.Next>
-              <FlowDecision x:Name="__ReferenceID1" Condition="[vBooReadParametersBanks]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+              <Sequence DisplayName="Enviar Notificacion Inicio" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_10">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                    <av:Point x:Key="ShapeLocation">480.64166666666665,389.5</av:Point>
-                    <av:Size x:Key="ShapeSize">79,87</av:Size>
-                    <av:PointCollection x:Key="FalseConnector">559.6416666666667,433 660,433 660,478.54</av:PointCollection>
-                    <av:PointCollection x:Key="TrueConnector">480.64166666666665,433 380,433 380,478.54</av:PointCollection>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <FlowDecision.True>
-                  <FlowStep x:Name="__ReferenceID3">
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\Mail\Mail_EnviarNotificacion.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Apps\Mail\Mail_EnviarNotificacion.xaml">
+                  <ui:InvokeWorkflowFile.Arguments>
+                    <InArgument x:TypeArguments="scg:IEnumerable(x:String)" x:Key="in_CstAttachmentsCollection">[Nothing]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_StrTemplate">[Path.Combine(in_Config("RutaFormatos").ToString, in_Config("StartTemplate").ToString)]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_StrBody">[in_Config("BodyEmailStart").ToString]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_StrSubject">[in_Config("SubjectEmailStart").ToString]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_StrTo">[in_Config("ToMailNotification").ToString]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_StrBcc">[Nothing]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_SrtCc">[Nothing]</InArgument>
+                    <InArgument x:TypeArguments="x:Boolean" x:Key="in_BooAlert">False</InArgument>
+                  </ui:InvokeWorkflowFile.Arguments>
+                </ui:InvokeWorkflowFile>
+              </Sequence>
+              <FlowStep.Next>
+                <FlowStep x:Name="__ReferenceID0">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <av:Point x:Key="ShapeLocation">420,258.5</av:Point>
+                      <av:Size x:Key="ShapeSize">200,81</av:Size>
+                      <av:PointCollection x:Key="ConnectorLocation">520,339.5 520,369.50000000000006 520.1416666666667,369.50000000000006 520.1416666666667,389.5</av:PointCollection>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Sequence DisplayName="Leer Parametrico Bancos" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_11">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <av:Point x:Key="ShapeLocation">280,478.54</av:Point>
-                        <av:Size x:Key="ShapeSize">200,81</av:Size>
-                        <av:PointCollection x:Key="ConnectorLocation">380,559.54 380,609.54</av:PointCollection>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Sequence DisplayName="Leer Parametrico Orden" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\Excel\Excel_LeerParametrico.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Apps\Excel\Excel_LeerParametrico.xaml">
+                      <ui:InvokeWorkflowFile.Arguments>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_StrParameterizableFile">[Path.Combine(in_Config("RutaParametrizacion").ToString, in_Config("Parameter").ToString)]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_StrParameterizableSheet">[in_Config("SheetsParameterBanks").ToString]</InArgument>
+                        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_DtbParameters">[vDtbParametersBanks]</OutArgument>
+                        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_BooReadParameters">[vBooReadParametersBanks]</OutArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_StrSortColumn">Orden Banco</InArgument>
+                      </ui:InvokeWorkflowFile.Arguments>
+                    </ui:InvokeWorkflowFile>
+                  </Sequence>
+                  <FlowStep.Next>
+                    <FlowDecision x:Name="__ReferenceID1" Condition="[vBooReadParametersBanks]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          <av:Point x:Key="ShapeLocation">480.64166666666665,389.5</av:Point>
+                          <av:Size x:Key="ShapeSize">79,87</av:Size>
+                          <av:PointCollection x:Key="FalseConnector">559.6416666666667,433 660,433 660,478.54</av:PointCollection>
+                          <av:PointCollection x:Key="TrueConnector">480.64166666666665,433 380,433 380,478.54</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\Excel\Excel_LeerParametrico.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Apps\Excel\Excel_LeerParametrico.xaml">
-                        <ui:InvokeWorkflowFile.Arguments>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_StrParameterizableFile">[Path.Combine(in_Config("RutaParametrizacion").ToString, in_Config("Parameter").ToString)]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_StrParameterizableSheet">[in_Config("SheetsParameterOrder").ToString]</InArgument>
-                          <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_DtbParameters">[vDtbParametersOrder]</OutArgument>
-                          <OutArgument x:TypeArguments="x:Boolean" x:Key="out_BooReadParameters">[vBooReadParametersOrder]</OutArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_StrSortColumn">Orden Banco</InArgument>
-                        </ui:InvokeWorkflowFile.Arguments>
-                      </ui:InvokeWorkflowFile>
-                    </Sequence>
-                    <FlowStep.Next>
-                      <FlowDecision x:Name="__ReferenceID4" Condition="[vBooReadParametersOrder]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                            <av:Point x:Key="ShapeLocation">340.5,609.54</av:Point>
-                            <av:Size x:Key="ShapeSize">79,87</av:Size>
-                            <av:PointCollection x:Key="FalseConnector">419.5,653.04 520,653.04 520,699.5</av:PointCollection>
-                            <av:PointCollection x:Key="TrueConnector">340.5,653.04 240,653.04 240,699.5</av:PointCollection>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <FlowDecision.True>
-                          <FlowStep x:Name="__ReferenceID9">
+                      <FlowDecision.True>
+                        <FlowStep x:Name="__ReferenceID3">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <av:Point x:Key="ShapeLocation">280,478.54</av:Point>
+                              <av:Size x:Key="ShapeSize">200,81</av:Size>
+                              <av:PointCollection x:Key="ConnectorLocation">380,559.54 380,609.54</av:PointCollection>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Sequence DisplayName="Leer Parametrico Orden" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_13">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <av:Point x:Key="ShapeLocation">140,699.5</av:Point>
-                                <av:Size x:Key="ShapeSize">200,81</av:Size>
-                                <av:PointCollection x:Key="ConnectorLocation">240,780.5 240,810.5 240.14166666666665,810.5 240.14166666666665,830.5</av:PointCollection>
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <Sequence DisplayName="Validar Calendario" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\Excel\Excel_LeerParametrico.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Apps\Excel\Excel_LeerParametrico.xaml">
+                              <ui:InvokeWorkflowFile.Arguments>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_StrParameterizableFile">[Path.Combine(in_Config("RutaParametrizacion").ToString, in_Config("Parameter").ToString)]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_StrParameterizableSheet">[in_Config("SheetsParameterOrder").ToString]</InArgument>
+                                <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_DtbParameters">[vDtbParametersOrder]</OutArgument>
+                                <OutArgument x:TypeArguments="x:Boolean" x:Key="out_BooReadParameters">[vBooReadParametersOrder]</OutArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_StrSortColumn">Orden Banco</InArgument>
+                              </ui:InvokeWorkflowFile.Arguments>
+                            </ui:InvokeWorkflowFile>
+                          </Sequence>
+                          <FlowStep.Next>
+                            <FlowDecision x:Name="__ReferenceID4" Condition="[vBooReadParametersOrder]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  <av:Point x:Key="ShapeLocation">340.5,609.54</av:Point>
+                                  <av:Size x:Key="ShapeSize">79,87</av:Size>
+                                  <av:PointCollection x:Key="FalseConnector">419.5,653.04 520,653.04 520,699.5</av:PointCollection>
+                                  <av:PointCollection x:Key="TrueConnector">340.5,653.04 240,653.04 240,699.5</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\UiPath\UIPath_ValidarCalendario.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Apps\UiPath\UIPath_ValidarCalendario.xaml">
-                                <ui:InvokeWorkflowFile.Arguments>
-                                  <InArgument x:TypeArguments="s:DateTime" x:Key="in_DtmDate">
-                                    <VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="Now.AddDays(CInt(in_Config(&quot;SubtractDays&quot;).ToString))" />
-                                  </InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="in_StrCalendarPath">
-                                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Path.Combine(in_Config(&quot;RutaParametrizacion&quot;).ToString, in_Config(&quot;Parameter&quot;).ToString)" />
-                                  </InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="in_StrSheetCalendar">
-                                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;SheetsCalendar&quot;).ToString" />
-                                  </InArgument>
-                                  <OutArgument x:TypeArguments="x:Boolean" x:Key="out_BooValidateDate">
-                                    <VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="vBooValidateDate" />
-                                  </OutArgument>
-                                  <OutArgument x:TypeArguments="s:DateTime" x:Key="out_DtmDate">
-                                    <VisualBasicReference x:TypeArguments="s:DateTime" ExpressionText="vDtmDate" />
-                                  </OutArgument>
-                                </ui:InvokeWorkflowFile.Arguments>
-                              </ui:InvokeWorkflowFile>
-                            </Sequence>
-                            <FlowStep.Next>
-                              <FlowDecision x:Name="__ReferenceID10" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_4">
-                                <FlowDecision.Condition>
-                                  <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="vBooValidateDate" />
-                                </FlowDecision.Condition>
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                    <av:Point x:Key="ShapeLocation">200.64166666666665,830.5</av:Point>
-                                    <av:Size x:Key="ShapeSize">79,87</av:Size>
-                                    <av:PointCollection x:Key="FalseConnector">279.64166666666665,874 380,874 380,919.5</av:PointCollection>
-                                    <av:PointCollection x:Key="TrueConnector">200.64166666666665,874 100,874 100,919.5</av:PointCollection>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                                <FlowDecision.True>
-                                  <FlowStep x:Name="__ReferenceID6">
+                              <FlowDecision.True>
+                                <FlowStep x:Name="__ReferenceID9">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <av:Point x:Key="ShapeLocation">140,699.5</av:Point>
+                                      <av:Size x:Key="ShapeSize">200,81</av:Size>
+                                      <av:PointCollection x:Key="ConnectorLocation">240,780.5 240,810.5 240.14166666666665,810.5 240.14166666666665,830.5</av:PointCollection>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <Sequence DisplayName="Validar Calendario" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_17">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <av:Point x:Key="ShapeLocation">0,919.5</av:Point>
-                                        <av:Size x:Key="ShapeSize">200,81</av:Size>
-                                        <av:PointCollection x:Key="ConnectorLocation">100,1000.5 100,1050.5</av:PointCollection>
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <Sequence DisplayName="Cargar Queue Obtener Movimientos" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\UiPath\UIPath_ValidarCalendario.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Apps\UiPath\UIPath_ValidarCalendario.xaml">
+                                      <ui:InvokeWorkflowFile.Arguments>
+                                        <InArgument x:TypeArguments="s:DateTime" x:Key="in_DtmDate">[Now.AddDays(CInt(in_Config("SubtractDays").ToString))]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_StrCalendarPath">[Path.Combine(in_Config("RutaParametrizacion").ToString, in_Config("Parameter").ToString)]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_StrSheetCalendar">[in_Config("SheetsCalendar").ToString]</InArgument>
+                                        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_BooValidateDate">[vBooValidateDate]</OutArgument>
+                                        <OutArgument x:TypeArguments="s:DateTime" x:Key="out_DtmDate">[vDtmDate]</OutArgument>
+                                      </ui:InvokeWorkflowFile.Arguments>
+                                    </ui:InvokeWorkflowFile>
+                                  </Sequence>
+                                  <FlowStep.Next>
+                                    <FlowDecision x:Name="__ReferenceID10" Condition="[vBooValidateDate]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_4">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          <av:Point x:Key="ShapeLocation">200.64166666666665,830.5</av:Point>
+                                          <av:Size x:Key="ShapeSize">79,87</av:Size>
+                                          <av:PointCollection x:Key="FalseConnector">279.64166666666665,874 380,874 380,919.5</av:PointCollection>
+                                          <av:PointCollection x:Key="TrueConnector">200.64166666666665,874 100,874 100,919.5</av:PointCollection>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\UiPath\UiPath_CargarQueueObtenerMovimientos.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Apps\UiPath\UiPath_CargarQueueObtenerMovimientos.xaml">
-                                        <ui:InvokeWorkflowFile.Arguments>
-                                          <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_DtbProcessMonitoring">
-                                            <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="out_DtbProcessMonitoring" />
-                                          </OutArgument>
-                                          <InArgument x:TypeArguments="x:Boolean" x:Key="in_BooUploadQueues">
-                                            <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="in_Config(&quot;UploadQueues&quot;).ToString.Equals(&quot;1&quot;)" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_StrOrchestratorQueueFolder">
-                                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;OrchestratorQueueFolder&quot;).ToString" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_StrOrchestratorQueueName">
-                                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;OrchestratorQueueName&quot;).ToString" />
-                                          </InArgument>
-                                          <OutArgument x:TypeArguments="x:Boolean" x:Key="out_BooUploadQueues">
-                                            <VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="vBooUploadQueues" />
-                                          </OutArgument>
-                                          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DtbParametersBanks">
-                                            <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="vDtbParametersBanks" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DtbParametersOrder">
-                                            <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="vDtbParametersOrder" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="s:DateTime" x:Key="in_DtmDate">
-                                            <VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="vDtmDate" />
-                                          </InArgument>
-                                        </ui:InvokeWorkflowFile.Arguments>
-                                      </ui:InvokeWorkflowFile>
-                                    </Sequence>
-                                    <FlowStep.Next>
-                                      <FlowDecision x:Name="__ReferenceID7" Condition="[vBooUploadQueues]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                            <av:Point x:Key="ShapeLocation">60.5,1050.5</av:Point>
-                                            <av:Size x:Key="ShapeSize">79,87</av:Size>
-                                            <av:PointCollection x:Key="FalseConnector">139.5,1094 240,1094 240,1139.5</av:PointCollection>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                        <FlowDecision.False>
-                                          <FlowStep x:Name="__ReferenceID8">
+                                      <FlowDecision.True>
+                                        <FlowStep x:Name="__ReferenceID6">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <av:Point x:Key="ShapeLocation">0,919.5</av:Point>
+                                              <av:Size x:Key="ShapeSize">200,81</av:Size>
+                                              <av:PointCollection x:Key="ConnectorLocation">100,1000.5 100,1050.5</av:PointCollection>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <Sequence DisplayName="Cargar Queue Obtener Movimientos" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_15">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <av:Point x:Key="ShapeLocation">140,1139.5</av:Point>
-                                                <av:Size x:Key="ShapeSize">200,81</av:Size>
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <Sequence DisplayName="Enviar Notificacion Cargar Queue Obtener Movimientos" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\UiPath\UiPath_CargarQueueObtenerMovimientos.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Apps\UiPath\UiPath_CargarQueueObtenerMovimientos.xaml">
+                                              <ui:InvokeWorkflowFile.Arguments>
+                                                <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_DtbProcessMonitoring">[out_DtbProcessMonitoring]</OutArgument>
+                                                <InArgument x:TypeArguments="x:Boolean" x:Key="in_BooUploadQueues">[in_Config("UploadQueues").ToString.Equals("1")]</InArgument>
+                                                <InArgument x:TypeArguments="x:String" x:Key="in_StrOrchestratorQueueFolder">[in_Config("OrchestratorQueueFolder").ToString]</InArgument>
+                                                <InArgument x:TypeArguments="x:String" x:Key="in_StrOrchestratorQueueName">[in_Config("OrchestratorQueueName").ToString]</InArgument>
+                                                <OutArgument x:TypeArguments="x:Boolean" x:Key="out_BooUploadQueues">[vBooUploadQueues]</OutArgument>
+                                                <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DtbParametersBanks">[vDtbParametersBanks]</InArgument>
+                                                <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DtbParametersOrder">[vDtbParametersOrder]</InArgument>
+                                                <InArgument x:TypeArguments="s:DateTime" x:Key="in_DtmDate">[vDtmDate]</InArgument>
+                                              </ui:InvokeWorkflowFile.Arguments>
+                                            </ui:InvokeWorkflowFile>
+                                          </Sequence>
+                                          <FlowStep.Next>
+                                            <FlowDecision x:Name="__ReferenceID7" Condition="[vBooUploadQueues]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_3">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                  <av:Point x:Key="ShapeLocation">60.5,1050.5</av:Point>
+                                                  <av:Size x:Key="ShapeSize">79,87</av:Size>
+                                                  <av:PointCollection x:Key="FalseConnector">139.5,1094 240,1094 240,1139.5</av:PointCollection>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\Mail\Mail_EnviarNotificacion.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Apps\Mail\Mail_EnviarNotificacion.xaml">
-                                                <ui:InvokeWorkflowFile.Arguments>
-                                                  <InArgument x:TypeArguments="scg:IEnumerable(x:String)" x:Key="in_CstAttachmentsCollection">[Nothing]</InArgument>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_StrTemplate">[Path.Combine(in_Config("RutaFormatos").ToString, in_Config("AlertTemplate").ToString)]</InArgument>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_StrBody">[in_Config("BodyLoadQueueGetMoves").ToString]</InArgument>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_StrSubject">[in_Config("SubjectLoadQueueGetMoves").ToString]</InArgument>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_StrTo">[in_Config("ToMailNotification").ToString]</InArgument>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_StrBcc">[Nothing]</InArgument>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_SrtCc">[Nothing]</InArgument>
-                                                  <InArgument x:TypeArguments="x:Boolean" x:Key="in_BooAlert">True</InArgument>
-                                                </ui:InvokeWorkflowFile.Arguments>
-                                              </ui:InvokeWorkflowFile>
-                                            </Sequence>
-                                          </FlowStep>
-                                        </FlowDecision.False>
-                                      </FlowDecision>
-                                    </FlowStep.Next>
-                                  </FlowStep>
-                                </FlowDecision.True>
-                                <FlowDecision.False>
-                                  <FlowStep x:Name="__ReferenceID11">
+                                              <FlowDecision.False>
+                                                <FlowStep x:Name="__ReferenceID8">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <av:Point x:Key="ShapeLocation">140,1139.5</av:Point>
+                                                      <av:Size x:Key="ShapeSize">200,81</av:Size>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <Sequence DisplayName="Enviar Notificacion Cargar Queue Obtener Movimientos" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\Mail\Mail_EnviarNotificacion.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Apps\Mail\Mail_EnviarNotificacion.xaml">
+                                                      <ui:InvokeWorkflowFile.Arguments>
+                                                        <InArgument x:TypeArguments="scg:IEnumerable(x:String)" x:Key="in_CstAttachmentsCollection">[Nothing]</InArgument>
+                                                        <InArgument x:TypeArguments="x:String" x:Key="in_StrTemplate">[Path.Combine(in_Config("RutaFormatos").ToString, in_Config("AlertTemplate").ToString)]</InArgument>
+                                                        <InArgument x:TypeArguments="x:String" x:Key="in_StrBody">[in_Config("BodyLoadQueueGetMoves").ToString]</InArgument>
+                                                        <InArgument x:TypeArguments="x:String" x:Key="in_StrSubject">[in_Config("SubjectLoadQueueGetMoves").ToString]</InArgument>
+                                                        <InArgument x:TypeArguments="x:String" x:Key="in_StrTo">[in_Config("ToMailNotification").ToString]</InArgument>
+                                                        <InArgument x:TypeArguments="x:String" x:Key="in_StrBcc">[Nothing]</InArgument>
+                                                        <InArgument x:TypeArguments="x:String" x:Key="in_SrtCc">[Nothing]</InArgument>
+                                                        <InArgument x:TypeArguments="x:Boolean" x:Key="in_BooAlert">True</InArgument>
+                                                      </ui:InvokeWorkflowFile.Arguments>
+                                                    </ui:InvokeWorkflowFile>
+                                                  </Sequence>
+                                                </FlowStep>
+                                              </FlowDecision.False>
+                                            </FlowDecision>
+                                          </FlowStep.Next>
+                                        </FlowStep>
+                                      </FlowDecision.True>
+                                      <FlowDecision.False>
+                                        <FlowStep x:Name="__ReferenceID11">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <av:Point x:Key="ShapeLocation">280,919.5</av:Point>
+                                              <av:Size x:Key="ShapeSize">200,81</av:Size>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <Sequence DisplayName="Enviar Notificación Novedad Validar Calendario" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\Mail\Mail_EnviarNotificacion.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Apps\Mail\Mail_EnviarNotificacion.xaml">
+                                              <ui:InvokeWorkflowFile.Arguments>
+                                                <InArgument x:TypeArguments="scg:IEnumerable(x:String)" x:Key="in_CstAttachmentsCollection">[Nothing]</InArgument>
+                                                <InArgument x:TypeArguments="x:String" x:Key="in_StrTemplate">[Path.Combine(in_Config("RutaFormatos").ToString, in_Config("AlertTemplate").ToString)]</InArgument>
+                                                <InArgument x:TypeArguments="x:String" x:Key="in_StrBody">[in_Config("BodyValidateCalendar").ToString]</InArgument>
+                                                <InArgument x:TypeArguments="x:String" x:Key="in_StrSubject">[in_Config("SubjectValidateCalendar").ToString]</InArgument>
+                                                <InArgument x:TypeArguments="x:String" x:Key="in_StrTo">[in_Config("ToMailNotification").ToString]</InArgument>
+                                                <InArgument x:TypeArguments="x:String" x:Key="in_StrBcc">[Nothing]</InArgument>
+                                                <InArgument x:TypeArguments="x:String" x:Key="in_SrtCc">[Nothing]</InArgument>
+                                                <InArgument x:TypeArguments="x:Boolean" x:Key="in_BooAlert">True</InArgument>
+                                              </ui:InvokeWorkflowFile.Arguments>
+                                            </ui:InvokeWorkflowFile>
+                                          </Sequence>
+                                        </FlowStep>
+                                      </FlowDecision.False>
+                                    </FlowDecision>
+                                  </FlowStep.Next>
+                                </FlowStep>
+                              </FlowDecision.True>
+                              <FlowDecision.False>
+                                <FlowStep x:Name="__ReferenceID5">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <av:Point x:Key="ShapeLocation">420,699.5</av:Point>
+                                      <av:Size x:Key="ShapeSize">200,81</av:Size>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <Sequence DisplayName="Enviar Notificacion Novedad Leer Parametrico Orden" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_14">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <av:Point x:Key="ShapeLocation">280,919.5</av:Point>
-                                        <av:Size x:Key="ShapeSize">200,81</av:Size>
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <Sequence DisplayName="Enviar Notificación Novedad Validar Calendario" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_18">
-                                      <sap:WorkflowViewStateService.ViewState>
-                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                        </scg:Dictionary>
-                                      </sap:WorkflowViewStateService.ViewState>
-                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\Mail\Mail_EnviarNotificacion.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Apps\Mail\Mail_EnviarNotificacion.xaml">
-                                        <ui:InvokeWorkflowFile.Arguments>
-                                          <InArgument x:TypeArguments="scg:IEnumerable(x:String)" x:Key="in_CstAttachmentsCollection">
-                                            <VisualBasicValue x:TypeArguments="scg:IEnumerable(x:String)" ExpressionText="Nothing" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_StrTemplate">
-                                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Path.Combine(in_Config(&quot;RutaFormatos&quot;).ToString, in_Config(&quot;AlertTemplate&quot;).ToString)" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_StrBody">
-                                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;BodyValidateCalendar&quot;).ToString" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_StrSubject">
-                                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;SubjectValidateCalendar&quot;).ToString" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_StrTo">
-                                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;ToMailNotification&quot;).ToString" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_StrBcc">
-                                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Nothing" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_SrtCc">
-                                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Nothing" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:Boolean" x:Key="in_BooAlert">
-                                            <Literal x:TypeArguments="x:Boolean" Value="True" />
-                                          </InArgument>
-                                        </ui:InvokeWorkflowFile.Arguments>
-                                      </ui:InvokeWorkflowFile>
-                                    </Sequence>
-                                  </FlowStep>
-                                </FlowDecision.False>
-                              </FlowDecision>
-                            </FlowStep.Next>
-                          </FlowStep>
-                        </FlowDecision.True>
-                        <FlowDecision.False>
-                          <FlowStep x:Name="__ReferenceID5">
+                                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\Mail\Mail_EnviarNotificacion.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Apps\Mail\Mail_EnviarNotificacion.xaml">
+                                      <ui:InvokeWorkflowFile.Arguments>
+                                        <InArgument x:TypeArguments="scg:IEnumerable(x:String)" x:Key="in_CstAttachmentsCollection">[Nothing]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_StrTemplate">[Path.Combine(in_Config("RutaFormatos").ToString, in_Config("AlertTemplate").ToString)]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_StrBody">[in_Config("BodyParametersOrder").ToString]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_StrSubject">[in_Config("SubjectParametersOrder").ToString]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_StrTo">[in_Config("ToMailNotification").ToString]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_StrBcc">[Nothing]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_SrtCc">[Nothing]</InArgument>
+                                        <InArgument x:TypeArguments="x:Boolean" x:Key="in_BooAlert">True</InArgument>
+                                      </ui:InvokeWorkflowFile.Arguments>
+                                    </ui:InvokeWorkflowFile>
+                                  </Sequence>
+                                </FlowStep>
+                              </FlowDecision.False>
+                            </FlowDecision>
+                          </FlowStep.Next>
+                        </FlowStep>
+                      </FlowDecision.True>
+                      <FlowDecision.False>
+                        <FlowStep x:Name="__ReferenceID2">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <av:Point x:Key="ShapeLocation">560,478.54</av:Point>
+                              <av:Size x:Key="ShapeSize">200,81</av:Size>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Sequence DisplayName="Enviar Notificacion Novedad Leer Parametrico Bancos" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_12">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <av:Point x:Key="ShapeLocation">420,699.5</av:Point>
-                                <av:Size x:Key="ShapeSize">200,81</av:Size>
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <Sequence DisplayName="Enviar Notificacion Novedad Leer Parametrico Orden" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_14">
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\Mail\Mail_EnviarNotificacion.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Apps\Mail\Mail_EnviarNotificacion.xaml">
-                                <ui:InvokeWorkflowFile.Arguments>
-                                  <InArgument x:TypeArguments="scg:IEnumerable(x:String)" x:Key="in_CstAttachmentsCollection">[Nothing]</InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="in_StrTemplate">[Path.Combine(in_Config("RutaFormatos").ToString, in_Config("AlertTemplate").ToString)]</InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="in_StrBody">[in_Config("BodyParametersOrder").ToString]</InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="in_StrSubject">[in_Config("SubjectParametersOrder").ToString]</InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="in_StrTo">[in_Config("ToMailNotification").ToString]</InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="in_StrBcc">[Nothing]</InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="in_SrtCc">[Nothing]</InArgument>
-                                  <InArgument x:TypeArguments="x:Boolean" x:Key="in_BooAlert">True</InArgument>
-                                </ui:InvokeWorkflowFile.Arguments>
-                              </ui:InvokeWorkflowFile>
-                            </Sequence>
-                          </FlowStep>
-                        </FlowDecision.False>
-                      </FlowDecision>
-                    </FlowStep.Next>
-                  </FlowStep>
-                </FlowDecision.True>
-                <FlowDecision.False>
-                  <FlowStep x:Name="__ReferenceID2">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <av:Point x:Key="ShapeLocation">560,478.54</av:Point>
-                        <av:Size x:Key="ShapeSize">200,81</av:Size>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <Sequence DisplayName="Enviar Notificacion Novedad Leer Parametrico Bancos" sap:VirtualizedContainerService.HintSize="200,81" sap2010:WorkflowViewState.IdRef="Sequence_12">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\Mail\Mail_EnviarNotificacion.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Apps\Mail\Mail_EnviarNotificacion.xaml">
-                        <ui:InvokeWorkflowFile.Arguments>
-                          <InArgument x:TypeArguments="scg:IEnumerable(x:String)" x:Key="in_CstAttachmentsCollection">[Nothing]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_StrTemplate">[Path.Combine(in_Config("RutaFormatos").ToString, in_Config("AlertTemplate").ToString)]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_StrBody">[in_Config("BodyParametersBanks").ToString]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_StrSubject">[in_Config("SubjectParametersBanks").ToString]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_StrTo">[in_Config("ToMailNotification").ToString]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_StrBcc">[Nothing]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_SrtCc">[Nothing]</InArgument>
-                          <InArgument x:TypeArguments="x:Boolean" x:Key="in_BooAlert">True</InArgument>
-                        </ui:InvokeWorkflowFile.Arguments>
-                      </ui:InvokeWorkflowFile>
-                    </Sequence>
-                  </FlowStep>
-                </FlowDecision.False>
-              </FlowDecision>
-            </FlowStep.Next>
-          </FlowStep>
-        </FlowStep.Next>
-      </FlowStep>
-      <x:Reference>__ReferenceID0</x:Reference>
-      <x:Reference>__ReferenceID1</x:Reference>
-      <x:Reference>__ReferenceID2</x:Reference>
-      <x:Reference>__ReferenceID3</x:Reference>
-      <x:Reference>__ReferenceID4</x:Reference>
-      <x:Reference>__ReferenceID5</x:Reference>
-      <x:Reference>__ReferenceID6</x:Reference>
-      <x:Reference>__ReferenceID7</x:Reference>
-      <x:Reference>__ReferenceID8</x:Reference>
-      <x:Reference>__ReferenceID9</x:Reference>
-      <x:Reference>__ReferenceID10</x:Reference>
-      <x:Reference>__ReferenceID11</x:Reference>
-    </Flowchart>
+                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\Mail\Mail_EnviarNotificacion.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Apps\Mail\Mail_EnviarNotificacion.xaml">
+                              <ui:InvokeWorkflowFile.Arguments>
+                                <InArgument x:TypeArguments="scg:IEnumerable(x:String)" x:Key="in_CstAttachmentsCollection">[Nothing]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_StrTemplate">[Path.Combine(in_Config("RutaFormatos").ToString, in_Config("AlertTemplate").ToString)]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_StrBody">[in_Config("BodyParametersBanks").ToString]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_StrSubject">[in_Config("SubjectParametersBanks").ToString]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_StrTo">[in_Config("ToMailNotification").ToString]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_StrBcc">[Nothing]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_SrtCc">[Nothing]</InArgument>
+                                <InArgument x:TypeArguments="x:Boolean" x:Key="in_BooAlert">True</InArgument>
+                              </ui:InvokeWorkflowFile.Arguments>
+                            </ui:InvokeWorkflowFile>
+                          </Sequence>
+                        </FlowStep>
+                      </FlowDecision.False>
+                    </FlowDecision>
+                  </FlowStep.Next>
+                </FlowStep>
+              </FlowStep.Next>
+            </FlowStep>
+            <x:Reference>__ReferenceID0</x:Reference>
+            <x:Reference>__ReferenceID1</x:Reference>
+            <x:Reference>__ReferenceID2</x:Reference>
+            <x:Reference>__ReferenceID3</x:Reference>
+            <x:Reference>__ReferenceID4</x:Reference>
+            <x:Reference>__ReferenceID5</x:Reference>
+            <x:Reference>__ReferenceID6</x:Reference>
+            <x:Reference>__ReferenceID7</x:Reference>
+            <x:Reference>__ReferenceID8</x:Reference>
+            <x:Reference>__ReferenceID9</x:Reference>
+            <x:Reference>__ReferenceID10</x:Reference>
+            <x:Reference>__ReferenceID11</x:Reference>
+          </Flowchart>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_24" />
+      </If.Else>
+    </If>
   </Sequence>
 </Activity>

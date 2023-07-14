@@ -6,13 +6,14 @@
     <x:Property Name="in_StrGeneratedFilesPath" Type="InArgument(x:String)" />
     <x:Property Name="in_StrFileName" Type="InArgument(x:String)" />
     <x:Property Name="in_StrFileNameZip" Type="InArgument(x:String)" />
+    <x:Property Name="in_StrRenameFile" Type="InArgument(x:String)" />
     <x:Property Name="out_BooDownloadFileMovements" Type="OutArgument(x:Boolean)" />
     <x:Property Name="out_StrExceptionMessage" Type="OutArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>912,5610</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>912,4809</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>INTERBANK_DescargarArchivoMovimientos_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -116,7 +117,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="INTERBANK_DescargarArchivoMovimientos" sap:VirtualizedContainerService.HintSize="922,5545" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="INTERBANK_DescargarArchivoMovimientos" sap:VirtualizedContainerService.HintSize="922,4744" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="vBooLoad" />
     </Sequence.Variables>
@@ -125,77 +126,22 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap:VirtualizedContainerService.HintSize="860,803" sap2010:WorkflowViewState.IdRef="Sequence_9">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_6">
-        <Assign.To>
-          <OutArgument x:TypeArguments="x:String">[in_StrFormat]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="x:String">TXT</InArgument>
-        </Assign.Value>
-      </Assign>
-      <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_7">
-        <Assign.To>
-          <OutArgument x:TypeArguments="x:String">[in_StrPathDownload]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="x:String">["C:\Users\jorge\Downloads"]</InArgument>
-        </Assign.Value>
-      </Assign>
-      <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_11">
-        <Assign.To>
-          <OutArgument x:TypeArguments="x:String">[in_StrGeneratedFilesPath]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="x:String">C:\Users\jorge\Documents\ALICORP_ExtractosBancariosDispatcher01\Archivos Generados\2023\06\14\INTERBANK</InArgument>
-        </Assign.Value>
-      </Assign>
-      <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_8">
-        <Assign.To>
-          <OutArgument x:TypeArguments="x:String">[in_StrCopyFile]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="x:String">C:\Users\jorge\Documents\Ruta Compatida</InArgument>
-        </Assign.Value>
-      </Assign>
-      <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_9">
-        <Assign.To>
-          <OutArgument x:TypeArguments="x:String">[in_StrFileName]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="x:String">*.txt</InArgument>
-        </Assign.Value>
-      </Assign>
-      <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_10">
-        <Assign.To>
-          <OutArgument x:TypeArguments="x:String">[in_StrFileNameZip]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="x:String">Movimientos_19062023.zip</InArgument>
-        </Assign.Value>
-      </Assign>
-    </Sequence>
-    <TryCatch DisplayName="Try Catch INTERBANK_DescargarArchivoMovimientos" sap:VirtualizedContainerService.HintSize="860,4591" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch INTERBANK_DescargarArchivoMovimientos" sap:VirtualizedContainerService.HintSize="860,4633" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="822,3854" sap2010:WorkflowViewState.IdRef="Sequence_4">
+        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="822,3896" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="760,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Descargar Archivo Movimientos&quot;]" />
-          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: Descargar Archivo Movimientos" sap:VirtualizedContainerService.HintSize="760,3305" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="50578787-3f80-485e-9440-4c4ad5cac324" Version="V2" WindowResize="Maximize">
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: Descargar Archivo Movimientos" sap:VirtualizedContainerService.HintSize="760,3347" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="50578787-3f80-485e-9440-4c4ad5cac324" Version="V2" WindowResize="Maximize">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="726,3088" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="726,3090" sap2010:WorkflowViewState.IdRef="Sequence_2">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -228,7 +174,7 @@
                     </uix:NClick.Target>
                   </uix:NClick>
                   <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="664,92" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info" Message="[&quot;Clic Mis Reportes&quot;]" />
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click MyReports" sap:VirtualizedContainerService.HintSize="664,157" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="10" DisplayName="Click MyReports" sap:VirtualizedContainerService.HintSize="664,157" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://empresas.interbank.pe/consultas/movimientos/historial/descarga" CvType="Text" DesignTimeRectangle="765, 447, 82, 17" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Mis Reportes'" FullSelectorArgument="&lt;webctrl tag='A' aaname='Mis Reportes' /&gt;" Guid="502b90e6-aef5-4347-ab7b-28d4fd7dbeab" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFYAAAAVCAYAAADcmhk1AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARlSURBVFhH7VZpbExRFBZLbLETIiLin4QgSBCJ2P0Q+1pbQ0hEaEMsQbWxRSOCBG1UELvuVGhrmFKldDFdaEpHa6l22o7uU21x3O/03Zc3Y6ZjmzAyX3PyOveee5bvnnvubUEeuAQeYl0ED7EugodYF8FDrIvwS8TeM2VSt0gvGn9vB1U31imjHmihEvvpSwNNTfCnFtdm0eSE3VT3uV6ZIbr05j61C5tPPaKW0aOynF8idrPhDLW8NpvtQ/B/n+sr6WjuDfoq/v43qMSa66toaKwPJ90+fAHFFD7l8apGC426s1klJMQYz+M/i2n3A1QbWmkdOodOvLqlaP0dJJflUveopZxnRUONMvp7sEssZF7SQa4kENxBEN1KEIBxECsDQYWj0jMrCngtqrBN6FyaIire9KlCsdwESazcGGzYdGVsxoO9PFYi1ix6dIhPB2wNiFlDYe+SeA5f+MR6v6xLHBN8Qf9jfTXr4Lsi+QjPwW7/mNV09W0i5wHCxuq2cZyBORHUKWIRDby5loKNsdQxfCHrSxl3dzufxKTSHBoSu1HNa4J+JxlritiXs5y/IxZB4dtTHPvUj3lMMAIcFufLTpFYXFE6BwO9gloTjdFttQoMsibluGK5Cc0RuyApkP2PiN9kZQPSOWIx6YoNvA6/0YJworQ6sx8eYOJmJu6zGocg6YsFCWp+IEIWCXLY8/yqXWJRUPCtHYcgxh/J+Tti4WT/i1A2Olq3hb9YoCVGS2yq+RX1jl5Bfa97czCFFjNdFj1ZVpqEo1YgibtdlKZWmq14PzmmEgtf6PGowsj3j3k9en+QaCeIadCt9ZRRkc/z5wv0PI8jDjIQL2xgQysbaulldSE1fv1slQ94ANanBVvFIKVt2Dw6KXw5y9kusTc/pNAkvR8bQmCJpc8dEvuhzsxVjUqQzntFL6ez+TrFchPsEYtWklfddLSgr7WhFbQKSaw2eW3Mvumned4nPYTnAJA2Ub+LSUABQBc6sKWFPWLhU/rXCmI8JdqHs5ztEgtHOD44RrKPOiLWUG6kgOwrlCbaRujbh3wccdRGiiODqpCQ608Z49QXQr8bq3gdgNdGV3HM0XLya0w89t5SxrqG8te/VbGIM09UpzNiB9/eQMV15fS6ppj8sy9zjKhcvJBgL6Eki7ZmnKPsyjdOc3ZIrC0cEfugNJt3C3Naaa7HIkjfZ6dVcrPERYDNQ6+0tSNfKJJYJKCtFIizHovNlPlhzJZYbBw2R66BXrI5l+8WOSYFG6cvyXSas0osbkE0bdy8uPVt4fX4MJOJNmH7KrggKgP9BsaRiPamlliXGsT9CTsMoApACJ5b8vjiQlubcoKrDLYQvHznSmJxS0Pf0atgsfKqgK72VQDMStxPXSKXkN6Uxb8lML/FcJbtYS2qFcDNj5cExrGZ8P3U/JLnHOVssVjIz0+0UdZyA0hiUU2yD/7LcDtih4se/Kce8a6E2xAr2w9akjvAbYh1N3iIdRE8xLoERN8APGAap8Pgbo8AAAAASUVORK5CYII=" InformativeScreenshot="a106f99661a322ef3c242539f09e34df.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Interbank*' /&gt;" SearchSteps="Selector" Version="V2" />
                     </uix:NClick.Target>
@@ -237,7 +183,6 @@
                   <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\UiPath\UiPath_LimbiarDescargas.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="664,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Apps\UiPath\UiPath_LimbiarDescargas.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <InArgument x:TypeArguments="x:String" x:Key="in_StrDownloadPath">[in_StrPathDownload]</InArgument>
-                      <OutArgument x:TypeArguments="x:Boolean" x:Key="out_BooDownload">[out_BooDownloadFileMovements]</OutArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>
                   <ui:RetryScope ContinueOnError="True" DisplayName="Retry Scope Load" sap:VirtualizedContainerService.HintSize="664,1374" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="10" RetryInterval="00:00:06">
@@ -269,7 +214,7 @@
                               </Sequence>
                             </uix:NCheckState.IfNotExists>
                             <uix:NCheckState.Target>
-                              <uix:TargetAnchorable BrowserURL="https://empresas.interbank.pe/reportes" CvElementArea="72, 282, 149, 67" CvTextArea="111, 307, 68, 16" CvTextArgument="Cargando..." CvType="Button" DesignTimeRectangle="112, 306, 67, 20" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Cargando...'" FullSelectorArgument="&lt;webctrl aaname='Cargando*' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Cargando...' tag='SPAN' type='' class='ng-tns-c332-46 ng-star-inserted' check:innerText='Cargando...' /&gt;" Guid="7943e1ba-0a8e-4c47-8685-e605ceea6282" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEcAAAAYCAYAAACoaOA9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAL+SURBVFhH7Zchk6swFIXff0KhcFVVuCgcCoVDoXAo/gAKh4rCoXAoFA4VFYfCnb2hoRsYYF7fbGe6bziddpqkSeC7J/fSP7h0qAvOiS44J7rgnOiCc6L/CE6HNKggdesntANnRF+lCF0HlmXBsm/wEo5+1MMfKwWHvxOORBU6cGOCISfdN2IgWIxl6Jauj9Sb4UxtAidpsMdgkoIwzd8w8ATezSZn2bgFOdrliiRHnNeoohtsy0UxUJ+okXiqbcHxc/Aigpe281qyzZ8OdbwEfFh27pDFNYYmheeQey2H3FtD6FGlaeC0rjm3WcERNDeYr1GNRyi7161vwJnQJDbSTjeP1GVgBFDo+5B1gntUP8ARnMBmyFrVmujVI2cByuVMygaJG6KayVQIg/J5XMe+QHDPaYYSucB2EJa9DsiINnXhlRrPWCNiMaoF5tiDxwy2hjPWERxj7UmofV1kL1rfgCPBgwD8ZV/SjVgpfZIUHNPa2zapS62DAJj705o+XzkFgsPXQRClh7jZ3OhEAOa9BpRMB8BUn+N+cCqO9Lpz6HeiKZGEDEzb1jLhrBbYc853AGTHkUU+2JL8LQPOBqoJeh/wMscI1kqthvf3WuWcsY7JjpuIaU19A3VsVdTcpMIgRx2FjXO2Vy1bZN4Don0LUOizP+c3yledWNbZOOcEzlAyhFtrjOqYqvED5wzFnA7+0TlKYqdakVPajBJwgpa6usxGXC87U9kvY7D7CRxSlzIUj2TylKwCMOp87KLcmMN/uuoczl7OKSnnuHr8DTln0eY5x3Hhm885dDTSpUpQci36AVVgwMlMOBItVSef0RHU7zDl6NQdTBThuaopR3lIakHgTTibBzpK4IHR912tqGJStapFuwK6qlbqOp/VSoD7FjmPfqnymEUuU5PM71o7cH5OQ8EQmbuRpqE0qtJn661w+twlOMI45xOkKtleuZvXPk1vhaOODk98uPODHL3VX5GonBP7b9B74fxyXXBOdME50QXnRBecE11wDgV8AWMnRURzSnfAAAAAAElFTkSuQmCC" InformativeScreenshot="bb97e6972a1745ea555a200f75e9def0.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Interbank*' /&gt;" SearchSteps="Selector" Version="V2" />
+                              <uix:TargetAnchorable BrowserURL="https://empresas.interbank.pe/reportes" CvElementArea="72, 282, 149, 67" CvTextArea="111, 307, 68, 16" CvType="Button" DesignTimeRectangle="112, 306, 67, 20" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Cargando...'" FullSelectorArgument="&lt;webctrl aaname='Cargando*' tag='SPAN' /&gt;" Guid="7943e1ba-0a8e-4c47-8685-e605ceea6282" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEcAAAAYCAYAAACoaOA9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAL+SURBVFhH7Zchk6swFIXff0KhcFVVuCgcCoVDoXAo/gAKh4rCoXAoFA4VFYfCnb2hoRsYYF7fbGe6bziddpqkSeC7J/fSP7h0qAvOiS44J7rgnOiCc6L/CE6HNKggdesntANnRF+lCF0HlmXBsm/wEo5+1MMfKwWHvxOORBU6cGOCISfdN2IgWIxl6Jauj9Sb4UxtAidpsMdgkoIwzd8w8ATezSZn2bgFOdrliiRHnNeoohtsy0UxUJ+okXiqbcHxc/Aigpe281qyzZ8OdbwEfFh27pDFNYYmheeQey2H3FtD6FGlaeC0rjm3WcERNDeYr1GNRyi7161vwJnQJDbSTjeP1GVgBFDo+5B1gntUP8ARnMBmyFrVmujVI2cByuVMygaJG6KayVQIg/J5XMe+QHDPaYYSucB2EJa9DsiINnXhlRrPWCNiMaoF5tiDxwy2hjPWERxj7UmofV1kL1rfgCPBgwD8ZV/SjVgpfZIUHNPa2zapS62DAJj705o+XzkFgsPXQRClh7jZ3OhEAOa9BpRMB8BUn+N+cCqO9Lpz6HeiKZGEDEzb1jLhrBbYc853AGTHkUU+2JL8LQPOBqoJeh/wMscI1kqthvf3WuWcsY7JjpuIaU19A3VsVdTcpMIgRx2FjXO2Vy1bZN4Don0LUOizP+c3yledWNbZOOcEzlAyhFtrjOqYqvED5wzFnA7+0TlKYqdakVPajBJwgpa6usxGXC87U9kvY7D7CRxSlzIUj2TylKwCMOp87KLcmMN/uuoczl7OKSnnuHr8DTln0eY5x3Hhm885dDTSpUpQci36AVVgwMlMOBItVSef0RHU7zDl6NQdTBThuaopR3lIakHgTTibBzpK4IHR912tqGJStapFuwK6qlbqOp/VSoD7FjmPfqnymEUuU5PM71o7cH5OQ8EQmbuRpqE0qtJn661w+twlOMI45xOkKtleuZvXPk1vhaOODk98uPODHL3VX5GonBP7b9B74fxyXXBOdME50QXnRBecE11wDgV8AWMnRURzSnfAAAAAAElFTkSuQmCC" InformativeScreenshot="bb97e6972a1745ea555a200f75e9def0.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Interbank*' /&gt;" SearchSteps="Selector" Version="V2" />
                             </uix:NCheckState.Target>
                           </uix:NCheckState>
                           <If Condition="[vBooLoad]" DisplayName="If vBooLoad" sap:VirtualizedContainerService.HintSize="560,798" sap2010:WorkflowViewState.IdRef="If_1">
@@ -306,7 +251,7 @@
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click DownloadNow" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
+                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click DownloadNow" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
                                   <uix:NClick.Target>
                                     <uix:TargetAnchorable BrowserURL="https://empresas.interbank.pe/reportes" CvType="Icon" DesignTimeRectangle="1234, 410, 30, 30" DesignTimeScaleFactor="1" FriendlyName="'IBK-ICON'" FullSelectorArgument="&lt;webctrl tag='IBK-ICON' class='ibk-icon icon-download' /&gt;" Guid="eb086cfe-96b0-4652-bba5-999db4c8ff9c" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACIAAAAiCAYAAAA6RwvCAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAM0SURBVFhH7Ze/ayJBFMfzX6TMn3BlyistbYSDa1IdgTTahBTXpDoLi2CTNIGQSg7F4AkuItklKdQUKkvASyAoQTgRwi6BJSII33uzO2v218yugYMc5AvTvJ3Z/cybN++93cA70QdIUP8xyIuB3/eXOFOPka1/w+cqjXoBR2oFF/cjmC983ppKDjLr4aSxh62faWxIRwapxjm0GV+XUPEgSwMdNbcC2CzvYVdVoDxMYBrWaowfrlFSD5EqZ1ZAabUHc8nfEyM5iHWHo6r74hyO9BnmcS9eLjDVT5F2waunGFj8mURiEOsWeQ6x3bjEeMHtSbWY4KKxw2GO0YmBEYBY0BocotkVu5c8VqJjEu54aaHT4jCNLubcHKVIkHm/gE1avFGtYCw5iml73/5Iui2JzOUMpZoTM9m+2C1hkCXFRZkt3MPZI7cJlAiE6bGCFNtYmeJFsLEQyFx3vLFJRyJzJVNiECygNdlRZ3CgRwdbCKTTchbkh9wgUXIQ0vDY2WDrlhv8CoBMcFZlx1KAliBDrgXy0kWW5tpxx01e+UGWPRywybVfkZODWgsEbtAW0YmIEz/ITHESUU3BlJtkehvIPkoR0xODmHoR6VoR2hM3kCJBnrrI13LI6wY3uFoHBJRNGUjEOY7bOSe3lClLPju2EMhzD3n76lOdaU8c20pu/NF6bvEqAOJSH0IJboiyrZslbRjKTT4QVhJsCMrGdDNCV9+4xi5bK4i/AAgwUL/aL8v2o+67H6Z0xUGuFDkEiWVr9vyTesctfoVAMDrHNvuQKGA99SM4tluisu96egcnI24KKAwCAxd1tkhSGyJgxBCe2lW/hMltQUWAkNzawCL8D7cFRQ2T1nRg5BWaJ7KY2hUNQhpTIK5uiaTMj1mnJoRwAziDLzG5RgjiD8wfKI3EJTxK85GC3ZgA9koCQqIdD6hftT1Du0o1qQkKXeuADGqWmm6TTWvUW7HHPJKDcJnD1x6Uja3yd2TZ74Peg2YP9ntRwM6qcWaDetxhHPWrEoHYWhgY3BQDHwsPBpm/uYO5Zo+bHMQra0Y/WY43lP614xX6uZquF0Y+vQ3kH+gDJKh3AgL8BdWIjmRoLbOyAAAAAElFTkSuQmCC" InformativeScreenshot="2c402aaafe9dc2810e0008a6685aa6f0.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Interbank*' /&gt;" SearchSteps="Selector" Version="V2" />
                                   </uix:NClick.Target>
@@ -346,11 +291,24 @@
           </ui:InvokeWorkflowFile>
           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\File\File_ExtraerArchivo.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="760,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Apps\File\File_ExtraerArchivo.xaml">
             <ui:InvokeWorkflowFile.Arguments>
-              <InArgument x:TypeArguments="x:String" x:Key="in_StrGeneratedFilesPath">[in_StrGeneratedFilesPath]</InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_StrFileNameZip">[in_StrFileNameZip]</InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_StrFileName">[in_StrFileName]</InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_StrCopyFile">[in_StrCopyFile]</InArgument>
-              <OutArgument x:TypeArguments="x:Boolean" x:Key="out_BooExtractedFile">[out_BooDownloadFileMovements]</OutArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_StrGeneratedFilesPath">
+                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_StrGeneratedFilesPath" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_StrFileNameZip">
+                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_StrFileNameZip" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_StrFileName">
+                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_StrFileName" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_StrCopyFile">
+                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_StrCopyFile" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_StrRenameFile">
+                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_StrRenameFile" />
+              </InArgument>
+              <OutArgument x:TypeArguments="x:Boolean" x:Key="out_BooExtractedFile">
+                <VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="out_BooDownloadFileMovements" />
+              </OutArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
         </Sequence>

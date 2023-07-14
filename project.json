@@ -1,5 +1,6 @@
 {
   "name": "ALICORP_ExtractosBancariosDispatcher01",
+  "projectId": "bcfe13ed-1a02-4a9e-9678-ee0951d248a7",
   "description": "Se encargará de la descarga y preparación cuando aplique de los extractos bancarios para los bancos desatendidos de Perú, mejorando el tiempo de descarga de los extractos bancarios.",
   "main": "Main.xaml",
   "dependencies": {

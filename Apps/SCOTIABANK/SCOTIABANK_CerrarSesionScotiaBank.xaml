@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="SCOTIABANK_CerrarSesionScotiaBank" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="636,2626" sap2010:WorkflowViewState.IdRef="SCOTIABANK_CerrarSesionScotiaBank_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="SCOTIABANK_CerrarSesionScotiaBank" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="655,2586" sap2010:WorkflowViewState.IdRef="SCOTIABANK_CerrarSesionScotiaBank_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -98,22 +98,22 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="SCOTIABANK_CerrarSesionScotiaBank" sap:VirtualizedContainerService.HintSize="646,2561" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SCOTIABANK_CerrarSesionScotiaBank" sap:VirtualizedContainerService.HintSize="646,2521" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch SCOTIABANK_CerrarSesionScotiaBank" sap:VirtualizedContainerService.HintSize="584,2450" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch SCOTIABANK_CerrarSesionScotiaBank" sap:VirtualizedContainerService.HintSize="584,2410" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="546,1562" sap2010:WorkflowViewState.IdRef="Sequence_4">
+        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="546,1522" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Cerrar Sesión SCOTIABANK&quot;]" />
-          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Edge: Cerrar Sesión SCOTIABANK" sap:VirtualizedContainerService.HintSize="484,1319" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="50578787-3f80-485e-9440-4c4ad5cac324" Version="V2" WindowResize="Maximize">
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Edge: Cerrar Sesión SCOTIABANK" sap:VirtualizedContainerService.HintSize="484,1279" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="50578787-3f80-485e-9440-4c4ad5cac324" Version="V2" WindowResize="Maximize">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
@@ -125,8 +125,8 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Clic Cerrar Sesión&quot;]" />
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Logout" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Clic Usuario&quot;]" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click User" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://bancainternetempresas.scotiabank.com.pe/main/#" CvType="Text" DesignTimeRectangle="1060, 89, 223, 20" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'EDSON VERA GAMARRA'" FullSelectorArgument="&lt;webctrl tag='A' class='data-user no-navigable' /&gt;" Guid="29198f1f-f26e-4ee2-8959-27359e5eb3c9" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAOMAAAAYCAYAAAAI20qWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAVOSURBVHhe7Zq/axxHFMf1l/gfSB9wmRCBC4PBRTp3IY0IBNzEuJGr+yfSpRC4UWdIUCAhxoELSWUX0SEcEgXFkY3uHAnJnJTJ/Nx98+Y7s3O3C1rIe/BBp503b97P2bPRxov3bihBEK4fGUZBGAkyjIIwEmQYBWEkDDyMt9Rv97fUH5/eAmuCIJQYbBj3J8/UUhE5fqaONrGuIAgpgw3jyYEfQiIXu1hXEISUEQ3jY3Xh96UyV6cTo7OtThf+ERN0VuLTQr+tmY5ld+YVgoTzWo6mc/g8+I3Od3tm6oQ9d7hYLqfb+nO/2LNxBbvZdYb+dnNpDRI5eIx1G39AfN5Otv7Z9YLNUo4iH9fIk6+/qwVYBxx+8bl6+80TtXz1l8V8Ns+Qbi0DDeMDmIDL6QOgm8MkGzU7xSU6KSIorh1E1khuOONCu2fsXG+PFscNlpakoPlhLK7ZBgjn9og9NB8YGuvzwazgXwu+bLxt1MTG/4W2rdeTJrb5m6vLBYqpHarEp5LNbI6cvVZ/1Tx5fZ2n/MXZsv/RTXX69HvjPhSzZnTQ3i4GGkYfKJNVbpp+DamxzR2S6QqU6rHn0R6Gb6jgD23sOK7cWQ477KCZ48tiyNgDrT66mCJYrDHYN2PT5MHmhccX7E1naQ8YXzMXRNFmIUex/op5sr6aZ+U6Bs5++UlrleXs5ync28VgX1MPf3jlXQkyU2/uYl1Mz4aM9js9eKMTupo0NIf57IZR69qCUj87iggbne/pGXuxyTLrhCY2sIYh/qL4mmdaj9XA5PRiF+Wsw2YhR32Gkcbe1Q9/PryvFerE6CIbJQYbxhebX6lz74iR5d49rJfFFQhKTaKTtdRevM/pJzc3gRYqKVrjE2osSnpO3DyGPrG757yJ4sYqx0ovnRq4/0kTk2E6OaADZOLEb6FOm3YPGkZnq/V/lTwxP+Al0PLP0++09pFSOz/qn0B2dvwHZXWRjRLDDePdL9U56ajl3pbaR3pZcsmm5BLdsWaTHCTcjOUGNeSGMW4AVlBEdCOjc+tjhxI1mCG1l14ALekwpmcVm52/cWhT67Vmr9GzvvKcVdj0e5B0+d4Iz5M5I8qJ2xvba1m+/lsb0cN4Z0OpCRvIiX52px1Go4tslOg/jJtb6nhPJ9w7QeXq+LmaP6r9A4D6hsSNX78/JDu9fWNok8bDqLHNYs7jjYUgOrZRaZOF9dVjtz6Bfe45FuRnElsEa1AbN5ZGJ3rDmNhcvCaf7nyWsxqbIEe2fkkua/Pk9LBwmw43jEbYQLJBNHINw3hPJ4R+OUVyrhPzMdjLWa8hG+hNSj8zogEs6PGvLKhhra3F3F5E0CdC2B+d37B+7GlDsuFhz+HQsVhjYnvY/5AL/5Zh9sya+3di8DMexiqbMEc+JvB268xTLmb7HNfTfU0N4gdyIx1EI9fwNdUltVNQAySs35BpAlGRgl58hisSO9fbow2N3x5t/Kh4Ed4mepP1ij34kBmEiMLlg98eIT8hF+4sGCs9l/sQ3nxN/qidSpu5HIW8Nrbr8mTj5f3hyV0Ov3/2ibFARA/kJB1EI0aX7++i5zBuq8XhXF15B6BczNW7PX5LI3yyMuKawQ9ZIqBImtBIrWTegqFZGknt4WHU+L2wmRjWH9gA9bHnm1aL9i9/hsGdQy+ZiGCHCrHlBjaTw1AbkyM+jP7c1vf292qbdg+uc6hBfZ5elvNg7eGz4rcjlrfffp3sq2G4/8ARhP8Bs9sfqH/f5a/Oq7NT9euH78O9XcgwCsIajPjP4QRB6IsMoyCMBBlGQRgJMoyCMBJkGAVhFNxQ/wE2eMt5J2Wy7wAAAABJRU5ErkJggg==" InformativeScreenshot="771f66c6fa701279fe668d37582d624d.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Telebanking' /&gt;" SearchSteps="Selector" Version="V2" />
                     </uix:NClick.Target>

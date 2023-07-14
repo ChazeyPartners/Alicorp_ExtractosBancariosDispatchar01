@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>636,2597</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>655,2557</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SCOTIABANK_SeleccionarEmpresa_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -111,22 +111,22 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="SCOTIABANK_SeleccionarEmpresa" sap:VirtualizedContainerService.HintSize="646,2532" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SCOTIABANK_SeleccionarEmpresa" sap:VirtualizedContainerService.HintSize="646,2492" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch SCOTIABANK_SeleccionarEmpresa" sap:VirtualizedContainerService.HintSize="584,2421" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch SCOTIABANK_SeleccionarEmpresa" sap:VirtualizedContainerService.HintSize="584,2381" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="546,1684" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="546,1644" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Seleccionar Empresa&quot;]" />
-          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: Seleccionar Empresa" sap:VirtualizedContainerService.HintSize="484,1319" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="50578787-3f80-485e-9440-4c4ad5cac324" Version="V2" WindowResize="Maximize">
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: Seleccionar Empresa" sap:VirtualizedContainerService.HintSize="484,1279" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="50578787-3f80-485e-9440-4c4ad5cac324" Version="V2" WindowResize="Maximize">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
@@ -139,7 +139,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Clic Empresa&quot;]" />
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click SelectCompany" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="5" DelayBefore="5" DisplayName="Click SelectCompany" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://bancainternetempresas.scotiabank.com.pe/main/#" DesignTimeRectangle="185, 138, 170, 55" DesignTimeScaleFactor="1" ElementType="ListItem" FriendlyName="'ALICORP S.A.'" FullSelectorArgument="&lt;webctrl parentid='navbar-collapse-1' tag='LI' class='dropdown*' /&gt;" Guid="1d1fecbb-0c85-40e7-9c6f-6f282a4dd520" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAK4AAAA7CAYAAADip7EeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAVpSURBVHhe7Zo/btw6EIfT5Bq+wDtOrpDL+ADust0rdgEXCeAgRcpsgDRJ8/KCxI2RNIkf3OQEfOJwKJHDISU5u7Jm/fsAApb4b8T5SGkBP/n3rzOHgmKtQFwUk+WJA8AgEBeYBOICk0BcYBKIC0wCcYFJIC4wCcQFJoG4wCQQF5gE4gKTQFxgEogLTAJxgUkgLjDJEcX96X48f+q+np27W74z8MHdnD1zP8qKwMdzvR/d92PGoo3dUbRT5iraDOXmI7fxVNtV5o7c7ty16JON2+D3q2ez2j9GjieuT/jzc3fTyXv96iffjMwX9/ailCUkOB8ntBNjs0RZHBTfzv3myx6aO+lfaRfmrshL802IQSWszc1FN74WHyCOJq4XyCeJElwkYKa4isgREvXiQ7hotCtkqggZ3xS9YNV29WfQn7l+PyPOp8l/otztd+71NV9oXL92u/0dXwSOJG6SVDUB88TN5Gww1i5uJuKI4ob47/eqH2IUcZwwXtzNZqPL20nr6xYRV54spVBzxJ2awPF2FFd6OmtC0txJbJV29Eyq0AGaq5O3L422PdpbofYGOSnu3H63KeVlaTe7fdci5wjiBoHKHzhpAlYibipWX0Rc1XbThSLJud/k+Ai/To/lR5qQtyGt5/DiVhOdJm2NnwpBkqJ/0e4PEM+Vw/Nr5VDzr55B3pa0noOLW5OH7vcJmCduK+HZZ0lLjCk/zqiNOBW1dk0aJ3/rB1ctdrrfWKuTg+VtSOuZJe5/Xz+5/T/f+Uqj8WrLkjZT3A4SX9yL35HpfKGdGHuGkMWYs8XtoPjLdahtak+9buqn0uPioOKGpFdOPE5ASE7ttcjCKeJ6olRDqczF4gxF2SQNITP57yOuhzdLGkcuXyIkt619y6brSn/fJ54T48AnLgDLAHGBSSAuMAnEBSaBuMAkEBeYBOICk0BcYBKIC0wCcYFJIC4wySxxAVgLEBeYBOICk0BcYJLDi/v5rXvx91YtV5+5jce3u3yv/Jf7rdtfbt32nfwH2i/uqjWexq/3bpu0L8bMYn3p9r/4vuDu3Uv34s0XvoqEOPv+s+vz55GxfXuT9KWSxifGpvLWfePaYq1G5h7WURuXSzHGw3IccTUhSZJk8eeIy4JlorKUpeAM1w99QrL6a6oX8WTJD5C0SuJIrP5eGXO7Xl6L2Oi6jKXHx66unSeMNTZXfy3XQSLzthKWE1cu4GRxZVITKrJ5SDgxfnpy5mJ5wry52F2bbvwr2VZLdvo8Y/VK3Nmp3hSzw/fPYk/Q1qQ5t1zvFLkJ1sP6xdUScU8GWfVkZTJ38uxZ4kJyLaZU1pF6bVNlfbq/t5d80lPJN4Hvn9e310edL6JtMqbZ74FZ/afCwRYvS1CYQ57iNJdykqniFjH504nHH6lX56H4goBUn8oo1o7iScYv2mfU3ljhvhdfP1Fr/dbBgj/OEmk9S4pLUqQJWre4GkUMGfobpJez2i+gjk15bJ/kD8kCJ25l8SaK+8cLWEjr0RNdk0MVV8aUnugj9epmHHnO2qaK+Bjz55kmLaHM3d4oD88ynwqaPNUTJiz4cBrK64RUFg1KiN63TIx+CnuKttq86XOP1SuiDGLWN1W4p62HiF1bb2bapmms+UpY7BuXFixbjLDYcleHdkJoWlixkJyc6qnA9dXFl3IpMkW00ye/V8rWrpfXuSjFGojYaOxkjXMZw1iatAEppdJe23grY7kfZx204GJBwr2kVPr2oialKmVHMW4s6fi8IUKpJyqXMMIbL/afXR+EifVStLjRQyljy59vkDrvp7eRa1lI3tjEa+Hw4gKwABAXmATiApNAXGASiAtMAnGBSSAuMIhz/wPdHMWQ/nLx5QAAAABJRU5ErkJggg==" InformativeScreenshot="13c8afd5fdac7cbab2d533d29091f1ff.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Telebanking' /&gt;" SearchSteps="Selector" Version="V2" />
                     </uix:NClick.Target>

@@ -12,6 +12,7 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "vBooExecute&StateMachine_1",
         "vDtbProcessMonitoring&StateMachine_1",
         "TransactionItem&StateMachine_1",
         "SystemException&StateMachine_1",
@@ -67,6 +68,7 @@
         "vDtbParametersBanks&Sequence_9"
       ],
       "ArgumentsSectionElementsOrder": [
+        "in_BooExecute",
         "out_DtbProcessMonitoring",
         "in_Config"
       ],
@@ -119,6 +121,11 @@
       "Path": "Framework/Process.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "vBooCloseMonth&Sequence_1",
+        "vBooExceptionMessage&Sequence_1",
+        "vBooSelectAccount&Sequence_1",
+        "vBooEnterPositionQuery&Sequence_1",
+        "vBooCorrectSociety&Sequence_1",
         "vBooCosultationMovements&Sequence_1",
         "vBooSortMovementFile&Sequence_1",
         "vBooEnterPerformSearch&Sequence_1",
@@ -424,6 +431,7 @@
       "Path": "Apps/BBVA/BBVA_IniciarSesionBBVA.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "vBooPop&Sequence_1",
         "vStrUsername&Sequence_1",
         "vSstPassword&Sequence_1"
       ],
@@ -718,7 +726,6 @@
       "SortBy": 0,
       "VariablesSectionElementsOrder": [],
       "ArgumentsSectionElementsOrder": [
-        "out_BooDownload",
         "in_StrDownloadPath"
       ],
       "ConstantsSectionElementsOrder": [],
@@ -818,6 +825,7 @@
       "ArgumentsSectionElementsOrder": [
         "out_StrExceptionMessage",
         "out_BooDownloadFileMovements",
+        "in_StrRenameFile",
         "in_StrFileNameZip",
         "in_StrFileName",
         "in_StrCopyFile",
@@ -828,29 +836,33 @@
       "AddedNamespaces": null
     },
     {
-      "Path": "Sequence.xaml",
-      "SortBy": 0,
-      "VariablesSectionElementsOrder": [
-        "Test&Sequence_1"
-      ],
-      "ArgumentsSectionElementsOrder": [
-        "in_StrGeneratedFilesPath"
-      ],
-      "ConstantsSectionElementsOrder": [],
-      "AddedNamespaces": null
-    },
-    {
       "Path": "Apps/File/File_OrganizarArchivoMovimientoScotiBank.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "vBooZeros&Sequence_1",
+        "vIntDifferenceCharacters&Sequence_1",
+        "vStrZeros&Sequence_1",
+        "vStrBalance&Sequence_1",
+        "vDtbAccount&Sequence_1",
+        "vBooInformation&Sequence_1",
+        "vStrAccount&Sequence_1",
         "vStrNewFile&Sequence_1",
         "vIntIndex&Sequence_1",
         "vDtbFile&Sequence_1",
         "vStrFile&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [
-        "out_StrExceptionMessage",
         "out_BooSortMovementFile",
+        "out_StrExceptionMessage",
+        "in_StrDateExcel",
+        "in_IntDateQuantityCharactersBalance",
+        "in_IntInitialIndexBalance",
+        "in_StrColumnBalance",
+        "in_StrColumnDay",
+        "in_StrRangeAccount",
+        "in_StrSheetsAccount",
+        "in_StrExcelAccount",
+        "in_StrPathDownload",
         "in_StrCopyFile",
         "in_StrDate",
         "in_IntDateQuantityCharacters",
@@ -936,14 +948,15 @@
         "vBooLoad&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [
+        "out_StrExceptionMessage",
+        "out_BooDownloadFileMovements",
+        "in_StrRenameFile",
         "in_StrFormat",
         "in_StrPathDownload",
         "in_StrCopyFile",
         "in_StrGeneratedFilesPath",
         "in_StrFileName",
-        "in_StrFileNameZip",
-        "out_BooDownloadFileMovements",
-        "out_StrExceptionMessage"
+        "in_StrFileNameZip"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
@@ -970,10 +983,384 @@
       ],
       "ArgumentsSectionElementsOrder": [
         "out_BooExtractedFile",
+        "in_StrRenameFile",
         "in_StrCopyFile",
         "in_StrFileName",
         "in_StrFileNameZip",
         "in_StrGeneratedFilesPath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/INTERBANK/INTERBANK_CerrarSesionInterbank.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/CloseAllApplications.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_BooExecute",
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/BANBIF/BANBIF_IniciarSesionBanbif.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vStrUsername&Sequence_1",
+        "vSstPassword&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrExceptionMessage",
+        "out_BooLogin",
+        "in_StrOrchestratorAssetName",
+        "in_StrOrchestratorFolderPath",
+        "in_StrEntity",
+        "in_StrURL"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/BANBIF/BANBIF_ValidarInicioSesionBanbif.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrExceptionMessage",
+        "out_BooSessionStarted"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/BANBIF/BANBIF_ValidarExistenciaEntidad.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "out_BooSessionStarted",
+        "in_StrCompanyName"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/BANBIF/BANBIF_ValidarNombreSociedad.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrExceptionMessage",
+        "out_BooCorrectSociety",
+        "in_StrCompanyName"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/BANBIF/BANBIF_CerrarSesionBanbif.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/BANBIF/BANBIF_IngresarConsultaPosicion.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrExceptionMessage",
+        "out_BooEnterPositionQuery"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/BANBIF/BANBIF_SeleccionarCuenta.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrExceptionMessage",
+        "out_BooSelectAccount",
+        "in_StrAccount"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/BANBIF/BANBIF_DescargarArchivoMovimientos.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_BooCloseMonth",
+        "out_StrExceptionMessage",
+        "out_BooDownloadFileMovements",
+        "in_StrGeneratedFilesPath",
+        "in_StrCopyFile",
+        "in_StrPathDownload",
+        "in_StrFileFormat"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/BANBIF/BANBIF_OrganizarArchivoMovimientoBanbif.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vStrRow&Sequence_1",
+        "vIntCountCommas&Sequence_1",
+        "vStrNewFile&Sequence_1",
+        "vIntIndex&Sequence_1",
+        "vDtbFile&Sequence_1",
+        "vStrFile&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrExceptionMessage",
+        "out_BooSortMovementFile",
+        "in_StrCopyFile",
+        "in_VinQuantityCharacters",
+        "in_VinInitialIndex",
+        "in_StrDate",
+        "in_StrAccountFile"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/SCOTIABANK/SCOTIABANK_OrganizarArchivoMovimientoScotiBank.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vStrFile&Sequence_1",
+        "vDtbFile&Sequence_1",
+        "vIntIndex&Sequence_1",
+        "vStrNewFile&Sequence_1",
+        "vBooInformation&Sequence_1",
+        "vDtbAccount&Sequence_1",
+        "vStrBalance&Sequence_1",
+        "vStrZeros&Sequence_1",
+        "vIntDifferenceCharacters&Sequence_1",
+        "vBooZeros&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_BooSortMovementFile",
+        "out_StrExceptionMessage",
+        "in_StrAccount",
+        "in_StrAccountFile",
+        "in_IntInitialIndexDate",
+        "in_IntDateQuantityCharacters",
+        "in_StrDate",
+        "in_StrCopyFile",
+        "in_StrPathDownload",
+        "in_StrExcelAccount",
+        "in_StrSheetsAccount",
+        "in_StrRangeAccount",
+        "in_StrDateExcel",
+        "in_StrColumnDay",
+        "in_StrColumnBalance",
+        "in_IntInitialIndexBalance",
+        "in_IntDateQuantityCharactersBalance"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/SANTANDER/SANTANDER_IniciarSesionSantander.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "vStrUsername&Sequence_1",
+        "vSstPassword&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrExceptionMessage",
+        "out_BooLogin",
+        "in_StrOrchestratorAssetName",
+        "in_StrOrchestratorFolderPath",
+        "in_StrURL"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/SANTANDER/SANTANDER_SeleccionarEmpresa.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrExceptionMessage",
+        "out_BooSelectCompany",
+        "in_StrCompany"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/SANTANDER/SANTANDER_ValidarInicioSesionSantander.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrExceptionMessage",
+        "out_BooSessionStarted"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/SANTANDER/SANTANDER_ValidarExistenciaCuenta.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrExceptionMessage",
+        "out_BooExistAccount",
+        "in_StrAccount"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/SANTANDER/SANTANDER_CerrarSesionSantander.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/SANTANDER/SANTANDER_SeleccionarCuenta.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrExceptionMessage",
+        "out_BooSelectAccount",
+        "in_StrAccount"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/SANTANDER/SANTANDER_ConsultarMovimientos.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrExceptionMessage",
+        "out_BooCosultationMovements",
+        "in_StrAccount",
+        "in_StrDate"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/SANTANDER/SANTANDER_ValidarExistenciaMovimientos.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrExceptionMessage",
+        "out_BooExistMovements"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/SANTANDER/SANTANDER_DescargarArchivoMovimientos.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_StrGeneratedFilesPath",
+        "out_BooDownloadFileMovements",
+        "out_StrExceptionMessage",
+        "in_StrCopyFile",
+        "in_StrPathDownload"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/SetTransactionStatus.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "QueueRetry&Sequence_17",
+        "ScreenshotPath&Sequence_17"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_BusinessException",
+        "in_TransactionField1",
+        "in_TransactionField2",
+        "in_TransactionID",
+        "in_SystemException",
+        "in_Config",
+        "in_TransactionItem",
+        "io_RetryNumber",
+        "io_TransactionNumber",
+        "io_ConsecutiveSystemExceptions"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/RetryCurrentTransaction.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config",
+        "io_RetryNumber",
+        "io_TransactionNumber",
+        "in_SystemException",
+        "in_QueueRetry"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/TakeScreenshot.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "Screenshot&Sequence_1",
+        "ScreenshotFileInfo&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Folder",
+        "io_FilePath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/BANBIF/BANBIF_ValidarCierreMes.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "out_BooCloseMonth",
+        "out_StrExceptionMessage",
+        "in_StrDate"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/BANBIF/BANBIF_ValidarExistenciaMovimientos.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "out_StrExceptionMessage",
+        "out_BooExistMovements"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Apps/BANBIF/BANBIF_ValidarMes.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_StrDate",
+        "out_StrExceptionMessage",
+        "out_BooCloseMonth"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null

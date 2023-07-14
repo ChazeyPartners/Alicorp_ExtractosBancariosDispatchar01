@@ -145,8 +145,9 @@
                   <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Clic Descargar&quot;]" />
                   <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\UiPath\UiPath_LimbiarDescargas.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Apps\UiPath\UiPath_LimbiarDescargas.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
-                      <InArgument x:TypeArguments="x:String" x:Key="in_StrDownloadPath">[in_StrPathDownload]</InArgument>
-                      <OutArgument x:TypeArguments="x:Boolean" x:Key="out_BooDownload">[out_BooDownloadFileMovements]</OutArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_StrDownloadPath">
+                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_StrPathDownload" />
+                      </InArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>
                   <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Download" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
@@ -169,18 +170,10 @@
           </uix:NApplicationCard>
           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\UiPath\UiPath_Descargar.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="484,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Apps\UiPath\UiPath_Descargar.xaml">
             <ui:InvokeWorkflowFile.Arguments>
-              <InArgument x:TypeArguments="x:String" x:Key="in_StrDownloadPath">
-                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_StrPathDownload" />
-              </InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_StrCopyFile">
-                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Path.Combine(in_StrCopyFile, in_StrFileName + in_StrExtension)" />
-              </InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_StrGeneratedFilesPath">
-                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Path.Combine(in_StrGeneratedFilesPath, in_StrFileName + in_StrExtension)" />
-              </InArgument>
-              <OutArgument x:TypeArguments="x:Boolean" x:Key="out_BooDownload">
-                <VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="out_BooDownloadFileMovements" />
-              </OutArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_StrDownloadPath">[in_StrPathDownload]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_StrCopyFile">[Path.Combine(in_StrCopyFile, in_StrFileName + in_StrExtension)]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_StrGeneratedFilesPath">[Path.Combine(in_StrGeneratedFilesPath, in_StrFileName + in_StrExtension)]</InArgument>
+              <OutArgument x:TypeArguments="x:Boolean" x:Key="out_BooDownload">[out_BooDownloadFileMovements]</OutArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
         </Sequence>

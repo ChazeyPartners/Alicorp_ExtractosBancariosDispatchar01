@@ -1,0 +1,323 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="BANBIF_DescargarArchivoMovimientos" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_StrFileFormat" Type="InArgument(x:String)" />
+    <x:Property Name="in_StrPathDownload" Type="InArgument(x:String)" />
+    <x:Property Name="in_StrCopyFile" Type="InArgument(x:String)" />
+    <x:Property Name="in_StrGeneratedFilesPath" Type="InArgument(x:String)" />
+    <x:Property Name="out_BooDownloadFileMovements" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="out_StrExceptionMessage" Type="OutArgument(x:String)" />
+    <x:Property Name="in_BooCloseMonth" Type="InArgument(x:Boolean)" />
+  </x:Members>
+  <this:BANBIF_DescargarArchivoMovimientos.in_BooCloseMonth>
+    <InArgument x:TypeArguments="x:Boolean" />
+  </this:BANBIF_DescargarArchivoMovimientos.in_BooCloseMonth>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1209,4443</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>BANBIF_DescargarArchivoMovimientos_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.Globalization</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="BANBIF_DescargarArchivoMovimientos" sap:VirtualizedContainerService.HintSize="742,4378" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Try Catch BANBIF_DescargarArchivoMovimientos" sap:VirtualizedContainerService.HintSize="680,4267" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="642,3530" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="580,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Descargar Archivo Movimientos&quot;]" />
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: Descargar Archivo Movimientos" sap:VirtualizedContainerService.HintSize="580,2772" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="50578787-3f80-485e-9440-4c4ad5cac324" Version="V2" WindowResize="Maximize">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="546,2555" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If Condition="[in_BooCloseMonth]" DisplayName="If in_BooCloseMonth" sap:VirtualizedContainerService.HintSize="484,968" sap2010:WorkflowViewState.IdRef="If_1">
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="300,80" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence sap:VirtualizedContainerService.HintSize="376,706" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Clic Búsqueda Avanzada&quot;]" />
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click AdvancedSearch" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://bancaporinternetempresas.banbif.com.pe/DCIBS_BIFNET/servlet/com.datapro.dibs.servlets.JSInqACMST" CvType="Text" DesignTimeRectangle="380, 223, 121, 11" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Búsqueda Avanzada'" FullSelectorArgument="&lt;webctrl tag='IFRAME' /&gt;&lt;webctrl tag='A' aaname='*Búsqueda Avanzada*' /&gt;" Guid="44ea53f4-9275-4dc9-9404-d61e56105850" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAH0AAAAPCAYAAADJasDvAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALiSURBVFhH7ZbPaxNBFMdz9ST+G6JQ8GRy96/wtKQnD3oSDD3ViNostIVVipim1pJG+zNBq6S2UXoICiKKYCt4KCiIrYoHiYXq150fO/NmO0kbmm5pu4cPoTNv3rx53/feNlFdrCNKVtb+4v7LddRWgRer/7C8Bqz/Bv8NuH5nGhOVJ9bzMbsnctEZDxbeorQMvPoiRP/8Swv+s7GJudmS9VxMZ9gX0cfGixiZf4/XP4B334FPvujfGsDXP8BM7Q0W5qas52I6Q6SiN2rnsdTXhdylcxh7WMZ4+TGG8gUM3xvF3UIBpemy9Vw7lHpcJFK+L8tejCAy0TdX+lDvPY5c90lkr13F88V5q10ruKCJrIkhcBWZlIvMpHkuKtouOM+T74g25khEx4debFROI3/5LDJuHjeGZ6122yFE9zCo1qbg+ElzPNNuv2hX9ME0K1oPTsr/TUf3Sdtz0Tf8kf5x4ASWcmdQHPEwUHxmtdsJW0SfLCApRTcSTtZF98up4JPsqYqzqsv8NX86BH6b+xEFJs7oGERMbM2Fk9ZnuaAWe43wx+Ix3sXjCuxF7DxmEi+DxuSk9Z7tzcEkUTGZgXSemYvH4HafQnZoApWnNavNTtEJJsgOaSoWT1Z4fOqEs79FMlqLzm3Cd9mKKzgbYNgQaFyW4tKxhwtG3sNjkYUo4xKTg9wv/YanyJ6Lfit7AVdu3kb/6CPrfjsYHcHRndBU9HDVk2QpIUhy7X7CncPw7fm+LijjrLUzNeYkkISKKkMKTQls2JrvMEUPYib5CmISDg8GzURnCTD25OPCidbi6mJh61s63eKHdrrCVlws6bQYDJsAIVZwP4PGoDo05FvY6ze3El34IxOOxHQARRfJ0MhE0U7wv9Eq0SSBDJVo0onim7iNH7qu1mhM9JsuhZHrSVJg+m4iiFqzC8j+pm/n/4PwvWaim7EKvyQmdelRRk0Ay94hJBadEYsec9iJRT9y1PEf3h1L5rV58+kAAAAASUVORK5CYII=" InformativeScreenshot="bb9943749fa094ed014296606c942db4.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*banbif*' /&gt;" SearchSteps="Selector" Version="V2" />
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Clic Ver Estados Cuenta Pasados&quot;]" />
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click ViewPastAccountStatements" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://bancaporinternetempresas.banbif.com.pe/DCIBS_BIFNET/pages/s/body_Advanced_Search.jsp" CvType="Text" DesignTimeRectangle="264, 357, 190, 14" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Ver Estados'" FullSelectorArgument="&lt;webctrl tag='IFRAME' /&gt;&lt;webctrl tag='A' aaname='Ver Estados de Cuenta Pasados' /&gt;" Guid="95498764-0c79-44b7-9b86-6bd707da0e27" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAMIAAAASCAYAAAAJ3wEeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANTSURBVGhD7VhLbiUxCMxR5qq5TDY5yNvkCG/2s80yqxfwo6wyjd0/9ygzAqk6aWNDuYBWlJfHQfv1lkj8P8hBSCQEOQiJhGDqINy+nr7bR7v++ue5/ik/eX0v7s8wS5O8r8H+WQD/++/YPwvQ7z3wrUI0/3wer3Y137Po1fPQ/Q8CtZ06CL2Gf7cK+QHZiyLciaZXHkc4/PhBEF5qrPusj88WHNV1UU8M88UfNsYlg1AvIg9eP9vAwJk4Z4bxpw9C0cVp/rdwRteonrM+mltxzSAIyuXEajHta1ULhXczXLg2mwkRFXZ1EDCIMNuL2DB8JdF4MBYf91C7BYPAfs+p8Yl1G5u1EOKLQehoFcVY+/J77TbngqbET039R3RlRPX0g9DVErxgLs6oBuxDbacPAi6CpmneXdHgU5JVVFnjeAx/OVhTAAjSyQWBOXeNbWf9XuTFnXivvnNTNXFRLHnoPo8mjvFVK2cHWnGM+gExbj2MOA9zUcNFd/JaeZ4+L2PhQ2xba+rp8o5qPTrn+RYOYtMHoRbUEiORCuNJYK8WcUtBR6IqUFy1msOwyG3gM4jt8zTciHONQ2vIoza6iy+eAlzWtKoxBDMGYZhL1opbHlGsPbqyX4HeaCzY2+wzHqNaA9E5rwP0mz8IgprMichNwqbNMGMQUEA2xPMFq1yMW4+zgrmFPC1vaWqcJ+NmB6I4UXN6W8Ti3Lzu4LXbnCvQg2Nt1tXOMtbqCY4hD7s3G7TsngvucukgQAz8vd9rRsaUQSBwcaOvno/F797XcLMCNDyjNTqntrizneEGjpoz0sqj8JX9kQ/wd9qcS9aKm+JzrD264jww8i3yBjyAptYr53zOSwfBT6uKzesoPos4YxC8vxTb3hG/KZiYcqsNa3vD4oqBW5hHTGPx7+pDrKoBoYlDmpW9A618nGiocCesNbzQHHgf5cJeeSA2896jK85Hcbyv5jU/OPUautZ65ZzXEXyvGQSQUTMCFVRwNTQXRFsdhI6h0fwerC84eR7mxH40jtre/xrxWbWweRWOkx+inlYhOJZZs59j7cmFuPJArKYJd+rKaOIEqIOkJvvuypn292q9di6q7TWDkEj8Y8hBSCQEOQiJhCAHIZEQ5CAkEm+PxzeedGH3hJqJXgAAAABJRU5ErkJggg==" InformativeScreenshot="4ae5221d6c9dfe473f50a936ad018f0e.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*banbif*' /&gt;" SearchSteps="Selector" Version="V2" />
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,92" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Clic Descargar&quot;]" />
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Download" sap:VirtualizedContainerService.HintSize="484,157" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50578787-3f80-485e-9440-4c4ad5cac324" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://bancaporinternetempresas.banbif.com.pe/DCIBS_BIFNET/servlet/com.datapro.dibs.servlets.JSInqACMST" CvElementArea="766, 667, 84, 20" CvTextArea="784, 670, 55, 14" CvType="Button" DesignTimeRectangle="749, 663, 88, 27" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'descargar'" FullSelectorArgument="&lt;webctrl tag='IFRAME' /&gt;&lt;webctrl aaname='descargar' tag='INPUT' type='button' /&gt;" Guid="a4c82228-237a-4ab6-8508-8acbf2dcba50" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFwAAAAfCAYAAABqI6qaAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANXSURBVGhD7Zi7axRRFMYFKxv/gDSmEDstYpPGQgUbC+0ErYQgGDCFVRqLgGKQxLxtgmZXkLw1YLJJkUAQ48YELNzEKGwWoxtMVhZ33Ueyzy9z5uHMnceuG65D4t4PPmZ2594z9/7umTOXOQIhVyWAuywB3GUJ4C5LAHdZArjL+mfAi8Wi7FLazWTxO5FinErvIpvNIZ8vODqXy2NnJ4NEMm3p7+RUyhq3UCio46TxalbGbWdqb+y/H3MHvvJpAw132lF7+pqwjbkD73gyisamB5h89bpiUz+7Qf5PFsBdNlfgUplDR58AXsqcgRcl4CMW4IGmW/h++Rz8D+/DNzLOXDNaAK9QTsA/NN9F/EwNdk8cw9aFOizfa8bMi0GmDZkB3rqKOAUNzTMDPuzmDvyxDXAyASbw0fpTyNUcxealerzp6mTaCOAVqhRwMgHeuHoR6ZPHsXW+Dm/bHjHXBfAK5QScwFINJ9BUWoLXr1iym9w4/lWBbJQGXFsATX8WwgO/qVNwQplcy1JS/UdRfMljjYMk/K1K+9GQ8jsYUvrJcSztJan3NsdHfBUtzJjCUiw66vdwpYavNdzAr7O1WL19E3P9/cw13Sv4kqIoYYzSoJkMn0eQztUJaRMlINq5DFOerOqJsPx/ySfE1EYBris4oYOzjomNpfVVFtucBC4Dp/pt95Jk/Q0/KIiWJcbJ2WWZJAWyuhgGGRdCy3bd1vYscB2OeaEtwLUFM4gFri6UwVyB07eG9t5hxxpe2irwv8hw4wQYGzPWIcMZqCaAjsArfOpcA57P59HWM7RP4FINX/ypRjJIA2aT5cZM1qVP0nxNfiJsstIZuOSy7Vkdogw37VIOolX4lvdFBeZew0ttC8v5IAK3PEHlyloZcwVOoo9XdjcSVswdOGV5LJZAUNqAvltYwMuxMTyVtoI9Xd3o7uxCr3Ts6+6pWnMvKeRMJoPNcBjL75cw45vG8OAQvAMeeJ4NwOvx4LnXKx2r01yBE+hEIoHt7W2sr68jEAhg0e/H3OwsfFNTmJqclI/TPl/VeUY1V+DZbBbJZBLRaFSGTlkeksB/XlvDigQ/8FExnVeruQKnbSFBT6fTcqbHYjEZfiQSkRdAc6SKzf2lKVRaArjLEsBdFbAHi12aVksMjf4AAAAASUVORK5CYII=" InformativeScreenshot="1a783b1e329954f8a6cea7e5489d66e1.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*banbif*' /&gt;" SearchSteps="Selector" Version="V2" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: Formato Archivo" sap:VirtualizedContainerService.HintSize="484,1103" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="1fb0d68d-bdb7-4b7d-bd20-cb0b3982506a" Version="V2" WindowResize="Maximize">
+                    <uix:NApplicationCard.Body>
+                      <ActivityAction x:TypeArguments="x:Object">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,886" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;Seleccionar Formato Archivo &quot; +  in_StrFileFormat]" />
+                          <uix:NSelectItem DelayAfter="5" DelayBefore="5" DisplayName="Select Item in_StrFileFormat" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NSelectItem_1" Item="[in_StrFileFormat]" ScopeIdentifier="1fb0d68d-bdb7-4b7d-bd20-cb0b3982506a" Version="V3">
+                            <uix:NSelectItem.Items>
+                              <scg:List x:TypeArguments="x:String" Capacity="4">
+                                <x:String>EXCEL COMMA DELIMITED (CSV)</x:String>
+                                <x:String>TEXT 1 (TXT)</x:String>
+                                <x:String>TEXT 2 (Con Cod. Operacón)</x:String>
+                                <x:String>TEXT 3 (Nro. de Operación)</x:String>
+                              </scg:List>
+                            </uix:NSelectItem.Items>
+                            <uix:NSelectItem.Target>
+                              <uix:TargetAnchorable BrowserURL="https://bancaporinternetempresas.banbif.com.pe/DCIBS_BIFNET/pages/s/SDownload_statement.jsp?&amp;dat1=31&amp;dat2=05&amp;dat3=23&amp;PB1=D" DesignTimeRectangle="140, 156, 238, 19" DesignTimeScaleFactor="1" ElementType="DropDown" FriendlyName="'EXCEL COMMA'" FullSelectorArgument="&lt;webctrl tag='SELECT' /&gt;" Guid="3114cd0a-06f1-4572-a1a8-b96667a8b768" ImageBase64="" InformativeScreenshot="fce594bd7ad1cd0178f2df45811c2d0f.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Formato de Archivo*' /&gt;" SearchSteps="Selector" Version="V2" />
+                            </uix:NSelectItem.Target>
+                          </uix:NSelectItem>
+                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\UiPath\UiPath_LimbiarDescargas.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Apps\UiPath\UiPath_LimbiarDescargas.xaml">
+                            <ui:InvokeWorkflowFile.Arguments>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_StrDownloadPath">[in_StrPathDownload]</InArgument>
+                            </ui:InvokeWorkflowFile.Arguments>
+                          </ui:InvokeWorkflowFile>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;Clic Descargar Archivo&quot;]" />
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click DownloadFile" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1fb0d68d-bdb7-4b7d-bd20-cb0b3982506a" Version="V3">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable BrowserURL="https://bancaporinternetempresas.banbif.com.pe/DCIBS_BIFNET/pages/s/SDownload_statement.jsp?&amp;dat1=31&amp;dat2=05&amp;dat3=23&amp;PB1=D" CvElementArea="76, 201, 84, 20" CvTextArea="96, 205, 53, 13" CvType="Button" DesignTimeRectangle="76, 197, 88, 27" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'descargar'" FullSelectorArgument="&lt;webctrl tag='INPUT' aaname='descargar' /&gt;" Guid="a0ca75cf-0f52-47f6-982d-e3dbb120c188" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFwAAAAfCAYAAABqI6qaAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAATmSURBVGhD7ZnLbxtVFMaRWLHhD+iGUkXsaKFsumEBSJUQQpQForQSElKFoJRITTYVEotKQNKSkjctqqBOCjRpAhTyLMqjhDQueZXGdpxC4iROmtiOLdvxI37m456ZuY6vZyZpmmJV8nzSp0lm7j0585tzz1w7j8FQXmUAz7MM4HmWATzPMoDnWQbwPEsT+Pr6uuTNFIsnsBqKCI5EY0gkkkil0rpOJlNYW4sjFI6q5us5ElHHTafTSp6UL7ect5ZpfPb8/8Pp9ObMSAJw6+Q8jn18DruffdvwNr1n32G8+0E5Rm//q9DUlgC88usWHC/+HO2/tG3bNE8rkULy03sPo+p8q0JTXHFcBvCHbGJIgFOplNQGqYVqAqdzlfUG8J36i4pGrHhW4HZ74PcHEIvFhd6eBXydAb+qAm4pfh8Lr70Ic9ln6Lz6k3At2wZw2aWfVGJ0dBR2ux1LS0vshR+RXthcWwIfP1WC4N5diD31BFwv78fIp6fQ/cMVYQxZAH5tUYoZHDYJyRSCi0vPYOCPP3Hn7ztwzjuxuroqtRcuAfhXGsDJBJjA+w48g+Sux3Hv4AEMVFcJYwzgsk+UlKG/rx/j4+OYn5tDKBTSr3A94GQCPH/oFUSLnoTrpf0YrDgrXDeAy/7oZBn6enoxNjKKWYcDq8Hg9iqcwFIPJ9DUWqaPvKGqbvLxWytKpA1x4KeHw8oZWdPXeII3MK2ckxWGuVy+1uJQTimiOblxELThtBTHBHOQTixiWpqnxFEefLZ4Trnx4bgh51RugxTKwWLRMfM37s/bAq7Vw+3HjsL/wm7YPnwPvRcvCtc27MQyBeHJZVe4UO0bYFrYOH7TGw9ANge72QoR5/K4XARceZhaOQmx+FzlIXHgXPkGTv1b6yUpeMKLCAXhVZJ1c6qqlKRzc8p5GaYyJvuGNCpWBC4/SGlsplLVOdHv6rxycuLztun7Bk6N/Vxds24P39Qc+JYVrk6QO7uqtStcrFg+ZkvgWjnlQBUecL6A08mK2qYHA87c8s+aEmlDHJi6msSWklHW8s29RmBV45l0gTOr/y7PKbcFkXYOnD7anygpZ8D7MD42hjm2S9HdFu6owplpnlYSj4rFFfHwvWffOzh4qBRVNSb09/bh9tgOt4Vb+VEErloRD9gmtnLRc0fw6pslOPvlBbT9yrbQ/IOP06kPnERfvGgFNKzvoueP4vW3TqL8TDWafmzC9e7fccs8jMnJKSwvLyMajeoDpyoPBEKYZpvZoZs38XNrK75lW8Ha6hrUVFWjjh3ra2oNc9fWMdfjwvlv0NhwGW2/tWNwcAhWiw1zs3Pwen1YW4sx4DpfXpHj8TjuLS5i5K9hdHd2oflKExoumWD67hIaTCYWuIEdC9js/okB9/eNlxmjZgn2wMAgJiascDhm4XK52QszhGQyKXHlygAn0NRv3G43ZmZmYLFY2NIwo7enB50dHehob5eOXZ2dBefuTXy9q5sx6oV5yAyb1YYF5wK8Kz6EGOxYLCbtUDSBJxIJhMNh+Hw+CTpVuYOBn7Lb2RKxwDIhm34uZNusVslWi2yCfHfqLttzz7Ke7YLf72ccIxLs3OomZYBTYyfo1OSp0gOBgATf4/FID4DbU+AmBi6XK2Pi4/V6pX82UMFSp6Cq5iaumhVuKD8ygOdZBvC8CvgP/cP8ccFUgfgAAAAASUVORK5CYII=" InformativeScreenshot="4287c91ee2d57e10b952498644373f3e.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Formato de Archivo*' /&gt;" SearchSteps="Selector" Version="V2" />
+                            </uix:NClick.Target>
+                          </uix:NClick>
+                        </Sequence>
+                      </ActivityAction>
+                    </uix:NApplicationCard.Body>
+                    <uix:NApplicationCard.TargetApp>
+                      <uix:TargetApp Area="100, 100, 416, 270" BrowserType="Edge" IconBase64="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" InformativeScreenshot="724f2d3b036765a307db77676f60c413.jpg" Selector="&lt;html app='msedge.exe' title='*Formato de Archivo*' /&gt;" Title="Nuevo Telecrédito" />
+                    </uix:NApplicationCard.TargetApp>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NApplicationCard>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="-8, -8, 1382, 736" BrowserType="Edge" IconBase64="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" InformativeScreenshot="8ef1f4c6b385d6b40376c0398d69b865.jpg" Selector="&lt;html app='msedge.exe' title='*banbif*' /&gt;" Title="Nuevo Telecrédito" />
+            </uix:NApplicationCard.TargetApp>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </uix:NApplicationCard>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Apps\UiPath\UiPath_Descargar.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="580,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Apps\UiPath\UiPath_Descargar.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_StrDownloadPath">[in_StrPathDownload]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_StrCopyFile">[in_StrCopyFile]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_StrGeneratedFilesPath">[in_StrGeneratedFilesPath]</InArgument>
+              <OutArgument x:TypeArguments="x:Boolean" x:Key="out_BooDownload">[out_BooDownloadFileMovements]</OutArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Edge: Cerrar Formato Archivo" sap:VirtualizedContainerService.HintSize="580,322" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="1fb0d68d-bdb7-4b7d-bd20-cb0b3982506a" Version="V2" WindowResize="Maximize">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="100, 100, 416, 270" BrowserType="Edge" IconBase64="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" InformativeScreenshot="724f2d3b036765a307db77676f60c413.jpg" Selector="&lt;html app='msedge.exe' title='*Formato de Archivo*' /&gt;" Title="Nuevo Telecrédito" />
+            </uix:NApplicationCard.TargetApp>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </uix:NApplicationCard>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="646,394" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Exception" sap:VirtualizedContainerService.HintSize="496,325" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Error" Message="[&quot;Mensaje Excepción &quot; + exception.Source + &quot; - &quot; + exception.Message]" />
+              <Assign DisplayName="Assign out_StrExceptionMessage" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_2">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[out_StrExceptionMessage]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">["Mensaje Excepción BANBIF_DescargarArchivoMovimientos " + exception.Source + " - " + exception.Message]</InArgument>
+                </Assign.Value>
+              </Assign>
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+      <TryCatch.Finally>
+        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Info" Message="[&quot;¿Descargó Archivo Movimientos? &quot; + out_BooDownloadFileMovements.ToString]" />
+      </TryCatch.Finally>
+    </TryCatch>
+  </Sequence>
+</Activity>
